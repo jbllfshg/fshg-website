@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Four Sausages Hospitality Group</title>
+<meta name="description" content="Book a table, enquire about a function, or get in touch with the Four Sausages Hospitality Group team.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
+  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
+  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.85rem;display:block;white-space:nowrap}
+.nav-links li a:hover, .nav-links li a.active{color:var(--navy)}
+.nav-links li+li{border-left:1px solid var(--border)}
+.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--sage)}
+
+/* PAGE HEADER */
+.page-header{background:var(--navy);padding:4rem 2.5rem 3rem;position:relative;overflow:hidden}
+.page-header-accent{position:absolute;width:500px;height:500px;border-radius:50%;background:var(--teal);opacity:0.07;top:-200px;right:-100px;pointer-events:none}
+.page-header-inner{position:relative;max-width:600px}
+.page-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:0.75rem}
+.page-sub{font-size:0.95rem;color:rgba(250,237,205,0.6);line-height:1.8;font-weight:300;max-width:480px}
+
+/* MAIN */
+main{padding:3.5rem 2.5rem;max-width:1100px;margin:0 auto}
+
+/* ACTION BUTTONS */
+.action-label-text{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage);margin-bottom:1rem}
+.contact-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem}
+.action-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;padding:1.75rem 1rem;border-radius:8px;border:1.5px solid var(--border);background:white;cursor:pointer;transition:all 0.2s;text-decoration:none;text-align:center}
+.action-btn:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,78,105,0.1)}
+.action-btn.active{border-color:var(--navy);background:var(--navy)}
+.action-btn.navy{background:var(--navy);border-color:var(--navy)}
+.action-btn.navy:hover{background:var(--sage);border-color:var(--sage)}
+.action-icon{font-size:1.6rem}
+.action-label{font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);line-height:1.4}
+.action-btn.navy .action-label, .action-btn.active .action-label{color:white}
+.action-sub{font-size:11px;color:var(--muted-sage)}
+.action-btn.navy .action-sub, .action-btn.active .action-sub{color:rgba(255,255,255,0.6)}
+
+/* PANELS */
+.contact-panel{display:none}
+.contact-panel.active{display:block}
+.panel-inner{background:white;border:1px solid var(--border);border-radius:8px;padding:2rem;margin-bottom:2rem}
+.panel-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem}
+.book-choices{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.book-choice{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1.5rem;border:1.5px solid var(--border);border-radius:8px;background:var(--off-white);text-decoration:none;transition:all 0.2s}
+.book-choice:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,78,105,0.1)}
+.bc-venue{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1.05}
+.bc-go{font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--tan)}
+@media(max-width:600px){.book-choices{grid-template-columns:1fr}}
+
+/* GENERAL ENQUIRY FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:11px;font-weight:600;color:var(--muted-sage);text-transform:uppercase;letter-spacing:0.08em}
+.form-field input,.form-field select,.form-field textarea{border:1px solid var(--border);border-radius:4px;padding:10px 12px;font-family:'Inter',sans-serif;font-size:13px;background:var(--off-white);color:var(--ink);outline:none;transition:border-color 0.18s}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--navy);background:white}
+.form-field textarea{resize:vertical;min-height:100px}
+.btn-submit{background:var(--navy);color:white;border:none;border-radius:3px;padding:12px 28px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s}
+.btn-submit:hover{background:var(--sage)}
+
+/* J&C RESERVATION FORM */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* CONTACT DETAILS */
+.contact-details{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border)}
+.contact-venue-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.cv-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:0.75rem}
+.tag-fairway{background:#e8ede6;color:var(--sage)}
+.tag-jack{background:#e4eceb;color:var(--teal)}
+.cv-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
+.cv-row{font-size:0.82rem;color:var(--ink-mid);line-height:1.7;margin-bottom:0.25rem}
+.cv-row a{color:var(--teal);text-decoration:none}
+.cv-row a:hover{text-decoration:underline}
+.cv-phone{margin-top:1rem;padding:0.75rem 1rem;background:var(--off-white);border-radius:4px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.cv-phone-label{font-size:10px;font-weight:600;color:var(--muted-sage);text-transform:uppercase;letter-spacing:0.08em}
+.cv-phone a{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);text-decoration:none}
+.group-contact{margin-top:1.5rem;padding:1.25rem;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.group-contact-label{font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem}
+.group-contact-val{font-size:0.9rem;color:var(--cream)}
+.group-contact-phone{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--tan);text-decoration:none}
+
+/* FOOTER */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px;margin-top:4rem}
+.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
+.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--tan)}
+.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
+.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--tan)}
+.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:768px){
+  .contact-actions{grid-template-columns:1fr 1fr}
+  .contact-details,.form-grid,.form-row,.footer-main{grid-template-columns:1fr}
+  .nav-links{display:none}
+  nav{padding:0 1.5rem}
+  main{padding:2rem 1.25rem}
+  .page-header{padding:3rem 1.5rem 2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html">Functions &amp; events</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="contact.html" class="active">Contact us</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Make an enquiry</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-accent"></div>
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Four Sausages Hospitality Group</p>
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-sub">Book a table, enquire about a private function or catering, or just say hello. We'd love to hear from you.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- ACTION BUTTONS -->
+  <p class="action-label-text" style="margin-top:0.5rem">What can we help you with?</p>
+  <div class="contact-actions">
+    <a class="action-btn" href="#" onclick="showPanel('book'); return false;">
+      <span class="action-icon">🍽️</span>
+      <span class="action-label">Book a table</span>
+      <span class="action-sub">Choose a venue</span>
+    </a>
+    <a class="action-btn" href="#functions-enquiry">
+      <span class="action-icon">🥂</span>
+      <span class="action-label">Function enquiry</span>
+      <span class="action-sub">Both venues</span>
+    </a>
+    <a class="action-btn" href="#catering-enquiry">
+      <span class="action-icon">🍱</span>
+      <span class="action-label">Catering enquiry</span>
+      <span class="action-sub">At-home &amp; private</span>
+    </a>
+  </div>
+
+  <!-- BOOK A TABLE — venue chooser (revealed on click) -->
+  <div class="contact-panel" id="panel-book">
+    <div class="panel-inner">
+      <p class="panel-title">Which venue would you like to book?</p>
+      <div class="book-choices">
+        <a class="book-choice" href="the-fairway.html#book">
+          <span class="cv-tag tag-fairway">Penrith Golf Club</span>
+          <span class="bc-venue">The Fairway</span>
+          <span class="bc-go">Book a table →</span>
+        </a>
+        <a class="book-choice" href="the-jack-and-cleaver.html#book">
+          <span class="cv-tag tag-jack">Pennant Hills Bowling Club</span>
+          <span class="bc-venue">The Jack &amp; Cleaver</span>
+          <span class="bc-go">Book a table →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- General Enquiry — always visible below buttons -->
+  <div style="margin-bottom:2rem">
+    <p class="action-label-text">General enquiry</p>
+    <div class="panel-inner">
+      <p class="panel-title">Send us a message</p>
+      <form name="general-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="general-enquiry">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-grid">
+          <div class="form-field"><label>First name</label><input type="text" name="first-name" placeholder="Jane" required></div>
+          <div class="form-field"><label>Last name</label><input type="text" name="last-name" placeholder="Smith" required></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="jane@example.com" required></div>
+          <div class="form-field"><label>Phone</label><input type="tel" name="phone" placeholder="04xx xxx xxx"></div>
+          <div class="form-field">
+            <label>I'm enquiring about</label>
+            <select name="topic">
+              <option value="">Select…</option>
+              <option>The Fairway</option>
+              <option>The Jack &amp; Cleaver</option>
+              <option>Functions &amp; events</option>
+              <option>At-home catering</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Message</label><textarea name="message" placeholder="How can we help?" required></textarea></div>
+        </div>
+        <button type="submit" class="btn-submit">Send message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Function Enquiry — FunctionTracker (always rendered, initialised on load) -->
+  <div id="functions-enquiry" style="margin-bottom:2rem;scroll-margin-top:90px">
+    <p class="action-label-text">Function enquiry</p>
+    <div class="panel-inner">
+      <p class="panel-title">Enquire about a function</p>
+      <div id="ftenquire2363"></div>
+    </div>
+  </div>
+
+  <!-- Catering Enquiry — FunctionTracker (always rendered, initialised on load) -->
+  <div id="catering-enquiry" style="margin-bottom:2rem;scroll-margin-top:90px">
+    <p class="action-label-text">Catering enquiry</p>
+    <div class="panel-inner">
+      <p class="panel-title">Enquire about catering</p>
+      <div id="ftenquire2364"></div>
+    </div>
+  </div>
+
+  <!-- FUNCTION & CATERING ENQUIRIES (above the venues) -->
+  <div class="group-contact">
+    <div>
+      <p class="group-contact-label">Function &amp; catering enquiries</p>
+      <p class="group-contact-val">functions@fshg.com.au &nbsp;·&nbsp; catering@fshg.com.au &nbsp;·&nbsp; hello@fshg.com.au</p>
+    </div>
+    <a href="tel:0247023642" class="group-contact-phone">(02) 4702 3642</a>
+  </div>
+
+  <!-- VENUE CONTACT DETAILS -->
+  <div class="contact-details">
+    <div class="contact-venue-card">
+      <span class="cv-tag tag-fairway">Penrith Golf Club</span>
+      <p class="cv-name">The Fairway</p>
+      <p class="cv-row">1939 The Northern Road, Glenmore Park NSW 2745</p>
+      <p class="cv-row">Mon–Thu 11:30am–2:30pm &amp; 5:00pm–8:30pm &nbsp;|&nbsp; Fri to 9:00pm &nbsp;|&nbsp; Sat 11:30am–9:00pm &nbsp;|&nbsp; Sun 11:30am–8:30pm</p>
+      <p class="cv-row" style="margin-top:0.5rem"><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+      <p class="cv-row"><a href="mailto:functions@thefairwaypenrith.com.au">functions@thefairwaypenrith.com.au</a></p>
+      <div class="cv-phone">
+        <span class="cv-phone-label">Phone</span>
+        <a href="tel:0247361633">(02) 4736 1633</a>
+      </div>
+    </div>
+    <div class="contact-venue-card">
+      <span class="cv-tag tag-jack">Pennant Hills Bowling Club</span>
+      <p class="cv-name">The Jack &amp; Cleaver</p>
+      <p class="cv-row">52 Yarrara Road, Pennant Hills NSW 2120</p>
+      <p class="cv-row">Sun–Thu 11:30am–2:30pm &amp; 5:30pm–8:30pm &nbsp;|&nbsp; Fri &amp; Sat 11:30am–2:30pm &amp; 5:30pm–9:00pm</p>
+      <p class="cv-row" style="margin-top:0.5rem"><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+      <p class="cv-row"><a href="mailto:functions@thejackandcleaver.com.au">functions@thejackandcleaver.com.au</a></p>
+      <div class="cv-phone">
+        <span class="cv-phone-label">Phone</span>
+        <a href="tel:0294842433">(02) 9484 2433</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <p class="footer-brand-name">Four Sausages</p>
+      <p class="footer-brand-sub">Hospitality Group</p>
+      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Our venues</p>
+      <ul class="footer-links">
+        <li><a href="the-fairway.html">The Fairway</a></li>
+        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        <li><a href="catering.html">At-home Catering</a></li>
+        <li><a href="functions-events.html">Functions &amp; Events</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+      <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+      <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+    </div>
+  </div>
+  <hr class="footer-rule">
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+  </div>
+</footer>
+
+<!-- FunctionTracker — load script, then initialise both widgets while visible -->
+<script language="javascript" src="https://fshg.functiontracker.com/public/v4/enquire.js"></script>
+<script>
+  // FunctionTracker initialises into visible containers on page load.
+  try { ftenquireinit(2363, 'fshg'); } catch(e) { console.log('FT functions error:', e); }
+  try { ftenquireinit(2364, 'fshg'); } catch(e) { console.log('FT catering error:', e); }
+</script>
+
+<script>
+  // Book a table — reveal the venue chooser
+  function showPanel(id) {
+    var panel = document.getElementById('panel-' + id);
+    if (!panel) return;
+    var isActive = panel.classList.contains('active');
+    document.querySelectorAll('.contact-panel').forEach(function(p){ p.classList.remove('active'); });
+    if (!isActive) {
+      panel.classList.add('active');
+      setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'center'}); }, 50);
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering | Four Sausages Hospitality Group</title>
+<meta name="description" content="Order our Signature Platters for your next gathering — restaurant-quality grazing, charcuterie, sliders, schnitzel and more, delivered or ready for pickup from The Fairway or The Jack & Cleaver.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
+  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
+  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif;text-decoration:none}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.85rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--navy)}
+.nav-links li+li{border-left:1px solid var(--border)}
+.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--sage)}
+
+/* HERO */
+#hero{position:relative;min-height:58vh;display:flex;align-items:flex-end;padding:4rem 2.5rem;overflow:hidden;background:var(--navy)}
+.hero-accent{position:absolute;width:600px;height:600px;border-radius:50%;background:var(--teal);opacity:0.10;top:-220px;right:-180px;pointer-events:none}
+.hero-accent2{position:absolute;width:420px;height:420px;border-radius:50%;background:var(--tan);opacity:0.10;bottom:-160px;left:-120px;pointer-events:none}
+.hero-inner{position:relative;max-width:760px}
+.hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:1.25rem;background:rgba(212,163,115,0.2);color:var(--tan)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:600;color:var(--cream);line-height:1.02;margin-bottom:0.5rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--tan);margin-bottom:1.5rem}
+.hero-desc{font-size:0.98rem;color:rgba(250,237,205,0.82);max-width:600px;line-height:1.8;font-weight:300;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 30px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-gold:hover{background:#c49060}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(250,237,205,0.4);border-radius:3px;padding:13px 30px;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(250,237,205,0.08)}
+
+/* SECTION SHELL */
+section{padding:4.5rem 2.5rem}
+.wrap{max-width:1180px;margin:0 auto}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem;text-align:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--navy);line-height:1.1;margin-bottom:0.75rem;text-align:center}
+.section-sub{color:var(--ink-mid);font-size:0.95rem;line-height:1.8;font-weight:300;max-width:620px;margin:0 auto;text-align:center}
+
+/* INTRO */
+#intro{background:var(--off-white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.intro-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.25rem}
+.intro-copy p{color:var(--ink-mid);font-size:0.98rem;line-height:1.9;font-weight:300;margin-bottom:1rem}
+.howto{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.howto-step{display:flex;gap:1rem;align-items:flex-start}
+.howto-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--cream);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.howto-step p{font-size:0.9rem;color:var(--ink-mid);line-height:1.6;font-weight:300;margin:0}
+.howto-step strong{color:var(--navy);font-weight:600}
+.intro-photo{border-radius:10px;overflow:hidden;aspect-ratio:4/5}
+.intro-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* COMING SOON BANNER */
+.coming-soon{max-width:760px;margin:2.5rem auto 0;background:#fff;border:1px solid var(--border);border-left:3px solid var(--tan);border-radius:8px;padding:1.1rem 1.5rem;display:flex;gap:0.9rem;align-items:center}
+.coming-soon .cs-icon{flex-shrink:0;font-size:1.2rem}
+.coming-soon p{font-size:0.88rem;color:var(--ink-mid);line-height:1.6;font-weight:300;margin:0}
+.coming-soon strong{color:var(--navy);font-weight:600}
+
+/* ORDER SECTION */
+#order{background:white;border-top:1px solid var(--border)}
+.order-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;margin-top:3rem;align-items:start}
+
+/* PLATTER CARDS */
+.platter-list{display:flex;flex-direction:column;gap:0.9rem}
+.platter{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;transition:border-color 0.2s}
+.platter.active{border-color:var(--tan);background:#fff}
+.platter-info{flex:1}
+.platter-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--navy);line-height:1.15;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
+.platter-price{font-size:1rem;font-weight:700;color:var(--tan);font-family:'Inter',sans-serif}
+.platter-feeds{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted-sage);margin:0.3rem 0 0.5rem}
+.platter-desc{font-size:0.85rem;color:var(--ink-mid);line-height:1.6;font-weight:300}
+.stepper{flex-shrink:0;display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:30px;background:white;overflow:hidden}
+.qty-btn{width:34px;height:34px;border:none;background:white;color:var(--navy);font-size:1.2rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s;line-height:1}
+.qty-btn:hover:not(:disabled){background:var(--off-white)}
+.qty-btn:disabled{color:#cdd0cb;cursor:default}
+.qty-val{min-width:30px;text-align:center;font-size:0.95rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* ORDER SUMMARY / FORM */
+.order-form{position:sticky;top:88px;background:var(--navy);color:var(--cream);border-radius:12px;padding:1.9rem}
+.order-form h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;color:var(--cream);margin-bottom:1rem}
+.summary-items{display:flex;flex-direction:column;gap:0.55rem;min-height:30px;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(250,237,205,0.15)}
+.summary-empty{font-size:0.85rem;color:rgba(250,237,205,0.55);font-weight:300;font-style:italic;line-height:1.6}
+.sum-line{display:flex;justify-content:space-between;gap:0.75rem;font-size:0.85rem;color:rgba(250,237,205,0.9);line-height:1.4}
+.sum-line .sl-name{font-weight:400}
+.sum-line .sl-name b{font-weight:600;color:var(--cream)}
+.sum-line .sl-amt{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--cream)}
+.summary-totals{display:flex;flex-direction:column;gap:0.45rem;margin-bottom:0.75rem}
+.tot-row{display:flex;justify-content:space-between;font-size:0.85rem;color:rgba(250,237,205,0.78)}
+.tot-row.grand{font-size:1.05rem;color:var(--cream);font-weight:600;padding-top:0.55rem;margin-top:0.2rem;border-top:1px solid rgba(250,237,205,0.15)}
+.tot-row .v{font-variant-numeric:tabular-nums}
+.free-hint{font-size:0.76rem;color:var(--tan);line-height:1.5;margin-bottom:1.1rem;min-height:0}
+.free-hint:empty{margin-bottom:0}
+
+.form-block-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(250,237,205,0.6);margin:1.1rem 0 0.6rem}
+.fulfil-toggle{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+.fulfil-toggle label{position:relative;cursor:pointer}
+.fulfil-toggle input{position:absolute;opacity:0;pointer-events:none}
+.fulfil-toggle span{display:block;text-align:center;padding:10px;border:1px solid rgba(250,237,205,0.25);border-radius:6px;font-size:0.85rem;font-weight:500;color:rgba(250,237,205,0.8);transition:all 0.2s}
+.fulfil-toggle input:checked+span{background:var(--tan);border-color:var(--tan);color:var(--ink);font-weight:600}
+.fulfil-toggle input:focus-visible+span{outline:2px solid var(--cream);outline-offset:2px}
+
+.field{display:block;margin-top:0.7rem}
+.field>span{display:block;font-size:0.78rem;color:rgba(250,237,205,0.7);margin-bottom:0.3rem}
+.field input,.field select,.field textarea{width:100%;background:rgba(250,237,205,0.06);border:1px solid rgba(250,237,205,0.22);border-radius:6px;padding:10px 12px;font-size:0.88rem;font-family:'Inter',sans-serif;color:var(--cream);transition:border-color 0.2s}
+.field input::placeholder,.field textarea::placeholder{color:rgba(250,237,205,0.4)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--tan)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4a373' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:30px}
+.field select option{color:#2a2e1e}
+.field textarea{resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem}
+.field-note{font-size:0.72rem;color:rgba(250,237,205,0.5);margin-top:0.3rem;line-height:1.4}
+
+.btn-submit{width:100%;margin-top:1.4rem;background:var(--tan);color:var(--ink);border:none;border-radius:6px;padding:14px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.05em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s}
+.btn-submit:hover{background:#c49060}
+.form-fine{font-size:0.72rem;color:rgba(250,237,205,0.5);line-height:1.5;margin-top:0.8rem;text-align:center}
+.form-msg{margin-top:1rem;padding:0.9rem 1rem;border-radius:6px;font-size:0.85rem;line-height:1.5}
+.form-msg.ok{background:rgba(212,163,115,0.2);color:var(--cream);border:1px solid var(--tan)}
+.form-msg.err{background:rgba(220,120,100,0.15);color:#f3d9cd;border:1px solid rgba(220,120,100,0.5)}
+.hp{position:absolute;left:-9999px}
+
+/* TERMS */
+#terms{background:var(--off-white)}
+.terms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.75rem}
+.term-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.6rem 1.75rem;display:flex;gap:1rem;align-items:flex-start}
+.term-icon{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#e8ede6;color:var(--sage);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.term-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:0.35rem;line-height:1.2}
+.term-card p{font-size:0.86rem;color:var(--ink-mid);line-height:1.6;font-weight:300}
+
+/* ENQUIRE CALLOUT */
+#enquire{background:var(--navy);color:var(--cream);text-align:center}
+.enquire-inner{max-width:680px;margin:0 auto}
+.enquire-inner .section-eyebrow{color:var(--tan)}
+.enquire-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:600;color:var(--cream);margin-bottom:1rem}
+.enquire-inner p{font-size:0.96rem;color:rgba(250,237,205,0.82);line-height:1.8;font-weight:300;margin-bottom:1.75rem}
+.enquire-contact{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
+.enquire-contact a{color:var(--cream);text-decoration:none;font-size:1.05rem;border-bottom:1px solid rgba(250,237,205,0.25);transition:border-color 0.2s}
+.enquire-contact a:hover{border-color:var(--tan)}
+
+/* FOOTER */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
+.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--tan)}
+.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
+.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--tan)}
+.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:980px){
+  .order-grid{grid-template-columns:1fr}
+  .order-form{position:static}
+}
+@media(max-width:880px){
+  .intro-grid,.terms-grid,.footer-main{grid-template-columns:1fr}
+  .intro-photo{aspect-ratio:16/10}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  nav{padding:0 1.5rem}
+  section{padding:3.25rem 1.4rem}
+  #hero{padding:3rem 1.5rem;min-height:52vh}
+  .order-form{padding:1.5rem}
+  .field-row{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html">Functions &amp; events</a></li>
+    <li><a href="catering.html" class="active">Catering</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+  <a href="#order" class="nav-cta">Order platters</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">Catering</span>
+    <h1 class="hero-title">Bring the feast home</h1>
+    <p class="hero-sub">Signature Platters, made to share.</p>
+    <p class="hero-desc">Restaurant-quality grazing, charcuterie, sliders and more — built by our kitchens and ready to deliver, or to collect from either venue. Order online in a few taps.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-gold">Build your order</a>
+      <a href="#terms" class="btn-ghost">Delivery &amp; pickup</a>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <h2>Catering, the easy way</h2>
+      <p>Each Signature Platter is made fresh by our kitchen and designed to feed 10–12 guests. Mix and match as many as you need, then choose delivery or pickup from your nearest venue.</p>
+      <div class="howto">
+        <div class="howto-step"><span class="howto-num">1</span><p><strong>Choose your platters.</strong> Add what you like and set the quantities — your total updates as you go.</p></div>
+        <div class="howto-step"><span class="howto-num">2</span><p><strong>Pick delivery or pickup.</strong> Tell us your venue, date and time. Orders over $350 deliver free within 8km.</p></div>
+        <div class="howto-step"><span class="howto-num">3</span><p><strong>Send your order.</strong> We'll confirm availability and arrange payment — no card details needed online.</p></div>
+      </div>
+    </div>
+    <div class="intro-photo">
+      <img src="images/catering/feature/catering-12.jpg" alt="An abundant catering spread of platters and grazing boards" loading="lazy">
+    </div>
+  </div>
+  <div class="coming-soon">
+    <span class="cs-icon">✦</span>
+    <p><strong>More coming soon.</strong> We're starting with our Signature Platters. Buffets, canapés, banquets and full event catering will be available to order here shortly.</p>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="wrap">
+    <p class="section-eyebrow">Order online</p>
+    <h2 class="section-title">Signature Platters</h2>
+    <p class="section-sub">Each platter feeds 10–12 guests. Build your order on the left and your summary updates on the right.</p>
+
+    <div class="order-grid">
+      <!-- PLATTERS -->
+      <div class="platter-list" id="platterList">
+        <div class="platter" data-id="cheese" data-name="Artisanal Cheese" data-price="230">
+          <div class="platter-info">
+            <h3 class="platter-title">Artisanal Cheese <span class="platter-price">$230</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Artisanal Cheese" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Artisanal Cheese">+</button></div>
+        </div>
+        <div class="platter" data-id="charcuterie" data-name="Artisanal Charcuterie" data-price="230">
+          <div class="platter-info">
+            <h3 class="platter-title">Artisanal Charcuterie <span class="platter-price">$230</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Artisanal Charcuterie" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Artisanal Charcuterie">+</button></div>
+        </div>
+        <div class="platter" data-id="sliders" data-name="Sliders (15pc)" data-price="135">
+          <div class="platter-info">
+            <h3 class="platter-title">Sliders <span style="font-size:0.85rem;color:var(--muted-sage);font-weight:400">(15pc)</span> <span class="platter-price">$135</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Sliders platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Sliders platter">+</button></div>
+        </div>
+        <div class="platter" data-id="arancini" data-name="Arancini" data-price="120">
+          <div class="platter-info">
+            <h3 class="platter-title">Arancini <span class="platter-price">$120</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Arancini platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Arancini platter">+</button></div>
+        </div>
+        <div class="platter" data-id="fish" data-name="Crispy Fish" data-price="155">
+          <div class="platter-info">
+            <h3 class="platter-title">Crispy Fish <span class="platter-price">$155</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Crispy Fish platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Crispy Fish platter">+</button></div>
+        </div>
+        <div class="platter" data-id="savouryrolls" data-name="S&amp;R Savoury Rolls" data-price="125">
+          <div class="platter-info">
+            <h3 class="platter-title">S&amp;R Savoury Rolls <span class="platter-price">$125</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Savoury Rolls platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Savoury Rolls platter">+</button></div>
+        </div>
+        <div class="platter" data-id="aussie" data-name="Classic Aussie" data-price="135">
+          <div class="platter-info">
+            <h3 class="platter-title">Classic Aussie <span class="platter-price">$135</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Classic Aussie platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Classic Aussie platter">+</button></div>
+        </div>
+        <div class="platter" data-id="schnitzel" data-name="Schnitzel (30pc)" data-price="255">
+          <div class="platter-info">
+            <h3 class="platter-title">Schnitzel <span style="font-size:0.85rem;color:var(--muted-sage);font-weight:400">(30pc)</span> <span class="platter-price">$255</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Schnitzel platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Schnitzel platter">+</button></div>
+        </div>
+        <div class="platter" data-id="wedges" data-name="Wedges" data-price="110">
+          <div class="platter-info">
+            <h3 class="platter-title">Wedges <span class="platter-price">$110</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Potato wedges served with sour cream &amp; sweet chilli sauce.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Wedges platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Wedges platter">+</button></div>
+        </div>
+        <div class="platter" data-id="fruit" data-name="Seasonal Fruit" data-price="220">
+          <div class="platter-info">
+            <h3 class="platter-title">Seasonal Fruit <span class="platter-price">$220</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">Chef's selection of fresh seasonal fruit.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Seasonal Fruit platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Seasonal Fruit platter">+</button></div>
+        </div>
+        <div class="platter" data-id="baked" data-name="Baked Goods" data-price="125">
+          <div class="platter-info">
+            <h3 class="platter-title">Baked Goods <span class="platter-price">$125</span></h3>
+            <p class="platter-feeds">Feeds 10–12</p>
+            <p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p>
+          </div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Baked Goods platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Baked Goods platter">+</button></div>
+        </div>
+      </div>
+
+      <!-- ORDER FORM -->
+      <form name="catering-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="order-form" id="orderForm">
+        <input type="hidden" name="form-name" value="catering-order">
+        <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+
+        <h3>Your order</h3>
+        <div class="summary-items" id="summaryItems">
+          <p class="summary-empty">No platters added yet. Choose from the list to get started.</p>
+        </div>
+        <div class="summary-totals">
+          <div class="tot-row"><span>Subtotal</span><span class="v" id="subtotalText">$0</span></div>
+          <div class="tot-row"><span id="feeLabel">Delivery</span><span class="v" id="feeText">—</span></div>
+          <div class="tot-row grand"><span>Total</span><span class="v" id="totalText">$0</span></div>
+        </div>
+        <p class="free-hint" id="freeHint"></p>
+
+        <p class="form-block-label">How would you like it?</p>
+        <div class="fulfil-toggle">
+          <label><input type="radio" name="fulfilment" value="Pickup" checked><span>Pickup</span></label>
+          <label><input type="radio" name="fulfilment" value="Delivery"><span>Delivery</span></label>
+        </div>
+
+        <label class="field"><span>Venue</span>
+          <select name="venue" id="venue" required>
+            <option value="" disabled selected>Choose a venue…</option>
+            <option>The Fairway (Penrith Golf Club)</option>
+            <option>The Jack &amp; Cleaver (Pennant Hills Bowling Club)</option>
+          </select>
+        </label>
+
+        <label class="field" id="addressField" hidden><span>Delivery address</span>
+          <input type="text" name="address" id="address" placeholder="Street, suburb &amp; postcode">
+          <p class="field-note">Free delivery within 8km of your chosen venue on orders over $350.</p>
+        </label>
+        <p class="field-note" id="pickupNote">Free pickup between 11:30am and 8:00pm. Outside these hours may incur a charge.</p>
+
+        <div class="field-row">
+          <label class="field"><span>Date</span><input type="date" name="event_date" id="eventDate" required></label>
+          <label class="field"><span>Time</span>
+            <select name="event_time" id="eventTime" required><option value="" disabled selected>Select…</option></select>
+          </label>
+        </div>
+        <p class="field-note">Minimum 48 hours notice required.</p>
+
+        <div class="field-row">
+          <label class="field"><span>First name</span><input type="text" name="first_name" required></label>
+          <label class="field"><span>Last name</span><input type="text" name="last_name" required></label>
+        </div>
+        <div class="field-row">
+          <label class="field"><span>Email</span><input type="email" name="email" required></label>
+          <label class="field"><span>Phone</span><input type="tel" name="phone" required></label>
+        </div>
+        <label class="field"><span>Notes — dietaries, allergies, anything else</span><textarea name="notes" rows="3" placeholder="Optional"></textarea></label>
+
+        <input type="hidden" name="order_details" id="fOrder">
+        <input type="hidden" name="subtotal" id="fSub">
+        <input type="hidden" name="delivery_fee" id="fFee">
+        <input type="hidden" name="order_total" id="fTotal">
+
+        <button type="submit" class="btn-submit">Send order request</button>
+        <p class="form-fine">This is an order request, not a payment. Our team will confirm availability and arrange payment with you directly.</p>
+        <div class="form-msg" id="formMsg" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="wrap">
+    <p class="section-eyebrow">Good to know</p>
+    <h2 class="section-title">Delivery &amp; pickup</h2>
+    <div class="terms-grid">
+      <div class="term-card">
+        <span class="term-icon">🚚</span>
+        <div><h3>Free delivery over $350</h3><p>Orders of $350 or more deliver free within 8km of your chosen venue. Under $350, a flat $50 delivery fee applies.</p></div>
+      </div>
+      <div class="term-card">
+        <span class="term-icon">🛍</span>
+        <div><h3>Free pickup, 11:30am–8pm</h3><p>Collect your platters — hot or cold — free of charge between 11:30am and 8:00pm from The Fairway or The Jack &amp; Cleaver.</p></div>
+      </div>
+      <div class="term-card">
+        <span class="term-icon">🕗</span>
+        <div><h3>After-hours pickup</h3><p>Hot or cold pickup outside of 11:30am–8:00pm can be arranged and may incur an additional charge.</p></div>
+      </div>
+      <div class="term-card">
+        <span class="term-icon">📅</span>
+        <div><h3>48 hours notice</h3><p>Please place your order at least 48 hours ahead so our kitchen can prepare everything fresh for you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section id="enquire">
+  <div class="enquire-inner">
+    <p class="section-eyebrow">Prefer to talk it through?</p>
+    <h2>We're here to help</h2>
+    <p>Catering a bigger event, or not sure what you need? Our team is happy to talk through quantities, dietaries and timing before you order.</p>
+    <div class="enquire-contact">
+      <a href="tel:0247023642">(02) 4702 3642</a>
+      <a href="mailto:catering@fshg.com.au">catering@fshg.com.au</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <p class="footer-brand-name">Four Sausages</p>
+      <p class="footer-brand-sub">Hospitality Group</p>
+      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Explore</p>
+      <ul class="footer-links">
+        <li><a href="the-fairway.html">The Fairway</a></li>
+        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        <li><a href="functions-events.html">Functions &amp; Events</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Catering</p>
+      <p class="footer-contact-item"><strong>Orders &amp; enquiries</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:catering@fshg.com.au">catering@fshg.com.au</a></p>
+      <p class="footer-contact-item"><strong>Pickup from</strong><br>The Fairway · Glenmore Park<br>The Jack &amp; Cleaver · Pennant Hills</p>
+    </div>
+  </div>
+  <hr class="footer-rule">
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FREE_DELIVERY_MIN = 350;
+  var DELIVERY_FEE = 50;
+  var cart = {}; // id -> qty
+  var form = document.getElementById('orderForm');
+
+  function money(n){ return '$' + Number(n).toLocaleString('en-AU'); }
+
+  // Build time options 11:30am – 8:00pm in 30-min steps
+  (function(){
+    var sel = document.getElementById('eventTime');
+    function label(h,m){
+      var ap = h >= 12 ? 'pm' : 'am';
+      var hh = h % 12; if(hh === 0) hh = 12;
+      return hh + ':' + (m===0?'00':m) + ap;
+    }
+    for(var t = 11*60+30; t <= 20*60; t += 30){
+      var h = Math.floor(t/60), m = t%60;
+      var o = document.createElement('option');
+      o.textContent = label(h,m); o.value = label(h,m);
+      sel.appendChild(o);
+    }
+  })();
+
+  // Date min = today + 48h
+  (function(){
+    var d = new Date(); d.setDate(d.getDate() + 2);
+    var iso = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    document.getElementById('eventDate').min = iso;
+  })();
+
+  function currentMethod(){
+    var r = form.querySelector('input[name="fulfilment"]:checked');
+    return r ? r.value : 'Pickup';
+  }
+
+  function recalc(){
+    var subtotal = 0;
+    var items = [];
+    document.querySelectorAll('.platter').forEach(function(p){
+      var id = p.dataset.id, qty = cart[id] || 0;
+      var valEl = p.querySelector('.qty-val');
+      var minusEl = p.querySelector('.minus');
+      valEl.textContent = qty;
+      minusEl.disabled = qty === 0;
+      p.classList.toggle('active', qty > 0);
+      if(qty > 0){
+        var price = +p.dataset.price, line = price * qty;
+        subtotal += line;
+        items.push({ name: p.dataset.name.replace('&amp;','&'), qty: qty, price: price, line: line });
+      }
+    });
+
+    // Summary list
+    var box = document.getElementById('summaryItems');
+    if(items.length === 0){
+      box.innerHTML = '<p class="summary-empty">No platters added yet. Choose from the list to get started.</p>';
+    } else {
+      box.innerHTML = items.map(function(i){
+        return '<div class="sum-line"><span class="sl-name"><b>' + i.qty + ' ×</b> ' + i.name + '</span><span class="sl-amt">' + money(i.line) + '</span></div>';
+      }).join('');
+    }
+
+    // Fees
+    var method = currentMethod();
+    var fee = 0;
+    var feeLabel = document.getElementById('feeLabel');
+    var feeText = document.getElementById('feeText');
+    var hint = document.getElementById('freeHint');
+    hint.textContent = '';
+
+    if(method === 'Delivery'){
+      feeLabel.textContent = 'Delivery (within 8km)';
+      if(subtotal === 0){
+        feeText.textContent = '—';
+      } else if(subtotal >= FREE_DELIVERY_MIN){
+        fee = 0; feeText.textContent = 'Free';
+      } else {
+        fee = DELIVERY_FEE; feeText.textContent = money(DELIVERY_FEE);
+        hint.textContent = 'Add ' + money(FREE_DELIVERY_MIN - subtotal) + ' more to unlock free delivery.';
+      }
+    } else {
+      feeLabel.textContent = 'Pickup';
+      feeText.textContent = 'Free';
+    }
+
+    var total = subtotal + fee;
+    document.getElementById('subtotalText').textContent = money(subtotal);
+    document.getElementById('totalText').textContent = money(total);
+
+    // Hidden fields
+    document.getElementById('fOrder').value = items.map(function(i){
+      return i.qty + ' x ' + i.name + ' @ ' + money(i.price) + ' = ' + money(i.line);
+    }).join('\n');
+    document.getElementById('fSub').value = money(subtotal);
+    document.getElementById('fFee').value = (method === 'Delivery' && subtotal > 0 && subtotal < FREE_DELIVERY_MIN) ? money(DELIVERY_FEE) : 'Free';
+    document.getElementById('fTotal').value = money(total);
+
+    return { items: items, subtotal: subtotal };
+  }
+
+  // Stepper clicks
+  document.getElementById('platterList').addEventListener('click', function(e){
+    var btn = e.target.closest('.qty-btn');
+    if(!btn) return;
+    var card = e.target.closest('.platter');
+    var id = card.dataset.id;
+    cart[id] = cart[id] || 0;
+    if(btn.classList.contains('plus')) cart[id]++;
+    else if(cart[id] > 0) cart[id]--;
+    recalc();
+  });
+
+  // Fulfilment toggle -> show/hide address, toggle notes
+  function syncFulfilment(){
+    var method = currentMethod();
+    var isDelivery = method === 'Delivery';
+    var addr = document.getElementById('addressField');
+    var addrInput = document.getElementById('address');
+    var pickupNote = document.getElementById('pickupNote');
+    addr.hidden = !isDelivery;
+    addrInput.required = isDelivery;
+    pickupNote.hidden = isDelivery;
+    recalc();
+  }
+  form.querySelectorAll('input[name="fulfilment"]').forEach(function(r){
+    r.addEventListener('change', syncFulfilment);
+  });
+
+  // Submit -> validate + AJAX post to Netlify
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var state = recalc();
+    var msg = document.getElementById('formMsg');
+    msg.hidden = false; msg.className = 'form-msg';
+
+    if(state.items.length === 0){
+      msg.classList.add('err');
+      msg.textContent = 'Please add at least one platter before sending your order.';
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    if(!form.checkValidity()){
+      form.reportValidity();
+      msg.hidden = true;
+      return;
+    }
+
+    var data = new URLSearchParams(new FormData(form));
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() })
+      .then(function(){
+        msg.classList.add('ok');
+        msg.innerHTML = '<strong>Thank you — your order request is in.</strong><br>Our catering team will be in touch shortly to confirm availability and arrange payment.';
+        form.querySelector('.btn-submit').style.display = 'none';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function(){
+        msg.classList.add('err');
+        msg.innerHTML = 'Something went wrong sending your order. Please call (02) 4702 3642 or email catering@fshg.com.au and we\'ll sort it out.';
+      });
+  });
+
+  recalc();
+})();
+</script>
+
+</body>
+</html>

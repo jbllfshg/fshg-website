@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fairway — Penrith Golf Club | Four Sausages Hospitality Group</title>
+<meta name="description" content="The Fairway at Penrith Golf Club — elevated seasonal cuisine, wood-fired pizza, steaks and seafood, with sweeping views over the greens. Dine in seven days. Glenmore Park, NSW.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
+  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
+  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif;text-decoration:none}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.85rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--navy)}
+.nav-links li+li{border-left:1px solid var(--border)}
+.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--sage)}
+
+/* HERO */
+#hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;padding:4rem 2.5rem;overflow:hidden;background:var(--navy)}
+.hero-img{position:absolute;inset:0;background-image:url('images/fairway/feature/fairway-01.jpg');background-size:cover;background-position:center;}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,46,30,0.25) 0%,rgba(42,46,30,0.35) 45%,rgba(34,36,40,0.82) 100%)}
+.hero-inner{position:relative;max-width:720px}
+.hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:1.25rem;background:#e8ede6;color:var(--sage)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:600;color:var(--cream);line-height:1;margin-bottom:0.5rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--tan);margin-bottom:1.5rem}
+.hero-desc{font-size:0.98rem;color:rgba(250,237,205,0.82);max-width:540px;line-height:1.8;font-weight:300;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 30px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-gold:hover{background:#c49060}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(250,237,205,0.4);border-radius:3px;padding:13px 30px;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(250,237,205,0.08)}
+
+/* SECTION SHELL */
+section{padding:5rem 2.5rem}
+.wrap{max-width:1120px;margin:0 auto}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem;text-align:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--navy);line-height:1.1;margin-bottom:0.75rem;text-align:center}
+.section-sub{color:var(--ink-mid);font-size:0.95rem;line-height:1.8;font-weight:300;max-width:560px;margin:0 auto;text-align:center}
+
+/* INTRO */
+#intro{background:var(--off-white)}
+.intro-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:center}
+.intro-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.25rem}
+.intro-copy p{color:var(--ink-mid);font-size:0.98rem;line-height:1.9;font-weight:300;margin-bottom:1rem}
+.intro-facts{display:flex;flex-direction:column;gap:0.9rem;margin-top:1.75rem}
+.intro-fact{display:flex;gap:0.85rem;align-items:flex-start;font-size:0.9rem;color:var(--ink-mid);line-height:1.6}
+.intro-fact .dot{width:6px;height:6px;border-radius:50%;background:var(--tan);margin-top:7px;flex-shrink:0}
+.intro-fact strong{color:var(--navy);font-weight:600}
+.intro-photo{border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 18px 44px rgba(74,78,105,0.16)}
+.intro-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* GALLERY */
+#gallery{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;margin-top:2.75rem}
+.gallery-grid figure{margin:0;border-radius:8px;overflow:hidden;aspect-ratio:1;background:var(--off-white)}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+.gallery-grid figure.wide{grid-column:span 2;aspect-ratio:2/1}
+
+/* MENU */
+#menu{background:var(--off-white)}
+.menu-legend{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:1.5rem auto 0;font-size:0.78rem;color:var(--muted-sage);max-width:640px}
+.menu-legend span strong{color:var(--navy)}
+.menu-cols{column-count:2;column-gap:3.5rem;margin-top:3rem}
+.menu-section{break-inside:avoid;margin-bottom:2.75rem}
+.menu-section-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);letter-spacing:0.01em;padding-bottom:0.6rem;margin-bottom:1.1rem;border-bottom:2px solid var(--tan);display:inline-block}
+.menu-note{font-size:0.8rem;color:var(--muted-sage);font-style:italic;line-height:1.6;margin:-0.4rem 0 1.1rem}
+.m-item{margin-bottom:1.05rem}
+.m-item-head{display:flex;align-items:baseline;gap:0.6rem}
+.m-name{font-size:0.92rem;font-weight:600;color:var(--ink);letter-spacing:0.01em}
+.m-dots{flex:1;border-bottom:1px dotted rgba(74,78,105,0.25);transform:translateY(-3px);min-width:14px}
+.m-price{font-size:0.84rem;font-weight:600;color:var(--navy);white-space:nowrap;font-variant-numeric:tabular-nums}
+.m-price .v{color:var(--muted-sage);font-weight:500}
+.m-desc{font-size:0.82rem;color:var(--ink-mid);line-height:1.55;font-weight:300;margin-top:2px;max-width:92%}
+.diet{display:inline-block;font-size:9px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);background:#e8ede6;border-radius:2px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+.m-opts{font-size:0.8rem;color:var(--ink-mid);line-height:1.6;margin-top:3px}
+.m-opts em{color:var(--navy);font-style:normal;font-weight:600}
+.kids-list{list-style:none}
+.kids-list .m-item-head{margin-bottom:0.7rem}
+.menu-fineprint{margin-top:1rem;font-size:0.74rem;color:var(--muted-sage);line-height:1.7;max-width:760px}
+
+/* INFO BAR */
+#info{background:var(--navy);color:var(--cream)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.info-block .info-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.85rem}
+.info-block p{font-size:0.92rem;color:rgba(250,237,205,0.82);line-height:1.85;font-weight:300}
+.info-block a{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(250,237,205,0.25);transition:border-color 0.2s}
+.info-block a:hover{border-color:var(--tan)}
+.info-cta{margin-top:1.25rem}
+.info-cta a{display:inline-block;background:var(--tan);color:var(--ink);border-radius:3px;padding:12px 26px;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:none;transition:background 0.2s}
+.info-cta a:hover{background:#c49060}
+
+/* BOOK */
+#book{background:white;border-top:1px solid var(--border)}
+.book-card{max-width:880px;margin:2.5rem auto 0;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radius:6px;display:block}
+
+/* FOOTER */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
+.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--tan)}
+.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
+.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--tan)}
+.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:880px){
+  .menu-cols{column-count:1}
+  .intro-grid,.info-grid,.footer-main{grid-template-columns:1fr}
+  .intro-photo{aspect-ratio:16/10;max-height:360px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid figure.wide{grid-column:span 2}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  nav{padding:0 1.5rem}
+  section{padding:3.5rem 1.4rem}
+  #hero{padding:3rem 1.5rem;min-height:70vh}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .gallery-grid img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html" class="active">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html">Functions &amp; events</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+  <a href="#book" class="nav-cta">Book a table</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-img"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">Penrith Golf Club</span>
+    <h1 class="hero-title">The Fairway</h1>
+    <p class="hero-sub">Local produce. Above par.</p>
+    <p class="hero-desc">Perched above the greens with sweeping 180° views, The Fairway serves seasonal cuisine in a relaxed club setting — wood-fired pizza, char-grilled steaks, fresh seafood, and a kitchen that leans on the best local produce.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn-gold">Book a table</a>
+      <a href="#menu" class="btn-ghost">View the menu</a>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <h2>A relaxed table with a view over the greens</h2>
+      <p>Set inside Penrith Golf Club, The Fairway is where Western Sydney comes for an easy lunch, a long dinner, or a celebration that runs late. The menu travels from pub favourites — schnitzels, burgers and parmis — to Thai-spiced barramundi, seared octopus and dry-aged steaks finished with café de Paris butter.</p>
+      <p>Whether you've just come off the course or you're here for the food alone, there's a seat with your name on it seven days a week.</p>
+      <div class="intro-facts">
+        <div class="intro-fact"><span class="dot"></span><span><strong>Lunch &amp; dinner, 7 days</strong> — open from 11:30am daily.</span></div>
+        <div class="intro-fact"><span class="dot"></span><span><strong>Members &amp; visitors welcome</strong> — members enjoy a discounted price on every dish.</span></div>
+        <div class="intro-fact"><span class="dot"></span><span><strong>Private functions</strong> — celebrations, wakes and corporate events catered in-house.</span></div>
+      </div>
+    </div>
+    <div class="intro-photo">
+      <img src="images/fairway/feature/fairway-18.jpg" alt="Char-grilled steak with café de Paris butter, chips and garden salad at The Fairway" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <p class="section-eyebrow">From the pass</p>
+    <h2 class="section-title">A taste of the table</h2>
+    <p class="section-sub">A few of the plates coming out of our kitchen — from the wood-fired oven to the grill and the curry pot.</p>
+    <div class="gallery-grid">
+      <figure class="wide"><img src="images/fairway/thumb/fairway-02.jpg" alt="A spread of pizzas, pasta, steak and sides" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-07.jpg" alt="Chicken parmigiana with chips and salad" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-15.jpg" alt="Yellow barramundi curry with jasmine rice" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-31.jpg" alt="Double beef burger with bacon and chips" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-23.jpg" alt="Roasted cauliflower in sweet yellow curry" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-29.jpg" alt="Seafood puttanesca pasta with prawns and mussels" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-21.jpg" alt="BBQ baby back pork ribs with chips and salad" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-27.jpg" alt="Sweet potato, pine nut and feta salad" loading="lazy"></figure>
+      <figure><img src="images/fairway/thumb/fairway-32.jpg" alt="Crispy pork belly with mash and gravy" loading="lazy"></figure>
+      <figure class="wide"><img src="images/fairway/thumb/fairway-09.jpg" alt="A table of share plates including curry, wings and pizza" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <p class="section-eyebrow">À la carte</p>
+    <h2 class="section-title">The Fairway menu</h2>
+    <p class="section-sub">April 2026. Available for lunch and dinner. Dishes may change with the season and availability.</p>
+    <div class="menu-legend">
+      <span>Prices shown as <strong>members</strong> / <span class="v">visitors</span></span>
+      <span><strong>gf</strong> gluten free &nbsp; <strong>df</strong> dairy free &nbsp; <strong>ve</strong> vegetarian</span>
+    </div>
+
+    <div class="menu-cols">
+
+      <!-- STARTERS -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Starters</h3>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Garlic &amp; Herb Bread <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">10 <span class="v">/ 14</span></span></div><p class="m-desc">Italian-style herbs, butter, sea salt.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Corn Ribs <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">18 <span class="v">/ 22</span></span></div><p class="m-desc">Crispy corn ribs tossed Mexican style, lime wedges, sour cream, parmesan.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Thai Style Prawns <span class="diet">gf</span><span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">25 <span class="v">/ 29</span></span></div><p class="m-desc">Prawns marinated in red Thai curry, coconut, crispy rice crackers, cucumber.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Wings (8pc) <span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">19 <span class="v">/ 23</span></span></div><p class="m-desc">Chicken wings with celery batons.</p><p class="m-opts"><em>Choose:</em> honey soy &amp; sesame · buffalo &amp; blue cheese · sticky BBQ w/ aioli</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Crispy Pork Belly Bites <span class="diet">gf</span><span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">Crispy pork belly topped with chilli &amp; shallots, served with lemon and aioli.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Tacos (3pc) <span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">21 <span class="v">/ 24</span></span></div><p class="m-desc">Soft tacos, pico de gallo, lime.</p><p class="m-opts"><em>Choose:</em> chicken chipotle · crispy fish w/ aioli · fajita-style prawns</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Salmon Sashimi <span class="diet">gf</span><span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">28 <span class="v">/ 32</span></span></div><p class="m-desc">Thinly sliced fresh salmon, cucumber, ponzu, salmon roe, herb oil.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Roasted Cauli <span class="diet">gf</span><span class="diet">df</span><span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">19 <span class="v">/ 23</span></span></div><p class="m-desc">Roasted cauliflower, sweet yellow curry, sesame seeds, fried curry leaves, crispy onions.</p></div>
+      </div>
+
+      <!-- HOUSE SCHNITZEL -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">House Schnitzel</h3>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">House Schnitzel</span><span class="m-dots"></span><span class="m-price">25 <span class="v">/ 29</span></span></div><p class="m-desc">Hand crumbed, served with chips and salad. Swap to mash &amp; veg +2.</p></div>
+        <p class="menu-note">Make it loaded — add a signature topping +4</p>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Parmigiana</span></div><p class="m-desc">Smoked ham, nap sauce, mozzarella.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Straya</span></div><p class="m-desc">Bacon, BBQ sauce, mozzarella, fried egg.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Supreme</span></div><p class="m-desc">Nap sauce, salami, pepperoni, mushroom, capsicum, red onion, mozzarella.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Hawaiian</span></div><p class="m-desc">Nap sauce, smoked ham, pineapple, mozzarella.</p></div>
+      </div>
+
+      <!-- FAVOURITES -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Favourites</h3>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Classic Fish &amp; Chips <span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">House battered fish, chips, salad, lemon wedge, tartare sauce.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Crispy Pork Belly <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">35 <span class="v">/ 39</span></span></div><p class="m-desc">Mash potato, coleslaw, house gravy.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Crumbed Lamb Cutlets</span><span class="m-dots"></span><span class="m-price">41 <span class="v">/ 45</span></span></div><p class="m-desc">Panko crumbed lamb cutlets, chips, salad, jus.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Asian Style Ribs <span class="diet">gf</span><span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">38 <span class="v">/ 42</span></span></div><p class="m-desc">Beef ribs, sweet fish sauce, Asian greens, coconut, lemon &amp; lime sauce.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Beer Basket</span><span class="m-dots"></span><span class="m-price">32 <span class="v">/ 36</span></span></div><p class="m-desc">Fried calamari, fish, prawns, mussels, onion rings, chips, aioli, lemon wedge.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Yellow Barramundi <span class="diet">gf</span><span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">33 <span class="v">/ 37</span></span></div><p class="m-desc">Grilled barramundi, yellow Thai-style curry, roast veggies, steamed jasmine rice.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">BBQ Baby Back Pork Ribs <span class="diet">df</span></span><span class="m-dots"></span><span class="m-price">39 <span class="v">/ 43</span></span></div><p class="m-desc">USA-style, chips, salad. Full rack +15.</p></div>
+      </div>
+
+      <!-- GRILL -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">From the Grill</h3>
+        <p class="menu-note">Served with café de Paris butter, our signature chimichurri, and your choice of chips &amp; salad or mash &amp; seasonal veg, plus a sauce: gravy · mushroom · pepper · jus. Only the jus is gluten free.</p>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">250g Angus Rump MB2+ MSA <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">34 <span class="v">/ 38</span></span></div><p class="m-desc">Angus certified rump steak, grass-fed.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">250g New York Strip Loin <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">38 <span class="v">/ 42</span></span></div><p class="m-desc">Grain-fed, silver MSA.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">300g Scotch Fillet <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">44 <span class="v">/ 48</span></span></div><p class="m-desc">Grain-fed, silver MSA.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Make it Surf &amp; Turf</span><span class="m-dots"></span><span class="m-price">+8</span></div></div>
+      </div>
+
+      <!-- BURGERS -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Burgers</h3>
+        <p class="menu-note">Add egg +2 · bacon +3 · avocado +3 · extra patty +6 · gluten free bun +3</p>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Smashed Cheeseburger</span><span class="m-dots"></span><span class="m-price">25 <span class="v">/ 29</span></span></div><p class="m-desc">Angus patty, American cheese, onion, pickles, house burger sauce.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Truffle Burger</span><span class="m-dots"></span><span class="m-price">25 <span class="v">/ 29</span></span></div><p class="m-desc">Grilled Angus beef patty, truffle mayo, cheese, mushroom.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Buffalo Chicken Sandwich</span><span class="m-dots"></span><span class="m-price">26 <span class="v">/ 30</span></span></div><p class="m-desc">Fried chicken, buffalo sauce, cheese, lettuce, tomato, pineapple.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Tonkatsu Fish Burger</span><span class="m-dots"></span><span class="m-price">25 <span class="v">/ 29</span></span></div><p class="m-desc">Battered fish, tonkatsu sauce, kewpie mayo, shredded cabbage slaw.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Double Double</span><span class="m-dots"></span><span class="m-price">28 <span class="v">/ 32</span></span></div><p class="m-desc">Double Angus beef patty, cheese, fried onion rings, bacon, lettuce, tomato, BBQ sauce.</p></div>
+      </div>
+
+      <!-- PASTA -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Pasta</h3>
+        <p class="menu-note">Choose penne, spaghetti or linguine. Gluten free pasta available, subject to availability. Add chicken +6 · prawns +8 · gluten free +3.</p>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Boscaiola</span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">Crispy pancetta, mushroom, garlic, onion, shallots, rich cream sauce, parmesan.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Seafood Puttanesca</span><span class="m-dots"></span><span class="m-price">29 <span class="v">/ 33</span></span></div><p class="m-desc">Olives, capers, anchovies, prawns, mussels, squid, toasted breadcrumbs, parmesan, rich tomato sauce.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Preserved Lemon &amp; Garlic <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">23 <span class="v">/ 27</span></span></div><p class="m-desc">Blitzed preserved lemon, garlic, olive oil, shaved zucchini, chilli flakes, parmesan.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Basil &amp; Pistachio <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">23 <span class="v">/ 27</span></span></div><p class="m-desc">Basil, pistachio, butter, lemon, parmesan.</p></div>
+      </div>
+
+      <!-- PIZZA -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Pizza</h3>
+        <p class="menu-note">Gluten free base +3.</p>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Margherita <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">21 <span class="v">/ 25</span></span></div><p class="m-desc">Tomato base, mozzarella, basil, extra virgin olive oil.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Vegetarian <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">22 <span class="v">/ 26</span></span></div><p class="m-desc">Tomato base, fresh capsicum, mushroom, olives, onion, pineapple.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Pepperoni</span><span class="m-dots"></span><span class="m-price">23 <span class="v">/ 27</span></span></div><p class="m-desc">Tomato base, pepperoni, mozzarella.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Hawaiian</span><span class="m-dots"></span><span class="m-price">23 <span class="v">/ 27</span></span></div><p class="m-desc">Tomato base, mozzarella, ham, pineapple.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Meat Lovers</span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">Salami, pepperoni, ham, chicken, bacon, BBQ sauce base, mozzarella.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Mushroom &amp; Ricotta <span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">22 <span class="v">/ 26</span></span></div><p class="m-desc">Earthy mushrooms, tomato base, rosemary, mozzarella, topped with ricotta.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Fairway Supreme</span><span class="m-dots"></span><span class="m-price">27 <span class="v">/ 31</span></span></div><p class="m-desc">Tomato base, mozzarella, ham, pepperoni, chorizo, mushrooms, onion, capsicum.</p></div>
+      </div>
+
+      <!-- SALADS -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Salads</h3>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Crunchy Caesar</span><span class="m-dots"></span><span class="m-price">26 <span class="v">/ 30</span></span></div><p class="m-desc">Cos lettuce, breadcrumbs, classic caesar dressing, parmesan, topped with hand-crumbed schnitzel.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Sweet Potato &amp; Pinenut</span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">Baked sweet potato, mixed leaf, pine nuts, sweet sultanas, cherry tomatoes, onion, house honey-lemon dressing, feta.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Octopus &amp; Butternut Pumpkin <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">27 <span class="v">/ 31</span></span></div><p class="m-desc">Seared octopus, thinly sliced roasted butternut, watercress, onion, cherry tomato, coriander, sweet Thai-style dressing.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Tomato Carpaccio <span class="diet">gf</span><span class="diet">ve</span></span><span class="m-dots"></span><span class="m-price">22 <span class="v">/ 26</span></span></div><p class="m-desc">Freshly sliced tomato, labneh, chimichurri, pine nuts, feta, olive oil.</p></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Waldorf</span><span class="m-dots"></span><span class="m-price">24 <span class="v">/ 28</span></span></div><p class="m-desc">Creamy blue cheese dressing, red chicory, celery, red apple, toasted walnuts, blackcurrant, parmesan.</p></div>
+      </div>
+
+      <!-- SIDES -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Sides</h3>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Basket of Chips <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">12 <span class="v">/ 16</span></span></div></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Mash Potato <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">8 <span class="v">/ 12</span></span></div></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">House Salad <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">6 <span class="v">/ 10</span></span></div></div>
+        <div class="m-item"><div class="m-item-head"><span class="m-name">Seasonal Veggies <span class="diet">gf</span></span><span class="m-dots"></span><span class="m-price">10 <span class="v">/ 14</span></span></div></div>
+      </div>
+
+      <!-- LITTLE ONES -->
+      <div class="menu-section">
+        <h3 class="menu-section-title">Little Ones</h3>
+        <p class="menu-note">Aged 12 &amp; under. Served with a free scoop of vanilla ice-cream and choice of topping, subject to availability.</p>
+        <div class="kids-list">
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Nuggets &amp; Chips</span><span class="m-dots"></span><span class="m-price">12</span></div></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Fish &amp; Chips</span><span class="m-dots"></span><span class="m-price">12</span></div></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Napoletana Pasta</span><span class="m-dots"></span><span class="m-price">12</span></div></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Bolognese Pasta</span><span class="m-dots"></span><span class="m-price">15</span></div></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Cheeseburger</span><span class="m-dots"></span><span class="m-price">12</span></div></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Chicken Schnitzel</span><span class="m-dots"></span><span class="m-price">15</span></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="menu-fineprint">M denotes members' prices, V denotes visitors' prices. Whilst we take the utmost care to accommodate dietary requirements and requests, we cannot guarantee that there will be no cross-contamination where allergens are concerned. All card transactions incur a 1.1% surcharge at the till. All QR code transactions incur a service fee listed at time of purchase.</p>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="wrap">
+    <p class="section-eyebrow">Reservations</p>
+    <h2 class="section-title">Book a table</h2>
+    <p class="section-sub">Reserve your table at The Fairway below. For private functions or larger groups, get in touch with our team.</p>
+    <div class="book-card">
+      <iframe data-id="nbi-widget" src="https://bookings.nowbookit.com/?accountid=3893fc92-bf1e-4ecd-900c-f21a423b1180&amp;venueid=9730" title="Book a table at The Fairway"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <div class="wrap info-grid">
+    <div class="info-block">
+      <p class="info-label">Find us</p>
+      <p>Penrith Golf Club<br>1939 The Northern Road,<br>Glenmore Park NSW 2745</p>
+    </div>
+    <div class="info-block">
+      <p class="info-label">Hours</p>
+      <p>Mon–Thu &nbsp;11:30am–2:30pm &amp; 5:00pm–8:30pm<br>Fri &nbsp;11:30am–2:30pm &amp; 5:00pm–9:00pm<br>Sat &nbsp;11:30am–9:00pm<br>Sun &nbsp;11:30am–8:30pm</p>
+    </div>
+    <div class="info-block">
+      <p class="info-label">Reservations</p>
+      <p><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+      <div class="info-cta"><a href="#book">Book a table</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <p class="footer-brand-name">Four Sausages</p>
+      <p class="footer-brand-sub">Hospitality Group</p>
+      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Our venues</p>
+      <ul class="footer-links">
+        <li><a href="the-fairway.html">The Fairway</a></li>
+        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        <li><a href="catering.html">At-home Catering</a></li>
+        <li><a href="functions-events.html">Functions &amp; Events</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+      <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+      <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+    </div>
+  </div>
+  <hr class="footer-rule">
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+  </div>
+</footer>
+
+<script src="https://plugins.nowbookit.com/iframe-resizer-build/bundle.js"></script>
+
+</body>
+</html>

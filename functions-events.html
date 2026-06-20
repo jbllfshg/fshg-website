@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Functions &amp; Events | Four Sausages Hospitality Group</title>
+<meta name="description" content="Host your event with Four Sausages Hospitality Group — grazing, canapés, buffets, banquets and set menus for celebrations of any size, at The Fairway (Penrith Golf Club) and The Jack & Cleaver (Pennant Hills Bowling Club).">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
+  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
+  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif;text-decoration:none}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.85rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--navy)}
+.nav-links li+li{border-left:1px solid var(--border)}
+.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--sage)}
+
+/* HERO */
+#hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;padding:4rem 2.5rem;overflow:hidden;background:var(--navy)}
+.hero-accent{position:absolute;width:600px;height:600px;border-radius:50%;background:var(--teal);opacity:0.10;top:-220px;right:-180px;pointer-events:none}
+.hero-accent2{position:absolute;width:420px;height:420px;border-radius:50%;background:var(--tan);opacity:0.10;bottom:-160px;left:-120px;pointer-events:none}
+.hero-inner{position:relative;max-width:760px}
+.hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:1.25rem;background:rgba(212,163,115,0.2);color:var(--tan)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:600;color:var(--cream);line-height:1.02;margin-bottom:0.5rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--tan);margin-bottom:1.5rem}
+.hero-desc{font-size:0.98rem;color:rgba(250,237,205,0.82);max-width:600px;line-height:1.8;font-weight:300;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 30px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-gold:hover{background:#c49060}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(250,237,205,0.4);border-radius:3px;padding:13px 30px;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(250,237,205,0.08)}
+
+/* SECTION SHELL */
+section{padding:4.5rem 2.5rem}
+.wrap{max-width:1120px;margin:0 auto}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem;text-align:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--navy);line-height:1.1;margin-bottom:0.75rem;text-align:center}
+.section-sub{color:var(--ink-mid);font-size:0.95rem;line-height:1.8;font-weight:300;max-width:600px;margin:0 auto;text-align:center}
+
+/* INTRO */
+#intro{background:var(--off-white)}
+.intro-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:center}
+.intro-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.25rem}
+.intro-copy p{color:var(--ink-mid);font-size:0.98rem;line-height:1.9;font-weight:300;margin-bottom:1rem}
+.venue-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:1.75rem}
+.venue-row{display:flex;gap:0.85rem;align-items:flex-start;font-size:0.9rem;color:var(--ink-mid);line-height:1.6}
+.venue-row .dot{width:6px;height:6px;border-radius:50%;background:var(--tan);margin-top:7px;flex-shrink:0}
+.venue-row strong{color:var(--navy);font-weight:600}
+.capacity-card{border-radius:10px;overflow:hidden;background:var(--navy);color:var(--cream);padding:2.25rem 2rem;display:flex;flex-direction:column;gap:1.5rem}
+.cap-stat .cap-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--tan);line-height:1}
+.cap-stat .cap-label{font-size:0.82rem;color:rgba(250,237,205,0.75);letter-spacing:0.04em;margin-top:0.25rem}
+.cap-note{font-size:0.78rem;color:rgba(250,237,205,0.6);line-height:1.6;border-top:1px solid rgba(250,237,205,0.15);padding-top:1.25rem}
+
+/* SPACES & CAPACITIES */
+.spaces-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.venue-spaces{background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:2rem 2.25rem}
+.vs-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:0.75rem}
+.tag-fairway{background:#e8ede6;color:var(--sage)}
+.tag-jack{background:#e4eceb;color:var(--teal)}
+.vs-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1.25rem}
+.space-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.space-row:last-child{border-bottom:none}
+.space-name{font-size:1rem;font-weight:600;color:var(--ink)}
+.space-caps{display:flex;gap:0.5rem;flex-wrap:wrap}
+.cap-pill{display:inline-block;font-size:0.78rem;font-weight:600;color:var(--navy);background:white;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-variant-numeric:tabular-nums}
+
+/* GALLERY STRIP */
+#gallery{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 2.5rem}
+.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;max-width:1180px;margin:0 auto}
+.gallery-strip figure{margin:0;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:var(--off-white)}
+.gallery-strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.gallery-strip figure:hover img{transform:scale(1.05)}
+
+/* PACKAGES */
+.pkg-stack{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.25rem;margin-bottom:1rem}
+.pkg-group-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);margin-top:3rem;padding-bottom:0.5rem;border-bottom:2px solid var(--tan);display:inline-block;scroll-margin-top:88px}
+section[id]{scroll-margin-top:88px}
+.jump-bar{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;max-width:1180px;margin:1.5rem auto 0}
+.jump-bar a{font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);background:var(--off-white);border:1px solid var(--border);border-radius:30px;padding:9px 18px;text-decoration:none;transition:all 0.2s}
+.jump-bar a:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.pkg-card{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem 2.25rem}
+.pkg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--navy);line-height:1.1}
+.pkg-meta{font-size:0.8rem;color:var(--muted-sage);margin-top:0.35rem;letter-spacing:0.01em}
+.pkg-price{flex-shrink:0;text-align:right}
+.pkg-price .pp{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--tan);line-height:1}
+.pkg-price .pp small{font-size:0.85rem;font-weight:600}
+.pkg-price .pp-alt{font-size:0.78rem;color:var(--muted-sage);margin-top:0.25rem;line-height:1.4}
+.pkg-price .pp-tier{display:flex;align-items:baseline;justify-content:flex-end;gap:0.5rem;white-space:nowrap;line-height:1.35}
+.pkg-price .pp-tier+.pp-tier{margin-top:0.25rem}
+.pkg-price .pp-tier .lbl{font-size:0.74rem;color:var(--muted-sage)}
+.pkg-price .pp-tier .amt{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;color:var(--tan)}
+.pkg-price .pp-tier .amt small{font-size:0.72rem;font-weight:600}
+.pkg-incl{font-size:0.83rem;color:var(--ink-mid);font-style:italic;line-height:1.6;margin-top:0.9rem;padding-top:0.9rem;border-top:1px solid var(--border)}
+.pkg-body{margin-top:1.25rem;display:grid;gap:1.4rem}
+.pkg-body.cols-2{grid-template-columns:1fr 1fr}
+.pkg-body.cols-3{grid-template-columns:repeat(3,1fr)}
+.choice-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);margin-bottom:0.55rem}
+.choice-label span{color:var(--muted-sage);font-weight:500;text-transform:none;letter-spacing:0;font-style:italic}
+.choice-items{font-size:0.86rem;color:var(--ink-mid);line-height:1.75;font-weight:300}
+.choice-items .it{display:block}
+.choice-items .sub{color:var(--muted-sage);font-size:0.92em}
+.diet{display:inline-block;font-size:9px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--olive);background:#eef0ea;border-radius:2px;padding:1px 5px;margin-left:3px;vertical-align:middle}
+.addon-note{font-size:0.8rem;color:var(--muted-sage);font-style:italic;margin-top:0.4rem}
+
+/* PLATTERS */
+.platter-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 3rem;margin-top:2.5rem}
+.platter-item{padding:0.85rem 0;border-bottom:1px solid var(--border)}
+.platter-head{display:flex;align-items:baseline;gap:0.6rem}
+.platter-name{font-size:0.95rem;font-weight:600;color:var(--ink)}
+.platter-dots{flex:1;border-bottom:1px dotted rgba(74,78,105,0.25);transform:translateY(-3px);min-width:12px}
+.platter-price{font-size:0.9rem;font-weight:700;color:var(--navy);white-space:nowrap}
+.platter-desc{font-size:0.8rem;color:var(--ink-mid);line-height:1.5;font-weight:300;margin-top:3px}
+
+/* KIDS / REMEMBRANCE / extras share pkg-card */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+.mini-item{background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center}
+.mini-item .mi-name{font-size:0.92rem;font-weight:600;color:var(--ink)}
+.mini-item .mi-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--tan);margin-top:0.35rem}
+
+/* REMEMBRANCE */
+#remembrance{background:var(--off-white)}
+.remem-intro{max-width:680px;margin:1.25rem auto 0;text-align:center;font-size:0.95rem;color:var(--ink-mid);line-height:1.9;font-weight:300;font-style:italic}
+.remem-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.remem-menu{margin-top:2rem;background:white;border:1px solid var(--border);border-radius:12px;padding:2rem 2.25rem}
+.remem-menu .choice-label{text-align:center;margin-bottom:1.25rem}
+.remem-list{columns:2;column-gap:3rem;font-size:0.88rem;color:var(--ink-mid);line-height:2;font-weight:300}
+.remem-list .it{display:block;break-inside:avoid;margin-bottom:0.15rem}
+
+/* TWO-COLUMN INFO BLOCKS (beverages / additions) */
+.info-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.info-block-card{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem 2.25rem}
+.info-block-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1.25rem}
+.add-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.7rem 0;border-bottom:1px solid var(--border)}
+.add-row:last-child{border-bottom:none}
+.add-name{font-size:0.9rem;font-weight:600;color:var(--ink)}
+.add-name .add-sub{display:block;font-size:0.78rem;font-weight:300;color:var(--muted-sage);margin-top:2px}
+.add-price{font-size:0.88rem;font-weight:700;color:var(--navy);white-space:nowrap;text-align:right}
+.bev-pkg{margin-bottom:1.5rem}
+.bev-name{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
+.bev-name .bn{font-size:0.98rem;font-weight:600;color:var(--navy)}
+.bev-name .bp{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--tan)}
+.bev-list{font-size:0.83rem;color:var(--ink-mid);line-height:1.7;font-weight:300}
+
+/* ENQUIRE */
+#enquire{background:var(--navy);color:var(--cream)}
+.enquire-inner{max-width:760px;margin:0 auto;text-align:center}
+.enquire-inner .section-eyebrow{color:var(--tan)}
+.enquire-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--cream);margin-bottom:1rem}
+.enquire-inner p{font-size:0.98rem;color:rgba(250,237,205,0.82);line-height:1.8;font-weight:300;margin-bottom:1.75rem}
+.enquire-contact{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.enquire-contact a{color:var(--cream);text-decoration:none;font-size:1.05rem;border-bottom:1px solid rgba(250,237,205,0.25);transition:border-color 0.2s}
+.enquire-contact a:hover{border-color:var(--tan)}
+
+.fineprint{max-width:900px;margin:2.5rem auto 0;font-size:0.74rem;color:var(--muted-sage);line-height:1.7;text-align:center}
+
+/* FOOTER */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
+.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--tan)}
+.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
+.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--tan)}
+.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:880px){
+  .intro-grid,.footer-main,.spaces-grid{grid-template-columns:1fr}
+  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list{grid-template-columns:1fr;columns:1}
+  .gallery-strip{grid-template-columns:repeat(2,1fr)}
+  .mini-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  nav{padding:0 1.5rem}
+  section{padding:3.25rem 1.4rem}
+  #hero{padding:3rem 1.5rem;min-height:58vh}
+  .pkg-card,.info-block-card,.remem-menu{padding:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-strip img{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html" class="active">Functions &amp; events</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+  <a href="#enquire" class="nav-cta">Enquire now</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">Functions &amp; Events</span>
+    <h1 class="hero-title">Events worth celebrating</h1>
+    <p class="hero-sub">From intimate gatherings to 320 guests.</p>
+    <p class="hero-desc">Birthdays, engagements, corporate lunches, christenings, wakes and weddings — our team has over 10 years of experience bringing people together. Choose a package, pick your venue, and we'll handle the rest.</p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-gold">View packages</a>
+      <a href="#enquire" class="btn-ghost">Make an enquiry</a>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <h2>Two venues, every occasion catered for</h2>
+      <p>Whether you're planning an intimate gathering or a celebration for three hundred, our function packages are designed to suit the moment — relaxed grazing and canapés, generous buffets, shared banquets, or a plated set menu.</p>
+      <p>Every package below is available at <strong>both</strong> of our venues, so you can choose the setting that suits your event best.</p>
+      <div class="venue-list">
+        <div class="venue-row"><span class="dot"></span><span><strong>The Fairway</strong> — Penrith Golf Club, with unobstructed 180° views of the greens and two balconies.</span></div>
+        <div class="venue-row"><span class="dot"></span><span><strong>The Jack &amp; Cleaver</strong> — Pennant Hills Bowling Club, a warm and versatile space overlooking the green.</span></div>
+        <div class="venue-row"><span class="dot"></span><span><strong>Minimum spend applies</strong> alongside each package's minimum guest numbers.</span></div>
+      </div>
+    </div>
+    <div class="capacity-card">
+      <div class="cap-stat"><div class="cap-num">320</div><div class="cap-label">Largest capacity — Yarrara Room, cocktail style</div></div>
+      <div class="cap-stat"><div class="cap-num">4</div><div class="cap-label">Versatile spaces across our two venues</div></div>
+      <p class="cap-note">Standard space hire is 4 hours. See the full breakdown of spaces and capacities below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPACES & CAPACITIES -->
+<section id="spaces" style="background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <p class="section-eyebrow">The venues</p>
+    <h2 class="section-title">Spaces &amp; capacities</h2>
+    <p class="section-sub">Two venues and four versatile spaces — choose the setting that suits your guest count and the style of your event.</p>
+    <div class="spaces-grid">
+      <div class="venue-spaces">
+        <span class="vs-tag tag-fairway">Penrith Golf Club</span>
+        <h3 class="vs-name">The Fairway</h3>
+        <div class="space-row">
+          <span class="space-name">Main Terrace</span>
+          <span class="space-caps"><span class="cap-pill">160 seated</span><span class="cap-pill">180 cocktail</span></span>
+        </div>
+        <div class="space-row">
+          <span class="space-name">Small Terrace</span>
+          <span class="space-caps"><span class="cap-pill">Up to 35 seated</span></span>
+        </div>
+      </div>
+      <div class="venue-spaces">
+        <span class="vs-tag tag-jack">Pennant Hills Bowling Club</span>
+        <h3 class="vs-name">The Jack &amp; Cleaver</h3>
+        <div class="space-row">
+          <span class="space-name">Yarrara Room</span>
+          <span class="space-caps"><span class="cap-pill">250 seated</span><span class="cap-pill">320 cocktail</span></span>
+        </div>
+        <div class="space-row">
+          <span class="space-name">Mezzanine</span>
+          <span class="space-caps"><span class="cap-pill">60 seated</span><span class="cap-pill">75 cocktail</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<section id="gallery">
+  <div class="gallery-strip">
+    <figure><img src="images/catering/thumb/catering-01.jpg" alt="Grazing platter with charcuterie, cheese and fruit" loading="lazy"></figure>
+    <figure><img src="images/catering/thumb/catering-04.jpg" alt="Waiter serving canapés on the greens" loading="lazy"></figure>
+    <figure><img src="images/catering/thumb/catering-12.jpg" alt="Event grazing spread with florals" loading="lazy"></figure>
+    <figure><img src="images/catering/thumb/catering-07.jpg" alt="Dessert table with strawberries and slices" loading="lazy"></figure>
+  </div>
+  <nav class="jump-bar" aria-label="Jump to a menu section">
+    <a href="#buffets">Buffets</a>
+    <a href="#grazing">Grazing &amp; Canapés</a>
+    <a href="#banquets">Banquets</a>
+    <a href="#set-menus">Set Menus</a>
+    <a href="#platters">Signature Platters</a>
+    <a href="#kids">Kids</a>
+    <a href="#remembrance">Remembrance</a>
+    <a href="#beverages">Drinks</a>
+  </nav>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <p class="section-eyebrow">The packages</p>
+    <h2 class="section-title">Celebration packages</h2>
+    <p class="section-sub">Choose the style that suits your event. All prices are per person and minimum guest numbers apply.</p>
+
+    <h3 class="pkg-group-title" id="buffets">Buffets</h3>
+    <div class="pkg-stack">
+
+      <!-- PIZZA & PASTA -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Signature Pizza &amp; Pasta</div><div class="pkg-meta">Minimum 35 guests · served as an elegant buffet</div></div>
+          <div class="pkg-price"><div class="pp">$46<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">Pasta <span>· choose 3</span></p><p class="choice-items">
+            <span class="it">Penne Boscaiola</span>
+            <span class="it">Classic Bolognese</span>
+            <span class="it">Chicken &amp; mushroom linguine</span>
+            <span class="it">Lamb ragu linguine</span>
+            <span class="it">Preserved lemon &amp; zucchini</span>
+            <span class="it">Chicken pesto</span>
+            <span class="it">Seafood puttanesca <span class="sub">(add $2pp)</span></span>
+          </p></div>
+          <div><p class="choice-label">Pizza <span>· choose 4</span></p><p class="choice-items">
+            <span class="it">Margherita</span>
+            <span class="it">Pepperoni</span>
+            <span class="it">Meat Lovers</span>
+            <span class="it">Chicken &amp; avo</span>
+            <span class="it">Classic vegetarian</span>
+            <span class="it">Supreme</span>
+            <span class="it">Garlic prawn <span class="sub">(add $2pp)</span></span>
+          </p></div>
+          <div><p class="choice-label">Salads <span>· choose 2</span></p><p class="choice-items">
+            <span class="it">Classic Caesar</span>
+            <span class="it">Greek</span>
+            <span class="it">Sweet potato &amp; pinenut</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Starts with house garlic &amp; herb bread. Includes linen for the buffet table, cutlery &amp; crockery.</p>
+      </div>
+
+      <!-- ROAST BUFFET -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Roast Buffet</div><div class="pkg-meta">Minimum 35 guests</div></div>
+          <div class="pkg-price"><div class="pp-tier"><span class="lbl">2 mains, 2 sides, 2 desserts</span><span class="amt">$46<small>pp</small></span></div><div class="pp-tier"><span class="lbl">3 mains, 3 sides, 2 desserts</span><span class="amt">$54<small>pp</small></span></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">Mains</p><p class="choice-items">
+            <span class="it">Roast pork, crackling, smoked applesauce</span>
+            <span class="it">Tender roast beef, roasted onions, red wine jus</span>
+            <span class="it">Roast chicken, rosemary, lemon, garlic</span>
+            <span class="it">Baked barramundi, creamy lemon butter</span>
+          </p></div>
+          <div><p class="choice-label">Sides</p><p class="choice-items">
+            <span class="it">Triple cooked crispy roast potatoes</span>
+            <span class="it">Skin-on pumpkin, caramelised onions</span>
+            <span class="it">Steamed seasonal vegetables, herbed butter</span>
+            <span class="it">Baked cauliflower, cheese béchamel</span>
+            <span class="it">Green peas, butter, gravy</span>
+            <span class="it">Caesar salad · Seasonal garden salad</span>
+          </p></div>
+          <div><p class="choice-label">Desserts</p><p class="choice-items">
+            <span class="it">Chef's selection of mini cakes</span>
+            <span class="it">Mini sticky date pudding, butterscotch</span>
+            <span class="it">Seasonal fruit</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Includes bread rolls &amp; butter and a complimentary tea &amp; coffee station.</p>
+      </div>
+
+      <!-- PREMIUM BBQ BUFFET -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Premium BBQ Buffet</div><div class="pkg-meta">Minimum 40 guests · perfect after a day on the greens or for a Sunday lunch</div></div>
+          <div class="pkg-price"><div class="pp">$55<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-2">
+          <div><p class="choice-label">Off the grill</p><p class="choice-items">
+            <span class="it">Rump steaks, chimichurri, butter</span>
+            <span class="it">Roast chicken pieces, rosemary, lemon, garlic, roasted onions</span>
+            <span class="it">Pork sausages, gravy</span>
+          </p></div>
+          <div><p class="choice-label">Sides &amp; salads</p><p class="choice-items">
+            <span class="it">Herbed roasted potatoes</span>
+            <span class="it">Green peas, butter</span>
+            <span class="it">Caesar salad</span>
+            <span class="it">Moroccan style cous cous</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Includes bread rolls &amp; butter.</p>
+      </div>
+
+      <!-- SIGNATURE BUFFET -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Signature Buffet</div><div class="pkg-meta">Minimum 40 guests</div></div>
+          <div class="pkg-price"><div class="pp-tier"><span class="lbl">3 mains, 3 sides, 2 salads</span><span class="amt">$59<small>pp</small></span></div><div class="pp-tier"><span class="lbl">4 mains, 3 sides, 3 salads</span><span class="amt">$67<small>pp</small></span></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">Mains</p><p class="choice-items">
+            <span class="it">Seafood paella</span>
+            <span class="it">Baked salmon, creamy dill sauce</span>
+            <span class="it">Yellow Thai barramundi curry</span>
+            <span class="it">Chicken Inasal (Filo BBQ style)</span>
+            <span class="it">Fried chicken, gochujang</span>
+            <span class="it">Mediterranean chicken pieces</span>
+            <span class="it">Herbed chicken, chimichurri</span>
+            <span class="it">Butter chicken curry</span>
+            <span class="it">Crispy pork kare-kare (Filo peanut style)</span>
+            <span class="it">Glazed honey pork loin</span>
+            <span class="it">Sticky pork belly, house BBQ glaze</span>
+            <span class="it">Beef carvery roast, herbed gravy</span>
+            <span class="it">Asian style beef ribs</span>
+            <span class="it">Braised ossobuco, rich tomato gravy</span>
+            <span class="it">BBQ beef brisket, sweet &amp; tangy</span>
+            <span class="it">Preserved lemon &amp; garlic pasta</span>
+            <span class="it">Vegetarian Thai green curry</span>
+            <span class="it">Roasted pumpkin satay</span>
+          </p></div>
+          <div><p class="choice-label">Sides</p><p class="choice-items">
+            <span class="it">Creamy garlic potato</span>
+            <span class="it">Garlic mashed potato</span>
+            <span class="it">Rice pilaf</span>
+            <span class="it">Grilled asparagus</span>
+            <span class="it">Honey glazed carrots</span>
+            <span class="it">Green beans almondine</span>
+            <span class="it">Mac &amp; cheese</span>
+            <span class="it">Seasonal veggies</span>
+            <span class="it">Tomato carpaccio</span>
+          </p></div>
+          <div><p class="choice-label">Salads</p><p class="choice-items">
+            <span class="it">Waldorf</span>
+            <span class="it">Caesar</span>
+            <span class="it">Greek</span>
+            <span class="it">Creamy coleslaw</span>
+            <span class="it">Asian crunch</span>
+            <span class="it">Italian pasta</span>
+            <span class="it">Spring berry</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Includes bread rolls &amp; butter, a complimentary tea &amp; coffee station, and chef's selection of mini cakes.</p>
+      </div>
+
+    </div>
+
+    <h3 class="pkg-group-title" id="grazing">Grazing &amp; Canapés</h3>
+    <div class="pkg-stack">
+
+      <!-- PLATINUM GRAZING -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Platinum Grazing</div><div class="pkg-meta">Minimum 30 guests · designed for relaxed, social grazing — ideal for cocktail parties</div></div>
+          <div class="pkg-price"><div class="pp">$85<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-2">
+          <div><p class="choice-label">Included</p><p class="choice-items">
+            <span class="it">Artisanal cheese selection — local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini</span>
+            <span class="it">Charcuterie selection — cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives &amp; sourdough</span>
+          </p></div>
+          <div><p class="choice-label">&nbsp;</p><p class="choice-items">
+            <span class="it">Chef's selection of savoury pastries</span>
+            <span class="it">Chef's selection of beef, chicken &amp; pork sliders</span>
+          </p>
+          <p class="addon-note">Add chef's selection of pizzas for $9pp</p></div>
+        </div>
+      </div>
+
+      <!-- SIGNATURE CANAPÉS -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Signature Canapés</div><div class="pkg-meta">Minimum 60 guests · choose 3 from each selection (9 total)</div></div>
+          <div class="pkg-price"><div class="pp">$67<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">Cold</p><p class="choice-items">
+            <span class="it">Mini bruschetta, vine-ripened tomatoes &amp; balsamic <span class="diet">v</span></span>
+            <span class="it">Mini rare beef baguette, whipped horseradish</span>
+            <span class="it">Potato blini, smoked salmon &amp; caper tartare</span>
+            <span class="it">Sweet corn fritter, avocado &amp; tomato salsa <span class="diet">gf</span></span>
+            <span class="it">Caramelised onion &amp; feta tartlet <span class="diet">v</span></span>
+            <span class="it">Cranberry, brie &amp; prosciutto crostini</span>
+            <span class="it">Sweet potato &amp; spicy avocado bites <span class="diet">v</span></span>
+          </p></div>
+          <div><p class="choice-label">Hot</p><p class="choice-items">
+            <span class="it">Salt &amp; pepper squid <span class="diet">gf</span></span>
+            <span class="it">Malay satay chicken &amp; sesame skewers</span>
+            <span class="it">Mini vegetarian spring rolls, sweet chilli &amp; soy <span class="diet">v</span></span>
+            <span class="it">Thai style fish cakes</span>
+            <span class="it">Honey soy beef skewers <span class="diet">gf</span></span>
+            <span class="it">Truffle porcini mushroom arancini <span class="diet">v</span></span>
+            <span class="it">Spinach &amp; ricotta savoury rolls <span class="diet">v</span></span>
+          </p></div>
+          <div><p class="choice-label">Fork</p><p class="choice-items">
+            <span class="it">Beer battered fish &amp; chips, house tartare</span>
+            <span class="it">Chicken &amp; prawn pad Thai, peanuts &amp; sprouts</span>
+            <span class="it">Creamy butter chicken, steamed jasmine rice</span>
+            <span class="it">Crispy chicken Caesar salad, parmesan</span>
+            <span class="it">Penne Boscaiola, crispy bacon</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Includes two waiters for two hours of food service.</p>
+      </div>
+
+    </div>
+
+    <h3 class="pkg-group-title" id="banquets">Banquets</h3>
+    <div class="pkg-stack">
+
+      <!-- ART OF ASIA -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Art of Asia Banquet</div><div class="pkg-meta">Minimum 40 guests · a journey through South East Asia, served to the table to share</div></div>
+          <div class="pkg-price"><div class="pp">$81<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">To Start <span>· pick 3</span></p><p class="choice-items">
+            <span class="it">Salmon sashimi</span>
+            <span class="it">Szechuan calamari</span>
+            <span class="it">Prawn, betel leaf</span>
+            <span class="it">Thai style beef salad</span>
+            <span class="it">Vegetable lumpia</span>
+            <span class="it">Sticky pork belly bites</span>
+          </p></div>
+          <div><p class="choice-label">Mains <span>· pick 3</span></p><p class="choice-items">
+            <span class="it">Slow cooked short ribs</span>
+            <span class="it">Cauliflower, coconut curry</span>
+            <span class="it">Roasted chicken, Isaan sauce</span>
+            <span class="it">Pork belly, peanut sauce</span>
+            <span class="it">Grilled salmon, red curry</span>
+            <span class="it">Prawn, coconut curry</span>
+            <span class="it">Pumpkin, satay</span>
+          </p></div>
+          <div><p class="choice-label">Curry <span>· pick 1</span></p><p class="choice-items">
+            <span class="it">Butter chicken</span>
+            <span class="it">Chicken penang</span>
+            <span class="it">Beef rendang</span>
+            <span class="it">Chicken green Thai curry</span>
+            <span class="it">Vegetable yellow curry</span>
+            <span class="it">Beef massaman</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Served with steamed jasmine rice. Add dessert for $12pp (pick two): mango sticky rice, panna cotta, or pandan coconut sago.</p>
+      </div>
+
+      <!-- MIDDLE EAST -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">The Middle East Banquet</div><div class="pkg-meta">Minimum 40 guests · a Lebanese journey, served to the table to share</div></div>
+          <div class="pkg-price"><div class="pp">$89<small>pp</small></div></div>
+        </div>
+        <div class="pkg-body cols-2">
+          <div><p class="choice-label">Mezze <span>· all included</span></p><p class="choice-items">
+            <span class="it">Kingfish tartare, pomegranate, fried bread</span>
+            <span class="it">Hummus Beiruti, wagyu beef</span>
+            <span class="it">Salmon nayee, fresh mint, olive oil</span>
+            <span class="it">Haloumi cigars, kataifi, honey, za'atar</span>
+            <span class="it">Kebbe balls, lamb mince, pine nuts</span>
+            <span class="it">Prawns, coriander, garlic, chilli, lemon</span>
+            <span class="it">Eggplant fatteh · Babaganoush</span>
+            <span class="it">Batata harra · Tabouli · Fattoush</span>
+            <span class="it">Fresh Lebanese bread, pickles &amp; olives</span>
+          </p></div>
+          <div><p class="choice-label">Mains <span>· pick 3</span></p><p class="choice-items">
+            <span class="it">Mixed charcoal grill — lamb skewers, shish tawook, kafta</span>
+            <span class="it">Slow roasted lamb shoulder, Lebanese rice, nuts</span>
+            <span class="it">Barramundi harra, coriander, chilli, garlic, lemon</span>
+            <span class="it">Chicken tawook, garlic toum</span>
+            <span class="it">Kafta meshwi, parsley, onion, spices</span>
+            <span class="it">Lamb cutlets, pomegranate glaze</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Add dessert for $12pp (pick two): ashta cheesecake, baklava, kanafeh, mouhalabieh, ashta ice cream, or katayef.</p>
+      </div>
+
+    </div>
+
+    <h3 class="pkg-group-title" id="set-menus">Set Menus</h3>
+    <div class="pkg-stack">
+
+      <!-- SET MENU -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Plated Set Menu</div><div class="pkg-meta">Two options per course chosen by you, served alternately to the table</div></div>
+          <div class="pkg-price"><div class="pp-tier"><span class="lbl">entrée &amp; main</span><span class="amt">$79<small>pp</small></span></div><div class="pp-tier"><span class="lbl">entrée, main &amp; dessert</span><span class="amt">$89<small>pp</small></span></div></div>
+        </div>
+        <div class="pkg-body cols-3">
+          <div><p class="choice-label">Entrées</p><p class="choice-items">
+            <span class="it">Cauliflower curry, sweet coconut Thai</span>
+            <span class="it">Basil pistachio tortellini, parmesan</span>
+            <span class="it">Prawn red curry skewers (2pc)</span>
+            <span class="it">Heirloom tomato carpaccio, labneh</span>
+            <span class="it">Chicken karaage, teriyaki, kewpie</span>
+            <span class="it">Caprese sourdough, pesto, balsamic</span>
+          </p></div>
+          <div><p class="choice-label">Mains</p><p class="choice-items">
+            <span class="it">Slow cooked lamb shoulder (200g), creamy mash</span>
+            <span class="it">New York sirloin (250g), chimichurri, miso butter</span>
+            <span class="it">Soy roasted chicken Maryland, buttered rice</span>
+            <span class="it">Oven baked Atlantic salmon, crunchy salad</span>
+            <span class="it">Crispy pork belly, pineapple sauce</span>
+            <span class="it">Roast pumpkin, satay, peanuts, Thai basil</span>
+          </p></div>
+          <div><p class="choice-label">Desserts</p><p class="choice-items">
+            <span class="it">Classic affogato, amaretto</span>
+            <span class="it">Chocolate mousse</span>
+            <span class="it">Warm sticky date pudding</span>
+            <span class="it">Pandan panna cotta</span>
+            <span class="it">Assorted cakes</span>
+            <span class="it">Lemon meringue</span>
+          </p></div>
+        </div>
+        <p class="pkg-incl">Includes bread &amp; butter, table linen, and a tea &amp; coffee station.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE PLATTERS -->
+<section id="platters" style="background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <p class="section-eyebrow">Add to any event</p>
+    <h2 class="section-title">Signature Platters</h2>
+    <p class="section-sub">Each platter is designed to feed 10–12 guests.</p>
+    <div class="platter-grid">
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Cheese</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Charcuterie</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Sliders (15pc)</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Arancini</span><span class="platter-dots"></span><span class="platter-price">$120</span></div><p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Crispy Fish</span><span class="platter-dots"></span><span class="platter-price">$155</span></div><p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">S&amp;R Savoury Rolls</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Classic Aussie</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Schnitzel (30pc)</span><span class="platter-dots"></span><span class="platter-price">$255</span></div><p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Wedges</span><span class="platter-dots"></span><span class="platter-price">$110</span></div><p class="platter-desc">Potato wedges with sour cream &amp; sweet chilli sauce.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Seasonal Fruit</span><span class="platter-dots"></span><span class="platter-price">$220</span></div><p class="platter-desc">Chef's selection of seasonal fruit.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Baked Goods</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR THE LITTLE ONES -->
+<section id="kids">
+  <div class="wrap">
+    <p class="section-eyebrow">For the little legends</p>
+    <h2 class="section-title">For the Little Ones</h2>
+    <p class="section-sub">For guests aged 12 &amp; under. Enjoy on its own or pair it with any other package. Each platter feeds 10–15 children.</p>
+    <div class="mini-grid">
+      <div class="mini-item"><div class="mi-name">Nuggets &amp; Chips Platter</div><div class="mi-price">$125</div></div>
+      <div class="mini-item"><div class="mi-name">Fish &amp; Chips Platter</div><div class="mi-price">$125</div></div>
+      <div class="mini-item"><div class="mi-name">Fairy Bread Platter</div><div class="mi-price">$80</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REMEMBRANCE -->
+<section id="remembrance">
+  <div class="wrap">
+    <p class="section-eyebrow">With care</p>
+    <h2 class="section-title">Remembrance Packages</h2>
+    <p class="remem-intro">Losing a loved one is hard, and we know the last thing you want to be doing is planning how to say goodbye. With over 10 years of experience, we're here to take care of your loved one's memorial, so you don't have to.</p>
+    <div class="remem-cards">
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Gold Package</div><div class="pkg-meta">Choose 6 options from the menu below</div></div>
+          <div class="pkg-price"><div class="pp">$33<small>pp</small></div></div>
+        </div>
+        <p class="pkg-incl">Includes 3 hour space hire and linen for the food table.</p>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Platinum Package</div><div class="pkg-meta">Choose 8 options from the menu below</div></div>
+          <div class="pkg-price"><div class="pp">$38<small>pp</small></div></div>
+        </div>
+        <p class="pkg-incl">Includes 3 hour space hire, linen for the food table, and a complimentary tea &amp; coffee station.</p>
+      </div>
+    </div>
+    <div class="remem-menu">
+      <p class="choice-label">The menu</p>
+      <div class="remem-list">
+        <span class="it">Mini gourmet beef pies</span>
+        <span class="it">Malay style satay chicken skewers</span>
+        <span class="it">Beer battered fish, house tartare</span>
+        <span class="it">Truffled porcini mushroom arancini <span class="diet">v</span></span>
+        <span class="it">Mini Thai style spring rolls</span>
+        <span class="it">Assorted selection of pizzas</span>
+        <span class="it">Ricotta cheese pastizzi <span class="diet">v</span></span>
+        <span class="it">Savoury spinach &amp; ricotta rolls <span class="diet">v</span></span>
+        <span class="it">Chef's selection of mini sandwiches <span class="sub">(+$4.50pp)</span></span>
+        <span class="it">Mini sweet danish selection</span>
+        <span class="it">Mini cakes selection</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEVERAGES -->
+<section id="beverages" style="background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <p class="section-eyebrow">Drinks</p>
+    <h2 class="section-title">Beverage Packages</h2>
+    <p class="section-sub">Choose a package, or keep it flexible with a cash bar or bar tab.</p>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Gold Beverage Package</span><span class="bp">$60pp</span></div>
+          <p class="bev-list">4 house tap beers · 1 house white · 1 house red · 1 packaged beer (Corona, Peroni etc) + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Premium Beverage Package</span><span class="bp">$75pp</span></div>
+          <p class="bev-list">3 house tap beers + 1 premium tap/draught RTD · 2 premium whites &amp; 2 premium reds (Moore's Creek / Oyster Bay) · sparkling (Prosecco or Brut) · packaged beer + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+      </div>
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Cash Bar</span></div>
+          <p class="bev-list">Guests pay for their own beverages upon ordering.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Bar Tab</span></div>
+          <p class="bev-list">Set a monetary limit and let us know which beverages to include. We'll notify you once the limit has been reached, and you decide whether to extend it or switch to a cash bar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT ADDITIONS -->
+<section id="additions">
+  <div class="wrap">
+    <p class="section-eyebrow">Finishing touches</p>
+    <h2 class="section-title">Event Additions</h2>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <h3>Add-ons</h3>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · up to 50pax</span></span><span class="add-price">$82.50</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">51–99pax</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">100pax or more</span></span><span class="add-price">$185</span></div>
+        <div class="add-row"><span class="add-name">Tea &amp; Coffee Station<span class="add-sub">Black &amp; herbal teas, instant coffee, sweeteners</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Cakeage<span class="add-sub">Bring your own cake or desserts; crockery supplied</span></span><span class="add-price">$3pp</span></div>
+      </div>
+      <div class="info-block-card">
+        <h3>Staffing &amp; hire</h3>
+        <div class="add-row"><span class="add-name">Waiter / Additional Staff<span class="add-sub">Per hour, per staff member</span></span><span class="add-price">$65/hr</span></div>
+        <div class="add-row"><span class="add-name">Security<span class="add-sub">Minimum 5 hours</span></span><span class="add-price">$75/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Space Hire<span class="add-sub">Standard hire is 4 hours</span></span><span class="add-price">$220/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Services<span class="add-sub">DJ · kids play / soft play · cakes · balloons &amp; decorations</span></span><span class="add-price">On request</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section id="enquire">
+  <div class="enquire-inner">
+    <p class="section-eyebrow">Let's plan it</p>
+    <h2>Start planning your event</h2>
+    <p>Tell us about your occasion, your preferred venue and rough guest numbers, and our functions team will take it from there.</p>
+    <div class="enquire-contact">
+      <a href="tel:0247023642">(02) 4702 3642</a>
+      <a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a>
+    </div>
+    <a href="contact.html#functions-enquiry" class="btn-gold">Make a function enquiry</a>
+    <p class="fineprint">Whilst our packages outline minimum guest requirements, a minimum spend also applies. Whilst we take the utmost care to accommodate dietary requirements and requests, we cannot guarantee that there will be no cross-contamination where allergens are concerned. Packages and pricing are subject to change.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <p class="footer-brand-name">Four Sausages</p>
+      <p class="footer-brand-sub">Hospitality Group</p>
+      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Our venues</p>
+      <ul class="footer-links">
+        <li><a href="the-fairway.html">The Fairway</a></li>
+        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        <li><a href="catering.html">At-home Catering</a></li>
+        <li><a href="functions-events.html">Functions &amp; Events</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+      <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+      <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+    </div>
+  </div>
+  <hr class="footer-rule">
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+  </div>
+</footer>
+
+</body>
+</html>

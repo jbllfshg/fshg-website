@@ -112,6 +112,15 @@ section{padding:5rem 2rem}
 .catering-divider{margin:1rem 0;height:1px;background:rgba(250,237,205,0.15)}
 .catering-contact{font-size:0.8rem;color:rgba(250,237,205,0.5);text-align:center;font-style:italic}
 
+/* HOME GALLERY */
+.home-gallery{overflow:hidden;padding:0;background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.home-gallery-track{display:flex;gap:0.5rem;width:max-content;animation:hg-scroll 50s linear infinite}
+.home-gallery:hover .home-gallery-track{animation-play-state:paused}
+.hg-item{flex:0 0 auto}
+.hg-item img{height:340px;width:auto;display:block}
+@keyframes hg-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){.hg-item img{height:210px}}
+@media(prefers-reduced-motion:reduce){.home-gallery{overflow-x:auto}.home-gallery-track{animation:none}}
 
 
 /* FOOTER */
@@ -183,6 +192,25 @@ section{padding:5rem 2rem}
       <div class="rule-dot"></div>
       <div class="rule-line"></div>
     </div>
+  </div>
+</section>
+  
+<!-- HOME GALLERY -->
+<section class="home-gallery" aria-label="A taste of our venues">
+  <div class="home-gallery-track">
+    <div class="hg-item"><img src="images/home/gallery-01.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <div class="hg-item"><img src="images/home/gallery-02.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <div class="hg-item"><img src="images/home/gallery-03.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <div class="hg-item"><img src="images/home/gallery-04.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <div class="hg-item"><img src="images/home/gallery-05.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <div class="hg-item"><img src="images/home/gallery-06.jpg" alt="A taste of our venues" loading="lazy"></div>
+    <!-- duplicate set below — keeps the scroll seamless, uses the same images -->
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-01.jpg" alt="" loading="lazy"></div>
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-02.jpg" alt="" loading="lazy"></div>
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-03.jpg" alt="" loading="lazy"></div>
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-04.jpg" alt="" loading="lazy"></div>
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-05.jpg" alt="" loading="lazy"></div>
+    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-06.jpg" alt="" loading="lazy"></div>
   </div>
 </section>
 

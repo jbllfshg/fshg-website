@@ -88,7 +88,8 @@ section{padding:5rem 2rem}
 #events{background:var(--navy)}
 .events-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem}
 .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.event-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem 1.5rem}
+.event-card{display:block;text-decoration:none;color:inherit;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem 1.5rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s}
+.event-card:hover{transform:translateY(-3px);border-color:rgba(212,163,115,0.5);box-shadow:0 14px 30px rgba(0,0,0,0.2)}
 .event-icon{font-size:1.5rem;margin-bottom:1rem}
 .event-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:0.5rem}
 .event-desc{font-size:0.85rem;color:rgba(250,237,205,0.65);line-height:1.7;font-weight:300}
@@ -285,12 +286,12 @@ section{padding:5rem 2rem}
     </div>
   </div>
   <div class="events-grid">
-    <div class="event-card"><div class="event-icon">🥂</div><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></div>
-    <div class="event-card"><div class="event-icon">🍽️</div><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></div>
-    <div class="event-card"><div class="event-icon">🎉</div><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></div>
-    <div class="event-card"><div class="event-icon">🧀</div><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></div>
-    <div class="event-card"><div class="event-icon">🌸</div><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></div>
-    <div class="event-card"><div class="event-icon">🍺</div><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></div>
+    <a class="event-card" href="functions-events.html#grazing"><div class="event-icon">🥂</div><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></a>
+    <a class="event-card" href="functions-events.html#buffets"><div class="event-icon">🍽️</div><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></a>
+    <a class="event-card" href="functions-events.html#set-menus"><div class="event-icon">🎉</div><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></a>
+    <a class="event-card" href="functions-events.html#grazing"><div class="event-icon">🧀</div><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></a>
+    <a class="event-card" href="functions-events.html#remembrance"><div class="event-icon">🌸</div><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></a>
+    <a class="event-card" href="functions-events.html#beverages"><div class="event-icon">🍺</div><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></a>
   </div>
   <div class="events-cta">
     <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:1rem">Both venues available. Minimum spends apply. Contact us to discuss your event.</p>

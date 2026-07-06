@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's On | Four Sausages Hospitality Group</title>
+<meta name="description" content="Live music, trivia, special events and good times at The Fairway and The Jack & Cleaver. See what's coming up.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
+  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
+  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif;text-decoration:none}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.8rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--navy)}
+.nav-links li+li{border-left:1px solid var(--border)}
+.nav-toggle{display:none;flex-shrink:0;background:none;border:none;cursor:pointer;color:var(--navy);width:42px;height:42px;align-items:center;justify-content:center;border-radius:6px;transition:background 0.2s}
+.nav-toggle:hover{background:var(--border)}
+.nav-toggle svg{width:26px;height:26px;display:block}
+.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--sage)}
+.nav-phone{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;transition:color 0.2s}
+.nav-phone:hover{color:var(--sage)}
+.nav-phone svg{width:15px;height:15px;flex-shrink:0}
+
+/* HERO */
+#hero{position:relative;min-height:46vh;display:flex;align-items:flex-end;padding:4rem 2.5rem;overflow:hidden;background:var(--navy)}
+.hero-accent{position:absolute;width:600px;height:600px;border-radius:50%;background:var(--teal);opacity:0.10;top:-220px;right:-180px;pointer-events:none}
+.hero-accent2{position:absolute;width:420px;height:420px;border-radius:50%;background:var(--tan);opacity:0.10;bottom:-160px;left:-120px;pointer-events:none}
+.hero-inner{position:relative;max-width:760px}
+.hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:1.25rem;background:rgba(212,163,115,0.2);color:var(--tan)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:600;color:var(--cream);line-height:1.02;margin-bottom:0.5rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--tan);margin-bottom:1.5rem}
+.hero-desc{font-size:0.98rem;color:rgba(250,237,205,0.82);max-width:560px;line-height:1.8;font-weight:300}
+
+/* SECTION SHELL */
+section{padding:4.5rem 2.5rem}
+.wrap{max-width:1180px;margin:0 auto}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem;text-align:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--navy);line-height:1.1;margin-bottom:0.75rem;text-align:center}
+.section-sub{color:var(--ink-mid);font-size:0.95rem;line-height:1.8;font-weight:300;max-width:600px;margin:0 auto;text-align:center}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;margin-top:2.25rem}
+.filter-pill{font-size:12px;font-weight:600;letter-spacing:0.03em;color:var(--navy);background:white;border:1px solid var(--border);border-radius:30px;padding:9px 20px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.filter-pill:hover{border-color:var(--muted-sage)}
+.filter-pill.active{background:var(--navy);color:white;border-color:var(--navy)}
+
+/* EVENTS */
+.events-list{display:flex;flex-direction:column;gap:1rem;max-width:800px;margin:2.5rem auto 0}
+.event-card{display:flex;gap:1.5rem;background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.75rem;align-items:flex-start;transition:box-shadow 0.2s,transform 0.2s}
+.event-card:hover{box-shadow:0 12px 30px rgba(74,78,105,0.08);transform:translateY(-2px)}
+.event-date{flex-shrink:0;width:74px;text-align:center;background:var(--navy);color:var(--cream);border-radius:10px;padding:0.85rem 0.5rem;display:flex;flex-direction:column;gap:2px}
+.ed-day{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;line-height:1}
+.ed-mon{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--tan)}
+.ed-dow{font-size:0.66rem;color:rgba(250,237,205,0.6);text-transform:uppercase;letter-spacing:0.08em}
+.event-body{flex:1;min-width:0}
+.venue-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:0.5rem}
+.tag-fairway{background:#e8ede6;color:var(--sage)}
+.tag-jack{background:#e4eceb;color:var(--teal)}
+.event-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:0.3rem}
+.event-meta{font-size:0.82rem;color:var(--muted-sage);font-weight:500;margin-bottom:0.5rem}
+.event-desc{font-size:0.9rem;color:var(--ink-mid);line-height:1.65;font-weight:300}
+.event-add{display:inline-block;margin-top:0.8rem;font-size:0.8rem;font-weight:600;color:var(--tan);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s}
+.event-add:hover{border-color:var(--tan)}
+.events-state{text-align:center;color:var(--ink-mid);font-size:0.95rem;padding:3rem 1rem;font-weight:300;max-width:800px;margin:2.5rem auto 0}
+.preview-note{max-width:800px;margin:1.75rem auto -0.5rem;text-align:center;font-size:0.78rem;color:var(--muted-sage);background:#fff;border:1px dashed rgba(74,78,105,0.25);border-radius:8px;padding:0.7rem 1rem;line-height:1.5}
+
+/* FOOTER */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
+.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
+.footer-links a:hover{color:var(--tan)}
+.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
+.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--tan)}
+.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:880px){.footer-main{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .nav-toggle{display:flex}
+  .nav-cta{display:none}
+  .nav-phone{order:2}
+  .nav-toggle{order:3}
+  .nav-phone-num{display:none}
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--off-white);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
+  nav.open .nav-links{max-height:78vh;border-bottom:1px solid var(--border);box-shadow:0 14px 26px rgba(74,78,105,0.10)}
+  .nav-links li+li{border-left:none;border-top:1px solid var(--border)}
+  .nav-links li a{padding:0.95rem 1.5rem;font-size:15px}
+  nav{padding:0 1.5rem}
+  section{padding:3.25rem 1.4rem}
+  #hero{padding:3rem 1.5rem;min-height:40vh}
+  .event-card{padding:1.25rem 1.25rem;gap:1.1rem}
+  .event-date{width:62px}
+  .ed-day{font-size:1.7rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html">Functions &amp; Events</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="whats-on.html" class="active">What's On</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <a href="tel:0247023642" class="nav-phone" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-num">(02) 4702 3642</span></a>
+  <a href="contact.html" class="nav-cta">Book a table</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">What's On</span>
+    <h1 class="hero-title">What's on</h1>
+    <p class="hero-sub">Live music, trivia &amp; good times.</p>
+    <p class="hero-desc">From acoustic sessions on the terrace to trivia nights and live bands — here's what's coming up across both our venues.</p>
+  </div>
+</header>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <p class="section-eyebrow">Upcoming</p>
+    <h2 class="section-title">Coming up at our venues</h2>
+    <p class="section-sub">Catch live music, trivia and special events at The Fairway and The Jack &amp; Cleaver. Filter by venue below.</p>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-pill active" data-filter="all" type="button">All events</button>
+      <button class="filter-pill" data-filter="fairway" type="button">The Fairway</button>
+      <button class="filter-pill" data-filter="jack" type="button">The Jack &amp; Cleaver</button>
+    </div>
+
+    <p class="preview-note" id="previewNote" hidden></p>
+    <div class="events-list" id="eventsList"></div>
+    <div class="events-state" id="eventsState">Loading upcoming events…</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <p class="footer-brand-name">Four Sausages</p>
+      <p class="footer-brand-sub">Hospitality Group</p>
+      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Explore</p>
+      <ul class="footer-links">
+        <li><a href="the-fairway.html">The Fairway</a></li>
+        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        <li><a href="whats-on.html">What's On</a></li>
+        <li><a href="functions-events.html">Functions &amp; Events</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Visit</p>
+      <p class="footer-contact-item"><strong>The Fairway</strong><br>Penrith Golf Club, Glenmore Park<br><a href="tel:0247361633">(02) 4736 1633</a></p>
+      <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br>Pennant Hills Bowling Club<br><a href="tel:0294842433">(02) 9484 2433</a></p>
+    </div>
+  </div>
+  <hr class="footer-rule">
+  <div class="footer-bottom">
+    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   WHAT'S ON — Google Calendar feed
+   ------------------------------------------------------------
+   1) Create a PUBLIC Google Calendar for your events.
+   2) Get a Google Calendar API key (restricted to the Calendar
+      API + your fshg.com.au domain).
+   3) Paste your Calendar ID and API key below, replacing the
+      two YOUR_… placeholders. That's it — add events in Google
+      Calendar and they'll appear here automatically.
+
+   Tip: put the venue in each event's LOCATION field
+   (e.g. "The Fairway" or "The Jack & Cleaver") and this page
+   colour-codes and filters them for you.
+   ============================================================ */
+var CALENDAR_ID = 'c_f191b1d7469317d58fae685ec70c24240839298a836119d7e6c45319f134d724@group.calendar.google.com';
+var API_KEY     = 'AIzaSyA23FT8L1vwDM9H7xSo8bIRSaNnbP_3jJM';
+
+(function(){
+  var listEl = document.getElementById('eventsList');
+  var stateEl = document.getElementById('eventsState');
+  var noteEl = document.getElementById('previewNote');
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function stripHtml(s){var d=document.createElement('div');d.innerHTML=String(s==null?'':s);return (d.textContent||d.innerText||'').trim();}
+
+  function venueOf(ev){
+    var s = ((ev.location||'') + ' ' + (ev.summary||'')).toLowerCase();
+    if(s.indexOf('fairway')>-1) return {key:'fairway', label:'The Fairway'};
+    if(s.indexOf('jack')>-1 || s.indexOf('cleaver')>-1) return {key:'jack', label:'The Jack & Cleaver'};
+    return {key:'other', label:''};
+  }
+
+  function parts(ev){
+    var isAllDay = !!(ev.start && ev.start.date && !ev.start.dateTime);
+    var iso = ev.start && (ev.start.dateTime || ev.start.date);
+    var d = new Date(iso);
+    var time = '';
+    if(!isAllDay){
+      var h=d.getHours(), m=d.getMinutes(), ap=h>=12?'pm':'am', hh=h%12; if(hh===0)hh=12;
+      time = hh + ':' + (m<10?'0'+m:m) + ap;
+    }
+    return {day:d.getDate(), mon:MONTHS[d.getMonth()], dow:DOW[d.getDay()], time:time};
+  }
+
+  function cardHTML(ev){
+    var v = venueOf(ev), p = parts(ev);
+    var tagClass = v.key==='fairway' ? 'tag-fairway' : (v.key==='jack' ? 'tag-jack' : '');
+    var meta = (p.time ? p.time : 'All day') + (ev.location ? (' &nbsp;·&nbsp; ' + esc(ev.location)) : '');
+    var desc = ev.description ? '<p class="event-desc">' + esc(stripHtml(ev.description)) + '</p>' : '';
+    var add = ev.htmlLink ? '<a class="event-add" href="' + esc(ev.htmlLink) + '" target="_blank" rel="noopener">+ Add to your calendar</a>' : '';
+    var tag = v.label ? '<span class="venue-tag ' + tagClass + '">' + esc(v.label) + '</span>' : '';
+    return '<article class="event-card" data-venue="' + v.key + '">'
+      + '<div class="event-date"><span class="ed-day">' + p.day + '</span><span class="ed-mon">' + p.mon + '</span><span class="ed-dow">' + p.dow + '</span></div>'
+      + '<div class="event-body">' + tag
+      + '<h3 class="event-title">' + esc(ev.summary || 'Event') + '</h3>'
+      + '<p class="event-meta">' + meta + '</p>' + desc + add + '</div></article>';
+  }
+
+  function render(items){
+    if(!items || !items.length){
+      stateEl.textContent = 'No upcoming events right now — check back soon!';
+      stateEl.hidden = false; listEl.innerHTML = ''; return;
+    }
+    stateEl.hidden = true;
+    listEl.innerHTML = items.map(cardHTML).join('');
+    applyFilter(currentFilter);
+  }
+
+  function showError(){
+    stateEl.innerHTML = "We couldn't load events just now. Please try again later, or call us for what's coming up.";
+    stateEl.hidden = false; listEl.innerHTML = '';
+  }
+
+  // Filtering
+  var currentFilter = 'all';
+  function applyFilter(f){
+    currentFilter = f;
+    var cards = listEl.querySelectorAll('.event-card');
+    var shown = 0;
+    cards.forEach(function(c){
+      var match = (f==='all') || c.getAttribute('data-venue')===f;
+      c.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    if(cards.length && shown===0){ stateEl.textContent='No upcoming events at this venue right now.'; stateEl.hidden=false; }
+    else if(cards.length){ stateEl.hidden=true; }
+  }
+  document.getElementById('filterBar').addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-pill'); if(!btn) return;
+    this.querySelectorAll('.filter-pill').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    applyFilter(btn.getAttribute('data-filter'));
+  });
+
+  // Sample data for preview (shown until your calendar is connected)
+  function daysFromNow(n,h,m){var d=new Date();d.setDate(d.getDate()+n);d.setHours(h,m,0,0);return d.toISOString();}
+  var SAMPLE = [
+    {summary:'Live Music — The Saplings', location:'The Fairway', start:{dateTime:daysFromNow(3,19,0)}, description:'Local indie-folk trio playing the Main Terrace as the sun goes down over the greens.'},
+    {summary:'Trivia Night', location:'The Jack & Cleaver', start:{dateTime:daysFromNow(5,19,0)}, description:'Test your smarts — prizes for the top three tables. Book ahead to reserve your spot.'},
+    {summary:'Sunday Sessions — Acoustic Duo', location:'The Fairway', start:{dateTime:daysFromNow(7,14,0)}, description:'Laid-back acoustic covers over a long Sunday lunch.'},
+    {summary:'Jazz on the Green', location:'The Jack & Cleaver', start:{dateTime:daysFromNow(10,18,30)}, description:'A night of smooth standards and a full bar.'},
+    {summary:'Open Mic Night', location:'The Jack & Cleaver', start:{dateTime:daysFromNow(12,19,30)}, description:'Bring an instrument or just come to listen — all welcome.'}
+  ];
+
+  var configured = CALENDAR_ID.indexOf('YOUR_')!==0 && API_KEY.indexOf('YOUR_')!==0;
+
+  if(!configured){
+    noteEl.hidden = false;
+    noteEl.innerHTML = '<strong>Preview:</strong> these are sample events. Once your Google Calendar is connected, your real listings appear here automatically.';
+    render(SAMPLE);
+    return;
+  }
+
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + encodeURIComponent(CALENDAR_ID) + '/events'
+    + '?key=' + encodeURIComponent(API_KEY)
+    + '&timeMin=' + encodeURIComponent(new Date().toISOString())
+    + '&singleEvents=true&orderBy=startTime&maxResults=60';
+
+  fetch(url)
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(data){ render((data.items||[])); })
+    .catch(function(){ showError(); });
+})();
+</script>
+
+</body>
+</html>

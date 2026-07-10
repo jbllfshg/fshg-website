@@ -1,0 +1,11 @@
+# Password-protect the staff handbook (and only that page) with an edge
+# function. The password lives in the STAFF_HANDBOOK_PASSWORD environment
+# variable in Netlify, not in this repo.
+
+[[edge_functions]]
+  path = "/staff-handbook"
+  function = "staff-handbook-auth"
+
+[[edge_functions]]
+  path = "/staff-handbook.html"
+  function = "staff-handbook-auth"

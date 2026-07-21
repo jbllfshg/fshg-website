@@ -159,6 +159,31 @@ iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radi
   html{scroll-behavior:auto}
   .gallery-grid img{transition:none}
 }
+
+/* SPECIALS */
+#specials{background:var(--navy);color:var(--cream);border-top:1px solid var(--border)}
+#specials .section-eyebrow{color:var(--tan)}
+#specials .section-title{color:var(--cream)}
+#specials .section-sub{color:rgba(250,237,205,0.72)}
+.sp-group{margin-top:2.75rem}
+.sp-group-label{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--cream);text-align:center;margin-bottom:1.5rem}
+.week-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;max-width:1120px;margin:0 auto}
+.day-card{background:rgba(255,255,255,0.06);border:1px solid rgba(250,237,205,0.14);border-radius:12px;padding:1.5rem 1.25rem;display:flex;flex-direction:column}
+.day-label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.7rem}
+.day-dish{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:0.3rem}
+.day-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--tan);margin-bottom:0.5rem}
+.day-detail{font-size:0.82rem;color:rgba(250,237,205,0.7);line-height:1.55;font-weight:300}
+.kids-banner{max-width:820px;margin:1.5rem auto 0;background:rgba(212,163,115,0.14);border:1px solid rgba(212,163,115,0.4);border-radius:12px;padding:1.1rem 1.5rem;text-align:center;font-size:0.92rem;color:var(--cream);line-height:1.6;font-weight:300}
+.kids-banner strong{color:var(--tan);font-weight:600}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;max-width:1120px;margin:0 auto}
+.deal-card{background:rgba(255,255,255,0.06);border:1px solid rgba(250,237,205,0.14);border-radius:12px;padding:1.5rem}
+.deal-icon{font-size:1.5rem;margin-bottom:0.6rem}
+.deal-title{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;color:var(--cream);margin-bottom:0.35rem;line-height:1.2}
+.deal-title .pct{color:var(--tan)}
+.deal-detail{font-size:0.85rem;color:rgba(250,237,205,0.72);line-height:1.6;font-weight:300}
+.sp-fine{max-width:820px;margin:2rem auto 0;text-align:center;font-size:0.76rem;color:rgba(250,237,205,0.5);line-height:1.6;font-style:italic}
+@media(max-width:880px){.week-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.week-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -213,6 +238,38 @@ iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radi
     </div>
     <div class="intro-photo">
       <img src="images/fairway/feature/fairway-18.jpg" alt="Char-grilled steak with café de Paris butter, chips and garden salad at The Fairway" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials">
+  <div class="wrap">
+    <p class="section-eyebrow">Great value, every week</p>
+    <h2 class="section-title">Specials &amp; Discounts</h2>
+    <p class="section-sub">There's a reason to come in every day of the week at The Fairway.</p>
+
+    <div class="sp-group">
+      <p class="sp-group-label">Weekly Dinner Specials</p>
+      <div class="week-grid">
+        <div class="day-card"><div class="day-label">Monday</div><div class="day-dish">Pizza or Pasta Night</div><div class="day-price">$22</div><div class="day-detail">Excludes seafood. Includes a glass of wine from the bar.</div></div>
+        <div class="day-card"><div class="day-label">Tuesday</div><div class="day-dish">Loaded Schnitzel Night</div><div class="day-price">$24</div><div class="day-detail">Served with chips and salad. Includes a schooner of beer or a glass of wine.</div></div>
+        <div class="day-card"><div class="day-label">Wednesday</div><div class="day-dish">Burger Night</div><div class="day-price">$19</div></div>
+        <div class="day-card"><div class="day-label">Thursday</div><div class="day-dish">Steak Night</div><div class="day-price">$26</div><div class="day-detail">250g rump with chips &amp; salad or mash &amp; veg, plus sauce. Includes a schooner of beer and a free piece of garlic bread.</div></div>
+        <div class="day-card"><div class="day-label">Sunday</div><div class="day-dish">Roast of the Day</div><div class="day-price">$25</div><div class="day-detail">Lunch and dinner, until we run out. Includes a warm dinner roll.</div></div>
+      </div>
+      <div class="kids-banner"><strong>Kids eat free</strong> — Monday to Wednesday, 5–7pm. One free kids' meal with every meal worth $25 or more.</div>
+    </div>
+
+    <div class="sp-group" id="deals" hidden>
+      <p class="sp-group-label">Deals &amp; Discounts</p>
+      <div class="deals-grid">
+        <div class="deal-card"><div class="deal-icon">🪪</div><div class="deal-title">Seniors' Discount <span class="pct">15%</span></div><div class="deal-detail">15% off one meal for holders of a valid Seniors Card (one card = 15% off one meal). Monday to Friday, 5:00–6:00pm.</div></div>
+        <div class="deal-card"><div class="deal-icon">🚑</div><div class="deal-title">Emergency Services &amp; Healthcare <span class="pct">10%</span></div><div class="deal-detail">10% off for nurses, ambulance officers and firefighters, on presentation of valid ID.</div></div>
+        <div class="deal-card"><div class="deal-icon">🍗</div><div class="deal-title">$1 Wings</div><div class="deal-detail">Back by popular demand. Sundays only, dine-in only, minimum order of 8 wings.</div></div>
+        <div class="deal-card"><div class="deal-icon">☕</div><div class="deal-title">Coffee &amp; Cake $11.90</div><div class="deal-detail">The coffee and cake deal is back — a coffee and a slice for $11.90.</div></div>
+      </div>
+      <p class="sp-fine">Offers are not valid on meals that are already discounted or on promotional items, and cannot be used in conjunction with any other offer.</p>
     </div>
   </div>
 </section>
@@ -433,6 +490,16 @@ iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radi
 </footer>
 
 <script src="https://plugins.nowbookit.com/iframe-resizer-build/bundle.js"></script>
+
+<script>
+/* Reveal the promotional discounts from Monday 27 July 2026 (local time). */
+(function(){
+  var deals = document.getElementById('deals');
+  if(!deals) return;
+  var start = new Date(2026, 6, 27, 0, 0, 0); // month 6 = July
+  if(new Date() >= start) deals.hidden = false;
+})();
+</script>
 
 </body>
 </html>

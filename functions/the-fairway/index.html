@@ -100,6 +100,18 @@ section{padding:4.5rem 2.5rem}
 .feat.hero-band .btn-cta{background:var(--tan);color:var(--ink)}
 .feat.hero-band .btn-cta:hover{background:#c49060}
 
+/* FEATURE MEDIA */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1080px;margin:0 auto}
+.feat-grid .feat-inner{text-align:left;max-width:none;margin:0}
+.feat-media{border-radius:12px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 44px rgba(74,78,105,0.18)}
+.feat-media img{width:100%;height:100%;object-fit:cover;display:block}
+.feat-grid.rev .feat-media{order:2}
+/* GALLERY STRIP */
+.gal-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;max-width:1120px;margin:2.5rem auto 0}
+.gal-strip figure{margin:0;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:var(--off-white)}
+.gal-strip img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:820px){.feat-grid{grid-template-columns:1fr;gap:1.75rem}.feat-grid.rev .feat-media{order:0}.gal-strip{grid-template-columns:repeat(2,1fr)}}
+
 /* PACKAGES */
 #packages{background:var(--off-white)}
 .pk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
@@ -247,7 +259,9 @@ section{padding:4.5rem 2.5rem}
 
 <!-- WEDDINGS -->
 <section id="weddings" class="feat hero-band" style="scroll-margin-top:72px">
-  <div class="feat-inner">
+  <div class="feat-grid">
+    <div class="feat-media"><img src="/images/catering/feature/catering-12.jpg" alt="Elegant catered grazing spread styled with florals for a wedding" loading="lazy"></div>
+    <div class="feat-inner">
     <p class="feat-eyebrow">Weddings</p>
     <h2 class="feat-title">Your wedding. No wedding tax.</h2>
     <p class="feat-body">Most venues add a premium the moment you say the word "wedding." We don't. Choose any of our function packages — the same canapés, buffets, banquets and grazing tables our other guests enjoy — at the same honest prices, for your big day. A beautiful setting, genuine service, and a reception that costs what it should.</p>
@@ -255,38 +269,48 @@ section{padding:4.5rem 2.5rem}
     <div class="price-pill">Packages from $46 per head</div><br>
     <a href="#enquire" class="btn-cta" data-type="Wedding">Enquire about your wedding</a>
   </div>
+  </div>
 </section>
 
 <!-- CELEBRATIONS -->
 <section id="celebrations" class="feat" style="scroll-margin-top:72px">
-  <div class="feat-inner">
+  <div class="feat-grid rev">
+    <div class="feat-media"><img src="/images/catering/feature/catering-07.jpg" alt="Dessert table with strawberries and sweet treats for a celebration" loading="lazy"></div>
+    <div class="feat-inner">
     <p class="feat-eyebrow">Celebrations</p>
     <h2 class="feat-title">Birthdays, engagements &amp; milestones</h2>
     <p class="feat-body">From an intimate 30th to a big engagement party, we make celebrating easy. Signature canapés with waiter service from $67pp, or a platinum grazing spread at $85pp. Tell us the occasion and your numbers — we'll shape the rest.</p>
     <div class="price-pill">Canapés from $67pp · Grazing $85pp</div><br>
     <a href="#enquire" class="btn-cta" data-type="Birthday or celebration">Plan your celebration</a>
   </div>
+  </div>
 </section>
 
 <!-- CORPORATE -->
 <section id="corporate" class="feat tint" style="scroll-margin-top:72px">
-  <div class="feat-inner">
+  <div class="feat-grid">
+    <div class="feat-media"><img src="/images/fairway/feature/fairway-02.jpg" alt="A generous shared spread of pizzas, pasta and sides for a group" loading="lazy"></div>
+    <div class="feat-inner">
     <p class="feat-eyebrow">Corporate</p>
     <h2 class="feat-title">Work functions &amp; corporate events</h2>
     <p class="feat-body">End-of-year parties, team lunches, client events and Christmas do's. Buffets and banquets from $46pp, set menus from $79pp, with beverage packages to match — a relaxed, professional setting your team will actually enjoy.</p>
     <div class="price-pill">Buffets from $46pp · Set menus from $79pp</div><br>
     <a href="#enquire" class="btn-cta" data-type="Corporate">Enquire for your team</a>
   </div>
+  </div>
 </section>
 
 <!-- REMEMBRANCE -->
 <section id="remembrance" class="feat" style="scroll-margin-top:72px">
-  <div class="feat-inner">
+  <div class="feat-grid rev">
+    <div class="feat-media"><img src="/images/catering/feature/catering-01.jpg" alt="An understated grazing platter with cheese and charcuterie" loading="lazy"></div>
+    <div class="feat-inner">
     <p class="feat-eyebrow">Remembrance</p>
     <h2 class="feat-title">Wakes &amp; remembrance gatherings</h2>
     <p class="feat-body">A calm, dignified space to gather and remember. Our Gold and Platinum remembrance packages include three-hour space hire, table linen and a curated selection of food, from $33 per head — handled with care, so you don't have to think about the details.</p>
     <div class="price-pill">From $33 per head</div><br>
     <a href="#enquire" class="btn-cta" data-type="Wake or remembrance">Talk to us</a>
+  </div>
   </div>
 </section>
 
@@ -305,6 +329,20 @@ section{padding:4.5rem 2.5rem}
       <div class="pk"><div class="pk-name">Beverages</div><div class="pk-price">Gold $60pp · Premium $75pp</div><div class="pk-desc">Bar tab and cash bar options. Non-alcoholic beverages always included.</div></div>
     </div>
     <p class="pk-foot">Minimum spends apply.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <p class="eyebrow">The little details</p>
+    <h2 class="title">A taste of our events</h2>
+    <div class="gal-strip">
+      <figure><img src="/images/catering/thumb/catering-12.jpg" alt="Event grazing spread styled with florals" loading="lazy"></figure>
+      <figure><img src="/images/catering/thumb/catering-04.jpg" alt="Canapes served at a function" loading="lazy"></figure>
+      <figure><img src="/images/catering/thumb/catering-01.jpg" alt="Grazing table with charcuterie and cheese" loading="lazy"></figure>
+      <figure><img src="/images/catering/thumb/catering-07.jpg" alt="Dessert table with strawberries and sweet treats" loading="lazy"></figure>
+    </div>
   </div>
 </section>
 

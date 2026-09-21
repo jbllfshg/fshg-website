@@ -9,3 +9,16 @@
 [[edge_functions]]
   path = "/staff-handbook.html"
   function = "staff-handbook-auth"
+
+# Turn off the What's On page — redirect it to the home page.
+[[redirects]]
+  from = "/whats-on"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/whats-on.html"
+  to = "/"
+  status = 301
+  force = true

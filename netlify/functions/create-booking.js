@@ -19,7 +19,10 @@ const MAINS = ["Sticky Pork Belly", "Grilled Lamb Shoulder", "Baked Salmon Salad
 // Bookings close 72 hours before the 11:30am start (AEDT, UTC+11).
 const CUTOFF = new Date("2026-10-31T11:30:00+11:00");
 
-const FROM_EMAIL = process.env.FROM_EMAIL || "reservations@thejackandcleaver.com.au";
+// Resend sends from a verified domain (fshg.com.au); replies route to the
+// venue's own inbox. Both can be overridden via Netlify env vars.
+const FROM_EMAIL = process.env.FROM_EMAIL || "reservations@fshg.com.au";
+const REPLY_TO = process.env.REPLY_TO || "reservations@thejackandcleaver.com.au";
 const TABLE = process.env.AIRTABLE_TABLE || "Melbourne Cup Bookings";
 
 const JSON_HEADERS = { "Content-Type": "application/json" };
@@ -109,7 +112,7 @@ async function sendEmail(to, subject, html) {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], subject, html }),
+    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html }),
   });
   return res.ok;
 }

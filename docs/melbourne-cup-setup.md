@@ -78,11 +78,13 @@ and in `melbourne-cup.html` — tell me if any of them change.
 
 ## 3. Resend (confirmation emails)
 
-1. In your Resend account, make sure the sending domain **thejackandcleaver.com.au**
-   is **verified** (Resend → Domains → add the DNS records it shows you). This is
-   what keeps emails out of spam.
+1. Emails are sent from a **verified** Resend domain. Currently that's
+   **fshg.com.au**, so confirmations send from **reservations@fshg.com.au**
+   (display name "The Jack & Cleaver"), with **reply-to** set to
+   **reservations@thejackandcleaver.com.au** so guest replies reach the venue.
 2. Create an **API key** (Resend → API Keys) — starts with `re_`.
-3. Emails are sent from **reservations@thejackandcleaver.com.au**.
+3. To send from `@thejackandcleaver.com.au` instead, verify that domain in Resend
+   (add the DNS records it shows you), then set `FROM_EMAIL` in Netlify.
 
 ---
 
@@ -98,7 +100,8 @@ Netlify → your site → **Site configuration → Environment variables** → a
 | `STRIPE_SECRET_KEY` | `sk_test_...` then `sk_live_...` | for card payments |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_...` | for card payments |
 | `RESEND_API_KEY` | `re_...` | for confirmation emails |
-| `FROM_EMAIL` | `reservations@thejackandcleaver.com.au` | optional (this is the default) |
+| `FROM_EMAIL` | `reservations@fshg.com.au` | optional (this is the default; must be on a Resend-verified domain) |
+| `REPLY_TO` | `reservations@thejackandcleaver.com.au` | optional (this is the default reply-to) |
 | `PUBLIC_URL` | e.g. `https://www.thejackandcleaver.com.au` | optional (auto-detected otherwise) |
 
 > Make sure these are available to **Production** *and* **Deploy previews** if you

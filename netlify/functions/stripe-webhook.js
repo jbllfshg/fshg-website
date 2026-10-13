@@ -6,7 +6,8 @@
 // variables. Signature verification is mandatory — an unsigned or badly
 // signed request is rejected.
 
-const FROM_EMAIL = process.env.FROM_EMAIL || "reservations@thejackandcleaver.com.au";
+const FROM_EMAIL = process.env.FROM_EMAIL || "reservations@fshg.com.au";
+const REPLY_TO = process.env.REPLY_TO || "reservations@thejackandcleaver.com.au";
 const TABLE = process.env.AIRTABLE_TABLE || "Melbourne Cup Bookings";
 
 function atUrl(id) {
@@ -35,7 +36,7 @@ async function sendEmail(to, subject, html) {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], subject, html }),
+    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html }),
   });
   return res.ok;
 }

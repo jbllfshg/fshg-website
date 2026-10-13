@@ -107,14 +107,55 @@ async function patchRecord(id, fields) {
 
 // ---- Email (Resend) ---------------------------------------------------------
 
-async function sendEmail(to, subject, html) {
-  if (!process.env.RESEND_API_KEY) return false;
+async function sendEmail(to, subject, html, text) {
+  if (!process.env.RESEND_API_KEY) { console.error("RESEND_API_KEY not set — email skipped"); return false; }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html }),
+    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html, text }),
   });
+  if (!res.ok) console.error("Resend send failed:", res.status, await res.text().catch(() => ""));
   return res.ok;
+}
+
+function bookingText({ name, ref, guests, amount, payid }) {
+  const lines = guests.map((g, i) => `  Guest ${i + 1}${g.name ? " (" + g.name + ")" : ""}: ${g.main}${g.dietary ? " — dietary: " + g.dietary : ""}`).join("\n");
+  let t =
+`Hi ${name || "there"},
+
+Thanks for booking the Melbourne Cup Lunch at The Jack & Cleaver!
+${payid ? "Your table is held — please complete your PayID payment to confirm it." : "Your booking is confirmed."}
+
+Reference: ${ref}
+When: Tuesday 3 November 2026, from 11:30am (wraps 4pm)
+Where: The Jack & Cleaver, Pennant Hills Bowling Club
+Guests: ${guests.length}
+Total: $${amount} (incl. GST)
+
+Meal selections:
+${lines}
+
+Each main includes a glass of sparkling on arrival and sticky date pudding.
+Live three-piece band from 12pm, plus Best Dressed prizes on the day.
+`;
+  if (payid) {
+    t +=
+`
+PAY BY PAYID TO CONFIRM:
+  PayID (ACN): 682 276 820
+  Account name: LL Club Catering Services Pty Ltd
+  Amount: $${amount}
+  Reference: ${ref}
+Please include the reference in your payment description so we can match it to your table.
+`;
+  }
+  t +=
+`
+Bookings close 72 hours before the event. No refunds for cancellations within 72 hours.
+Questions? Call (02) 9484 2433 or reply to this email.
+
+The Jack & Cleaver · Four Sausages Hospitality Group`;
+  return t;
 }
 
 function mainsSummary(guests) {
@@ -285,7 +326,8 @@ exports.handler = async (event) => {
           name, ref, guests, amount,
           intro: "Thank you for booking our Melbourne Cup lunch! Your table is held — to confirm it, please complete your PayID payment using the details below.",
           payidBlock: payidBlock(amount, ref),
-        })
+        }),
+        bookingText({ name, ref, guests, amount, payid: true })
       );
     } catch (e) { /* booking is saved; email failure shouldn't block the response */ }
     return json(200, { reference: ref, amount });

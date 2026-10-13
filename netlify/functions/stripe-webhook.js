@@ -31,14 +31,36 @@ async function markPaid(id) {
   return res.ok;
 }
 
-async function sendEmail(to, subject, html) {
-  if (!process.env.RESEND_API_KEY) return false;
+async function sendEmail(to, subject, html, text) {
+  if (!process.env.RESEND_API_KEY) { console.error("RESEND_API_KEY not set — email skipped"); return false; }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html }),
+    body: JSON.stringify({ from: `The Jack & Cleaver <${FROM_EMAIL}>`, to: [to], reply_to: REPLY_TO, subject, html, text }),
   });
+  if (!res.ok) console.error("Resend send failed:", res.status, await res.text().catch(() => ""));
   return res.ok;
+}
+
+function confirmationText(f) {
+  const detail = (f["Guest Details"] || "").split("\n").filter(Boolean).map((l) => "  " + l).join("\n");
+  return `Hi ${f.Name || "there"},
+
+Payment received — your table for the Melbourne Cup Lunch at The Jack & Cleaver is confirmed!
+
+Reference: ${f.Reference || ""}
+When: Tuesday 3 November 2026, from 11:30am (wraps 4pm)
+Where: The Jack & Cleaver, Pennant Hills Bowling Club
+Guests: ${f.Guests || ""}
+Paid: $${f.Amount || ""} (incl. GST)
+${detail ? "\nMeal selections:\n" + detail + "\n" : ""}
+Your lunch includes a glass of sparkling on arrival and sticky date pudding, with a
+live three-piece band from 12pm and Best Dressed prizes on the day.
+
+No refunds for cancellations within 72 hours of the event.
+Questions? Call (02) 9484 2433 or reply to this email.
+
+The Jack & Cleaver · Four Sausages Hospitality Group`;
 }
 
 function confirmationHtml(f) {
@@ -98,7 +120,8 @@ exports.handler = async (event) => {
             await sendEmail(
               record.fields.Email,
               `Your Melbourne Cup lunch is confirmed! (${record.fields.Reference || ""})`,
-              confirmationHtml(record.fields)
+              confirmationHtml(record.fields),
+              confirmationText(record.fields)
             );
           }
         }

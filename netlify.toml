@@ -1,3 +1,17 @@
+# The site is static HTML. Serverless functions (e.g. the Melbourne Cup
+# booking flow) live in netlify/functions and are bundled by Netlify. All
+# secrets (Stripe, Airtable, Resend) come from Netlify environment variables,
+# never from this repo.
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Password-protect the staff handbook (and only that page) with an edge
 # function. The password lives in the STAFF_HANDBOOK_PASSWORD environment
 # variable in Netlify, not in this repo.

@@ -1,0 +1,9 @@
+{
+  "name": "fshg-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Four Sausages Hospitality Group website. Dependencies are used only by the Netlify serverless functions (e.g. the Melbourne Cup booking flow); the site itself is static HTML.",
+  "dependencies": {
+    "stripe": "^16.12.0"
+  }
+}

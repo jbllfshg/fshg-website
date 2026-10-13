@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed — Melbourne Cup Lunch | The Jack &amp; Cleaver</title>
+<meta name="description" content="Your Melbourne Cup lunch booking at The Jack & Cleaver.">
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4a4e69;--teal:#5a7d7c;--tan:#d4a373;--cream:#faedcd;
+  --off-white:#f4f5f0;--muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
+  --border:rgba(74,78,105,0.12);
+}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;height:72px}
+.nav-group{display:flex;flex-direction:column;font-family:'Cormorant Garamond',serif;text-decoration:none}
+.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);line-height:1.1}
+.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem}
+.card{max-width:620px;width:100%;background:white;border:1px solid var(--border);border-radius:14px;padding:3rem 2.5rem;text-align:center;box-shadow:0 18px 44px rgba(74,78,105,0.10)}
+.tick{width:64px;height:64px;border-radius:50%;background:#e4eceb;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.tick svg{width:32px;height:32px;stroke:var(--teal)}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
+p.lead{color:var(--ink-mid);font-size:1rem;line-height:1.8;font-weight:300;margin-bottom:1.5rem}
+.ref-box{background:var(--off-white);border:1px dashed var(--teal);border-radius:10px;padding:1.1rem;margin:1.5rem 0}
+.ref-box .rb-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage);margin-bottom:0.3rem}
+.ref-box .rb-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);letter-spacing:0.04em}
+.payid{text-align:left;background:var(--navy);color:var(--cream);border-radius:12px;padding:1.75rem;margin:1.5rem 0}
+.payid h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:1rem}
+.payid .pay-row{display:flex;justify-content:space-between;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(250,237,205,0.14);font-size:0.92rem}
+.payid .pay-row:last-child{border-bottom:none}
+.payid .pr-label{color:rgba(250,237,205,0.7);font-weight:300}
+.payid .pr-val{font-weight:600;color:var(--cream);text-align:right}
+.payid .note{font-size:0.82rem;color:rgba(250,237,205,0.7);line-height:1.6;font-weight:300;margin-top:1rem}
+.email-note{font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin-bottom:1.5rem}
+.actions{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem}
+.btn{border-radius:3px;padding:12px 26px;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s}
+.btn-navy{background:var(--navy);color:white}
+.btn-navy:hover{background:var(--teal)}
+.btn-line{border:1px solid var(--border);color:var(--navy)}
+.btn-line:hover{border-color:var(--teal);color:var(--teal)}
+.fine{font-size:0.78rem;color:var(--muted-sage);line-height:1.6;margin-top:1.75rem}
+footer{text-align:center;padding:1.5rem;font-size:11px;color:var(--muted-sage)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <p class="eyebrow">Melbourne Cup Lunch · The Jack &amp; Cleaver</p>
+    <h1 id="heading">Booking received</h1>
+    <p class="lead" id="lead">Thank you — we've got your booking for the Melbourne Cup lunch.</p>
+
+    <div class="ref-box">
+      <div class="rb-label">Your booking reference</div>
+      <div class="rb-val" id="refVal">—</div>
+    </div>
+
+    <!-- PayID payment details (shown only for PayID bookings) -->
+    <div class="payid" id="payidBox" style="display:none">
+      <h2>Pay by PayID to confirm</h2>
+      <div class="pay-row"><span class="pr-label">PayID (ACN)</span><span class="pr-val">682 276 820</span></div>
+      <div class="pay-row"><span class="pr-label">Account name</span><span class="pr-val">LL Club Catering Services Pty Ltd</span></div>
+      <div class="pay-row"><span class="pr-label">Amount</span><span class="pr-val" id="payAmount">—</span></div>
+      <div class="pay-row"><span class="pr-label">Reference</span><span class="pr-val" id="payRef">—</span></div>
+      <p class="note">Please include your booking reference in the payment description so we can match it to your table. Your table is confirmed once we receive your transfer — we'll email you to confirm. These details are also in your confirmation email.</p>
+    </div>
+
+    <p class="email-note" id="emailNote">A confirmation email is on its way to the address you provided. If it doesn't arrive within a few minutes, please check your junk folder.</p>
+
+    <div class="actions">
+      <a href="index.html" class="btn btn-navy">Back to home</a>
+      <a href="the-jack-and-cleaver.html" class="btn btn-line">The Jack &amp; Cleaver</a>
+    </div>
+
+    <p class="fine">Questions about your booking? Call The Jack &amp; Cleaver on (02) 9484 2433 or email <a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a> and quote your reference.</p>
+  </div>
+</main>
+
+<footer>© 2026 LL Club Catering Services Pty Ltd · The Jack &amp; Cleaver</footer>
+
+<script>
+(function(){
+  function q(name){
+    var m = new RegExp('[?&]'+name+'=([^&]*)').exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g,' ')) : '';
+  }
+  var ref = q('ref'), method = q('method'), amount = q('amount'), paid = q('paid');
+  document.getElementById('refVal').textContent = ref || '—';
+
+  if(method === 'payid'){
+    document.getElementById('heading').textContent = 'Almost there — one step to go';
+    document.getElementById('lead').textContent = 'Thanks! Your table is held. To confirm your Melbourne Cup lunch, please complete your PayID transfer using the details below.';
+    document.getElementById('payidBox').style.display = 'block';
+    document.getElementById('payRef').textContent = ref || '—';
+    document.getElementById('payAmount').textContent = amount ? ('$' + amount) : 'see your email';
+  } else {
+    // card payment
+    document.getElementById('heading').textContent = 'You’re booked in!';
+    document.getElementById('lead').textContent = 'Payment received — your table for the Melbourne Cup lunch is confirmed. We can’t wait to see you trackside.';
+  }
+})();
+</script>
+</body>
+</html>

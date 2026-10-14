@@ -79,13 +79,20 @@ section{padding:5.5rem 0}
 .sec-title{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.85rem;text-wrap:balance}
 .sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
 
-/* ---------- PHOTO MOSAIC ---------- */
-.photo-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,224px);gap:5px;background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.photo-mosaic .pm{position:relative;display:block;overflow:hidden}
-.photo-mosaic .pm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
-.photo-mosaic .pm:hover img{transform:scale(1.06)}
-.m1{grid-column:span 2;grid-row:span 2}
-.m2,.m5,.m6{grid-column:span 2}
+/* ---------- QUICK PATHS ---------- */
+#paths{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.path-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.path-photo{aspect-ratio:4/3;overflow:hidden}
+.path-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.path-card:hover .path-photo img{transform:scale(1.05)}
+.path-body{padding:1.6rem 1.5rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.path-name{font-family:var(--display);font-weight:800;font-size:1.4rem;letter-spacing:-0.015em;color:var(--ink);line-height:1.05;margin-bottom:0.5rem}
+.path-desc{font-size:0.9rem;color:var(--muted);line-height:1.6;margin-bottom:1.1rem}
+.path-link{margin-top:auto;font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--claret);display:inline-flex;align-items:center;gap:7px}
+.path-link .arw{transition:transform 0.2s}
+.path-card:hover .path-link .arw{transform:translateX(4px)}
 
 /* ---------- VENUES ---------- */
 #venues{background:var(--paper)}
@@ -181,13 +188,11 @@ section{padding:5.5rem 0}
   section{padding:3.8rem 0}
   #hero{padding:3rem 0}
   .hero-media::before{right:-10px;bottom:-10px}
-  .photo-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw}
-  .m1{grid-row:span 1}
-  .m1,.m2,.m5,.m6{grid-column:span 1}
+  .paths-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .venue-card:hover,.event-card:hover,.photo-mosaic .pm:hover img{transform:none}
+  .venue-card:hover,.event-card:hover,.path-card:hover,.path-card:hover .path-photo img{transform:none}
 }
 </style>
 </head>
@@ -230,14 +235,40 @@ section{padding:5.5rem 0}
   </div>
 </section>
 
-<!-- PHOTO MOSAIC -->
-<section class="photo-mosaic" aria-label="A taste of our venues">
-  <div class="pm m1"><img src="images/home/gallery-01.jpg" alt="A plated dish at one of our venues" loading="lazy"></div>
-  <div class="pm m2"><img src="images/home/gallery-02.jpg" alt="Food and drinks at Four Sausages" loading="lazy"></div>
-  <div class="pm"><img src="images/home/gallery-03.jpg" alt="A dish from our kitchen" loading="lazy"></div>
-  <div class="pm"><img src="images/home/gallery-04.jpg" alt="A dish from our kitchen" loading="lazy"></div>
-  <div class="pm m5"><img src="images/home/gallery-05.jpg" alt="Dining at Four Sausages" loading="lazy"></div>
-  <div class="pm m6"><img src="images/home/gallery-06.jpg" alt="A taste of our venues" loading="lazy"></div>
+<!-- QUICK PATHS -->
+<section id="paths">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Start here</p>
+      <h2 class="sec-title">How can we help?</h2>
+    </div>
+    <div class="paths-grid">
+      <a class="path-card" href="#venues">
+        <div class="path-photo"><img src="images/home/gallery-01.jpg" alt="A plated dish at one of our venues" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Dine at our venues</p>
+          <p class="path-desc">Two bistros across Western Sydney and the Hills — lunch and dinner, seven days. Book a table at The Fairway or The Jack &amp; Cleaver.</p>
+          <span class="path-link">See our venues <span class="arw">→</span></span>
+        </div>
+      </a>
+      <a class="path-card" href="functions-events.html">
+        <div class="path-photo"><img src="images/catering/feature/catering-05.jpg" alt="Canapés served on platters at a function" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Plan a function</p>
+          <p class="path-desc">Birthdays, milestones, corporate events and remembrances — packages for 30 to 320 guests across both venues.</p>
+          <span class="path-link">Explore functions <span class="arw">→</span></span>
+        </div>
+      </a>
+      <a class="path-card" href="catering.html">
+        <div class="path-photo"><img src="images/catering/feature/catering-01.jpg" alt="An abundant grazing spread of cheese, charcuterie and fruit" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Order catering</p>
+          <p class="path-desc">Bring the feast to your home, backyard or office — grazing, canapés, buffets and banquets, delivered and served.</p>
+          <span class="path-link">See catering <span class="arw">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- VENUES -->

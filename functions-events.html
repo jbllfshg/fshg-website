@@ -94,7 +94,7 @@ section{padding:5.5rem 0}
 .cap-note{font-size:0.8rem;color:var(--paper-faint);line-height:1.6;border-top:1px solid rgba(245,242,236,0.15);padding-top:1.25rem}
 
 /* ---------- SPACES & CAPACITIES ---------- */
-#spaces{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#spaces{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .spaces-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .venue-spaces{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem}
 .vs-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--claret);border:1px solid var(--line-strong);padding:4px 11px;border-radius:2px;margin-bottom:1rem}
@@ -148,7 +148,7 @@ section[id]{scroll-margin-top:88px}
 .addon-note{font-size:0.82rem;color:var(--muted);margin-top:0.5rem}
 
 /* ---------- PLATTERS (dark band) ---------- */
-#platters{background:var(--ink);color:var(--paper)}
+#platters{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
 #platters .sec-title{color:var(--paper)}
 #platters .sec-sub{color:var(--paper-dim)}
 .platter-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 3rem}
@@ -260,6 +260,9 @@ section[id]{scroll-margin-top:88px}
   .gallery-strip img,.gallery-strip figure:hover img{transition:none;transform:none}
   .pkg-card:hover{transform:none}
 }
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>

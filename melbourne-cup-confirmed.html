@@ -6,45 +6,135 @@
 <title>Booking Confirmed — Melbourne Cup Lunch | The Jack &amp; Cleaver</title>
 <meta name="description" content="Your Melbourne Cup lunch booking at The Jack & Cleaver.">
 <meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   Four Sausages — "Bold Editorial" design system
+   ============================================================ */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#4a4e69;--teal:#5a7d7c;--tan:#d4a373;--cream:#faedcd;
-  --off-white:#f4f5f0;--muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
-  --border:rgba(74,78,105,0.12);
+  --paper:#f5f2ec;--paper-2:#efe9dd;--card:#fbfaf6;
+  --ink:#211c18;--muted:#7c7267;
+  --line:rgba(33,28,24,0.14);--line-strong:rgba(33,28,24,0.24);
+  --claret:#8a2b2e;--claret-dk:#6f2124;--orange:#c96a2b;
+  --paper-dim:rgba(245,242,236,0.72);--paper-faint:rgba(245,242,236,0.46);
+  --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
-body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
-nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;height:72px}
-.nav-group{display:flex;flex-direction:column;font-family:'Cormorant Garamond',serif;text-decoration:none}
-.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);line-height:1.1}
-.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem}
-.card{max-width:620px;width:100%;background:white;border:1px solid var(--border);border-radius:14px;padding:3rem 2.5rem;text-align:center;box-shadow:0 18px 44px rgba(74,78,105,0.10)}
-.tick{width:64px;height:64px;border-radius:50%;background:#e4eceb;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
-.tick svg{width:32px;height:32px;stroke:var(--teal)}
-.eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
-p.lead{color:var(--ink-mid);font-size:1rem;line-height:1.8;font-weight:300;margin-bottom:1.5rem}
-.ref-box{background:var(--off-white);border:1px dashed var(--teal);border-radius:10px;padding:1.1rem;margin:1.5rem 0}
-.ref-box .rb-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage);margin-bottom:0.3rem}
-.ref-box .rb-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);letter-spacing:0.04em}
-.payid{text-align:left;background:var(--navy);color:var(--cream);border-radius:12px;padding:1.75rem;margin:1.5rem 0}
-.payid h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:1rem}
-.payid .pay-row{display:flex;justify-content:space-between;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(250,237,205,0.14);font-size:0.92rem}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-block;text-decoration:none;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:13px 26px;border-radius:2px;transition:all 0.18s;cursor:pointer;border:1px solid transparent;text-align:center}
+.btn-primary{background:var(--claret);color:var(--paper)}
+.btn-primary:hover{background:var(--claret-dk)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn-outline:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn-light{background:var(--paper);color:var(--ink)}
+.btn-light:hover{background:var(--orange);color:var(--paper)}
+.btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(245,242,236,0.4)}
+.btn-ghost-light:hover{border-color:var(--paper);background:rgba(245,242,236,0.08)}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:74px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;text-decoration:none}
+.nav-group-name{font-family:var(--display);font-size:21px;font-weight:900;color:var(--ink);letter-spacing:-0.01em;line-height:1;text-transform:uppercase}
+.nav-group-sub{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--claret);margin-top:3px}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink);font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.18s;padding:0.5rem 0.9rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--claret)}
+.nav-toggle{display:none;flex-shrink:0;background:none;border:none;cursor:pointer;color:var(--ink);width:42px;height:42px;align-items:center;justify-content:center;border-radius:4px;transition:background 0.2s}
+.nav-toggle:hover{background:var(--line)}
+.nav-toggle svg{width:26px;height:26px;display:block}
+.nav-cta{flex-shrink:0;background:var(--claret);color:var(--paper);border:none;border-radius:2px;padding:11px 22px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.07em;text-transform:uppercase;font-family:var(--body);transition:background 0.18s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--claret-dk)}
+.nav-phone{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;transition:color 0.2s}
+.nav-phone:hover{color:var(--claret)}
+.nav-phone svg{width:15px;height:15px;flex-shrink:0}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:5.5rem 0}
+.sec-head{max-width:650px;margin-bottom:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.9rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-title{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.85rem;text-wrap:balance}
+.sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
+
+body{min-height:100vh;display:flex;flex-direction:column}
+
+/* ---------- CONFIRMATION ---------- */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem;background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center}
+.card{max-width:640px;width:100%;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--claret);border-radius:3px;padding:3rem 2.5rem;text-align:center;box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.tick{width:64px;height:64px;border-radius:2px;background:var(--claret);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.tick svg{width:32px;height:32px;stroke:var(--paper)}
+.card .eyebrow{justify-content:center}
+h1{font-family:var(--display);font-size:clamp(2rem,4.6vw,2.9rem);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.03em;margin-bottom:1rem;text-wrap:balance}
+p.lead{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:1.5rem}
+.ref-box{background:var(--paper);border:1px dashed var(--claret);border-radius:3px;padding:1.2rem;margin:1.5rem 0}
+.ref-box .rb-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem}
+.ref-box .rb-val{font-family:var(--display);font-size:1.9rem;font-weight:900;color:var(--claret);letter-spacing:0.02em}
+.payid{text-align:left;background:linear-gradient(rgba(33,28,24,0.9),rgba(33,28,24,0.94)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper);border-radius:3px;padding:1.75rem;margin:1.5rem 0}
+.payid h2{font-family:var(--display);font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:var(--paper);margin-bottom:1rem}
+.payid .pay-row{display:flex;justify-content:space-between;gap:1rem;padding:0.65rem 0;border-bottom:1px solid rgba(245,242,236,0.15);font-size:0.92rem}
 .payid .pay-row:last-child{border-bottom:none}
-.payid .pr-label{color:rgba(250,237,205,0.7);font-weight:300}
-.payid .pr-val{font-weight:600;color:var(--cream);text-align:right}
-.payid .note{font-size:0.82rem;color:rgba(250,237,205,0.7);line-height:1.6;font-weight:300;margin-top:1rem}
-.email-note{font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin-bottom:1.5rem}
+.payid .pr-label{color:var(--paper-dim)}
+.payid .pr-val{font-weight:700;color:var(--paper);text-align:right}
+.payid .note{font-size:0.84rem;color:var(--paper-dim);line-height:1.6;margin-top:1rem}
+.email-note{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
 .actions{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem}
-.btn{border-radius:3px;padding:12px 26px;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s}
-.btn-navy{background:var(--navy);color:white}
-.btn-navy:hover{background:var(--teal)}
-.btn-line{border:1px solid var(--border);color:var(--navy)}
-.btn-line:hover{border-color:var(--teal);color:var(--teal)}
-.fine{font-size:0.78rem;color:var(--muted-sage);line-height:1.6;margin-top:1.75rem}
-footer{text-align:center;padding:1.5rem;font-size:11px;color:var(--muted-sage)}
+.fine{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-top:1.75rem}
+.fine a{color:var(--claret);text-underline-offset:2px}
+.fine a:hover{color:var(--orange)}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:var(--ink);color:var(--paper-dim);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:2.5rem;padding:4rem 0 3rem}
+.footer-brand-name{font-family:var(--display);font-size:1.4rem;font-weight:900;color:var(--paper);letter-spacing:-0.01em;text-transform:uppercase;line-height:1}
+.footer-brand-sub{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin:0.4rem 0 1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:var(--paper-faint);line-height:1.8;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--paper-dim);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-contact-item{font-size:0.875rem;color:var(--paper-dim);line-height:1.7;margin-bottom:0.6rem}
+.footer-contact-item a{color:var(--paper-dim);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--orange)}
+.footer-contact-item strong{color:var(--paper);font-weight:700}
+.footer-rule{border:none;border-top:1px solid rgba(245,242,236,0.1);margin:0}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:var(--paper-faint)}
+.footer-abn{font-size:11px;color:rgba(245,242,236,0.32)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .footer-main{grid-template-columns:1fr}
+  .nav-toggle{display:flex}
+  .nav-cta{display:none}
+  .nav-phone{order:2}
+  .nav-toggle{order:3}
+  .nav-phone-num{display:none}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
+  nav.open .nav-links{max-height:82vh;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(33,28,24,0.12)}
+  .nav-links li a{padding:0.95rem 1.5rem;font-size:14px;border-top:1px solid var(--line)}
+  nav{padding:0 1.25rem}
+  .wrap{padding:0 1.25rem}
+  main{padding:2.5rem 1rem}
+  .card{padding:2rem 1.4rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>
@@ -53,7 +143,19 @@ footer{text-align:center;padding:1.5rem;font-size:11px;color:var(--muted-sage)}
     <span class="nav-group-name">Four Sausages</span>
     <span class="nav-group-sub">Hospitality Group</span>
   </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-fairway.html">The Fairway</a></li>
+    <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li><a href="functions-events.html">Functions &amp; Events</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+  <a href="tel:0247023642" class="nav-phone" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-num">(02) 4702 3642</span></a>
+  <a href="contact.html" class="nav-cta">Make an enquiry</a>
 </nav>
+
 
 <main>
   <div class="card">
@@ -80,15 +182,57 @@ footer{text-align:center;padding:1.5rem;font-size:11px;color:var(--muted-sage)}
     <p class="email-note" id="emailNote">A confirmation email is on its way to the address you provided. If it doesn't arrive within a few minutes, please check your junk folder.</p>
 
     <div class="actions">
-      <a href="index.html" class="btn btn-navy">Back to home</a>
-      <a href="the-jack-and-cleaver.html" class="btn btn-line">The Jack &amp; Cleaver</a>
+      <a href="index.html" class="btn btn-primary">Back to home</a>
+      <a href="the-jack-and-cleaver.html" class="btn btn-outline">The Jack &amp; Cleaver</a>
     </div>
 
     <p class="fine">Questions about your booking? Call The Jack &amp; Cleaver on (02) 9484 2433 or email <a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a> and quote your reference.</p>
   </div>
 </main>
 
-<footer>© 2026 LL Club Catering Services Pty Ltd · The Jack &amp; Cleaver</footer>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-main">
+      <!-- Brand -->
+      <div>
+        <p class="footer-brand-name">Four Sausages</p>
+        <p class="footer-brand-sub">Hospitality Group</p>
+        <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+      </div>
+      <!-- Our venues -->
+      <div>
+        <p class="footer-col-title">Our venues</p>
+        <ul class="footer-links">
+          <li><a href="the-fairway.html">The Fairway</a></li>
+          <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        </ul>
+      </div>
+      <!-- Our services -->
+      <div>
+        <p class="footer-col-title">Our services</p>
+        <ul class="footer-links">
+          <li><a href="catering.html">Event Catering</a></li>
+          <li><a href="index.html#events">Functions &amp; Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+        <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+        <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+      </div>
+    </div>
+    <hr class="footer-rule">
+    <div class="footer-bottom">
+      <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+      <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+    </div>
+  </div>
+</footer>
+
 
 <script>
 (function(){

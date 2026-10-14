@@ -121,7 +121,7 @@ section{padding:5.5rem 0}
 .menu-fineprint{margin-top:1rem;font-size:0.76rem;color:var(--muted);line-height:1.7;max-width:760px}
 
 /* ---------- BOOK ---------- */
-#book{background:var(--paper-2);border-top:1px solid var(--line)}
+#book{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-top:1px solid var(--line)}
 .book-card{max-width:760px;margin:0;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem}
@@ -145,7 +145,7 @@ section{padding:5.5rem 0}
 .info-block .info-cta a:hover{background:var(--claret-dk);color:var(--paper)}
 
 /* ---------- SPECIALS (dark band) ---------- */
-#specials{background:var(--ink);color:var(--paper)}
+#specials{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
 #specials .eyebrow{color:var(--orange)}
 #specials .sec-title{color:var(--paper)}
 #specials .sec-sub{color:var(--paper-dim)}
@@ -224,6 +224,9 @@ section{padding:5.5rem 0}
   .gallery-grid img{transition:none}
   .gallery-grid figure:hover img,.day-card:hover{transform:none}
 }
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>

@@ -96,7 +96,14 @@ section{padding:5.5rem 0}
 
 /* ---------- VENUES ---------- */
 #venues{background:var(--paper)}
-.venues-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.venues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:920px){.venues-grid{grid-template-columns:1fr}}
+.venue-card.coming{background:linear-gradient(rgba(33,28,24,0.82),rgba(33,28,24,0.9)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper);align-items:center;justify-content:center;text-align:center;padding:2.75rem 1.75rem;min-height:340px}
+.venue-card.coming .venue-name{color:var(--paper);margin-bottom:0.5rem}
+.coming-badge{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);background:var(--orange);padding:6px 14px;border-radius:2px;margin-bottom:1.4rem}
+.coming-concept{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--paper);letter-spacing:-0.01em;margin-bottom:0.9rem}
+.coming-loc{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:1.1rem}
+.coming-note{font-size:0.9rem;color:var(--paper-dim);line-height:1.6;max-width:30ch;margin:0 auto}
 .venue-card{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
 .venue-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
 .venue-photo{aspect-ratio:16/10;overflow:hidden}
@@ -309,8 +316,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Where to find us</p>
-      <h2 class="sec-title">Our restaurants</h2>
-      <p class="sec-sub">Two unique venues, both offering outstanding food, warm service, and beautiful settings for any occasion.</p>
+      <h2 class="sec-title">Our venues</h2>
+      <p class="sec-sub">Two much-loved venues serving outstanding food and warm service — with a Lebanese street-food truck rolling into Western Sydney soon.</p>
     </div>
     <div class="venues-grid">
       <div class="venue-card">
@@ -350,6 +357,13 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
             <a href="the-jack-and-cleaver.html#book" class="btn btn-outline">Book a table</a>
           </div>
         </div>
+      </div>
+      <div class="venue-card coming">
+        <span class="coming-badge">Coming Summer 2027</span>
+        <h3 class="venue-name">Open Sesame</h3>
+        <p class="coming-concept">Lebanese street food fusion</p>
+        <p class="coming-loc">Western Sydney</p>
+        <p class="coming-note">Our first food truck is on its way — watch this space.</p>
       </div>
     </div>
   </div>

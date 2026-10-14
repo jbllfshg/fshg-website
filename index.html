@@ -5,170 +5,205 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Four Sausages Hospitality Group</title>
 <meta name="description" content="Four Sausages Hospitality Group — home of The Fairway at Penrith Golf Club and The Jack & Cleaver at Pennant Hills Bowling Club. Dine in, private functions, and at-home catering across Sydney.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   Four Sausages — "Bold Editorial" design system
+   Palette: warm paper, near-black ink, claret primary, burnt-orange secondary
+   Type: Archivo (heavy display) + Figtree (body)
+   ============================================================ */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#4a4e69;--teal:#5a7d7c;--sage:#636d62;--tan:#d4a373;
-  --cream:#faedcd;--off-white:#f4f5f0;--olive:#7b8265;
-  --muted-sage:#8a9689;--ink:#2a2e1e;--ink-mid:#4a4f3a;
-  --border:rgba(74,78,105,0.12);
+  --paper:#f5f2ec;--paper-2:#efe9dd;--card:#fbfaf6;
+  --ink:#211c18;--muted:#7c7267;
+  --line:rgba(33,28,24,0.14);--line-strong:rgba(33,28,24,0.24);
+  --claret:#8a2b2e;--claret-dk:#6f2124;--orange:#c96a2b;
+  --paper-dim:rgba(245,242,236,0.72);--paper-faint:rgba(245,242,236,0.46);
+  --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);overflow-x:hidden}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--off-white);border-bottom:1px solid var(--border);padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;height:72px;gap:1.25rem}
-.nav-group{display:flex;flex-direction:column;flex-shrink:0;font-family:'Cormorant Garamond',serif}
-.nav-group-name{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:0.01em;line-height:1.1}
-.nav-group-sub{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-sage)}
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-block;text-decoration:none;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:13px 26px;border-radius:2px;transition:all 0.18s;cursor:pointer;border:1px solid transparent;text-align:center}
+.btn-primary{background:var(--claret);color:var(--paper)}
+.btn-primary:hover{background:var(--claret-dk)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn-outline:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn-light{background:var(--paper);color:var(--ink)}
+.btn-light:hover{background:var(--orange);color:var(--paper)}
+.btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(245,242,236,0.4)}
+.btn-ghost-light:hover{border-color:var(--paper);background:rgba(245,242,236,0.08)}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:74px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;text-decoration:none}
+.nav-group-name{font-family:var(--display);font-size:21px;font-weight:900;color:var(--ink);letter-spacing:-0.01em;line-height:1;text-transform:uppercase}
+.nav-group-sub{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--claret);margin-top:3px}
 .nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
-.nav-links li a{text-decoration:none;color:var(--ink-mid);font-size:13px;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;padding:0.5rem 0.85rem;display:block;white-space:nowrap}
-.nav-links li a:hover,.nav-links li a.active{color:var(--navy)}
-.nav-links li+li{border-left:1px solid var(--border)}
-.nav-toggle{display:none;flex-shrink:0;background:none;border:none;cursor:pointer;color:var(--navy);width:42px;height:42px;align-items:center;justify-content:center;border-radius:6px;transition:background 0.2s}
-.nav-toggle:hover{background:var(--border)}
+.nav-links li a{text-decoration:none;color:var(--ink);font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.18s;padding:0.5rem 0.9rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--claret)}
+.nav-toggle{display:none;flex-shrink:0;background:none;border:none;cursor:pointer;color:var(--ink);width:42px;height:42px;align-items:center;justify-content:center;border-radius:4px;transition:background 0.2s}
+.nav-toggle:hover{background:var(--line)}
 .nav-toggle svg{width:26px;height:26px;display:block}
-.nav-cta{flex-shrink:0;background:var(--navy);color:white;border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
-.nav-cta:hover{background:var(--sage)}
-.nav-phone{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;transition:color 0.2s}
-.nav-phone:hover{color:var(--sage)}
+.nav-cta{flex-shrink:0;background:var(--claret);color:var(--paper);border:none;border-radius:2px;padding:11px 22px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.07em;text-transform:uppercase;font-family:var(--body);transition:background 0.18s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--claret-dk)}
+.nav-phone{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;transition:color 0.2s}
+.nav-phone:hover{color:var(--claret)}
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 
-/* HERO */
-#hero{min-height:90vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:5rem 2rem;position:relative;overflow:hidden}
-.hero-img{position:absolute;inset:0;background:url('images/home/gallery-01.jpg') center/cover;pointer-events:none}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,32,40,0.5) 0%,rgba(30,32,40,0.6) 45%,rgba(24,26,32,0.78) 100%);pointer-events:none}
-.hero-inner{position:relative;z-index:1;text-align:center;max-width:760px}
-.hero-eyebrow{display:inline-block;border:1px solid rgba(212,163,115,0.4);color:var(--tan);font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:2rem}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5rem);font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:1.5rem}
-.hero-title em{color:var(--tan);font-style:italic}
-.hero-sub{font-size:1rem;color:rgba(250,237,205,0.65);max-width:480px;margin:0 auto 2.5rem;line-height:1.8;font-weight:300}
-.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-gold{background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 30px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-gold:hover{background:#c49060}
-.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(250,237,205,0.35);border-radius:3px;padding:13px 30px;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-ghost:hover{border-color:var(--cream);background:rgba(250,237,205,0.06)}
-.hero-rule{display:flex;align-items:center;gap:1.5rem;margin:3rem auto 0;max-width:400px}
-.rule-line{flex:1;height:1px;background:rgba(250,237,205,0.15)}
-.rule-dot{width:5px;height:5px;border-radius:50%;background:var(--tan);opacity:0.5}
+/* ---------- HERO ---------- */
+#hero{background:var(--paper);padding:4.5rem 0 4rem;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:3.5rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--claret);margin-bottom:1.5rem}
+.hero-eyebrow::before{content:"";width:30px;height:2px;background:var(--claret)}
+.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,6.4vw,5.3rem);line-height:0.94;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance;margin-bottom:1.4rem}
+.hero-title em{font-style:normal;color:var(--claret)}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:46ch;line-height:1.7;margin-bottom:2.1rem}
+.hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.hero-media{position:relative}
+.hero-media::before{content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:2px solid var(--claret);border-radius:2px;z-index:0}
+.hero-media img{position:relative;z-index:1;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px}
 
-/* SECTIONS */
-section{padding:5rem 2rem}
-.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:var(--navy);line-height:1.1;margin-bottom:0.75rem}
-.section-sub{color:var(--ink-mid);font-size:0.95rem;line-height:1.8;font-weight:300;max-width:520px}
-.section-header{margin-bottom:3rem}
+/* ---------- SECTION SHELL ---------- */
+section{padding:5.5rem 0}
+.sec-head{max-width:650px;margin-bottom:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.9rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-title{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.85rem;text-wrap:balance}
+.sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
 
-/* VENUES */
-#venues{background:var(--off-white)}
-.venues-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.venue-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:white;transition:transform 0.2s,box-shadow 0.2s}
-.venue-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(74,78,105,0.1)}
-.venue-photo{aspect-ratio:16/9;overflow:hidden}
-.venue-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.45s ease}
+/* ---------- QUICK PATHS ---------- */
+#paths{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.path-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.path-photo{aspect-ratio:4/3;overflow:hidden}
+.path-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.path-card:hover .path-photo img{transform:scale(1.05)}
+.path-body{padding:1.6rem 1.5rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.path-name{font-family:var(--display);font-weight:800;font-size:1.4rem;letter-spacing:-0.015em;color:var(--ink);line-height:1.05;margin-bottom:0.5rem}
+.path-desc{font-size:0.9rem;color:var(--muted);line-height:1.6;margin-bottom:1.1rem}
+.path-link{margin-top:auto;font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--claret);display:inline-flex;align-items:center;gap:7px}
+.path-link .arw{transition:transform 0.2s}
+.path-card:hover .path-link .arw{transform:translateX(4px)}
+
+/* ---------- VENUES ---------- */
+#venues{background:var(--paper)}
+.venues-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.venue-card{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
+.venue-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.venue-photo{aspect-ratio:16/10;overflow:hidden}
+.venue-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
 .venue-card:hover .venue-photo img{transform:scale(1.04)}
-.venue-card-header{padding:2.5rem 2rem 2rem;border-bottom:1px solid var(--border)}
-.venue-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:1.25rem}
-.tag-fairway{background:#e8ede6;color:var(--sage)}
-.tag-jack{background:#e4eceb;color:var(--teal)}
-.venue-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:0.25rem;line-height:1.1}
-.venue-sub{font-size:0.8rem;color:var(--muted-sage);letter-spacing:0.04em;font-style:italic;margin-bottom:1rem}
-.venue-tagline{font-size:0.9rem;color:var(--ink-mid);line-height:1.7;font-weight:300}
-.venue-card-body{padding:1.5rem 2rem}
-.venue-detail{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.85rem;font-size:0.85rem;color:var(--ink-mid);line-height:1.6}
-.venue-detail-label{font-weight:600;color:var(--navy);min-width:52px;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;padding-top:1px}
-.venue-card-footer{padding:1.25rem 2rem;border-top:1px solid var(--border);display:flex;gap:0.75rem;flex-wrap:wrap}
-.btn-venue-primary{flex:1;background:var(--navy);color:white;border:none;border-radius:3px;padding:10px 16px;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;text-align:center;text-decoration:none;display:inline-block}
-.btn-venue-primary:hover{background:var(--sage)}
-.btn-venue-outline{flex:1;background:transparent;color:var(--navy);border:1px solid var(--border);border-radius:3px;padding:10px 16px;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all 0.2s;text-align:center;text-decoration:none;display:inline-block}
-.btn-venue-outline:hover{border-color:var(--navy);background:var(--off-white)}
+.venue-body{padding:2rem;display:flex;flex-direction:column;flex:1}
+.venue-tag{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--claret);border:1px solid var(--line-strong);padding:4px 11px;border-radius:2px;margin-bottom:1.1rem}
+.venue-name{font-family:var(--display);font-weight:800;font-size:1.95rem;letter-spacing:-0.02em;color:var(--ink);line-height:1;margin-bottom:0.45rem}
+.venue-sub{font-size:0.78rem;color:var(--orange);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+.venue-tagline{font-size:0.92rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.venue-details{border-top:1px solid var(--line);padding-top:1.2rem;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.6rem}
+.venue-detail{display:flex;gap:0.9rem;font-size:0.85rem;color:var(--ink);line-height:1.55}
+.venue-detail .lbl{min-width:58px;font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);padding-top:3px;flex-shrink:0}
+.venue-foot{margin-top:auto;display:flex;gap:0.7rem;flex-wrap:wrap}
+.venue-foot .btn{flex:1}
 
-/* EVENTS */
-#events{background:var(--navy)}
-.events-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem}
-.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.event-card{display:block;text-decoration:none;color:inherit;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem 1.5rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s}
-.event-card:hover{transform:translateY(-3px);border-color:rgba(212,163,115,0.5);box-shadow:0 14px 30px rgba(0,0,0,0.2)}
-.event-icon{font-size:1.5rem;margin-bottom:1rem}
-.event-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:0.5rem}
-.event-desc{font-size:0.85rem;color:rgba(250,237,205,0.65);line-height:1.7;font-weight:300}
-.event-from{margin-top:1rem;font-size:0.8rem;font-weight:600;color:var(--tan);letter-spacing:0.04em}
-.events-cta{margin-top:2.5rem;text-align:center;color:rgba(255,255,255,0.5)}
-.btn-events{display:inline-block;background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 36px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;text-decoration:none}
-.btn-events:hover{background:#c49060}
+/* ---------- EVENTS (dark band) ---------- */
+#events{background:var(--ink);color:var(--paper)}
+#events .eyebrow{color:var(--orange)}
+#events .sec-title{color:var(--paper)}
+.events-intro{display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:end;margin-bottom:3.2rem}
+.events-intro .sec-sub{color:var(--paper-dim)}
+.events-pull{border-left:3px solid var(--claret);padding-left:1.5rem}
+.events-pull .pq{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.3;color:var(--paper);margin-bottom:0.7rem;letter-spacing:-0.01em}
+.events-pull .pd{font-size:0.85rem;color:var(--paper-dim);line-height:1.7}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.event-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:rgba(245,242,236,0.045);border:1px solid rgba(245,242,236,0.15);border-radius:3px;padding:1.6rem 1.5rem;transition:border-color 0.2s,transform 0.2s}
+.event-card:hover{border-color:var(--orange);transform:translateY(-3px)}
+.event-name{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--paper);margin-bottom:0.55rem;letter-spacing:-0.01em}
+.event-desc{font-size:0.84rem;color:var(--paper-dim);line-height:1.6;margin-bottom:1.1rem}
+.event-from{margin-top:auto;font-size:0.76rem;font-weight:700;color:var(--orange);letter-spacing:0.05em;text-transform:uppercase}
+.events-cta{margin-top:2.6rem;text-align:center}
+.events-cta p{font-size:0.86rem;color:var(--paper-faint);margin-bottom:1.1rem}
 
-/* CATERING */
-#catering{background:var(--sage);color:white}
-.catering-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.catering-features{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
-.catering-feature{display:flex;align-items:flex-start;gap:1rem}
-.feature-dot{width:6px;height:6px;border-radius:50%;background:var(--tan);margin-top:6px;flex-shrink:0}
-.feature-text{font-size:0.9rem;color:rgba(250,237,205,0.8);line-height:1.7;font-weight:300}
-.feature-text strong{color:var(--cream);font-weight:600}
-.catering-cta-box{background:rgba(250,237,205,0.08);border:1px solid rgba(250,237,205,0.15);border-radius:8px;padding:2rem}
-.catering-photo{border-radius:8px;overflow:hidden;aspect-ratio:3/2;margin-bottom:1.5rem;border:1px solid rgba(250,237,205,0.15)}
-.catering-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.catering-cta-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--cream);margin-bottom:0.75rem;line-height:1.2}
-.catering-cta-sub{font-size:0.875rem;color:rgba(250,237,205,0.65);line-height:1.7;margin-bottom:1.5rem;font-weight:300}
-.btn-catering{display:block;background:var(--tan);color:var(--ink);border:none;border-radius:3px;padding:13px 24px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;font-family:'Inter',sans-serif;transition:background 0.2s;text-align:center;text-decoration:none}
-.btn-catering:hover{background:#c49060}
-.catering-divider{margin:1rem 0;height:1px;background:rgba(250,237,205,0.15)}
-.catering-contact{font-size:0.8rem;color:rgba(250,237,205,0.5);text-align:center;font-style:italic}
+/* ---------- CATERING ---------- */
+#catering{background:var(--paper-2);border-top:1px solid var(--line)}
+.catering-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.catering-features{margin-top:1.8rem;display:flex;flex-direction:column;gap:1rem}
+.catering-feature{display:flex;gap:0.9rem;align-items:flex-start}
+.feature-sq{width:8px;height:8px;background:var(--claret);margin-top:7px;flex-shrink:0}
+.feature-text{font-size:0.92rem;color:var(--muted);line-height:1.7}
+.feature-text strong{color:var(--ink);font-weight:700}
+.catering-photo{aspect-ratio:3/2;overflow:hidden;border-radius:3px;margin-bottom:1.5rem}
+.catering-photo img{width:100%;height:100%;object-fit:cover}
+.catering-cta-box{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem}
+.catering-cta-title{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-0.015em;color:var(--ink);margin-bottom:0.7rem;line-height:1.1}
+.catering-cta-sub{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.btn-block{display:block;width:100%}
+.catering-divider{height:1px;background:var(--line);margin:1.2rem 0}
+.catering-contact{font-size:0.82rem;color:var(--muted);text-align:center}
 
-/* HOME GALLERY */
-.home-gallery{overflow:hidden;padding:0;background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.home-gallery-track{display:flex;gap:0.5rem;width:max-content;animation:hg-scroll 50s linear infinite}
-.home-gallery:hover .home-gallery-track{animation-play-state:paused}
-.hg-item{flex:0 0 auto}
-.hg-item img{height:340px;width:auto;display:block}
-@keyframes hg-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(max-width:768px){.hg-item img{height:210px}}
-@media(prefers-reduced-motion:reduce){.home-gallery{overflow-x:auto}.home-gallery-track{animation:none}}
-
-
-/* FOOTER */
-.site-footer{background:#1a1a1a;color:rgba(255,255,255,0.5);font-size:14px}
-.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 2.5rem 3rem}
-.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:white;letter-spacing:0.02em;margin-bottom:0.25rem}
-.footer-brand-sub{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:1.25rem}
-.footer-brand-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300;max-width:280px}
-.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+/* ---------- FOOTER ---------- */
+.site-footer{background:var(--ink);color:var(--paper-dim);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:2.5rem;padding:4rem 0 3rem}
+.footer-brand-name{font-family:var(--display);font-size:1.4rem;font-weight:900;color:var(--paper);letter-spacing:-0.01em;text-transform:uppercase;line-height:1}
+.footer-brand-sub{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin:0.4rem 0 1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:var(--paper-faint);line-height:1.8;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper);margin-bottom:1.25rem}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-.footer-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.875rem;transition:color 0.2s;font-weight:300}
-.footer-links a:hover{color:var(--tan)}
-.footer-contact-item{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;margin-bottom:0.5rem}
-.footer-contact-item a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
-.footer-contact-item a:hover{color:var(--tan)}
-.footer-contact-item strong{color:rgba(255,255,255,0.65);font-weight:500}
-.footer-rule{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0 2.5rem}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;flex-wrap:wrap;gap:0.5rem}
-.footer-legal{font-size:11px;color:rgba(255,255,255,0.25)}
-.footer-abn{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links a{color:var(--paper-dim);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-contact-item{font-size:0.875rem;color:var(--paper-dim);line-height:1.7;margin-bottom:0.6rem}
+.footer-contact-item a{color:var(--paper-dim);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--orange)}
+.footer-contact-item strong{color:var(--paper);font-weight:700}
+.footer-rule{border:none;border-top:1px solid rgba(245,242,236,0.1);margin:0}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:var(--paper-faint)}
+.footer-abn{font-size:11px;color:rgba(245,242,236,0.32)}
 
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-grid,.events-intro{grid-template-columns:1fr}
+  .hero-media{max-width:460px}
+  .events-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
 @media(max-width:768px){
-  .venues-grid,.events-grid,.events-intro,.catering-wrap,.footer-main{grid-template-columns:1fr}
+  .venues-grid,.catering-wrap,.footer-main,.events-grid{grid-template-columns:1fr}
   .nav-toggle{display:flex}
   .nav-cta{display:none}
   .nav-phone{order:2}
   .nav-toggle{order:3}
   .nav-phone-num{display:none}
-  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--off-white);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
-  nav.open .nav-links{max-height:78vh;border-bottom:1px solid var(--border);box-shadow:0 14px 26px rgba(74,78,105,0.10)}
-  .nav-links li+li{border-left:none;border-top:1px solid var(--border)}
-  .nav-links li a{padding:0.95rem 1.5rem;font-size:15px}
-  nav{padding:0 1.5rem}
-  section{padding:3.5rem 1.25rem}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
+  nav.open .nav-links{max-height:82vh;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(33,28,24,0.12)}
+  .nav-links li a{padding:0.95rem 1.5rem;font-size:14px;border-top:1px solid var(--line)}
+  nav{padding:0 1.25rem}
+  .wrap{padding:0 1.25rem}
+  section{padding:3.8rem 0}
+  #hero{padding:3rem 0}
+  .hero-media::before{right:-10px;bottom:-10px}
+  .paths-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .venue-card:hover,.event-card:hover,.path-card:hover,.path-card:hover .path-photo img{transform:none}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-group">
+  <a href="index.html" class="nav-group">
     <span class="nav-group-name">Four Sausages</span>
     <span class="nav-group-sub">Hospitality Group</span>
-  </div>
+  </a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -184,184 +219,205 @@ section{padding:5rem 2rem}
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-img"></div>
-  <div class="hero-shade"></div>
-  <div class="hero-inner">
-    <span class="hero-eyebrow">Four Sausages Hospitality Group · Sydney, NSW</span>
-    <h1 class="hero-title">Good food.<br>Great <em>occasions.</em></h1>
-    <p class="hero-sub">Two distinctive venues, private event packages, and off-site catering at your home or office — all under one group with over 10 years of hospitality experience.</p>
-    <div class="hero-actions">
-      <a href="#venues" class="btn-gold">Explore our venues</a>
-      <a href="#events" class="btn-ghost">Plan an event</a>
-      <a href="catering.html" class="btn-ghost">Order Catering</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Four Sausages Hospitality Group · Sydney, NSW</span>
+      <h1 class="hero-title">Food worth<br><em>gathering</em> for.</h1>
+      <p class="hero-sub">Two distinctive venues, private event packages, and off-site catering at your home or office — all under one group with over 10 years of hospitality experience.</p>
+      <div class="hero-actions">
+        <a href="#venues" class="btn btn-primary">Explore our venues</a>
+        <a href="#events" class="btn btn-outline">Plan an event</a>
+        <a href="catering.html" class="btn btn-outline">Order catering</a>
+      </div>
     </div>
-    <div class="hero-rule">
-      <div class="rule-line"></div>
-      <div class="rule-dot"></div>
-      <div class="rule-line"></div>
+    <div class="hero-media">
+      <img src="images/home/gallery-04.jpg" alt="An overhead spread of pizzas, pasta, salads and sides from our kitchens" loading="eager">
     </div>
-  </div>
-</section>
-  
-<!-- HOME GALLERY -->
-<section class="home-gallery" aria-label="A taste of our venues">
-  <div class="home-gallery-track">
-    <div class="hg-item"><img src="images/home/gallery-01.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <div class="hg-item"><img src="images/home/gallery-02.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <div class="hg-item"><img src="images/home/gallery-03.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <div class="hg-item"><img src="images/home/gallery-04.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <div class="hg-item"><img src="images/home/gallery-05.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <div class="hg-item"><img src="images/home/gallery-06.jpg" alt="A taste of our venues" loading="lazy"></div>
-    <!-- duplicate set below — keeps the scroll seamless, uses the same images -->
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-01.jpg" alt="" loading="lazy"></div>
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-02.jpg" alt="" loading="lazy"></div>
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-03.jpg" alt="" loading="lazy"></div>
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-04.jpg" alt="" loading="lazy"></div>
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-05.jpg" alt="" loading="lazy"></div>
-    <div class="hg-item" aria-hidden="true"><img src="images/home/gallery-06.jpg" alt="" loading="lazy"></div>
   </div>
 </section>
 
-<!-- VENUES -->
-<section id="venues">
-  <div class="section-header">
-    <p class="section-eyebrow">Where to Find Us</p>
-    <h2 class="section-title">Our Restaurants</h2>
-    <p class="section-sub">Two unique venues, both offering outstanding food, warm service, and beautiful settings for any occasion.</p>
-  </div>
-  <div class="venues-grid">
-    <div class="venue-card">
-      <div class="venue-photo"><img src="images/fairway/thumb/fairway-18.jpg" alt="Char-grilled steak with chimichurri, chips and salad at The Fairway" loading="lazy"></div>
-      <div class="venue-card-header">
-        <span class="venue-tag tag-fairway">Penrith Golf Club</span>
-        <h3 class="venue-name">The Fairway</h3>
-        <p class="venue-sub">Local produce. Above par.</p>
-        <p class="venue-tagline">Perched above the greens at Penrith Golf Club with sweeping 180° views, The Fairway serves elevated seasonal cuisine in a relaxed club setting. From fresh barramundi to crispy pork belly, every plate reflects the best of local produce.</p>
-      </div>
-      <div class="venue-card-body">
-        <div class="venue-detail"><span class="venue-detail-label">Address</span><span>1939 The Northern Road, Glenmore Park NSW 2745</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Hours</span><span>Mon–Thu 11:30am–2:30pm &amp; 5:00pm–8:30pm · Fri 11:30am–2:30pm &amp; 5:00pm–9:00pm · Sat 11:30am–9:00pm · Sun 11:30am–8:30pm</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Phone</span><span>(02) 4736 1633</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Email</span><span>reservations@thefairwaypenrith.com.au</span></div>
-      </div>
-      <div class="venue-card-footer">
-        <a href="the-fairway.html" class="btn-venue-primary">Visit The Fairway</a>
-        <a href="the-fairway.html#book" class="btn-venue-outline">Book a table</a>
-      </div>
+<!-- QUICK PATHS -->
+<section id="paths">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Start here</p>
+      <h2 class="sec-title">How can we make your day?</h2>
     </div>
-    <div class="venue-card">
-      <div class="venue-photo"><img src="images/fairway/thumb/fairway-31.jpg" alt="Stacked beef burger with bacon, cheese and chips at The Jack & Cleaver" loading="lazy"></div>
-      <div class="venue-card-header">
-        <span class="venue-tag tag-jack">Pennant Hills Bowling Club</span>
-        <h3 class="venue-name">The Jack &amp; Cleaver</h3>
-        <p class="venue-sub">Established 2022</p>
-        <p class="venue-tagline">Nestled inside Pennant Hills Bowling Club, The Jack &amp; Cleaver is the neighbourhood's go-to for a great schnitzel, a proper burger, and a cold drink overlooking the green. Warm, unpretentious, and always delicious.</p>
-      </div>
-      <div class="venue-card-body">
-        <div class="venue-detail"><span class="venue-detail-label">Address</span><span>52 Yarrara Road, Pennant Hills NSW 2120</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Hours</span><span>Sun–Thu 11:30am–2:30pm &amp; 5:30pm–8:30pm · Fri &amp; Sat 11:30am–2:30pm &amp; 5:30pm–9:00pm</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Phone</span><span>(02) 9484 2433</span></div>
-        <div class="venue-detail"><span class="venue-detail-label">Email</span><span>reservations@thejackandcleaver.com.au</span></div>
-      </div>
-      <div class="venue-card-footer">
-        <a href="the-jack-and-cleaver.html" class="btn-venue-primary">Visit The Jack &amp; Cleaver</a>
-        <a href="the-jack-and-cleaver.html#book" class="btn-venue-outline">Book a table</a>
-      </div>
+    <div class="paths-grid">
+      <a class="path-card" href="functions-events.html">
+        <div class="path-photo"><img src="images/catering/feature/catering-05.jpg" alt="Canapés served on platters at a function" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Plan a function</p>
+          <p class="path-desc">Birthdays, milestones, corporate events and remembrances — packages for 30 to 320 guests across both venues.</p>
+          <span class="path-link">Explore functions <span class="arw">→</span></span>
+        </div>
+      </a>
+      <a class="path-card" href="#venues">
+        <div class="path-photo"><img src="images/home/gallery-01.jpg" alt="A plated dish at one of our venues" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Dine at our venues</p>
+          <p class="path-desc">Two bistros across Western Sydney and the Hills — lunch and dinner, seven days. Book a table at The Fairway or The Jack &amp; Cleaver.</p>
+          <span class="path-link">See our venues <span class="arw">→</span></span>
+        </div>
+      </a>
+      <a class="path-card" href="catering.html">
+        <div class="path-photo"><img src="images/catering/feature/catering-01.jpg" alt="An abundant grazing spread of cheese, charcuterie and fruit" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Order catering</p>
+          <p class="path-desc">Bring the feast to your home, backyard or office — grazing, canapés, buffets and banquets, delivered and served.</p>
+          <span class="path-link">See catering <span class="arw">→</span></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- EVENTS -->
 <section id="events">
-  <div class="events-intro">
-    <div>
-      <p class="section-eyebrow" style="color:var(--tan)">Private Functions</p>
-      <h2 class="section-title" style="color:var(--cream)">Celebrate your next event with us</h2>
-      <p class="section-sub" style="color:rgba(250,237,205,0.7)">From intimate birthdays to milestone events, both venues offer a full suite of function packages — including canapés, buffets, banquets, and remembrance gatherings. We have a range of packages available.</p>
+  <div class="wrap">
+    <div class="events-intro">
+      <div>
+        <p class="eyebrow">Private functions</p>
+        <h2 class="sec-title">Celebrate your next event with us</h2>
+        <p class="sec-sub">From intimate birthdays to milestone events, both venues offer a full suite of function packages — including canapés, buffets, banquets, and remembrance gatherings. We have a range of packages available.</p>
+      </div>
+      <div class="events-pull">
+        <p class="pq">A space for every celebration — from 30 guests to 320.</p>
+        <p class="pd">Gather up to 320 guests in our brand-new Yarrara Room at The Jack &amp; Cleaver, or soak up the views from The Fairway's Main Terrace, overlooking the golf course greens — with two more intimate spaces to choose from across the venues.</p>
+      </div>
     </div>
-    <div style="border-left:3px solid var(--tan);padding-left:1.5rem">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--cream);line-height:1.5;margin-bottom:0.75rem">A space for every celebration — from 30 guests to 320.</p>
-      <p style="font-size:0.82rem;color:rgba(250,237,205,0.65);line-height:1.7;font-weight:300">Gather up to 320 guests in our brand-new Yarrara Room at The Jack &amp; Cleaver, or soak up the views from The Fairway's Main Terrace, overlooking the golf course greens — with two more intimate spaces to choose from across the venues.</p>
+    <div class="events-grid">
+      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></a>
+      <a class="event-card" href="functions-events.html#buffets"><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></a>
+      <a class="event-card" href="functions-events.html#set-menus"><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></a>
+      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></a>
+      <a class="event-card" href="functions-events.html#remembrance"><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></a>
+      <a class="event-card" href="functions-events.html#beverages"><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></a>
+    </div>
+    <div class="events-cta">
+      <p>Both venues available. Minimum spends apply. Contact us to discuss your event.</p>
+      <a href="contact.html" class="btn btn-light">Enquire about a function</a>
     </div>
   </div>
-  <div class="events-grid">
-    <a class="event-card" href="functions-events.html#grazing"><div class="event-icon">🥂</div><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></a>
-    <a class="event-card" href="functions-events.html#buffets"><div class="event-icon">🍽️</div><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></a>
-    <a class="event-card" href="functions-events.html#set-menus"><div class="event-icon">🎉</div><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></a>
-    <a class="event-card" href="functions-events.html#grazing"><div class="event-icon">🧀</div><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></a>
-    <a class="event-card" href="functions-events.html#remembrance"><div class="event-icon">🌸</div><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></a>
-    <a class="event-card" href="functions-events.html#beverages"><div class="event-icon">🍺</div><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></a>
-  </div>
-  <div class="events-cta">
-    <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:1rem">Both venues available. Minimum spends apply. Contact us to discuss your event.</p>
-    <a href="contact.html" class="btn-events">Enquire about a function</a>
+</section>
+
+<!-- VENUES -->
+<section id="venues">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where to find us</p>
+      <h2 class="sec-title">Our restaurants</h2>
+      <p class="sec-sub">Two unique venues, both offering outstanding food, warm service, and beautiful settings for any occasion.</p>
+    </div>
+    <div class="venues-grid">
+      <div class="venue-card">
+        <div class="venue-photo"><img src="images/fairway/thumb/fairway-18.jpg" alt="Char-grilled steak with chimichurri, chips and salad at The Fairway" loading="lazy"></div>
+        <div class="venue-body">
+          <span class="venue-tag">Penrith Golf Club</span>
+          <h3 class="venue-name">The Fairway</h3>
+          <p class="venue-sub">Local produce. Above par.</p>
+          <p class="venue-tagline">Perched above the greens at Penrith Golf Club with sweeping 180° views, The Fairway serves elevated seasonal cuisine in a relaxed club setting. From fresh barramundi to crispy pork belly, every plate reflects the best of local produce.</p>
+          <div class="venue-details">
+            <div class="venue-detail"><span class="lbl">Address</span><span>1939 The Northern Road, Glenmore Park NSW 2745</span></div>
+            <div class="venue-detail"><span class="lbl">Hours</span><span>Lunch &amp; dinner, 7 days</span></div>
+            <div class="venue-detail"><span class="lbl">Phone</span><span>(02) 4736 1633</span></div>
+            <div class="venue-detail"><span class="lbl">Email</span><span>reservations@thefairwaypenrith.com.au</span></div>
+          </div>
+          <div class="venue-foot">
+            <a href="the-fairway.html" class="btn btn-primary">Visit The Fairway</a>
+            <a href="the-fairway.html#book" class="btn btn-outline">Book a table</a>
+          </div>
+        </div>
+      </div>
+      <div class="venue-card">
+        <div class="venue-photo"><img src="images/fairway/thumb/fairway-31.jpg" alt="Stacked beef burger with bacon, cheese and chips at The Jack & Cleaver" loading="lazy"></div>
+        <div class="venue-body">
+          <span class="venue-tag">Pennant Hills Bowling Club</span>
+          <h3 class="venue-name">The Jack &amp; Cleaver</h3>
+          <p class="venue-sub">Established 2022</p>
+          <p class="venue-tagline">Nestled inside Pennant Hills Bowling Club, The Jack &amp; Cleaver is the neighbourhood's go-to for a great schnitzel, a proper burger, and a cold drink overlooking the green. Warm, unpretentious, and always delicious.</p>
+          <div class="venue-details">
+            <div class="venue-detail"><span class="lbl">Address</span><span>52 Yarrara Road, Pennant Hills NSW 2120</span></div>
+            <div class="venue-detail"><span class="lbl">Hours</span><span>Lunch &amp; dinner, 7 days</span></div>
+            <div class="venue-detail"><span class="lbl">Phone</span><span>(02) 9484 2433</span></div>
+            <div class="venue-detail"><span class="lbl">Email</span><span>reservations@thejackandcleaver.com.au</span></div>
+          </div>
+          <div class="venue-foot">
+            <a href="the-jack-and-cleaver.html" class="btn btn-primary">Visit The Jack &amp; Cleaver</a>
+            <a href="the-jack-and-cleaver.html#book" class="btn btn-outline">Book a table</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CATERING -->
 <section id="catering">
-  <div class="catering-wrap">
+  <div class="wrap catering-wrap">
     <div>
-      <p class="section-eyebrow" style="color:var(--tan)">Catering</p>
-      <h2 class="section-title" style="color:var(--cream)">We come to you</h2>
-      <p class="section-sub" style="color:rgba(250,237,205,0.7)">Bring the full experience to your home, backyard, office, or private space. Our catering team delivers restaurant-quality food and professional service for any occasion.</p>
+      <p class="eyebrow">Catering</p>
+      <h2 class="sec-title">We come to you</h2>
+      <p class="sec-sub">Bring the full experience to your home, backyard, office, or private space. Our catering team delivers restaurant-quality food and professional service for any occasion.</p>
       <div class="catering-features">
-        <div class="catering-feature"><div class="feature-dot"></div><p class="feature-text"><strong>Signature platters</strong> — cheese, charcuterie, sliders, arancini, schnitzel and more. Each feeds 10–12 guests.</p></div>
-        <div class="catering-feature"><div class="feature-dot"></div><p class="feature-text"><strong>Canapé packages</strong> — cold, hot and fork selections with optional waiter service included.</p></div>
-        <div class="catering-feature"><div class="feature-dot"></div><p class="feature-text"><strong>Buffet &amp; banquet menus</strong> — the full restaurant experience, at your venue of choice.</p></div>
-        <div class="catering-feature"><div class="feature-dot"></div><p class="feature-text"><strong>Dietary accommodations</strong> — we do our utmost to meet all dietary needs. Just let us know.</p></div>
+        <div class="catering-feature"><div class="feature-sq"></div><p class="feature-text"><strong>Signature platters</strong> — cheese, charcuterie, sliders, arancini, schnitzel and more. Each feeds 10–12 guests.</p></div>
+        <div class="catering-feature"><div class="feature-sq"></div><p class="feature-text"><strong>Canapé packages</strong> — cold, hot and fork selections with optional waiter service included.</p></div>
+        <div class="catering-feature"><div class="feature-sq"></div><p class="feature-text"><strong>Buffet &amp; banquet menus</strong> — the full restaurant experience, at your venue of choice.</p></div>
+        <div class="catering-feature"><div class="feature-sq"></div><p class="feature-text"><strong>Dietary accommodations</strong> — we do our utmost to meet all dietary needs. Just let us know.</p></div>
       </div>
     </div>
     <div>
       <div class="catering-photo"><img src="images/catering/thumb/catering-02.jpg" alt="A grazing table of cheese, charcuterie and fresh produce" loading="lazy"></div>
       <div class="catering-cta-box">
-      <p class="catering-cta-title">Ready to bring the feast home?</p>
-      <p class="catering-cta-sub">Get in touch with our catering team to discuss your event, guest numbers, and the menu that's right for you. We'll handle the rest.</p>
-      <a href="contact.html" class="btn-catering">Start planning</a>
-      <div class="catering-divider"></div>
-      <p class="catering-contact">catering@fshg.com.au &nbsp;·&nbsp; (02) 4702 3642</p>
+        <p class="catering-cta-title">Ready to bring the feast home?</p>
+        <p class="catering-cta-sub">Get in touch with our catering team to discuss your event, guest numbers, and the menu that's right for you. We'll handle the rest.</p>
+        <a href="contact.html" class="btn btn-primary btn-block">Start planning</a>
+        <div class="catering-divider"></div>
+        <p class="catering-contact">catering@fshg.com.au &nbsp;·&nbsp; (02) 4702 3642</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
 <footer class="site-footer">
-  <div class="footer-main">
-
-    <!-- Brand -->
-    <div>
-      <p class="footer-brand-name">Four Sausages</p>
-      <p class="footer-brand-sub">Hospitality Group</p>
-      <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+  <div class="wrap">
+    <div class="footer-main">
+      <!-- Brand -->
+      <div>
+        <p class="footer-brand-name">Four Sausages</p>
+        <p class="footer-brand-sub">Hospitality Group</p>
+        <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+      </div>
+      <!-- Our venues -->
+      <div>
+        <p class="footer-col-title">Our venues</p>
+        <ul class="footer-links">
+          <li><a href="the-fairway.html">The Fairway</a></li>
+          <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        </ul>
+      </div>
+      <!-- Our services -->
+      <div>
+        <p class="footer-col-title">Our services</p>
+        <ul class="footer-links">
+          <li><a href="catering.html">Event Catering</a></li>
+          <li><a href="index.html#events">Functions &amp; Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+        <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+        <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+      </div>
     </div>
-
-    <!-- Our venues -->
-    <div>
-      <p class="footer-col-title">Our venues</p>
-      <ul class="footer-links">
-        <li><a href="the-fairway.html">The Fairway</a></li>
-        <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
-        <li><a href="catering.html">At-home Catering</a></li>
-        <li><a href="index.html#events">Functions &amp; Events</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+    <hr class="footer-rule">
+    <div class="footer-bottom">
+      <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+      <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
     </div>
-
-    <!-- Contact -->
-    <div>
-      <p class="footer-col-title">Contact</p>
-      <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
-      <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
-      <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
-    </div>
-
-  </div>
-  <hr class="footer-rule">
-  <div class="footer-bottom">
-    <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
-    <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
   </div>
 </footer>
 

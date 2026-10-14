@@ -59,15 +59,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.93);backdrop
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 
 /* ---------- HERO (photo band) ---------- */
-#hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;padding:4.5rem 0;overflow:hidden;background:var(--ink)}
-.hero-img{position:absolute;inset:0;background-image:url('images/fairway/feature/fairway-02.jpg');background-size:cover;background-position:center;}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,28,24,0.30) 0%,rgba(33,28,24,0.45) 45%,rgba(33,28,24,0.9) 100%)}
-.hero-inner{position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 2rem}
-.hero-tag{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:1.5rem}
-.hero-tag::before{content:"";width:30px;height:2px;background:var(--orange)}
-.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,7vw,5.6rem);line-height:0.94;letter-spacing:-0.035em;color:var(--paper);text-wrap:balance;margin-bottom:1rem}
-.hero-sub{font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,2.5vw,1.6rem);letter-spacing:-0.015em;color:var(--orange);margin-bottom:1.4rem}
-.hero-desc{font-size:1.02rem;color:var(--paper-dim);max-width:560px;line-height:1.7;margin-bottom:2.1rem}
+#hero{background:var(--paper);padding:4.5rem 0 4rem;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:3.5rem;align-items:center}
+.hero-inner{grid-column:1;grid-row:1}
+.hero-img{grid-column:2;grid-row:1;align-self:center;position:relative;z-index:1;width:100%;aspect-ratio:1/1;background-image:url('images/fairway/feature/fairway-02.jpg');background-size:cover;background-position:center;border-radius:2px;background-color:var(--paper-2)}
+.hero-shade{grid-column:2;grid-row:1;align-self:center;position:relative;z-index:0;width:100%;aspect-ratio:1/1;border:2px solid var(--claret);border-radius:2px;transform:translate(16px,16px)}
+.hero-tag{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--claret);margin-bottom:1.5rem}
+.hero-tag::before{content:"";width:30px;height:2px;background:var(--claret)}
+.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,6.4vw,5.3rem);line-height:0.94;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance;margin-bottom:1rem}
+.hero-sub{font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,2.3vw,1.5rem);letter-spacing:-0.01em;color:var(--claret);margin-bottom:1.4rem}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:46ch;line-height:1.7;margin-bottom:2.1rem}
 .hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
 
 /* ---------- SECTION SHELL ---------- */
@@ -209,8 +210,11 @@ section{padding:5.5rem 0}
   nav{padding:0 1.25rem}
   .wrap{padding:0 1.25rem}
   section{padding:3.8rem 0}
-  #hero{padding:3rem 0;min-height:70vh}
-  .hero-inner{padding:0 1.25rem}
+  #hero{padding:3rem 0}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-inner{grid-column:1;grid-row:1}
+  .hero-img,.hero-shade{grid-column:1;grid-row:2;max-width:460px}
+  .hero-shade{transform:translate(10px,10px)}
   .form-row{grid-template-columns:1fr}
   .book-card{padding:1.4rem}
 }
@@ -250,6 +254,7 @@ section{padding:5.5rem 0}
 
 <!-- HERO -->
 <header id="hero">
+  <div class="wrap hero-grid">
   <div class="hero-img"></div>
   <div class="hero-shade"></div>
   <div class="hero-inner">
@@ -258,9 +263,10 @@ section{padding:5.5rem 0}
     <p class="hero-sub">Schnitzels, burgers &amp; a cold one.</p>
     <p class="hero-desc">Tucked inside Pennant Hills Bowling Club, The Jack &amp; Cleaver is the neighbourhood's go-to for a great schnitzel, a proper burger, and a cold drink overlooking the green. Warm, unpretentious, and always delicious.</p>
     <div class="hero-actions">
-      <a href="#book" class="btn btn-light">Book a table</a>
-      <a href="#menu" class="btn btn-ghost-light">View the menu</a>
+      <a href="#book" class="btn btn-primary">Book a table</a>
+      <a href="#menu" class="btn btn-outline">View the menu</a>
     </div>
+  </div>
   </div>
 </header>
 

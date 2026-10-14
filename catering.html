@@ -78,7 +78,7 @@ section{padding:5.5rem 0}
 .hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
 
 /* ---------- INTRO ---------- */
-#intro{background:var(--paper-2);border-bottom:1px solid var(--line)}
+#intro{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-bottom:1px solid var(--line)}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .intro-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1.1rem;text-wrap:balance}
 .intro-copy p{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:1rem}
@@ -177,7 +177,7 @@ section{padding:5.5rem 0}
 .term-card p{font-size:0.9rem;color:var(--muted);line-height:1.65}
 
 /* ---------- ENQUIRE CALLOUT (dark band) ---------- */
-#enquire{background:var(--ink);color:var(--paper);text-align:center}
+#enquire{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper);text-align:center}
 .enquire-inner{max-width:714px;margin:0 auto;padding:0 2rem}
 #enquire .eyebrow{color:var(--orange)}
 .enquire-inner h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--paper);margin-bottom:1rem;text-wrap:balance}
@@ -241,6 +241,9 @@ section{padding:5.5rem 0}
   html{scroll-behavior:auto}
   .term-card:hover{transform:none}
 }
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>

@@ -80,7 +80,7 @@ section{padding:5.5rem 0}
 .sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
 
 /* ---------- QUICK PATHS ---------- */
-#paths{background:var(--paper-2);border-bottom:1px solid var(--line)}
+#paths{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-bottom:1px solid var(--line)}
 .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .path-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s}
 .path-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
@@ -114,7 +114,7 @@ section{padding:5.5rem 0}
 .venue-foot .btn{flex:1}
 
 /* ---------- EVENTS (dark band) ---------- */
-#events{background:var(--ink);color:var(--paper)}
+#events{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
 #events .eyebrow{color:var(--orange)}
 #events .sec-title{color:var(--paper)}
 .events-intro{display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:end;margin-bottom:3.2rem}
@@ -195,6 +195,9 @@ section{padding:5.5rem 0}
   html{scroll-behavior:auto}
   .venue-card:hover,.event-card:hover,.path-card:hover,.path-card:hover .path-photo img{transform:none}
 }
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>

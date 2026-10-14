@@ -80,7 +80,7 @@ section{padding:5.5rem 0}
 .sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
 
 /* ---------- INTRO ---------- */
-#intro{background:var(--paper-2);border-bottom:1px solid var(--line)}
+#intro{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-bottom:1px solid var(--line)}
 .intro-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:center}
 .intro-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,3.8vw,2.7rem);line-height:1.02;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1.25rem;text-wrap:balance}
 .intro-copy p{color:var(--ink);font-size:1rem;line-height:1.8;margin-bottom:1rem}
@@ -92,7 +92,7 @@ section{padding:5.5rem 0}
 .intro-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ---------- SPECIALS (dark band) ---------- */
-#specials{background:var(--ink);color:var(--paper)}
+#specials{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
 #specials .eyebrow{color:var(--orange)}
 #specials .sec-title{color:var(--paper)}
 #specials .sec-sub{color:var(--paper-dim)}
@@ -212,6 +212,9 @@ iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radi
   .gallery-grid img{transition:none}
   .day-card:hover{transform:none}
 }
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </style>
 </head>
 <body>

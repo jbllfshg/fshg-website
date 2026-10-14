@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Event Catering | Four Sausages Hospitality Group</title>
-<meta name="description" content="Event catering across Sydney — corporate packages, private-event catering and an à la carte platter menu. Order platters online for delivery or pickup from The Fairway or The Jack & Cleaver.">
+<title>Catering | Four Sausages Hospitality Group</title>
+<meta name="description" content="Order our Signature Platters for your next gathering — restaurant-quality grazing, charcuterie, sliders, schnitzel and more, delivered or ready for pickup from The Fairway or The Jack & Cleaver.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -67,157 +67,124 @@ section{padding:5.5rem 0}
 .sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
 
 /* ---------- HERO ---------- */
-#hero{position:relative;overflow:hidden;background:var(--paper);padding:5rem 0 4.5rem;border-bottom:1px solid var(--line)}
-.hero-accent{position:absolute;top:0;right:0;bottom:0;width:30%;background:var(--paper-2);border-left:1px solid var(--line);pointer-events:none}
-.hero-accent2{position:absolute;top:50%;right:15%;width:120px;height:120px;margin:-60px -60px 0 0;border:2px solid var(--claret);border-radius:2px;pointer-events:none}
-.hero-inner{position:relative;z-index:1;max-width:760px}
+#hero{background:var(--paper);padding:4.5rem 0 4rem;border-bottom:1px solid var(--line)}
+.hero-accent,.hero-accent2{display:none}
+.hero-inner{max-width:1180px;margin:0 auto;padding:0 2rem}
 .hero-tag{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--claret);margin-bottom:1.5rem}
 .hero-tag::before{content:"";width:30px;height:2px;background:var(--claret)}
-.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,6.4vw,5.3rem);line-height:0.94;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance;margin-bottom:1.2rem}
-.hero-title em{font-style:normal;color:var(--claret)}
-.hero-sub{font-family:var(--display);font-weight:700;font-size:clamp(1.1rem,2.4vw,1.4rem);letter-spacing:-0.01em;color:var(--orange);margin-bottom:1.1rem}
+.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,6.4vw,5.3rem);line-height:0.94;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance;margin-bottom:1.1rem;max-width:12ch}
+.hero-sub{font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,2.5vw,1.55rem);letter-spacing:-0.01em;color:var(--claret);margin-bottom:1.3rem;line-height:1.2}
 .hero-desc{font-size:1.05rem;color:var(--muted);max-width:56ch;line-height:1.7;margin-bottom:2.1rem}
 .hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
 
 /* ---------- INTRO ---------- */
 #intro{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('images/home/texture-paper.webp');background-size:cover;background-position:left center;border-bottom:1px solid var(--line)}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.intro-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1.25rem;text-wrap:balance}
-.intro-copy>p{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:1rem}
-.howto{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.75rem}
+.intro-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1.1rem;text-wrap:balance}
+.intro-copy p{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:1rem}
+.howto{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.8rem}
 .howto-step{display:flex;gap:1rem;align-items:flex-start}
-.howto-num{flex-shrink:0;width:30px;height:30px;border-radius:2px;background:var(--claret);color:var(--paper);font-family:var(--display);font-weight:800;font-size:0.95rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.howto-num{flex-shrink:0;width:30px;height:30px;border-radius:2px;background:var(--claret);color:var(--paper);font-family:var(--display);font-weight:800;font-size:0.95rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
 .howto-step p{font-size:0.92rem;color:var(--muted);line-height:1.65;margin:0}
 .howto-step strong{color:var(--ink);font-weight:700}
 .intro-photo{border-radius:3px;overflow:hidden;aspect-ratio:4/5}
 .intro-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* BESPOKE CALLOUT (dark band inside intro) */
-.bespoke{margin-top:3.5rem;background:var(--ink);color:var(--paper);border-radius:3px;padding:2.4rem 2.6rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
-.bespoke-title{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.1;letter-spacing:-0.02em;color:var(--paper);margin:0 0 0.6rem}
-.bespoke-text{font-size:0.95rem;color:var(--paper-dim);line-height:1.7;max-width:62ch;margin:0}
+/* ---------- COMING SOON + CUSTOM EVENT BAND ---------- */
+.coming-soon,.cta-band{max-width:760px;width:calc(100% - 4rem);margin-left:auto;margin-right:auto}
+.coming-soon{margin-top:3rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--claret);border-radius:3px;padding:1.1rem 1.5rem;display:flex;gap:0.9rem;align-items:center}
+.coming-soon .cs-icon{flex-shrink:0;font-size:1.2rem;color:var(--orange)}
+.coming-soon p{font-size:0.9rem;color:var(--muted);line-height:1.65;margin:0}
+.coming-soon strong{color:var(--ink);font-weight:700}
+.cta-band{margin-top:1.25rem;background:var(--ink);border-radius:3px;padding:2.2rem 2rem;text-align:center}
+.cta-band-title{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,2.6vw,1.6rem);letter-spacing:-0.015em;color:var(--paper);line-height:1.25;margin:0 0 0.75rem}
+.cta-band-text{font-size:0.95rem;color:var(--paper-dim);line-height:1.75;margin:0 0 1.5rem}
+.cta-band-text a{color:var(--orange);font-weight:600;text-decoration:underline}
+.cta-band-text a:hover{color:var(--paper)}
 
-/* ---------- PACKAGES ---------- */
-#packages{background:var(--paper)}
-#birthday{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-#private{background:var(--paper)}
-#addons{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-#packages .sec-head{margin-bottom:1.75rem}
-nav.cat-nav{position:static;z-index:auto;background:none;backdrop-filter:none;border-bottom:none;padding:0;height:auto;justify-content:flex-start;flex-wrap:wrap;gap:0.55rem;margin:0 0 2.75rem}
-.cat-nav a{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--line-strong);border-radius:2px;padding:9px 16px;text-decoration:none;transition:all 0.18s}
-.cat-nav a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.pkg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.pkg2{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.9rem 1.75rem;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
-.pkg2:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
-.pkg2-name{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.02em;color:var(--ink);line-height:1.08;margin-bottom:0.45rem}
-.pkg2-tag{font-size:0.88rem;color:var(--muted);line-height:1.55;margin-bottom:1.1rem}
-.pkg2 ul{list-style:none;margin:0 0 1.25rem;padding:0;display:flex;flex-direction:column;gap:0.45rem}
-.pkg2 li{font-size:0.88rem;color:var(--ink);line-height:1.5;padding-left:1.1rem;position:relative}
-.pkg2 li::before{content:"";position:absolute;left:0;top:0.5em;width:6px;height:6px;background:var(--claret)}
-.delivery-incl{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem}
-.tiers{margin-top:auto;border-top:1px solid var(--line);padding-top:1rem;display:flex;flex-direction:column;gap:0.45rem}
-.tier{display:flex;justify-content:space-between;align-items:baseline;font-size:0.9rem;color:var(--muted)}
-.tier .t-price{font-family:var(--display);font-size:1.25rem;font-weight:800;letter-spacing:-0.01em;color:var(--claret);font-variant-numeric:tabular-nums}
-.fixed-price{margin-top:auto;border-top:1px solid var(--line);padding-top:1rem;font-family:var(--display);font-size:2.4rem;font-weight:900;letter-spacing:-0.03em;line-height:1;color:var(--claret)}
-.fixed-price small{font-family:var(--body);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);display:block;margin-top:0.5rem}
-.pkg2-note{font-size:0.76rem;color:var(--muted);margin-top:0.6rem;line-height:1.5}
-.btn-enq{margin-top:1.3rem;display:block}
-.pkg-foot{margin:2.5rem 0 0;padding-top:1.25rem;border-top:1px solid var(--line);font-size:0.92rem;color:var(--muted);line-height:1.7}
-.pkg-foot a{color:var(--claret);font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
-.pkg-foot a:hover{color:var(--orange)}
-/* ADD-ONS */
-.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.addon{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.6rem}
-.addon h3{font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-0.015em;color:var(--ink);line-height:1.15;margin-bottom:0.35rem}
-.addon .a-price{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--claret);margin-bottom:0.65rem}
-.addon p{font-size:0.88rem;color:var(--muted);line-height:1.65}
-
-/* ---------- ORDER (À LA CARTE BUILDER) ---------- */
-#order{background:var(--paper)}
+/* ---------- ORDER SECTION ---------- */
+#order{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .order-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:start}
 
-/* À LA CARTE CATEGORIES */
-.cat-head{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.02em;color:var(--ink);border-bottom:2px solid var(--claret);padding-bottom:0.5rem;margin:2.25rem 0 0.9rem}
-.platter-list>.cat-head:first-child{margin-top:0}
-.cat-sub{font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin:-0.35rem 0 0.9rem}
-.diet{display:inline-block;font-family:var(--body);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--claret);background:rgba(138,43,46,0.08);border:1px solid rgba(138,43,46,0.25);border-radius:2px;padding:1px 5px;margin-left:3px;vertical-align:middle}
-
-/* PLATTER CARDS */
-.platter-list{display:flex;flex-direction:column;gap:0.8rem}
-.platter{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.3rem 1.5rem;transition:border-color 0.2s,background 0.2s}
+/* ---------- PLATTER CARDS ---------- */
+.platter-list{display:flex;flex-direction:column;gap:0.9rem}
+.platter{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.4rem 1.6rem;transition:border-color 0.2s,box-shadow 0.2s}
 .platter:hover{border-color:var(--line-strong)}
-.platter.active{border-color:var(--claret);background:#fff}
+.platter.active{border-color:var(--claret);background:#fff;box-shadow:inset 3px 0 0 var(--claret)}
 .platter-info{flex:1}
-.platter-title{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.2;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
-.platter-price{font-family:var(--display);font-size:1.05rem;font-weight:800;color:var(--claret)}
-.platter-feeds{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin:0.35rem 0 0.5rem}
-.platter-desc{font-size:0.86rem;color:var(--muted);line-height:1.6}
+.platter-title{font-family:var(--display);font-size:1.3rem;font-weight:800;letter-spacing:-0.015em;color:var(--ink);line-height:1.1;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
+.platter-price{font-family:var(--display);font-size:1.05rem;font-weight:800;color:var(--claret);letter-spacing:-0.01em}
+.platter-pc{font-family:var(--body);font-size:0.85rem;color:var(--muted);font-weight:500;letter-spacing:0}
+.platter-feeds{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin:0.4rem 0 0.5rem}
+.platter-desc{font-size:0.88rem;color:var(--muted);line-height:1.65}
 .stepper{flex-shrink:0;display:flex;align-items:center;gap:0;border:1px solid var(--line-strong);border-radius:2px;background:#fff;overflow:hidden}
-.qty-btn{width:36px;height:36px;border:none;background:#fff;color:var(--ink);font-family:var(--body);font-size:1.2rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s,color 0.15s;line-height:1}
-.qty-btn:hover:not(:disabled){background:var(--ink);color:var(--paper)}
-.qty-btn:disabled{color:rgba(33,28,24,0.25);cursor:default}
-.qty-val{min-width:32px;text-align:center;font-size:0.95rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.qty-btn{width:34px;height:34px;border:none;background:#fff;color:var(--ink);font-size:1.2rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s,color 0.15s;line-height:1;font-family:var(--body)}
+.qty-btn:hover:not(:disabled){background:var(--claret);color:var(--paper)}
+.qty-btn:disabled{color:var(--line-strong);cursor:default}
+.qty-val{min-width:30px;text-align:center;font-size:0.95rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
 
-/* ORDER SUMMARY / FORM (dark panel) */
-.order-form{position:sticky;top:94px;background:var(--ink);color:var(--paper);border-radius:3px;padding:2rem}
+/* ---------- ORDER SUMMARY / FORM (dark panel) ---------- */
+.order-form{position:sticky;top:98px;background:var(--ink);color:var(--paper);border-radius:3px;padding:1.9rem}
 .order-form h3{font-family:var(--display);font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;color:var(--paper);margin-bottom:1rem}
 .summary-items{display:flex;flex-direction:column;gap:0.55rem;min-height:30px;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(245,242,236,0.15)}
-.summary-empty{font-size:0.86rem;color:var(--paper-faint);line-height:1.6}
-.sum-line{display:flex;justify-content:space-between;gap:0.75rem;font-size:0.86rem;color:var(--paper-dim);line-height:1.4}
-.sum-line .sl-name{font-weight:500}
+.summary-empty{font-size:0.85rem;color:var(--paper-faint);font-style:italic;line-height:1.6}
+.sum-line{display:flex;justify-content:space-between;gap:0.75rem;font-size:0.85rem;color:var(--paper-dim);line-height:1.4}
+.sum-line .sl-name{font-weight:400}
 .sum-line .sl-name b{font-weight:700;color:var(--paper)}
 .sum-line .sl-amt{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--paper)}
 .summary-totals{display:flex;flex-direction:column;gap:0.45rem;margin-bottom:0.75rem}
-.tot-row{display:flex;justify-content:space-between;font-size:0.86rem;color:var(--paper-dim)}
-.tot-row.grand{font-family:var(--display);font-size:1.2rem;color:var(--paper);font-weight:800;letter-spacing:-0.01em;padding-top:0.6rem;margin-top:0.2rem;border-top:1px solid rgba(245,242,236,0.15)}
+.tot-row{display:flex;justify-content:space-between;font-size:0.85rem;color:var(--paper-dim)}
+.tot-row.grand{font-family:var(--display);font-size:1.15rem;color:var(--paper);font-weight:800;letter-spacing:-0.01em;padding-top:0.6rem;margin-top:0.2rem;border-top:1px solid rgba(245,242,236,0.15)}
 .tot-row .v{font-variant-numeric:tabular-nums}
-.free-hint{font-size:0.78rem;font-weight:600;color:var(--orange);line-height:1.5;margin-bottom:1.1rem;min-height:0}
+.free-hint{font-size:0.78rem;color:var(--orange);font-weight:600;line-height:1.5;margin-bottom:1.1rem;min-height:0}
 .free-hint:empty{margin-bottom:0}
 
-.form-block-label{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);margin:1.2rem 0 0.6rem}
+.form-block-label{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper-faint);margin:1.1rem 0 0.6rem}
 .fulfil-toggle{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
 .fulfil-toggle label{position:relative;cursor:pointer}
 .fulfil-toggle input{position:absolute;opacity:0;pointer-events:none}
-.fulfil-toggle span{display:block;text-align:center;padding:10px;border:1px solid rgba(245,242,236,0.28);border-radius:2px;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--paper-dim);transition:all 0.18s}
-.fulfil-toggle label:hover span{border-color:var(--orange);color:var(--paper)}
-.fulfil-toggle input:checked+span{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.fulfil-toggle span{display:block;text-align:center;padding:10px;border:1px solid rgba(245,242,236,0.25);border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--paper-dim);transition:all 0.18s}
+.fulfil-toggle label:hover span{border-color:var(--paper)}
+.fulfil-toggle input:checked+span{background:var(--paper);border-color:var(--paper);color:var(--ink);font-weight:700}
 .fulfil-toggle input:focus-visible+span{outline:2px solid var(--orange);outline-offset:2px}
 
-.field{display:block;margin-top:0.75rem}
-.field[hidden]{display:none}
-.field>span{display:block;font-size:0.78rem;font-weight:600;color:var(--paper-dim);margin-bottom:0.3rem}
-.field input,.field select,.field textarea{width:100%;background:rgba(245,242,236,0.06);border:1px solid rgba(245,242,236,0.22);border-radius:2px;padding:10px 12px;font-size:0.9rem;font-family:var(--body);color:var(--paper);color-scheme:dark;transition:border-color 0.18s}
+.field{display:block;margin-top:0.7rem}
+.field>span{display:block;font-size:0.78rem;color:var(--paper-dim);margin-bottom:0.3rem}
+.field input,.field select,.field textarea{width:100%;background:rgba(245,242,236,0.06);border:1px solid rgba(245,242,236,0.22);border-radius:2px;padding:10px 12px;font-size:0.88rem;font-family:var(--body);color:var(--paper);transition:border-color 0.18s}
 .field input::placeholder,.field textarea::placeholder{color:var(--paper-faint)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
 .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c96a2b' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:30px}
 .field select option{color:var(--ink)}
 .field textarea{resize:vertical}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem}
-.field-note{font-size:0.74rem;color:var(--paper-faint);margin-top:0.35rem;line-height:1.45}
+.field-note{font-size:0.72rem;color:var(--paper-faint);margin-top:0.3rem;line-height:1.4}
 
-.btn-submit{width:100%;margin-top:1.5rem;padding:15px}
-.form-fine{font-size:0.74rem;color:var(--paper-faint);line-height:1.5;margin-top:0.85rem;text-align:center}
-.form-msg{margin-top:1rem;padding:0.9rem 1rem;border-radius:2px;font-size:0.86rem;line-height:1.5}
+.btn-submit{width:100%;margin-top:1.4rem;background:var(--paper);color:var(--ink);border:1px solid transparent;border-radius:2px;padding:14px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.08em;text-transform:uppercase;font-family:var(--body);transition:all 0.18s}
+.btn-submit:hover{background:var(--orange);color:var(--paper)}
+.form-fine{font-size:0.72rem;color:var(--paper-faint);line-height:1.5;margin-top:0.8rem;text-align:center}
+.form-msg{margin-top:1rem;padding:0.9rem 1rem;border-radius:2px;font-size:0.85rem;line-height:1.5}
 .form-msg.ok{background:rgba(201,106,43,0.18);color:var(--paper);border:1px solid var(--orange)}
-.form-msg.err{background:rgba(138,43,46,0.4);color:var(--paper);border:1px solid rgba(245,242,236,0.35)}
+.form-msg.err{background:rgba(220,120,100,0.15);color:#f3d9cd;border:1px solid rgba(220,120,100,0.5)}
 .hp{position:absolute;left:-9999px}
 
 /* ---------- TERMS ---------- */
-#terms{background:var(--paper-2);border-top:1px solid var(--line)}
+#terms{background:var(--paper-2);border-bottom:1px solid var(--line)}
 .terms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.term-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.6rem 1.75rem;display:flex;gap:1.1rem;align-items:flex-start}
-.term-icon{flex-shrink:0;width:42px;height:42px;border-radius:2px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.term-card h3{font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-0.015em;color:var(--ink);margin-bottom:0.4rem;line-height:1.15}
+.term-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.6rem 1.75rem;display:flex;gap:1rem;align-items:flex-start;transition:transform 0.2s,box-shadow 0.2s}
+.term-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.term-icon{flex-shrink:0;width:40px;height:40px;border-radius:2px;background:var(--paper-2);border:1px solid var(--line);color:var(--claret);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.term-card h3{font-family:var(--display);font-size:1.2rem;font-weight:800;letter-spacing:-0.015em;color:var(--ink);margin-bottom:0.35rem;line-height:1.15}
 .term-card p{font-size:0.9rem;color:var(--muted);line-height:1.65}
 
-/* ---------- ENQUIRE (dark band) ---------- */
+/* ---------- ENQUIRE CALLOUT (dark band) ---------- */
 #enquire{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper);text-align:center}
-.enquire-inner{max-width:780px}
+.enquire-inner{max-width:714px;margin:0 auto;padding:0 2rem}
 #enquire .eyebrow{color:var(--orange)}
 .enquire-inner h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--paper);margin-bottom:1rem;text-wrap:balance}
-.enquire-inner>p{font-size:1rem;color:var(--paper-dim);line-height:1.7;margin-bottom:1.9rem}
+.enquire-inner p{font-size:1rem;color:var(--paper-dim);line-height:1.7;margin-bottom:1.9rem}
+.enquire-inner p.eyebrow{color:var(--orange);margin-bottom:0.9rem;font-size:11px;line-height:normal}
 .enquire-contact{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
-.enquire-contact a{color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:-0.01em;border-bottom:2px solid rgba(245,242,236,0.25);padding-bottom:2px;transition:border-color 0.18s,color 0.18s}
+.enquire-contact a{color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:-0.01em;border-bottom:2px solid var(--claret);padding-bottom:2px;transition:border-color 0.2s,color 0.2s}
 .enquire-contact a:hover{border-color:var(--orange);color:var(--orange)}
 
 /* ---------- FOOTER ---------- */
@@ -240,9 +207,6 @@ nav.cat-nav{position:static;z-index:auto;background:none;backdrop-filter:none;bo
 .footer-abn{font-size:11px;color:rgba(245,242,236,0.32)}
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:1100px){
-  .hero-accent,.hero-accent2{display:none}
-}
 @media(max-width:980px){
   .order-grid{grid-template-columns:1fr}
   .order-form{position:static}
@@ -251,8 +215,7 @@ nav.cat-nav{position:static;z-index:auto;background:none;backdrop-filter:none;bo
   .footer-main{grid-template-columns:1fr 1fr}
 }
 @media(max-width:880px){
-  .intro-grid,.terms-grid,.bespoke{grid-template-columns:1fr}
-  .pkg-cards,.addon-grid{grid-template-columns:1fr}
+  .intro-grid,.terms-grid{grid-template-columns:1fr}
   .intro-photo{aspect-ratio:16/10}
 }
 @media(max-width:768px){
@@ -269,14 +232,14 @@ nav.cat-nav{position:static;z-index:auto;background:none;backdrop-filter:none;bo
   .wrap{padding:0 1.25rem}
   section{padding:3.8rem 0}
   #hero{padding:3rem 0}
+  .hero-inner,.enquire-inner{padding:0 1.25rem}
+  .coming-soon,.cta-band{width:calc(100% - 2.5rem)}
   .order-form{padding:1.5rem}
   .field-row{grid-template-columns:1fr}
-  .bespoke{padding:1.9rem 1.5rem}
-  .platter{padding:1.1rem 1.1rem;gap:1rem}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .pkg2:hover{transform:none}
+  .term-card:hover{transform:none}
 }
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
@@ -307,248 +270,42 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 <header id="hero">
   <div class="hero-accent"></div>
   <div class="hero-accent2"></div>
-  <div class="wrap">
-    <div class="hero-inner">
-      <span class="hero-tag">Event Catering</span>
-      <h1 class="hero-title">Bring the <em>feast</em> to you</h1>
-      <p class="hero-sub">Corporate, private events &amp; à la carte platters.</p>
-      <p class="hero-desc">Restaurant-quality catering from our kitchen to your home, office or venue — ready-to-serve packages for teams and celebrations, or order individual platters online for delivery or pickup.</p>
-      <div class="hero-actions">
-        <a href="#packages" class="btn btn-primary">See packages</a>
-        <a href="#order" class="btn btn-outline">Order platters online</a>
-      </div>
+  <div class="hero-inner">
+    <span class="hero-tag">Catering</span>
+    <h1 class="hero-title">Bring the feast home</h1>
+    <p class="hero-sub">Signature Platters, made to share.</p>
+    <p class="hero-desc">Restaurant-quality grazing, charcuterie, sliders and more — built by our kitchens and ready to deliver, or to collect from either venue. Order online in a few taps.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn btn-primary">Build your order</a>
+      <a href="#terms" class="btn btn-outline">Delivery &amp; pickup</a>
     </div>
   </div>
 </header>
 
 <!-- INTRO -->
 <section id="intro">
-  <div class="wrap">
-    <div class="intro-grid">
-      <div class="intro-copy">
-        <h2>Event Catering, the easy way</h2>
-        <p>From our kitchen in Seven Hills to your home, office or venue. Choose a ready-to-serve package for a team lunch or a celebration, or build your own order from our à la carte platter menu — all delivered, or ready to collect.</p>
-        <div class="howto">
-          <div class="howto-step"><span class="howto-num">1</span><p><strong>Pick a package or platters.</strong> Browse our corporate and private-event packages, or add individual platters and set the quantities.</p></div>
-          <div class="howto-step"><span class="howto-num">2</span><p><strong>Choose delivery or pickup.</strong> Tell us your venue, date and time. À la carte orders over $350 deliver free within 8km; packages include delivery.</p></div>
-          <div class="howto-step"><span class="howto-num">3</span><p><strong>Order or enquire.</strong> Order platters online in a few taps, or send a package enquiry and we'll tailor it to your event.</p></div>
-        </div>
-      </div>
-      <div class="intro-photo">
-        <img src="images/catering/feature/catering-12.jpg" alt="An abundant catering spread of platters and grazing boards" loading="lazy">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <h2>Catering, the easy way</h2>
+      <p>Each Signature Platter is made fresh by our kitchen. Mix and match as many as you need, then choose delivery or pickup from your nearest venue.</p>
+      <div class="howto">
+        <div class="howto-step"><span class="howto-num">1</span><p><strong>Choose your platters.</strong> Add what you like and set the quantities — your total updates as you go.</p></div>
+        <div class="howto-step"><span class="howto-num">2</span><p><strong>Pick delivery or pickup.</strong> Tell us your venue, date and time. Orders over $350 deliver free within 8km.</p></div>
+        <div class="howto-step"><span class="howto-num">3</span><p><strong>Send your order.</strong> We'll confirm availability and arrange payment — no card details needed online.</p></div>
       </div>
     </div>
-    <div class="bespoke">
-      <div class="bespoke-copy">
-        <p class="bespoke-title">Something a little more bespoke?</p>
-        <p class="bespoke-text">Every package can be tailored, and we can build a custom spread from the full menu for any event — at home, the office, or a private space. Tell us what you have in mind.</p>
-      </div>
-      <a href="contact.html#catering-enquiry" class="btn btn-light">Enquire about custom catering</a>
+    <div class="intro-photo">
+      <img src="images/catering/feature/catering-12.jpg" alt="An abundant catering spread of platters and grazing boards" loading="lazy">
     </div>
   </div>
-</section>
-
-<!-- CORPORATE PACKAGES -->
-<section id="packages">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">For the workplace</p>
-      <h2 class="sec-title">Corporate Packages</h2>
-      <p class="sec-sub">Pre-planned packages for workplaces, meetings, team celebrations and corporate events. Delivery included; pricing scales by team size.</p>
-    </div>
-    <nav class="cat-nav" aria-label="Jump to a section">
-      <a href="#packages">Corporate</a>
-      <a href="#birthday">Birthdays</a>
-      <a href="#private">Private events</a>
-      <a href="#addons">Add-ons</a>
-      <a href="#order">Full menu &amp; order online</a>
-    </nav>
-    <div class="pkg-cards">
-      <div class="pkg2">
-        <div class="pkg2-name">Morning Tea</div>
-        <div class="pkg2-tag">Effortless morning tea for your team.</div>
-        <ul>
-          <li>Mixed Danishes &amp; Fresh Strawberries Platter</li>
-          <li>Scones with Jam &amp; Cream Platter</li>
-          <li>Savoury Pastry Platter</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="tiers">
-          <div class="tier"><span>30 staff</span><span class="t-price">$350</span></div>
-          <div class="tier"><span>60 staff</span><span class="t-price">$650</span></div>
-          <div class="tier"><span>90 staff</span><span class="t-price">$1,000</span></div>
-        </div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-      <div class="pkg2">
-        <div class="pkg2-name">Staff Meeting</div>
-        <div class="pkg2-tag">Good food makes better meetings.</div>
-        <ul>
-          <li>Seasonal Fresh Fruit Platter</li>
-          <li>Savoury Pastry Platter</li>
-          <li>Gourmet Beef Bourguignon Pies Platter</li>
-          <li>Mixed Sandwich Platter</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="tiers">
-          <div class="tier"><span>30 staff</span><span class="t-price">$450</span></div>
-          <div class="tier"><span>60 staff</span><span class="t-price">$850</span></div>
-          <div class="tier"><span>90 staff</span><span class="t-price">$1,250</span></div>
-        </div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-      <div class="pkg2">
-        <div class="pkg2-name">Friday Lunch</div>
-        <div class="pkg2-tag">The best part of everyone's Friday.</div>
-        <ul>
-          <li>Mixed Sandwich Platter</li>
-          <li>Vegetable or Duck Rice Paper Rolls Platter</li>
-          <li>Chicken Katsu or Cheeseburger Sliders</li>
-          <li>Truffle &amp; Mushroom Arancini</li>
-          <li>Seasonal Fruit Platter</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="tiers">
-          <div class="tier"><span>30 staff</span><span class="t-price">$600</span></div>
-          <div class="tier"><span>60 staff</span><span class="t-price">$1,150</span></div>
-          <div class="tier"><span>90 staff</span><span class="t-price">$1,700</span></div>
-        </div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-    </div>
-    <p class="pkg-foot">Build your own: custom corporate packages can be created from the full menu with a tailored quote. <a href="contact.html#catering-enquiry">Get in touch</a>.</p>
+  <div class="coming-soon">
+    <span class="cs-icon">✦</span>
+    <p><strong>More coming soon.</strong> We're starting with our Signature Platters. Buffets, canapés, banquets and full event catering will be available to order here shortly.</p>
   </div>
-</section>
-
-<!-- CORPORATE BIRTHDAY PACKAGES -->
-<section id="birthday">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Celebrate the team</p>
-      <h2 class="sec-title">Corporate Birthday Packages</h2>
-      <p class="sec-sub">Two workplace-celebration packages designed to remove the planning stress. Discounts available on annual programs.</p>
-    </div>
-    <div class="pkg-cards pkg-cards-2">
-      <div class="pkg2">
-        <div class="pkg2-name">Combined Monthly Birthday Lunch</div>
-        <div class="pkg2-tag">Celebrate the whole team — 10% off when booked for the full year.</div>
-        <ul>
-          <li>6 Hot Mixed Platters</li>
-          <li>Chef's Selection of Cakes &amp; Slices with Birthday Candle</li>
-          <li>2 × Balloon Columns with Happy Birthday Balloon</li>
-          <li>Happy Birthday Banner</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="tiers">
-          <div class="tier"><span>30 staff</span><span class="t-price">$950</span></div>
-          <div class="tier"><span>60 staff</span><span class="t-price">$1,650</span></div>
-          <div class="tier"><span>90 staff</span><span class="t-price">$2,350</span></div>
-        </div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-      <div class="pkg2">
-        <div class="pkg2-name">Individual Birthday Afternoon Tea</div>
-        <div class="pkg2-tag">Make every birthday special — 15% off annual birthday programs (min. 10 birthdays booked).</div>
-        <ul>
-          <li>2 × Table Balloon Bunches with Happy Birthday Balloon</li>
-          <li>Happy Birthday Banner</li>
-          <li>Savoury Pastry Platter</li>
-          <li>Sandwich Platter</li>
-          <li>Scones with Jam &amp; Cream</li>
-          <li>Chef's Selection of Cakes &amp; Slices with Birthday Candle</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="tiers">
-          <div class="tier"><span>30 staff</span><span class="t-price">$650</span></div>
-          <div class="tier"><span>60 staff</span><span class="t-price">$1,150</span></div>
-          <div class="tier"><span>90 staff</span><span class="t-price">$1,650</span></div>
-        </div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRIVATE EVENT PACKAGES -->
-<section id="private">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">For your celebration</p>
-      <h2 class="sec-title">Private Event Packages</h2>
-      <p class="sec-sub">For birthdays, family celebrations, wakes and private gatherings. Flexible options with optional setup and styling. Delivery included; food presented in ready-to-serve disposable containers.</p>
-    </div>
-    <div class="pkg-cards">
-      <div class="pkg2">
-        <div class="pkg2-name">Light</div>
-        <div class="pkg2-tag">Serves approx. 30 guests. Select your cold platter options from the menu; everything else is taken care of.</div>
-        <ul>
-          <li>1 × Antipasto Platter</li>
-          <li>3 × Cold Food Platters</li>
-          <li>1 × Chef's Selection of Cakes &amp; Slices</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="fixed-price">$850<small>Serves approx. 30 guests</small></div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-      <div class="pkg2">
-        <div class="pkg2-name">Substantial</div>
-        <div class="pkg2-tag">More variety across cold and hot platters, with double the desserts. Delivered ready to serve.</div>
-        <ul>
-          <li>1 × Antipasto Platter</li>
-          <li>4 × Cold Food Platters</li>
-          <li>6 × Hot Food Platters</li>
-          <li>2 × Chef's Selection of Cakes &amp; Slices</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="fixed-price">$1,900<small>Serves approx. 50–60 guests</small></div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-      <div class="pkg2">
-        <div class="pkg2-name">Premium</div>
-        <div class="pkg2-tag">The ultimate spread with cold and hot platters, pizza, pasta and a premium sweet finish.</div>
-        <ul>
-          <li>1 × Antipasto Platter</li>
-          <li>2 × Cold Food Platters</li>
-          <li>6 × Hot Food Platters</li>
-          <li>2 × Pizza Packs</li>
-          <li>2 × Pasta Packs</li>
-          <li>1 × Seasonal Fruit Platter</li>
-          <li>1 × Premium Petit Fours &amp; Macarons</li>
-        </ul>
-        <p class="delivery-incl">Delivery included</p>
-        <div class="fixed-price">$2,850<small>Serves approx. 70–80 guests</small></div>
-        <a href="contact.html#catering-enquiry" class="btn btn-primary btn-enq">Enquire</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OPTIONAL ADD-ONS -->
-<section id="addons">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Finishing touches</p>
-      <h2 class="sec-title">Optional Add-Ons</h2>
-      <p class="sec-sub">Round out any package or order with tableware, styling and staff.</p>
-    </div>
-    <div class="addon-grid">
-      <div class="addon">
-        <h3>Cutlery &amp; Tableware</h3>
-        <p class="a-price">Contact for pricing</p>
-        <p>Quality disposable plates and cutlery so guests are ready to eat the moment food arrives.</p>
-      </div>
-      <div class="addon">
-        <h3>Styled Setup &amp; Pack Down</h3>
-        <p class="a-price">From $200</p>
-        <p>Trestle tables dressed with linen, premium platters laid out and food styled. Pack-down and waste removal after the event.</p>
-      </div>
-      <div class="addon">
-        <h3>On-the-Day Staffing</h3>
-        <p class="a-price">From $150</p>
-        <p>Staff to serve, replenish and keep things running smoothly. $50/hr additional; Sunday surcharges apply.</p>
-      </div>
-    </div>
-    <p class="pkg-foot">Add-ons can be included with any package or à la carte order. <a href="contact.html#catering-enquiry">Ask us</a> when you enquire.</p>
+  <div class="cta-band">
+    <p class="cta-band-title">Looking to have your event catered, but want something a little extra?</p>
+    <p class="cta-band-text">Maybe one of the packages on our <a href="functions-events.html">Functions &amp; Events</a> page caught your eye, and you'd like us to run an entire event for you — at home. We'd be happy to help!</p>
+    <a href="contact.html#catering-enquiry" class="btn btn-light">Put a request through here</a>
   </div>
 </section>
 
@@ -557,240 +314,100 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Order online</p>
-      <h2 class="sec-title">Full Catering Menu</h2>
-      <p class="sec-sub">Restaurant-quality platters prepared fresh from our Seven Hills kitchen. Build your order on the left and your summary updates on the right. Prices are per platter / serve as listed.</p>
+      <h2 class="sec-title">Signature Platters</h2>
+      <p class="sec-sub">Each platter feeds 10–15 guests. Build your order on the left and your summary updates on the right.</p>
     </div>
 
     <div class="order-grid">
       <!-- PLATTERS -->
       <div class="platter-list" id="platterList">
-        <div class="cat-head">Hot Platters</div>
-        <div class="platter" data-id="pies" data-name="Gourmet Beef Bourguignon Pies" data-price="125">
+        <div class="platter" data-id="cheese" data-name="Artisanal Cheese" data-price="230">
           <div class="platter-info">
-            <h3 class="platter-title">Gourmet Beef Bourguignon Pies <span class="platter-price">$125</span></h3>
-            <p class="platter-feeds">24 pcs</p>
+            <h3 class="platter-title">Artisanal Cheese <span class="platter-price">$230</span></h3>
+            <p class="platter-feeds">Feeds 10-15</p>
+            <p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Gourmet Beef Bourguignon Pies" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Gourmet Beef Bourguignon Pies">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Artisanal Cheese" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Artisanal Cheese">+</button></div>
         </div>
-        <div class="platter" data-id="calamari" data-name="Lemon Pepper Calamari with Aioli" data-price="125">
+        <div class="platter" data-id="charcuterie" data-name="Artisanal Charcuterie" data-price="230">
           <div class="platter-info">
-            <h3 class="platter-title">Lemon Pepper Calamari with Aioli <span class="diet">gf</span> <span class="platter-price">$125</span></h3>
-            <p class="platter-feeds">Platter</p>
+            <h3 class="platter-title">Artisanal Charcuterie <span class="platter-price">$230</span></h3>
+            <p class="platter-feeds">Feeds 10–15</p>
+            <p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Lemon Pepper Calamari" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Lemon Pepper Calamari">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Artisanal Charcuterie" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Artisanal Charcuterie">+</button></div>
         </div>
-        <div class="platter" data-id="thai-spring-rolls" data-name="Thai Spring Rolls with Sweet Chilli Sauce" data-price="100">
+        <div class="platter" data-id="sliders" data-name="Sliders" data-price="135">
           <div class="platter-info">
-            <h3 class="platter-title">Thai Spring Rolls with Sweet Chilli Sauce <span class="diet">v</span> <span class="platter-price">$100</span></h3>
-            <p class="platter-feeds">90 pcs</p>
+            <h3 class="platter-title">Sliders <span class="platter-pc">(15pc)</span> <span class="platter-price">$135</span></h3>
+            <p class="platter-feeds">15pcs</p>
+            <p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Thai Spring Rolls" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Thai Spring Rolls">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Sliders platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Sliders platter">+</button></div>
         </div>
-        <div class="platter" data-id="duck-spring-rolls" data-name="Duck Spring Rolls with Sweet Chilli Sauce" data-price="120">
+        <div class="platter" data-id="arancini" data-name="Arancini" data-price="120">
           <div class="platter-info">
-            <h3 class="platter-title">Duck Spring Rolls with Sweet Chilli Sauce <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">30 pcs</p>
+            <h3 class="platter-title">Arancini <span class="platter-price">$120</span></h3>
+            <p class="platter-feeds">30pcs</p>
+            <p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Duck Spring Rolls" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Duck Spring Rolls">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Arancini platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Arancini platter">+</button></div>
         </div>
-        <div class="platter" data-id="samosa" data-name="Vegetable Samosa" data-price="110">
+        <div class="platter" data-id="fish" data-name="Crispy Fish" data-price="155">
           <div class="platter-info">
-            <h3 class="platter-title">Vegetable Samosa <span class="diet">v</span> <span class="platter-price">$110</span></h3>
-            <p class="platter-feeds">30 pcs</p>
+            <h3 class="platter-title">Crispy Fish <span class="platter-price">$155</span></h3>
+            <p class="platter-feeds">30pcs</p>
+            <p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Vegetable Samosa" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Vegetable Samosa">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Crispy Fish platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Crispy Fish platter">+</button></div>
         </div>
-        <div class="platter" data-id="cheeseburger-sliders" data-name="American Cheeseburger Sliders" data-price="120">
+        <div class="platter" data-id="savouryrolls" data-name="S&amp;R Savoury Rolls" data-price="125">
           <div class="platter-info">
-            <h3 class="platter-title">American Cheeseburger Sliders <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">15 pcs</p>
+            <h3 class="platter-title">S&amp;R Savoury Rolls <span class="platter-price">$125</span></h3>
+            <p class="platter-feeds">30pcs</p>
+            <p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one American Cheeseburger Sliders" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one American Cheeseburger Sliders">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Savoury Rolls platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Savoury Rolls platter">+</button></div>
         </div>
-        <div class="platter" data-id="katsu-sliders" data-name="Katsu Fried Chicken Sliders" data-price="120">
+        <div class="platter" data-id="aussie" data-name="Classic Aussie" data-price="135">
           <div class="platter-info">
-            <h3 class="platter-title">Katsu Fried Chicken Sliders <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">15 pcs</p>
+            <h3 class="platter-title">Classic Aussie <span class="platter-price">$135</span></h3>
+            <p class="platter-feeds">30pcs</p>
+            <p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Katsu Fried Chicken Sliders" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Katsu Fried Chicken Sliders">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Classic Aussie platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Classic Aussie platter">+</button></div>
         </div>
-        <div class="platter" data-id="teriyaki-skewers" data-name="Teriyaki Chicken Skewers with Sesame Seeds" data-price="150">
+        <div class="platter" data-id="schnitzel" data-name="Schnitzel" data-price="255">
           <div class="platter-info">
-            <h3 class="platter-title">Teriyaki Chicken Skewers with Sesame Seeds <span class="platter-price">$150</span></h3>
-            <p class="platter-feeds">30 pcs</p>
+            <h3 class="platter-title">Schnitzel <span class="platter-pc">(30pc)</span> <span class="platter-price">$255</span></h3>
+            <p class="platter-feeds">30pcs</p>
+            <p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Teriyaki Chicken Skewers" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Teriyaki Chicken Skewers">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Schnitzel platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Schnitzel platter">+</button></div>
         </div>
-        <div class="platter" data-id="kofta-skewers" data-name="Lamb Kofta Skewers with Tzatziki" data-price="150">
+        <div class="platter" data-id="wedges" data-name="Wedges" data-price="110">
           <div class="platter-info">
-            <h3 class="platter-title">Lamb Kofta Skewers with Tzatziki <span class="platter-price">$150</span></h3>
-            <p class="platter-feeds">30 pcs</p>
+            <h3 class="platter-title">Wedges <span class="platter-price">$110</span></h3>
+            <p class="platter-feeds">Feeds 10–15</p>
+            <p class="platter-desc">Potato wedges served with sour cream &amp; sweet chilli sauce.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Lamb Kofta Skewers" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Lamb Kofta Skewers">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Wedges platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Wedges platter">+</button></div>
         </div>
-        <div class="platter" data-id="chorizo-skewers" data-name="Black Forest Chorizo Skewers" data-price="160">
+        <div class="platter" data-id="fruit" data-name="Seasonal Fruit" data-price="220">
           <div class="platter-info">
-            <h3 class="platter-title">Black Forest Chorizo Skewers <span class="platter-price">$160</span></h3>
-            <p class="platter-feeds">30 pcs</p>
+            <h3 class="platter-title">Seasonal Fruit <span class="platter-price">$220</span></h3>
+            <p class="platter-feeds">Feeds 10–15</p>
+            <p class="platter-desc">Chef's selection of fresh seasonal fruit.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Black Forest Chorizo Skewers" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Black Forest Chorizo Skewers">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Seasonal Fruit platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Seasonal Fruit platter">+</button></div>
         </div>
-        <div class="platter" data-id="savoury-pastry" data-name="Savoury Pastry Platter" data-price="140">
+        <div class="platter" data-id="baked" data-name="Baked Goods" data-price="125">
           <div class="platter-info">
-            <h3 class="platter-title">Savoury Pastry Platter <span class="diet">v</span> <span class="platter-price">$140</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-            <p class="platter-desc">Herb-wrapped haloumi fingers, ricotta &amp; spinach kisses, caramelised onion &amp; feta tart.</p>
+            <h3 class="platter-title">Baked Goods <span class="platter-price">$125</span></h3>
+            <p class="platter-feeds">25pcs</p>
+            <p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p>
           </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Savoury Pastry Platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Savoury Pastry Platter">+</button></div>
-        </div>
-        <div class="platter" data-id="arancini" data-name="Truffle &amp; Mushroom Arancini with Truffle Aioli" data-price="120">
-          <div class="platter-info">
-            <h3 class="platter-title">Truffle &amp; Mushroom Arancini with Truffle Aioli <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">25 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Truffle &amp; Mushroom Arancini" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Truffle &amp; Mushroom Arancini">+</button></div>
-        </div>
-        <div class="platter" data-id="tempura-fish" data-name="Tempura Fish Cocktails" data-price="120">
-          <div class="platter-info">
-            <h3 class="platter-title">Tempura Fish Cocktails <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-            <p class="platter-desc">With chips, tartare sauce &amp; lemon.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Tempura Fish Cocktails" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Tempura Fish Cocktails">+</button></div>
-        </div>
-
-        <div class="cat-head">Cold Selections</div>
-        <p class="cat-sub">48 hours notice required.</p>
-        <div class="platter" data-id="veg-rice-paper" data-name="Vegetable Rice Paper Rolls with Dipping Sauce" data-price="180">
-          <div class="platter-info">
-            <h3 class="platter-title">Vegetable Rice Paper Rolls with Dipping Sauce <span class="diet">vg</span><span class="diet">gf</span> <span class="platter-price">$180</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Vegetable Rice Paper Rolls" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Vegetable Rice Paper Rolls">+</button></div>
-        </div>
-        <div class="platter" data-id="duck-rice-paper" data-name="Roasted Duck Rice Paper Rolls with Dipping Sauce" data-price="180">
-          <div class="platter-info">
-            <h3 class="platter-title">Roasted Duck Rice Paper Rolls with Dipping Sauce <span class="platter-price">$180</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Roasted Duck Rice Paper Rolls" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Roasted Duck Rice Paper Rolls">+</button></div>
-        </div>
-        <div class="platter" data-id="salmon-tartlets" data-name="Smoked Salmon, Fennel &amp; Horseradish Tartlets" data-price="195">
-          <div class="platter-info">
-            <h3 class="platter-title">Smoked Salmon, Fennel &amp; Horseradish Tartlets <span class="platter-price">$195</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Smoked Salmon Tartlets" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Smoked Salmon Tartlets">+</button></div>
-        </div>
-        <div class="platter" data-id="sushi" data-name="Assorted Sushi" data-price="210">
-          <div class="platter-info">
-            <h3 class="platter-title">Assorted Sushi <span class="diet">vg</span><span class="diet">gf</span> <span class="platter-price">$210</span></h3>
-            <p class="platter-feeds">45 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Assorted Sushi" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Assorted Sushi">+</button></div>
-        </div>
-        <div class="platter" data-id="caprese-skewers" data-name="Tomato, Basil &amp; Bocconcini Skewers" data-price="210">
-          <div class="platter-info">
-            <h3 class="platter-title">Tomato, Basil &amp; Bocconcini Skewers <span class="diet">v</span><span class="diet">gf</span> <span class="platter-price">$210</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-            <p class="platter-desc">With balsamic glaze.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Tomato, Basil &amp; Bocconcini Skewers" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Tomato, Basil &amp; Bocconcini Skewers">+</button></div>
-        </div>
-        <div class="platter" data-id="pinwheels" data-name="Roast Pumpkin &amp; Goat Cheese Pinwheels" data-price="210">
-          <div class="platter-info">
-            <h3 class="platter-title">Roast Pumpkin &amp; Goat Cheese Pinwheels <span class="diet">v</span> <span class="platter-price">$210</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Roast Pumpkin &amp; Goat Cheese Pinwheels" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Roast Pumpkin &amp; Goat Cheese Pinwheels">+</button></div>
-        </div>
-        <div class="platter" data-id="peking-duck" data-name="Peking Duck Pancakes with Hoisin Sauce" data-price="260">
-          <div class="platter-info">
-            <h3 class="platter-title">Peking Duck Pancakes with Hoisin Sauce <span class="platter-price">$260</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Peking Duck Pancakes" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Peking Duck Pancakes">+</button></div>
-        </div>
-        <div class="platter" data-id="sandwiches" data-name="Chef's Selection of Sandwiches" data-price="95">
-          <div class="platter-info">
-            <h3 class="platter-title">Chef's Selection of Sandwiches <span class="platter-price">$95</span></h3>
-            <p class="platter-feeds">32 qtrs</p>
-            <p class="platter-desc">Ham, cheese &amp; tomato · Egg, lettuce &amp; mayo · Chicken, lettuce &amp; mayo · Salad &amp; avocado.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Chef's Selection of Sandwiches" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Chef's Selection of Sandwiches">+</button></div>
-        </div>
-
-        <div class="cat-head">Grazing Platters</div>
-        <div class="platter" data-id="cheese" data-name="Cheese Platter" data-price="200">
-          <div class="platter-info">
-            <h3 class="platter-title">Cheese Platter <span class="platter-price">$200</span></h3>
-            <p class="platter-feeds">Platter</p>
-            <p class="platter-desc">Local &amp; imported cheese with fresh grapes, nuts, dried fruits, lavosh, crackers &amp; grissini.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Cheese Platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Cheese Platter">+</button></div>
-        </div>
-        <div class="platter" data-id="antipasto" data-name="Antipasto Platter" data-price="200">
-          <div class="platter-info">
-            <h3 class="platter-title">Antipasto Platter <span class="platter-price">$200</span></h3>
-            <p class="platter-feeds">Platter</p>
-            <p class="platter-desc">Italian cured salami, prosciutto, champagne ham, provolone, chargrilled peppers, fetta &amp; olives with toasted pane de casa &amp; grissini.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Antipasto Platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Antipasto Platter">+</button></div>
-        </div>
-
-        <div class="cat-head">Pizza &amp; Pasta</div>
-        <div class="platter" data-id="pizza-pack" data-name="Pizza Pack" data-price="360">
-          <div class="platter-info">
-            <h3 class="platter-title">Pizza Pack <span class="platter-price">$360</span></h3>
-            <p class="platter-feeds">Serves 15</p>
-            <p class="platter-desc">Four long slab pizzas — choose from Margherita (V), Vegetarian (V), BBQ Meatlovers, BBQ Chicken, Pepperoni.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Pizza Pack" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Pizza Pack">+</button></div>
-        </div>
-        <div class="platter" data-id="pasta-pack" data-name="Pasta Pack" data-price="285">
-          <div class="platter-info">
-            <h3 class="platter-title">Pasta Pack <span class="platter-price">$285</span></h3>
-            <p class="platter-feeds">Serves 15</p>
-            <p class="platter-desc">3 types to share — Pesto Penne, Chilli Prawn Linguine, Beef Ragu Rigatoni.</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Pasta Pack" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Pasta Pack">+</button></div>
-        </div>
-
-        <div class="cat-head">Sweet Selections</div>
-        <div class="platter" data-id="danishes" data-name="Mixed Danishes &amp; Fresh Strawberries" data-price="110">
-          <div class="platter-info">
-            <h3 class="platter-title">Mixed Danishes &amp; Fresh Strawberries <span class="platter-price">$110</span></h3>
-            <p class="platter-feeds">20 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Mixed Danishes" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Mixed Danishes">+</button></div>
-        </div>
-        <div class="platter" data-id="scones" data-name="Scones with Jam &amp; Cream" data-price="110">
-          <div class="platter-info">
-            <h3 class="platter-title">Scones with Jam &amp; Cream <span class="platter-price">$110</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Scones with Jam &amp; Cream" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Scones with Jam &amp; Cream">+</button></div>
-        </div>
-        <div class="platter" data-id="fruit" data-name="Seasonal Fresh Fruit Platter" data-price="120">
-          <div class="platter-info">
-            <h3 class="platter-title">Seasonal Fresh Fruit Platter <span class="platter-price">$120</span></h3>
-            <p class="platter-feeds">Platter</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Seasonal Fresh Fruit Platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Seasonal Fresh Fruit Platter">+</button></div>
-        </div>
-        <div class="platter" data-id="cakes-slices" data-name="Chef's Selection Cakes &amp; Slices" data-price="130">
-          <div class="platter-info">
-            <h3 class="platter-title">Chef's Selection Cakes &amp; Slices <span class="platter-price">$130</span></h3>
-            <p class="platter-feeds">Platter</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Chef's Selection Cakes &amp; Slices" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Chef's Selection Cakes &amp; Slices">+</button></div>
-        </div>
-        <div class="platter" data-id="petit-fours" data-name="Premium Petit Fours &amp; Macarons" data-price="250">
-          <div class="platter-info">
-            <h3 class="platter-title">Premium Petit Fours &amp; Macarons <span class="platter-price">$250</span></h3>
-            <p class="platter-feeds">30 pcs</p>
-          </div>
-          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Premium Petit Fours &amp; Macarons" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Premium Petit Fours &amp; Macarons">+</button></div>
+          <div class="stepper"><button type="button" class="qty-btn minus" aria-label="Remove one Baked Goods platter" disabled>−</button><span class="qty-val">0</span><button type="button" class="qty-btn plus" aria-label="Add one Baked Goods platter">+</button></div>
         </div>
       </div>
 
@@ -853,7 +470,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <input type="hidden" name="delivery_fee" id="fFee">
         <input type="hidden" name="order_total" id="fTotal">
 
-        <button type="submit" class="btn btn-light btn-submit">Send order request</button>
+        <button type="submit" class="btn-submit">Send order request</button>
         <p class="form-fine">This is an order request, not a payment. Our team will confirm availability and arrange payment with you directly.</p>
         <div class="form-msg" id="formMsg" hidden></div>
       </form>
@@ -868,7 +485,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <p class="eyebrow">Good to know</p>
       <h2 class="sec-title">Delivery &amp; pickup</h2>
     </div>
-<div class="terms-grid">
+    <div class="terms-grid">
       <div class="term-card">
         <span class="term-icon">🚚</span>
         <div><h3>Free delivery over $350</h3><p>Orders of $350 or more deliver free within 8km of your chosen venue. Under $350, a flat $50 delivery fee applies.</p></div>
@@ -891,7 +508,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 
 <!-- ENQUIRE -->
 <section id="enquire">
-  <div class="wrap enquire-inner">
+  <div class="enquire-inner">
     <p class="eyebrow">Prefer to talk it through?</p>
     <h2>We're here to help</h2>
     <p>Catering a bigger event, or not sure what you need? Our team is happy to talk through quantities, dietaries and timing before you order.</p>

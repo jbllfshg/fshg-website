@@ -150,7 +150,7 @@ section{padding:5.5rem 0}
 
 /* ---------- FOOTER ---------- */
 .site-footer{background:var(--ink);color:var(--paper-dim);font-size:14px}
-.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding:4rem 0 3rem}
+.footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:2.5rem;padding:4rem 0 3rem}
 .footer-brand-name{font-family:var(--display);font-size:1.4rem;font-weight:900;color:var(--paper);letter-spacing:-0.01em;text-transform:uppercase;line-height:1}
 .footer-brand-sub{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin:0.4rem 0 1.25rem}
 .footer-brand-desc{font-size:0.85rem;color:var(--paper-faint);line-height:1.8;max-width:280px}
@@ -172,6 +172,7 @@ section{padding:5.5rem 0}
   .hero-grid,.events-intro{grid-template-columns:1fr}
   .hero-media{max-width:460px}
   .events-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-main{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   .venues-grid,.catering-wrap,.footer-main,.events-grid{grid-template-columns:1fr}
@@ -240,23 +241,23 @@ section{padding:5.5rem 0}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Start here</p>
-      <h2 class="sec-title">How can we help?</h2>
+      <h2 class="sec-title">How can we make your day?</h2>
     </div>
     <div class="paths-grid">
-      <a class="path-card" href="#venues">
-        <div class="path-photo"><img src="images/home/gallery-01.jpg" alt="A plated dish at one of our venues" loading="lazy"></div>
-        <div class="path-body">
-          <p class="path-name">Dine at our venues</p>
-          <p class="path-desc">Two bistros across Western Sydney and the Hills — lunch and dinner, seven days. Book a table at The Fairway or The Jack &amp; Cleaver.</p>
-          <span class="path-link">See our venues <span class="arw">→</span></span>
-        </div>
-      </a>
       <a class="path-card" href="functions-events.html">
         <div class="path-photo"><img src="images/catering/feature/catering-05.jpg" alt="Canapés served on platters at a function" loading="lazy"></div>
         <div class="path-body">
           <p class="path-name">Plan a function</p>
           <p class="path-desc">Birthdays, milestones, corporate events and remembrances — packages for 30 to 320 guests across both venues.</p>
           <span class="path-link">Explore functions <span class="arw">→</span></span>
+        </div>
+      </a>
+      <a class="path-card" href="#venues">
+        <div class="path-photo"><img src="images/home/gallery-01.jpg" alt="A plated dish at one of our venues" loading="lazy"></div>
+        <div class="path-body">
+          <p class="path-name">Dine at our venues</p>
+          <p class="path-desc">Two bistros across Western Sydney and the Hills — lunch and dinner, seven days. Book a table at The Fairway or The Jack &amp; Cleaver.</p>
+          <span class="path-link">See our venues <span class="arw">→</span></span>
         </div>
       </a>
       <a class="path-card" href="catering.html">
@@ -267,6 +268,35 @@ section{padding:5.5rem 0}
           <span class="path-link">See catering <span class="arw">→</span></span>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="events-intro">
+      <div>
+        <p class="eyebrow">Private functions</p>
+        <h2 class="sec-title">Celebrate your next event with us</h2>
+        <p class="sec-sub">From intimate birthdays to milestone events, both venues offer a full suite of function packages — including canapés, buffets, banquets, and remembrance gatherings. We have a range of packages available.</p>
+      </div>
+      <div class="events-pull">
+        <p class="pq">A space for every celebration — from 30 guests to 320.</p>
+        <p class="pd">Gather up to 320 guests in our brand-new Yarrara Room at The Jack &amp; Cleaver, or soak up the views from The Fairway's Main Terrace, overlooking the golf course greens — with two more intimate spaces to choose from across the venues.</p>
+      </div>
+    </div>
+    <div class="events-grid">
+      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></a>
+      <a class="event-card" href="functions-events.html#buffets"><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></a>
+      <a class="event-card" href="functions-events.html#set-menus"><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></a>
+      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></a>
+      <a class="event-card" href="functions-events.html#remembrance"><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></a>
+      <a class="event-card" href="functions-events.html#beverages"><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></a>
+    </div>
+    <div class="events-cta">
+      <p>Both venues available. Minimum spends apply. Contact us to discuss your event.</p>
+      <a href="contact.html" class="btn btn-light">Enquire about a function</a>
     </div>
   </div>
 </section>
@@ -322,35 +352,6 @@ section{padding:5.5rem 0}
   </div>
 </section>
 
-<!-- EVENTS -->
-<section id="events">
-  <div class="wrap">
-    <div class="events-intro">
-      <div>
-        <p class="eyebrow">Private functions</p>
-        <h2 class="sec-title">Celebrate your next event with us</h2>
-        <p class="sec-sub">From intimate birthdays to milestone events, both venues offer a full suite of function packages — including canapés, buffets, banquets, and remembrance gatherings. We have a range of packages available.</p>
-      </div>
-      <div class="events-pull">
-        <p class="pq">A space for every celebration — from 30 guests to 320.</p>
-        <p class="pd">Gather up to 320 guests in our brand-new Yarrara Room at The Jack &amp; Cleaver, or soak up the views from The Fairway's Main Terrace, overlooking the golf course greens — with two more intimate spaces to choose from across the venues.</p>
-      </div>
-    </div>
-    <div class="events-grid">
-      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Signature canapés</p><p class="event-desc">9 selections across cold, hot, and fork options. Two waiters included for two hours of service. Perfect for cocktail receptions.</p><p class="event-from">From $67pp · Min. 60 guests</p></a>
-      <a class="event-card" href="functions-events.html#buffets"><p class="event-name">Buffets &amp; banquets</p><p class="event-desc">Roast buffet, BBQ buffet, signature buffet, Art of Asia, Middle East banquet, pizza &amp; pasta — something for every occasion.</p><p class="event-from">From $46pp · Min. 35 guests</p></a>
-      <a class="event-card" href="functions-events.html#set-menus"><p class="event-name">Set menu dining</p><p class="event-desc">Entrée &amp; main, or entrée, main &amp; dessert. Two alternating choices served to the table. Includes linen, bread &amp; butter, tea &amp; coffee.</p><p class="event-from">From $79pp · Two-course</p></a>
-      <a class="event-card" href="functions-events.html#grazing"><p class="event-name">Platinum grazing</p><p class="event-desc">Artisanal cheese, charcuterie, savoury pastries, and sliders. Ideal for cocktail parties or informal gatherings. Add pizzas for $9pp.</p><p class="event-from">$85pp · Min. 30 guests</p></a>
-      <a class="event-card" href="functions-events.html#remembrance"><p class="event-name">Remembrance packages</p><p class="event-desc">Gold &amp; Platinum packages with 3-hour space hire, table linen, and a curated selection of food. Thoughtful, dignified, effortless.</p><p class="event-from">From $33pp · Gold package</p></a>
-      <a class="event-card" href="functions-events.html#beverages"><p class="event-name">Beverage packages</p><p class="event-desc">Gold ($60pp) and Premium ($75pp) packages, plus bar tab and cash bar options. Non-alcoholic beverages always included.</p><p class="event-from">From $60pp · Gold package</p></a>
-    </div>
-    <div class="events-cta">
-      <p>Both venues available. Minimum spends apply. Contact us to discuss your event.</p>
-      <a href="contact.html" class="btn btn-light">Enquire about a function</a>
-    </div>
-  </div>
-</section>
-
 <!-- CATERING -->
 <section id="catering">
   <div class="wrap catering-wrap">
@@ -393,7 +394,13 @@ section{padding:5.5rem 0}
         <ul class="footer-links">
           <li><a href="the-fairway.html">The Fairway</a></li>
           <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
-          <li><a href="catering.html">At-home Catering</a></li>
+        </ul>
+      </div>
+      <!-- Our services -->
+      <div>
+        <p class="footer-col-title">Our services</p>
+        <ul class="footer-links">
+          <li><a href="catering.html">Event Catering</a></li>
           <li><a href="index.html#events">Functions &amp; Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

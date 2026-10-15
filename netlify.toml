@@ -24,6 +24,10 @@
   path = "/staff-handbook.html"
   function = "staff-handbook-auth"
 
+[[edge_functions]]
+  path = "/staff-handbook/*"
+  function = "staff-handbook-auth"
+
 # Turn off the What's On page — redirect it to the home page.
 [[redirects]]
   from = "/whats-on"
@@ -35,4 +39,44 @@
   from = "/whats-on.html"
   to = "/"
   status = 301
+  force = true
+
+# Block internal files. The site publishes the whole repo (publish = "."),
+# so anything that isn't a public page must be hidden here. These return the
+# 404 page rather than the file. Note: /.netlify/functions/* (the live
+# booking endpoints) is a different path and is NOT affected.
+[[redirects]]
+  from = "/docs/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/node_modules/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404.html"
+  status = 404
   force = true

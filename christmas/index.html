@@ -262,8 +262,9 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 #hero.xmas .hero-title{color:var(--paper)}
 #hero.xmas .hero-title em{font-style:normal;color:var(--gold-lt)}
 #hero.xmas .hero-sub{color:var(--paper-dim)}
-#hero.xmas .hero-img{background-image:url('/images/christmas/roast-chicken.jpg')}
-#hero.xmas .hero-shade{border-color:var(--gold)}
+#hero.xmas .hero-img{background-image:url('/images/christmas/grazing-board.jpg')}
+#hero.xmas .hero-shade{border-color:var(--gold);align-self:center;aspect-ratio:5/4}
+@media(max-width:900px){#hero.xmas .hero-shade{aspect-ratio:16/10}}
 #hero.xmas .btn-gold{background:var(--claret)}
 #hero.xmas .btn-call{color:var(--paper);border-color:rgba(245,242,236,0.4)}
 #hero.xmas .btn-call:hover{background:var(--paper);color:var(--ink)}
@@ -310,8 +311,11 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 .dish-name .plus{display:inline-block;margin-left:6px;font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.06em;color:var(--claret);background:rgba(138,43,46,0.08);border:1px solid rgba(138,43,46,0.25);border-radius:2px;padding:2px 6px;vertical-align:2px}
 .dish-desc{font-size:0.88rem;font-style:italic;color:var(--muted);line-height:1.55;margin-top:2px}
 .dish-desc ul{margin:4px 0 0 1.1rem}
-.menu-dessert{grid-column:1/-1;margin-top:0.6rem;padding-top:1.2rem;border-top:1px solid var(--gold);display:flex;align-items:center;gap:12px;font-size:0.95rem;color:var(--ink)}
-.menu-dessert svg{width:22px;height:22px;color:var(--claret);flex-shrink:0}
+.menu-desserts{grid-column:1/-1;margin-top:1rem;padding-top:1.6rem;border-top:1px solid var(--gold)}
+.menu-desserts h3{font-family:var(--display);font-weight:900;font-size:1.35rem;letter-spacing:0.02em;text-transform:uppercase;color:var(--pine);margin-bottom:1.2rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.menu-desserts h3 svg{width:20px;height:20px;color:var(--claret)}
+.menu-h-note{font-family:var(--body);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:var(--claret)}
+.dessert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.2rem}
 .menu-note{margin-top:1.4rem;font-size:0.82rem;color:var(--paper-dim);line-height:1.6}
 
 /* Menu photo strip */
@@ -345,6 +349,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 @media(max-width:820px){
   .opt-grid,.v-grid{grid-template-columns:1fr}
   .menu-photos{grid-template-columns:repeat(2,1fr)}
+  .dessert-grid{grid-template-columns:1fr}
   .menu-card{grid-template-columns:1fr;padding:1.6rem 1.4rem}
   .menu-col+.menu-col{border-left:none;padding-left:0;margin-top:1rem}
 }
@@ -386,7 +391,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 <!-- HERO -->
 <header id="hero" class="xmas">
   <div class="snow" aria-hidden="true"></div>
-  <div class="hero-img" role="img" aria-label="A golden roast chicken with rosemary and roasted vegetables"></div>
+  <div class="hero-img" role="img" aria-label="A festive Christmas grazing spread with cheeses, charcuterie, fruit and gingerbread"></div>
   <div class="hero-shade"></div>
   <div class="hero-inner">
     <span class="hero-eyebrow">Christmas Functions · Both venues</span>
@@ -486,7 +491,18 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <div class="dish"><p class="dish-name">Christmas Pearl Couscous Salad</p><p class="dish-desc">Pearl couscous, crispy celery, spring onion, toasted almonds and pine nuts, dried cranberries and lime-soy dressing.</p></div>
         <div class="dish"><p class="dish-name">Garlic Parmesan Roasted Brussels Sprouts</p><p class="dish-desc">Brussels sprouts roasted with garlic and topped with parmesan cheese.</p></div>
       </div>
-      <div class="menu-dessert"><svg><use href="#i-bauble"/></svg><span><strong>Dessert</strong> — every package finishes with your choice of dessert.</span></div>
+      <div class="menu-desserts">
+        <h3><svg><use href="#i-bauble"/></svg>Desserts <span class="menu-h-note">Choice of one, included in both packages</span></h3>
+        <div class="dessert-grid">
+          <div class="dish"><p class="dish-name">Mini Baked New York Cheesecakes</p></div>
+          <div class="dish"><p class="dish-name">Mini Chocolate Lava Cakes</p><p class="dish-desc">Served with fresh whipped cream.</p></div>
+          <div class="dish"><p class="dish-name">Apple Crumble Slice</p><p class="dish-desc">Served with warm custard.</p></div>
+          <div class="dish"><p class="dish-name">Fresh Vanilla Slice</p></div>
+          <div class="dish"><p class="dish-name">Chocolate, Hazelnut and Cranberry Slice</p><p class="dish-desc">Served with fresh whipped cream.</p></div>
+          <div class="dish"><p class="dish-name">Sticky Date Pudding</p><p class="dish-desc">Served with butterscotch sauce.</p></div>
+          <div class="dish"><p class="dish-name">Mini Pavlovas</p><p class="dish-desc">Served with fresh fruit.</p></div>
+        </div>
+      </div>
     </div>
     <p class="menu-note">We do our utmost to accommodate dietary requirements, but we cannot guarantee there will be no cross-contamination where allergens are concerned. Menu and pricing are subject to change.</p>
   </div>

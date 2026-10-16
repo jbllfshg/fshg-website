@@ -550,6 +550,8 @@ window.dataLayer = window.dataLayer || [];
       fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: data.toString() })
         .then(function(){
           window.dataLayer.push({ event:'enquiry_submit', venue: VENUE, event_type: eventType });
+          // Google Ads "Submit lead form" conversion
+          if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-18516230020/vpvNCL-4u54dEIT_nP1E', value: 1.0, currency: 'AUD' });
           if(body) body.style.display = 'none';
           if(msg){
             msg.hidden = false;

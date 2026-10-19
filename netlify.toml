@@ -41,6 +41,14 @@
   status = 301
   force = true
 
+# Melbourne Cup bookings at The Fairway (Penrith) go straight to NowBookit.
+# 302 (temporary) so it can be repointed or removed after the event.
+[[redirects]]
+  from = "/melbourne-cup-penrith"
+  to = "https://bookings.nowbookit.com/?accountid=3893fc92-bf1e-4ecd-900c-f21a423b1180&venueid=9730&theme=light&colors=hex,c5e1a5,558b2f&date=2026-11-03&serviceids=event_QYJN0BI76TI1U_1791771307344"
+  status = 302
+  force = true
+
 # Block internal files. The site publishes the whole repo (publish = "."),
 # so anything that isn't a public page must be hidden here. These return the
 # 404 page rather than the file. Note: /.netlify/functions/* (the live

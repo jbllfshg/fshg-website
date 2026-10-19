@@ -168,6 +168,12 @@ section{padding:5.5rem 0}
 .m-opts em{color:var(--orange);font-style:normal;font-weight:700}
 .kids-list{list-style:none}
 .kids-list .m-item-head{margin-bottom:0.7rem}
+.cafe-block{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--claret);border-radius:3px;padding:2rem 2.2rem 1rem;margin:0 0 4rem}
+.cafe-block .eyebrow{display:flex}
+.cafe-block .menu-section-title{margin-bottom:0.7rem}
+.cafe-block .menu-note{margin:0 0 1.5rem}
+.cafe-items{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem}
+@media (max-width:760px){.cafe-block{padding:1.5rem 1.2rem 0.6rem}.cafe-items{grid-template-columns:1fr}}
 .menu-fineprint{margin-top:1rem;font-size:0.78rem;color:var(--muted);line-height:1.7;max-width:760px;border-top:1px solid var(--line);padding-top:1.25rem}
 
 /* ---------- BOOK ---------- */
@@ -295,7 +301,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <p>Set inside Penrith Golf Club, The Fairway is where Western Sydney comes for an easy lunch, a long dinner, or a celebration that runs late. The menu travels from pub favourites — schnitzels, burgers and parmis — to Thai-spiced barramundi, seared octopus and dry-aged steaks finished with café de Paris butter.</p>
       <p>Whether you've just come off the course or you're here for the food alone, there's a seat with your name on it seven days a week.</p>
       <div class="intro-facts">
-        <div class="intro-fact"><span class="dot"></span><span><strong>Lunch &amp; dinner, 7 days</strong> — open from 11:30am daily.</span></div>
+        <div class="intro-fact"><span class="dot"></span><span><strong>Café, lunch &amp; dinner, 7 days</strong> — open from 10am daily, with a <a href="#cafe">café menu</a> until 11:30am.</span></div>
         <div class="intro-fact"><span class="dot"></span><span><strong>Members &amp; visitors welcome</strong> — members enjoy a discounted price on every dish.</span></div>
         <div class="intro-fact"><span class="dot"></span><span><strong>Private functions</strong> — celebrations, wakes and corporate events catered in-house.</span></div>
       </div>
@@ -366,6 +372,26 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 <!-- MENU -->
 <section id="menu">
   <div class="wrap">
+
+    <!-- CAFE (10am–11:30am) -->
+    <div class="cafe-block" id="cafe">
+      <p class="eyebrow">Café · 10am–11:30am daily</p>
+      <h3 class="menu-section-title">Morning café menu</h3>
+      <p class="menu-note">Served from 10am until the lunch menu starts at 11:30am.</p>
+      <div class="cafe-items">
+        <div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Ham &amp; Cheese Deluxe Toastie</span><span class="m-dots"></span><span class="m-price">12.90</span></div><p class="m-desc">Pesto, arugula, sundried tomatoes, shaved leg ham, cheese, served on a Turkish roll.</p></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">HCTT</span><span class="m-dots"></span><span class="m-price">9</span></div><p class="m-desc">Old school ham, cheese and tomato toastie.</p></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Bacon &amp; Egg Toastie</span><span class="m-dots"></span><span class="m-price">11</span></div><p class="m-desc">Crispy bacon, eggs, American style cheese, BBQ sauce, aioli, arugula.</p><p class="m-opts"><em>Add</em> hash brown +3</p></div>
+        </div>
+        <div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Chicken Caesar Wrap</span><span class="m-dots"></span><span class="m-price">14.90</span></div><p class="m-desc">Cos lettuce, bacon, parmesan cheese, crunchy schnitzel, Caesar dressing.</p></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Spinach &amp; Feta Filo</span><span class="m-dots"></span><span class="m-price">11.90</span></div><p class="m-desc">Spinach and feta cheese mix wrapped in buttery filo pastry, served with green salad.</p></div>
+          <div class="m-item"><div class="m-item-head"><span class="m-name">Rosemary Lamb Filo</span><span class="m-dots"></span><span class="m-price">15.90</span></div><p class="m-desc">Slow cooked lamb, rosemary and feta cheese wrapped in buttery filo pastry, served with green salad.</p></div>
+        </div>
+      </div>
+    </div>
+
     <div class="sec-head">
       <p class="eyebrow">À la carte</p>
       <h2 class="sec-title">The Fairway menu</h2>
@@ -517,7 +543,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     </div>
     <div class="info-block">
       <p class="info-label">Hours</p>
-      <p>Mon–Thu &nbsp;11:30am–2:30pm &amp; 5:00pm–8:30pm<br>Fri &nbsp;11:30am–2:30pm &amp; 5:00pm–9:00pm<br>Sat &nbsp;11:30am–9:00pm<br>Sun &nbsp;11:30am–8:30pm</p>
+      <p>Mon–Thu &nbsp;10:00am–2:30pm &amp; 5:00pm–8:30pm<br>Fri &nbsp;10:00am–2:30pm &amp; 5:00pm–9:00pm<br>Sat &nbsp;10:00am–9:00pm<br>Sun &nbsp;10:00am–8:30pm<br><span style="font-size:0.85em;opacity:0.8">Café menu 10:00am–11:30am daily</span></p>
     </div>
     <div class="info-block">
       <p class="info-label">Reservations</p>

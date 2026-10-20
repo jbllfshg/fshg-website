@@ -202,6 +202,10 @@ section[id]{scroll-margin-top:88px}
 .remem-list{columns:2;column-gap:3rem;font-size:0.9rem;color:var(--ink);line-height:1.9}
 .remem-list .it{display:block;break-inside:avoid;margin-bottom:0.15rem}
 .remem-list .sub{color:var(--muted)}
+.wed-photos{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:2.5rem}
+.wed-photos figure{margin:0;border-radius:3px;overflow:hidden;aspect-ratio:3/2;background:var(--paper-2)}
+.wed-photos img{width:100%;height:100%;object-fit:cover;display:block}
+.wed-card{margin-top:1.5rem}
 
 /* ---------- TWO-COLUMN INFO BLOCKS (beverages / additions) ---------- */
 #beverages{background:var(--paper)}
@@ -256,7 +260,7 @@ section[id]{scroll-margin-top:88px}
 }
 @media(max-width:880px){
   .intro-grid,.spaces-grid{grid-template-columns:1fr}
-  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list{grid-template-columns:1fr;columns:1}
+  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list,.wed-photos{grid-template-columns:1fr;columns:1}
   .gallery-strip{grid-template-columns:repeat(2,1fr)}
   .mini-grid{grid-template-columns:1fr}
 }
@@ -830,13 +834,26 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <h2 class="sec-title">Wedding Ceremonies on the Golf Course</h2>
     </div>
     <p class="remem-intro">Exchange your vows outdoors on the greens at The Fairway, Penrith Golf Club, then move straight inside for your reception. Pair your ceremony with any of our function packages, with no wedding tax.</p>
-    <div class="remem-cards" style="grid-template-columns:1fr;max-width:680px">
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><span class="vs-tag tag-fairway">Penrith Golf Club</span><div class="pkg-name">Golf Course Ceremony</div><div class="pkg-meta">The Fairway · Talk to our team about dates and inclusions</div></div>
-          <div class="pkg-price"><div class="pp-alt">From</div><div class="pp">$2,000</div></div>
+    <div class="wed-photos">
+      <figure><img src="images/weddings/ceremony-arbour.jpg" alt="Wedding ceremony set up on the golf course with white chairs and a floral arbour" loading="lazy"></figure>
+      <figure><img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy"></figure>
+    </div>
+    <div class="pkg-card wed-card">
+      <div class="pkg-head">
+        <div><span class="vs-tag tag-fairway">Penrith Golf Club</span><div class="pkg-name">Golf Course Ceremony</div><div class="pkg-meta">The Fairway · 90 minute ceremony on the course</div></div>
+        <div class="pkg-price"><div class="pp-alt">From</div><div class="pp">$2,000</div></div>
+      </div>
+      <div class="pkg-incl">
+        <p class="choice-label">Includes</p>
+        <div class="remem-list">
+          <span class="it">90 minutes on the golf course</span>
+          <span class="it">Ceremony chairs</span>
+          <span class="it">Aisle carpet</span>
+          <span class="it">Arbour, dressed with linen</span>
+          <span class="it">Witness table</span>
+          <span class="it">Complimentary toasting champagne</span>
         </div>
-        <p class="pkg-incl">A ceremony set on the golf course with sweeping views over the greens. <a href="contact.html#functions-enquiry">Enquire about your wedding</a>.</p>
+        <p style="margin-top:1rem"><a href="contact.html#functions-enquiry">Enquire about your wedding</a></p>
       </div>
     </div>
   </div>

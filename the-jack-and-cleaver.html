@@ -252,6 +252,18 @@ section{padding:5.5rem 0}
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+/* ---------- BAREFOOT BOWLS BAND ---------- */
+#bowls{background:linear-gradient(rgba(33,28,24,0.84),rgba(33,28,24,0.9)),url('images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
+.bowls-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:3.5rem;align-items:center}
+.bowls-photo{border-radius:3px;overflow:hidden;aspect-ratio:4/3;border:2px solid var(--paper-faint)}
+.bowls-photo img{width:100%;height:100%;object-fit:cover;object-position:center 65%;display:block}
+#bowls .eyebrow{color:var(--orange)}
+#bowls .eyebrow::before{background:var(--orange)}
+#bowls .sec-title{color:var(--paper)}
+#bowls .sec-sub{color:var(--paper-dim);margin-bottom:1.4rem}
+.bowls-facts{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.bowls-facts span{border:1px solid rgba(245,242,236,0.35);border-radius:2px;padding:7px 13px;font-size:0.74rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+@media(max-width:880px){.bowls-grid{grid-template-columns:1fr;gap:2rem}}
 </style>
 </head>
 <body>
@@ -320,6 +332,22 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     </div>
     <div class="intro-photo">
       <img src="images/fairway/feature/fairway-31.jpg" alt="Double beef burger stacked with bacon, cheese and onion rings, served with chips" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- BAREFOOT BOWLS -->
+<section id="bowls">
+  <div class="wrap bowls-grid">
+    <div class="bowls-photo">
+      <img src="images/barefoot-bowls/bowlers.jpg" alt="Four friends bowling barefoot on the green" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow">On the green</p>
+      <h2 class="sec-title">Barefoot Bowls</h2>
+      <p class="sec-sub">Kick off your shoes and roll a few ends at Pennant Hills Bowling Club, then share burger, seafood and party platters from our dedicated Barefoot Bowls menu.</p>
+      <div class="bowls-facts"><span>Bowls from $7</span><span>Platters from $89</span></div>
+      <a href="/barefoot-bowls/" class="btn btn-light">See the Barefoot Bowls menu</a>
     </div>
   </div>
 </section>

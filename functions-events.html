@@ -26,8 +26,11 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Four Sausages Hospitality Group">
+<link rel="canonical" href="https://fshg.com.au/functions-events">
 <meta name="theme-color" content="#8a2b2e">
 <meta name="description" content="Host your event with Four Sausages Hospitality Group — grazing, canapés, buffets, banquets and set menus for celebrations of any size, at The Fairway (Penrith Golf Club) and The Jack & Cleaver (Pennant Hills Bowling Club).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,6 +205,10 @@ section[id]{scroll-margin-top:88px}
 .remem-list{columns:2;column-gap:3rem;font-size:0.9rem;color:var(--ink);line-height:1.9}
 .remem-list .it{display:block;break-inside:avoid;margin-bottom:0.15rem}
 .remem-list .sub{color:var(--muted)}
+.wed-photos{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:2.5rem}
+.wed-photos figure{margin:0;border-radius:3px;overflow:hidden;aspect-ratio:3/2;background:var(--paper-2)}
+.wed-photos img{width:100%;height:100%;object-fit:cover;display:block}
+.wed-card{margin-top:1.5rem}
 
 /* ---------- TWO-COLUMN INFO BLOCKS (beverages / additions) ---------- */
 #beverages{background:var(--paper)}
@@ -256,7 +263,7 @@ section[id]{scroll-margin-top:88px}
 }
 @media(max-width:880px){
   .intro-grid,.spaces-grid{grid-template-columns:1fr}
-  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list{grid-template-columns:1fr;columns:1}
+  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list,.wed-photos{grid-template-columns:1fr;columns:1}
   .gallery-strip{grid-template-columns:repeat(2,1fr)}
   .mini-grid{grid-template-columns:1fr}
 }
@@ -409,6 +416,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <a href="#platters">Signature Platters</a>
     <a href="#kids">Kids</a>
     <a href="#remembrance">Remembrance</a>
+    <a href="#weddings">Weddings</a>
     <a href="#beverages">Drinks</a>
   </nav>
 </section>
@@ -821,6 +829,39 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   </div>
 </section>
 
+<!-- WEDDING CEREMONIES -->
+<section id="weddings">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Say &ldquo;I do&rdquo;</p>
+      <h2 class="sec-title">Wedding Ceremonies on the Golf Course</h2>
+    </div>
+    <p class="remem-intro">Exchange your vows outdoors on the greens at The Fairway, Penrith Golf Club, then move straight inside for your reception. Pair your ceremony with any of our function packages, with no wedding tax.</p>
+    <div class="wed-photos">
+      <figure><img src="images/weddings/ceremony-arbour.jpg" alt="Wedding ceremony set up on the golf course with white chairs and a floral arbour" loading="lazy"></figure>
+      <figure><img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy"></figure>
+    </div>
+    <div class="pkg-card wed-card">
+      <div class="pkg-head">
+        <div><span class="vs-tag tag-fairway">Penrith Golf Club</span><div class="pkg-name">Golf Course Ceremony</div><div class="pkg-meta">The Fairway · 90 minute ceremony on the course</div></div>
+        <div class="pkg-price"><div class="pp-alt">From</div><div class="pp">$2,000</div></div>
+      </div>
+      <div class="pkg-incl">
+        <p class="choice-label">Includes</p>
+        <div class="remem-list">
+          <span class="it">90 minutes on the golf course</span>
+          <span class="it">Ceremony chairs</span>
+          <span class="it">Aisle carpet</span>
+          <span class="it">Arbour, dressed with linen</span>
+          <span class="it">Witness table</span>
+          <span class="it">Complimentary toasting champagne</span>
+        </div>
+        <p style="margin-top:1rem"><a href="contact.html#functions-enquiry">Enquire about your wedding</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BEVERAGES -->
 <section id="beverages">
   <div class="wrap">
@@ -864,7 +905,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <div class="info-2col">
       <div class="info-block-card">
         <h3>Add-ons</h3>
-        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · up to 50pax</span></span><span class="add-price">$82.50</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · up to 50pax</span></span><span class="add-price">$85</span></div>
         <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 51–99pax</span></span><span class="add-price">$135</span></div>
         <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 100pax or more</span></span><span class="add-price">$185</span></div>
         <div class="add-row"><span class="add-name">Tea &amp; Coffee Station<span class="add-sub">Black &amp; herbal teas, instant coffee, sweeteners</span></span><span class="add-price">$135</span></div>
@@ -925,8 +966,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <!-- Contact -->
       <div>
         <p class="footer-col-title">Contact</p>
-        <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247361633">(02) 4736 1633</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
-        <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0294842433">(02) 9484 2433</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+        <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+        <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
         <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
       </div>
     </div>

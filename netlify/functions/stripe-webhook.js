@@ -58,7 +58,7 @@ Your lunch includes a glass of sparkling on arrival and sticky date pudding, wit
 live three-piece band from 12pm and Best Dressed prizes on the day.
 
 No refunds for cancellations within 72 hours of the event.
-Questions? Call (02) 9484 2433 or reply to this email.
+Questions? Call (02) 4702 3642 or reply to this email.
 
 The Jack & Cleaver · Four Sausages Hospitality Group`;
 }
@@ -81,7 +81,7 @@ function confirmationHtml(f) {
     </table>
     ${detail ? `<p style="font-size:13px;color:#8a9689;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Meal selections</p><table style="width:100%;border-collapse:collapse;margin-bottom:18px">${detail}</table>` : ""}
     <p style="font-size:15px;line-height:1.7">Your lunch includes a glass of sparkling on arrival and sticky date pudding to finish, with a live three-piece band from 12pm and Best Dressed prizes on the day.</p>
-    <p style="font-size:13px;color:#8a9689;line-height:1.6;border-top:1px solid #eee;padding-top:14px">No refunds are given for cancellations within 72 hours of the event. Questions? Call us on (02) 9484 2433 or reply to this email.</p>
+    <p style="font-size:13px;color:#8a9689;line-height:1.6;border-top:1px solid #eee;padding-top:14px">No refunds are given for cancellations within 72 hours of the event. Questions? Call us on (02) 4702 3642 or reply to this email.</p>
     <p style="font-size:13px;color:#8a9689">The Jack &amp; Cleaver · Four Sausages Hospitality Group</p>
   </div>`;
 }

@@ -152,7 +152,7 @@ Please include the reference in your payment description so we can match it to y
   t +=
 `
 Bookings close 72 hours before the event. No refunds for cancellations within 72 hours.
-Questions? Call (02) 9484 2433 or reply to this email.
+Questions? Call (02) 4702 3642 or reply to this email.
 
 The Jack & Cleaver · Four Sausages Hospitality Group`;
   return t;
@@ -202,7 +202,7 @@ function bookingHtml({ name, ref, guests, amount, intro, payidBlock }) {
     <table style="width:100%;border-collapse:collapse;margin-bottom:18px">${rows}</table>
     <p style="font-size:15px;line-height:1.7">Each guest's main includes a glass of sparkling on arrival and sticky date pudding to finish. There'll be a live three-piece band from 12pm, and Best Dressed prizes on the day.</p>
     ${payidBlock || ""}
-    <p style="font-size:13px;color:#8a9689;line-height:1.6;border-top:1px solid #eee;padding-top:14px">Bookings close 72 hours before the event. No refunds are given for cancellations within 72 hours. Questions? Call us on (02) 9484 2433 or reply to this email.</p>
+    <p style="font-size:13px;color:#8a9689;line-height:1.6;border-top:1px solid #eee;padding-top:14px">Bookings close 72 hours before the event. No refunds are given for cancellations within 72 hours. Questions? Call us on (02) 4702 3642 or reply to this email.</p>
     <p style="font-size:13px;color:#8a9689">The Jack &amp; Cleaver · Four Sausages Hospitality Group</p>
   </div>`;
 }
@@ -277,7 +277,7 @@ exports.handler = async (event) => {
 
   const amount = guests.length * PRICE; // computed server-side — never trust the client
 
-  if (!airtableConfigured()) return json(503, { error: "Online bookings aren't available right now. Please call us on (02) 9484 2433." });
+  if (!airtableConfigured()) return json(503, { error: "Online bookings aren't available right now. Please call us on (02) 4702 3642." });
 
   // Capacity check (atomic enough for a 60-seat one-off event).
   try {
@@ -292,7 +292,7 @@ exports.handler = async (event) => {
       });
     }
   } catch (e) {
-    return json(502, { error: "We couldn't check availability. Please try again shortly or call us on (02) 9484 2433." });
+    return json(502, { error: "We couldn't check availability. Please try again shortly or call us on (02) 4702 3642." });
   }
 
   const ref = reference();
@@ -314,7 +314,7 @@ exports.handler = async (event) => {
 
   let record;
   try { record = await createRecord(fields); }
-  catch (e) { return json(502, { error: "We couldn't save your booking. Please try again or call us on (02) 9484 2433." }); }
+  catch (e) { return json(502, { error: "We couldn't save your booking. Please try again or call us on (02) 4702 3642." }); }
 
   // ---- PayID path ----
   if (method === "payid") {
@@ -335,7 +335,7 @@ exports.handler = async (event) => {
 
   // ---- Card path (Stripe Checkout) ----
   if (!process.env.STRIPE_SECRET_KEY) {
-    return json(503, { error: "Card payments aren't available right now. Please choose PayID, or call us on (02) 9484 2433." });
+    return json(503, { error: "Card payments aren't available right now. Please choose PayID, or call us on (02) 4702 3642." });
   }
   let stripe;
   try { stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); }
@@ -363,6 +363,6 @@ exports.handler = async (event) => {
     patchRecord(record.id, { "Stripe Session ID": session.id }).catch(() => {});
     return json(200, { checkoutUrl: session.url, reference: ref });
   } catch (e) {
-    return json(502, { error: "We couldn't start the card payment. Please try PayID, or call us on (02) 9484 2433." });
+    return json(502, { error: "We couldn't start the card payment. Please try PayID, or call us on (02) 4702 3642." });
   }
 };

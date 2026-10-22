@@ -28,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#8a2b2e">
+<meta name="theme-color" content="#4f6e6d">
 <meta name="description" content="Functions, weddings and events at The Jack &amp; Cleaver, Pennant Hills Bowling Club — no wedding tax, honest package pricing from $46pp, room for up to 320 guests. Enquire today.">
 <link rel="canonical" href="https://fshg.com.au/functions/the-jack-and-cleaver">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -257,6 +257,33 @@ section{padding:5.5rem 0}
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+
+/* ---------- THE JACK & CLEAVER VENUE THEME ----------
+   Same FSHG layout, type, header and footer, with the accents swapped for
+   The Jack & Cleaver's own colours: teal #5a7d7c, navy #4a4e69,
+   tan #d4a373, off-white #f4f5f0. */
+:root{
+  --paper:#f4f5f0;--paper-2:#f6efe3;--card:#fbfcf8;
+  --ink:#24262f;--muted:#666a78;
+  --line:rgba(36,38,47,0.14);--line-strong:rgba(36,38,47,0.24);
+  --claret:#4f6e6d;--claret-dk:#3f5958;--orange:#4a4e69;--tan:#d4a373;
+}
+/* Header and footer stay in group colours so the site reads as one group. */
+nav,.site-footer{--paper:#f5f2ec;--ink:#211c18;--muted:#7c7267;--line:rgba(33,28,24,0.14);--line-strong:rgba(33,28,24,0.24);--claret:#8a2b2e;--claret-dk:#6f2124;--orange:#c96a2b}
+.venue-logo{filter:none;height:auto}
+.hero-venue-logo{width:220px;margin:0 0 1.5rem}
+/* keep the frame hugging the photo now the copy column is taller */
+.hero-shade{align-self:center;aspect-ratio:5/4}
+/* soft cream behind the enquiry form */
+#enquire{background:#f8f6ee}
+.ff input:focus,.ff select:focus,.ff textarea:focus{box-shadow:0 0 0 3px rgba(79,110,109,0.18)}
+.price-pill{background:rgba(79,110,109,0.08);border-color:rgba(79,110,109,0.3)}
+/* errors stay red */
+.form-msg.err{background:rgba(138,43,46,0.07);border-color:#8a2b2e;color:#6f2124}
+.form-msg.err a{color:#6f2124}
+.feat.hero-band,#why{--orange:var(--tan);background:linear-gradient(rgba(50,53,74,0.9),rgba(50,53,74,0.95)),url('/images/home/texture-timber.webp');background-size:cover;background-position:center}
+.feat.hero-band .price-pill{background:rgba(212,163,115,0.16);border-color:rgba(212,163,115,0.5)}
+.feat.hero-band .btn-cta:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -292,6 +319,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   <div class="hero-img"></div>
   <div class="hero-shade"></div>
   <div class="hero-inner">
+    <img class="venue-logo hero-venue-logo" src="/images/jack-and-cleaver/logo/the-jack-and-cleaver-logo.png" alt="The Jack &amp; Cleaver" width="760" height="449">
     <span class="hero-eyebrow">Functions &amp; Weddings · Pennant Hills Bowling Club</span>
     <h1 class="hero-title">Functions &amp; weddings<br>by the green</h1>
     <p class="hero-sub">Weddings, celebrations, corporate events and remembrance gatherings at The Jack &amp; Cleaver — room for up to 320 guests, genuine service, and honest package pricing with no wedding tax.</p>

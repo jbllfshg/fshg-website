@@ -28,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#8a2b2e">
+<meta name="theme-color" content="#636d62">
 <meta name="description" content="The Fairway at Penrith Golf Club — elevated seasonal cuisine, wood-fired pizza, steaks and seafood, with sweeping views over the greens. Dine in seven days. Glenmore Park, NSW.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -240,6 +240,27 @@ iframe[data-id="nbi-widget"]{width:100%;min-height:560px;border:none;border-radi
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+
+/* ---------- THE FAIRWAY VENUE THEME ----------
+   Same FSHG layout, type, header and footer, with the accents swapped for
+   The Fairway's own palette: sage #636d62, tan #d4a373, cream #faedcd,
+   teal #5a7d7c, off-white #f4f5f0. */
+:root{
+  --paper:#f4f5f0;--paper-2:#faedcd;--card:#fbfcf8;
+  --ink:#262b26;--muted:#6b7369;
+  --line:rgba(38,43,38,0.14);--line-strong:rgba(38,43,38,0.24);
+  --claret:#636d62;--claret-dk:#4d554c;--orange:#4f6e6d;--tan:#d4a373;
+}
+/* Header and footer stay in group colours so the site reads as one group. */
+nav,.site-footer{--paper:#f5f2ec;--ink:#211c18;--muted:#7c7267;--line:rgba(33,28,24,0.14);--line-strong:rgba(33,28,24,0.24);--claret:#8a2b2e;--claret-dk:#6f2124;--orange:#c96a2b}
+.venue-logo{filter:none;height:auto}
+.hero-logo{margin:0 0 1.7rem;max-width:440px}
+.hero-logo .venue-logo{width:100%}
+#specials{--orange:var(--tan);background:linear-gradient(rgba(47,56,49,0.9),rgba(47,56,49,0.95)),url('images/home/texture-timber.webp');background-size:cover;background-position:center}
+#specials .sp-group-label{border-left-color:var(--tan)}
+.kids-banner{background:rgba(212,163,115,0.12);border-color:rgba(212,163,115,0.45);border-left-color:var(--tan)}
+.diet{background:rgba(212,163,115,0.28)}
+#book{background:#f8f6ee}
 </style>
 </head>
 <body>
@@ -276,8 +297,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   <div class="hero-shade"></div>
   <div class="hero-inner">
     <span class="hero-tag">Penrith Golf Club</span>
-    <h1 class="hero-title">The Fairway</h1>
-    <p class="hero-sub">Local produce. Above par.</p>
+    <h1 class="hero-logo"><img class="venue-logo" src="images/fairway/logo/the-fairway-logo.png" alt="The Fairway. Local produce. Above par." width="900" height="377"></h1>
     <p class="hero-desc">Perched above the greens with sweeping 180° views, The Fairway serves seasonal cuisine in a relaxed club setting — wood-fired pizza, char-grilled steaks, fresh seafood, and a kitchen that leans on the best local produce.</p>
     <div class="hero-actions">
       <a href="#book" class="btn btn-primary">Book a table</a>

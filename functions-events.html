@@ -296,21 +296,91 @@ section[id]{scroll-margin-top:88px}
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 
-/* ---------- EVENT TYPES (hub tiles) ---------- */
-#event-types{background:var(--paper-2);border-bottom:1px solid var(--line);scroll-margin-top:74px}
-.et-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.et-card{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
-.et-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
-.et-photo{aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
-.et-photo img{width:100%;height:100%;object-fit:cover}
-.et-body{padding:1.4rem 1.5rem 1.5rem;border-top:3px solid var(--claret);display:flex;flex-direction:column;flex:1}
-.et-body h3{font-family:var(--display);font-size:1.35rem;font-weight:800;letter-spacing:-0.015em;line-height:1.1;margin-bottom:0.45rem}
-.et-body p{font-size:0.9rem;color:var(--muted);line-height:1.6;flex:1}
-.et-from{font-size:0.74rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--claret);margin-top:0.9rem}
-.et-go{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-top:0.4rem}
-@media(max-width:880px){.et-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.et-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.et-card:hover{transform:none}}
+
+/* ============================================================
+   Overview page — photo-led layout
+   ============================================================ */
+#fe-hero{position:relative;min-height:min(78vh,700px);display:flex;align-items:flex-end;color:var(--paper);overflow:hidden;background:var(--ink)}
+.fe-hero-bg{position:absolute;inset:0;background:url('/images/functions/room-tables.jpg') center 40%/cover no-repeat;transform:scale(1.03)}
+#fe-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,28,24,0.88) 0%,rgba(33,28,24,0.62) 45%,rgba(33,28,24,0.15) 100%),linear-gradient(0deg,rgba(33,28,24,0.55),rgba(33,28,24,0) 45%)}
+.fe-hero-inner{position:relative;z-index:1;max-width:1180px;width:100%;margin:0 auto;padding:6rem 2rem 3.5rem}
+.fe-tag{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:1.4rem}
+.fe-tag::before{content:"";width:30px;height:2px;background:var(--orange)}
+.fe-title{font-family:var(--display);font-weight:900;font-size:clamp(3rem,7vw,5.8rem);line-height:0.92;letter-spacing:-0.035em;max-width:11ch;margin-bottom:1.3rem;text-wrap:balance}
+.fe-title em{font-style:normal;color:var(--orange)}
+.fe-sub{font-size:1.1rem;line-height:1.7;color:var(--paper-dim);max-width:52ch;margin-bottom:2rem}
+.fe-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.fe-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid rgba(245,242,236,0.18)}
+.fe-chips a{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);text-decoration:none;border:1px solid rgba(245,242,236,0.35);border-radius:999px;padding:8px 15px;transition:all 0.18s;backdrop-filter:blur(4px);background:rgba(33,28,24,0.25)}
+.fe-chips a:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+#fe-stats{background:var(--claret);color:var(--paper);padding:2.1rem 0}
+.fe-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.fe-stats div{display:flex;flex-direction:column;gap:0.3rem;padding-left:1.1rem;border-left:2px solid rgba(245,242,236,0.3)}
+.fe-stats .n{font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1;letter-spacing:-0.03em}
+.fe-stats .l{font-size:0.85rem;color:rgba(245,242,236,0.8);line-height:1.4}
+
+#event-types{background:var(--paper);scroll-margin-top:74px}
+.et-row{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1rem;margin-top:1rem}
+.et-row.big{margin-top:0}
+.et-card{position:relative;display:block;overflow:hidden;border-radius:3px;aspect-ratio:3/4;color:var(--paper);text-decoration:none;background:var(--ink)}
+.et-card.big{aspect-ratio:16/10}
+.et-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+.et-card:hover img{transform:scale(1.06)}
+.et-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(33,28,24,0.92) 0%,rgba(33,28,24,0.45) 45%,rgba(33,28,24,0.05) 75%);transition:background 0.3s}
+.et-body{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:0.35rem}
+.et-card.big .et-body{padding:2rem 2rem 1.8rem}
+.et-from{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper);background:var(--claret);padding:5px 9px;border-radius:2px;margin-bottom:0.3rem}
+.et-name{font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:-0.02em;line-height:1.05}
+.et-card.big .et-name{font-size:clamp(1.8rem,3vw,2.5rem)}
+.et-desc{font-size:0.88rem;color:var(--paper-dim);line-height:1.5}
+.et-go{margin-top:0.5rem;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:inline-flex;gap:6px;align-items:center}
+.et-go span{transition:transform 0.2s}
+.et-card:hover .et-go span{transform:translateX(4px)}
+.et-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+#spaces{background:var(--paper-2)}
+.venue-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.venue-card{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.vc-photo{aspect-ratio:16/9;overflow:hidden}
+.vc-photo img{width:100%;height:100%;object-fit:cover}
+.vc-body{padding:1.8rem 2rem 1.6rem;border-top:3px solid var(--claret)}
+.vc-desc{font-size:0.92rem;color:var(--muted);line-height:1.65;margin:-0.6rem 0 0.6rem}
+
+#gallery{padding:0;border:0;background:var(--ink)}
+.gallery-mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,minmax(0,260px));gap:4px}
+.gallery-mosaic figure{margin:0;overflow:hidden}
+.gallery-mosaic .g1{grid-row:span 2}
+.gallery-mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+.gallery-mosaic figure:hover img{transform:scale(1.05)}
+
+#enquire{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('/images/home/texture-timber.webp') center/cover;border-top:0;color:var(--paper)}
+#enquire .enquire-inner{background:transparent;border:0;padding:1rem 0}
+#enquire .enquire-inner h2{color:var(--paper)}
+#enquire .enquire-inner p{color:var(--paper-dim)}
+#enquire .enquire-contact a{color:var(--paper);border-color:rgba(245,242,236,0.35)}
+#enquire .enquire-contact a:hover{color:var(--orange);border-color:var(--orange)}
+#enquire .fineprint{color:var(--paper-faint)}
+
+@media(max-width:900px){
+  .et-row{grid-auto-flow:row;grid-template-columns:1fr 1fr}
+  .et-row.big{grid-template-columns:1fr}
+  .venue-cards{grid-template-columns:1fr}
+  .fe-stats{grid-template-columns:1fr 1fr}
+  .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:180px}
+  .gallery-mosaic .g1{grid-column:span 2;grid-row:auto}
+}
+@media(max-width:768px){
+  .fe-hero-inner{padding:4.5rem 1.25rem 2.5rem}
+  #fe-hero::after{background:linear-gradient(0deg,rgba(33,28,24,0.9),rgba(33,28,24,0.72))}
+  #fe-hero{min-height:0}
+  .fe-actions .btn{width:100%}
+  .et-card{aspect-ratio:4/5}
+  .et-card.big{aspect-ratio:4/3}
+  .vc-body{padding:1.5rem}
+}
+@media(max-width:480px){.et-row{grid-template-columns:1fr}.et-card{aspect-ratio:16/11}}
+@media(prefers-reduced-motion:reduce){.et-card img,.gallery-mosaic img{transition:none}.et-card:hover img,.gallery-mosaic figure:hover img{transform:none}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js"></script>
@@ -363,21 +433,29 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </a>
 
 <!-- HERO -->
-<header id="hero">
-  <div class="hero-accent"></div>
-  <div class="hero-accent2"></div>
-  <div class="hero-inner">
-    <span class="hero-tag">Functions &amp; Events</span>
-    <h1 class="hero-title">Events worth <em>celebrating</em></h1>
-    <p class="hero-sub">From intimate gatherings to 320 guests.</p>
-    <p class="hero-desc">Birthdays, engagements, corporate lunches, christenings, wakes and weddings — our team has over 10 years of experience bringing people together. Choose your occasion below, pick your venue, and we'll handle the rest.</p>
-    <div class="hero-actions">
-      <a href="#event-types" class="btn btn-primary">Choose your event</a>
-      <a href="#enquire" class="btn btn-outline">Make an enquiry</a>
-      <a href="/christmas/#xmas-packages" id="xmas-functions-btn" data-xmas class="btn" style="background:#1f3a2b;color:#f5f2ec;border-color:#b8945a" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">🎄 Christmas packages</a>
+<header id="fe-hero">
+  <div class="fe-hero-bg" role="img" aria-label="A function room dressed for a celebration, with white chair covers, blue sashes and gold table settings"></div>
+  <div class="fe-hero-inner">
+    <span class="fe-tag">Functions &amp; Events · Penrith &amp; Pennant Hills</span>
+    <h1 class="fe-title">Events worth <em>celebrating.</em></h1>
+    <p class="fe-sub">Birthdays, weddings, work functions and gatherings of every kind, for 30 to 320 guests. Pick your occasion, pick your venue, and our team takes care of the rest.</p>
+    <div class="fe-actions">
+      <a href="#event-types" class="btn btn-light">Choose your occasion</a>
+      <a href="#enquire" class="btn btn-ghost-light">Make an enquiry</a>
     </div>
+    <div class="fe-chips" role="navigation" aria-label="Occasions"><a href="/functions/special-occasions/">Special Occasions</a><a href="/functions/weddings/">Weddings</a><a href="/christmas/" data-xmas>Christmas Parties</a><a href="/functions/corporate/">Corporate Events</a><a href="/functions/graduations-formals/">Graduations &amp; Formals</a><a href="/remembrance/">Remembrance</a></div>
   </div>
 </header>
+
+<!-- STATS -->
+<section id="fe-stats" aria-label="At a glance">
+  <div class="wrap fe-stats">
+    <div><span class="n">320</span><span class="l">guests in our largest room</span></div>
+    <div><span class="n">2</span><span class="l">venues, Penrith &amp; Pennant Hills</span></div>
+    <div><span class="n">4</span><span class="l">function spaces to choose from</span></div>
+    <div><span class="n">10+</span><span class="l">years bringing people together</span></div>
+  </div>
+</section>
 
 <!-- EVENT TYPES -->
 <section id="event-types">
@@ -385,102 +463,86 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <div class="sec-head">
       <p class="eyebrow">Choose your occasion</p>
       <h2 class="sec-title">What are you celebrating?</h2>
-      <p class="sec-sub">Each occasion has its own page with packages, menus and an enquiry form.</p>
+      <p class="sec-sub">Every occasion has its own page with packages, menus and an enquiry form.</p>
     </div>
-    <div class="et-grid">
-      <a class="et-card" href="/functions/special-occasions/">
-        <div class="et-photo"><img src="images/functions/room-tables.jpg" alt="A function room set for a birthday, with blue and gold table settings" loading="lazy"></div>
-        <div class="et-body"><h3>Special Occasions</h3><p>Birthdays, engagements, christenings and milestones. Buffets, grazing, canapés, banquets and set menus.</p><span class="et-from">From $46pp</span><span class="et-go">Explore →</span></div>
+    <div class="et-row big">
+      <a class="et-card big" href="/functions/special-occasions/">
+        <img src="images/functions/room-tables.jpg" alt="A function room set for a birthday, with blue and gold table settings" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">From $46pp</span><span class="et-name">Special Occasions</span><span class="et-desc">Birthdays, engagements, christenings and milestones</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
       </a>
-      <a class="et-card" href="/functions/weddings/">
-        <div class="et-photo"><img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy"></div>
-        <div class="et-body"><h3>Weddings</h3><p>Receptions at both venues, and ceremonies on the golf course at The Fairway. No wedding tax.</p><span class="et-from">Ceremonies from $2,000</span><span class="et-go">Explore →</span></div>
+      <a class="et-card big" href="/functions/weddings/">
+        <img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">Ceremonies from $2,000</span><span class="et-name">Weddings</span><span class="et-desc">Receptions at both venues, ceremonies on the greens</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
       </a>
-      <a class="et-card" href="/remembrance/">
-        <div class="et-photo"><img src="images/remembrance/function-room.jpg" alt="A function room set with round tables, white linen and glassware" loading="lazy"></div>
-        <div class="et-body"><h3>Remembrance</h3><p>Wakes, memorials and celebrations of life, handled with care so you don't have to think about the details.</p><span class="et-from">From $33pp</span><span class="et-go">Explore →</span></div>
-      </a>
-      <a class="et-card" href="/functions/graduations-formals/">
-        <div class="et-photo"><img src="images/catering/feature/catering-04.jpg" alt="Waiters serving trays of canapés on the greens" loading="lazy"></div>
-        <div class="et-body"><h3>Graduations &amp; Formals</h3><p>Graduation dinners, school formals and after-parties, with room for up to 320 guests.</p><span class="et-from">New menu coming soon</span><span class="et-go">Explore →</span></div>
+    </div>
+    <div class="et-row">
+      <a class="et-card" href="/christmas/" data-xmas>
+        <img src="images/christmas/grazing-board.jpg" alt="A festive Christmas grazing spread" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">From $48pp</span><span class="et-name">Christmas Parties</span><span class="et-desc">Festive roasts, seafood and all the trimmings</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
       </a>
       <a class="et-card" href="/functions/corporate/">
-        <div class="et-photo"><img src="images/catering/feature/catering-06.jpg" alt="A buffet line of hot dishes and salads at an event" loading="lazy"></div>
-        <div class="et-body"><h3>Corporate Events</h3><p>Meetings, workshops, team lunches and end-of-week celebrations.</p><span class="et-from">From $39pp</span><span class="et-go">Explore →</span></div>
+        <img src="images/functions/room-window-chair.jpg" alt="A dressed table beside sunny windows" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">From $39pp</span><span class="et-name">Corporate Events</span><span class="et-desc">Meetings, workshops and team lunches</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
       </a>
-      <a class="et-card" href="/christmas/" data-xmas>
-        <div class="et-photo"><img src="images/christmas/grazing-board.jpg" alt="A festive Christmas grazing spread" loading="lazy"></div>
-        <div class="et-body"><h3>Christmas Parties</h3><p>Work Christmas parties and festive get-togethers, with roasts, seafood and all the trimmings.</p><span class="et-from">From $48pp</span><span class="et-go">Explore →</span></div>
+      <a class="et-card" href="/functions/graduations-formals/">
+        <img src="images/functions/table-window.jpg" alt="A candlelit table in a sunlit function room" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">New menu coming soon</span><span class="et-name">Graduations &amp; Formals</span><span class="et-desc">Dinners, formals and after-parties</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
+      </a>
+      <a class="et-card" href="/remembrance/">
+        <img src="images/remembrance/function-room.jpg" alt="A function room set with round tables, white linen and glassware" loading="lazy">
+        <span class="et-shade"></span>
+        <span class="et-body"><span class="et-from">From $33pp</span><span class="et-name">Remembrance</span><span class="et-desc">Wakes, memorials and celebrations of life</span><span class="et-go">Explore <span aria-hidden="true">→</span></span></span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section id="intro">
-  <div class="wrap intro-grid">
-    <div class="intro-copy">
-      <h2>Two venues, every occasion catered for</h2>
-      <p>Whether you're planning an intimate gathering or a celebration for three hundred, our function packages are designed to suit whatever the occasion — from relaxed grazing tables and canapés, to generous buffets, shared banquets, or a plated set menu.</p>
-      <p>Our packages are available at <strong>both</strong> of our venues, so you can choose the setting that suits your event best.</p>
-      <div class="venue-list">
-        <div class="venue-row"><span class="dot"></span><span><strong>The Fairway</strong> — Penrith Golf Club, with unobstructed 180° views of the greens. Main Terrace and Small Terrace available.</span></div>
-        <div class="venue-row"><span class="dot"></span><span><strong>The Jack &amp; Cleaver</strong> — Pennant Hills Bowling Club, a warm and versatile space overlooking the green. Yarrara Function Room and Mezzanine available.</span></div>
-        <div class="venue-row"><span class="dot"></span><span><strong>Completely customisable</strong> — All our packages are customisable to suit your event needs.</span></div>
-      </div>
-    </div>
-    <div class="capacity-card">
-      <div class="cap-stat"><div class="cap-num">320</div><div class="cap-label">Largest capacity — Yarrara Room, cocktail style</div></div>
-      <div class="cap-stat"><div class="cap-num">4</div><div class="cap-label">Versatile spaces across our two venues</div></div>
-      <p class="cap-note">Standard space hire is 4 hours. See the full breakdown of spaces and capacities below.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SPACES & CAPACITIES -->
+<!-- VENUES & SPACES -->
 <section id="spaces">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">The venues</p>
-      <h2 class="sec-title">Spaces &amp; capacities</h2>
-      <p class="sec-sub">Two venues and four versatile spaces — choose the setting that suits your guest count and the style of your event.</p>
+      <p class="eyebrow">Two venues</p>
+      <h2 class="sec-title">Find the right room</h2>
+      <p class="sec-sub">Our packages are available at both venues, and every one can be tailored to your event. Standard space hire is 4 hours.</p>
     </div>
-    <div class="spaces-grid">
-      <div class="venue-spaces">
-        <span class="vs-tag tag-fairway">Penrith Golf Club</span>
-        <h3 class="vs-name">The Fairway</h3>
-        <div class="space-row">
-          <span class="space-name">Main Terrace</span>
-          <span class="space-caps"><span class="cap-pill">160 seated</span><span class="cap-pill">180 cocktail</span></span>
-        </div>
-        <div class="space-row">
-          <span class="space-name">Small Terrace</span>
-          <span class="space-caps"><span class="cap-pill">Up to 35 seated</span></span>
+    <div class="venue-cards">
+      <div class="venue-card">
+        <div class="vc-photo"><img src="images/home/venue-the-fairway.jpg" alt="A spread of char-grilled steak, seafood pasta, wood-fired pizza and sides at The Fairway" loading="lazy"></div>
+        <div class="vc-body">
+          <span class="vs-tag tag-fairway">Penrith Golf Club</span>
+          <h3 class="vs-name">The Fairway</h3>
+          <p class="vc-desc">Unobstructed 180° views over the greens, and the only venue for ceremonies on the golf course.</p>
+          <div class="space-row"><span class="space-name">Main Terrace</span><span class="space-caps"><span class="cap-pill">160 seated</span><span class="cap-pill">180 cocktail</span></span></div>
+          <div class="space-row"><span class="space-name">Small Terrace</span><span class="space-caps"><span class="cap-pill">Up to 35 seated</span></span></div>
         </div>
       </div>
-      <div class="venue-spaces">
-        <span class="vs-tag tag-jack">Pennant Hills Bowling Club</span>
-        <h3 class="vs-name">The Jack &amp; Cleaver</h3>
-        <div class="space-row">
-          <span class="space-name">Yarrara Room</span>
-          <span class="space-caps"><span class="cap-pill">250 seated</span><span class="cap-pill">320 cocktail</span></span>
-        </div>
-        <div class="space-row">
-          <span class="space-name">Mezzanine</span>
-          <span class="space-caps"><span class="cap-pill">60 seated</span><span class="cap-pill">75 cocktail</span></span>
+      <div class="venue-card">
+        <div class="vc-photo"><img src="images/home/venue-jack-and-cleaver.jpg" alt="A spread of wood-fired pizzas, pasta, chicken schnitzel caesar and garlic bread at The Jack &amp; Cleaver" loading="lazy"></div>
+        <div class="vc-body">
+          <span class="vs-tag tag-jack">Pennant Hills Bowling Club</span>
+          <h3 class="vs-name">The Jack &amp; Cleaver</h3>
+          <p class="vc-desc">A warm, versatile space overlooking the green, home to our largest room.</p>
+          <div class="space-row"><span class="space-name">Yarrara Room</span><span class="space-caps"><span class="cap-pill">250 seated</span><span class="cap-pill">320 cocktail</span></span></div>
+          <div class="space-row"><span class="space-name">Mezzanine</span><span class="space-caps"><span class="cap-pill">60 seated</span><span class="cap-pill">75 cocktail</span></span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY STRIP -->
-<section id="gallery">
-  <div class="gallery-strip">
-    <figure><img src="images/catering/thumb/catering-01.jpg" alt="Grazing platter with charcuterie, cheese and fruit" loading="lazy"></figure>
-    <figure><img src="images/catering/thumb/catering-04.jpg" alt="Waiter serving canapés on the greens" loading="lazy"></figure>
-    <figure><img src="images/catering/thumb/catering-12.jpg" alt="Event grazing spread with florals" loading="lazy"></figure>
-    <figure><img src="images/catering/thumb/catering-07.jpg" alt="Dessert table with strawberries and slices" loading="lazy"></figure>
+<!-- GALLERY -->
+<section id="gallery" aria-label="Photos from our functions">
+  <div class="gallery-mosaic">
+    <figure class="g1"><img src="images/functions/table-overhead.jpg" alt="A round table from above, set for ten with a floral centrepiece" loading="lazy"></figure>
+    <figure><img src="images/catering/feature/catering-04.jpg" alt="Waiters serving trays of canapés on the greens" loading="lazy"></figure>
+    <figure><img src="images/functions/table-setting.jpg" alt="A place setting with a blue napkin, gold butterfly ring and menu card" loading="lazy"></figure>
+    <figure><img src="images/catering/feature/catering-02.jpg" alt="A grazing table of cheeses, cured meats, fruit and dips" loading="lazy"></figure>
+    <figure><img src="images/functions/table-window-sun.jpg" alt="A table set beside tall windows overlooking the trees" loading="lazy"></figure>
   </div>
 </section>
 
@@ -494,9 +556,9 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <a href="tel:0247023642">(02) 4702 3642</a>
       <a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a>
     </div>
-    <a href="contact.html#functions-enquiry" class="btn btn-primary">Make a function enquiry</a>
-    <p class="fineprint">Whilst our packages outline minimum guest requirements, a minimum spend also applies. Whilst we take the utmost care to accommodate dietary requirements and requests, we cannot guarantee that there will be no cross-contamination where allergens are concerned. Packages and pricing are subject to change.</p>
+    <a href="contact.html#functions-enquiry" class="btn btn-light">Make a function enquiry</a>
   </div>
+  <p class="fineprint">Whilst our packages outline minimum guest requirements, a minimum spend also applies. Bookings on a public holiday incur a 15% surcharge on all packages. Whilst we take the utmost care to accommodate dietary requirements and requests, we cannot guarantee that there will be no cross-contamination where allergens are concerned. Packages and pricing are subject to change.</p>
 </section>
 
 <footer class="site-footer">

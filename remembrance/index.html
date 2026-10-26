@@ -318,6 +318,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   .remem-menu{padding:1.5rem}
 }
 </style>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js"></script>
 </head>
 <body>
 
@@ -335,7 +337,18 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <li><a href="/index.html">Home</a></li>
     <li><a href="/the-fairway.html">The Fairway</a></li>
     <li><a href="/the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
-    <li><a href="/functions-events.html">Functions &amp; Events</a></li>
+    <li class="has-sub">
+    <a href="/functions-events.html" class="active">Functions &amp; Events</a>
+    <button type="button" class="sub-toggle" aria-label="Show event types" aria-expanded="false"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <ul class="sub-menu">
+      <li><a href="/functions/special-occasions/">Special Occasions</a></li>
+      <li><a href="/functions/weddings/">Weddings</a></li>
+      <li><a href="/remembrance/" class="active">Remembrance</a></li>
+      <li><a href="/functions/graduations-formals/">Graduations &amp; Formals</a></li>
+      <li><a href="/functions/corporate/">Corporate Events</a></li>
+      <li data-xmas><a href="/christmas/">Christmas Parties</a></li>
+    </ul>
+  </li>
     <li><a href="/catering.html">Catering</a></li>
     <li><a href="/contact.html">Contact us</a></li>
   </ul>
@@ -525,7 +538,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <ul class="footer-links">
           <li><a href="/catering.html">Event Catering</a></li>
           <li><a href="/functions-events.html">Functions &amp; Events</a></li>
-          <li><a href="/christmas/">Christmas Functions</a></li>
+          <li data-xmas><a href="/christmas/">Christmas Functions</a></li>
           <li><a href="/remembrance/">Remembrance Packages</a></li>
           <li><a href="/contact.html">Contact Us</a></li>
         </ul>

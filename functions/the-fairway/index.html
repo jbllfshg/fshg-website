@@ -308,6 +308,8 @@ nav,.site-footer{--paper:#f5f2ec;--ink:#211c18;--muted:#7c7267;--line:rgba(33,28
 .feat.hero-band .price-pill{background:rgba(212,163,115,0.16);border-color:rgba(212,163,115,0.5)}
 .feat.hero-band .btn-cta:hover{color:var(--ink)}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js"></script>
 </head>
 <body>
 
@@ -321,21 +323,30 @@ nav,.site-footer{--paper:#f5f2ec;--ink:#211c18;--muted:#7c7267;--line:rgba(33,28
     <li><a href="/index.html">Home</a></li>
     <li><a href="/the-fairway.html">The Fairway</a></li>
     <li><a href="/the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
-    <li><a href="/functions-events.html">Functions &amp; Events</a></li>
+    <li class="has-sub">
+    <a href="/functions-events.html">Functions &amp; Events</a>
+    <button type="button" class="sub-toggle" aria-label="Show event types" aria-expanded="false"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <ul class="sub-menu">
+      <li><a href="/functions/special-occasions/">Special Occasions</a></li>
+      <li><a href="/functions/weddings/">Weddings</a></li>
+      <li><a href="/remembrance/">Remembrance</a></li>
+      <li><a href="/functions/graduations-formals/">Graduations &amp; Formals</a></li>
+      <li><a href="/functions/corporate/">Corporate Events</a></li>
+      <li data-xmas><a href="/christmas/">Christmas Parties</a></li>
+    </ul>
+  </li>
     <li><a href="/catering.html">Catering</a></li>
-    <li><a href="/whats-on.html">What's On</a></li>
     <li><a href="/contact.html">Contact Us</a></li>
   </ul>
   <a href="tel:0247023642" class="nav-phone" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-num">(02) 4702 3642</span></a>
   <a href="#enquire" class="nav-cta">Make an enquiry</a>
 </nav>
 
-<!-- Christmas functions banner: hides itself automatically after Sun 20 Dec 2026 (Sydney time) -->
-<a href="/christmas/" id="xmas-banner" style="display:flex;align-items:center;justify-content:center;gap:0.9rem;flex-wrap:wrap;text-align:center;background:#1f3a2b;color:#f5f2ec;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.95rem;line-height:1.4;border-bottom:2px solid #b8945a;transition:background 0.2s" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">
+<!-- Christmas functions banner: shows 1 Oct to 21 Dec each year (data-xmas, see /assets/site.js) -->
+<a href="/christmas/" id="xmas-banner" data-xmas style="display:flex;align-items:center;justify-content:center;gap:0.9rem;flex-wrap:wrap;text-align:center;background:#1f3a2b;color:#f5f2ec;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.95rem;line-height:1.4;border-bottom:2px solid #b8945a;transition:background 0.2s" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">
   <span>🎄 <strong>Book your Christmas function or event now!</strong> — festive menus at The Fairway &amp; The Jack &amp; Cleaver, from $48pp</span>
   <span style="font-weight:700;letter-spacing:0.04em;text-transform:uppercase;font-size:0.78rem;color:#d9bd8c;border-bottom:2px solid #b8945a">See the Christmas menu →</span>
 </a>
-<script>(function(){var b=document.getElementById('xmas-banner');if(b&&Date.now()>=Date.UTC(2026,11,20,13,0,0))b.remove();})();</script>
 
 <!-- HERO -->
 <header id="hero">

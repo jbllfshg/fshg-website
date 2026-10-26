@@ -1,0 +1,44 @@
+/* Shared site styles: Functions & Events dropdown + Christmas season switch.
+   Loaded on every public page after its inline styles. */
+
+/* Christmas items (menu link, banner, buttons) carry data-xmas and only show
+   from 1 Oct to 21 Dec (Sydney). site.js adds .xmas-off outside that window. */
+.xmas-off [data-xmas]{display:none!important}
+
+/* ---------- Functions dropdown ---------- */
+/* Between 1181px and 1340px tighten the menu so it fits on one line. */
+@media(min-width:1181px) and (max-width:1340px){
+  .nav-links li a{padding-left:0.6rem;padding-right:0.6rem}
+  .nav-phone-num{display:none}
+}
+.nav-links li.has-sub{position:relative;display:flex;align-items:center}
+.nav-links li.has-sub>a{padding-right:0.25rem}
+.sub-toggle{background:none;border:0;color:var(--ink,#211c18);cursor:pointer;padding:0.5rem 0.7rem 0.5rem 0.15rem;display:flex;align-items:center;font:inherit}
+.sub-toggle svg{width:10px;height:7px;transition:transform 0.18s}
+.has-sub.open .sub-toggle svg{transform:rotate(180deg)}
+.sub-toggle:focus-visible{outline:2px solid var(--orange,#c96a2b);outline-offset:-2px}
+.sub-menu{list-style:none;position:absolute;top:100%;left:0;min-width:250px;margin:0;padding:0.45rem 0;background:var(--card,#fbfaf6);border:1px solid var(--line,rgba(33,28,24,0.14));border-top:3px solid var(--claret,#8a2b2e);border-radius:0 0 3px 3px;box-shadow:0 18px 36px rgba(33,28,24,0.14);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 0.16s,transform 0.16s,visibility 0.16s;z-index:120}
+.nav-links .sub-menu li a{padding:0.7rem 1.2rem;font-size:12px;letter-spacing:0.07em}
+.nav-links .sub-menu li a:hover,.nav-links .sub-menu li a.active{color:var(--claret,#8a2b2e);background:var(--paper-2,#efe9dd)}
+.has-sub.open>.sub-menu,.has-sub:focus-within>.sub-menu{opacity:1;visibility:visible;transform:none}
+@media(hover:hover) and (min-width:1181px){
+  .has-sub:hover>.sub-menu{opacity:1;visibility:visible;transform:none}
+}
+/* The full menu no longer fits on one line below ~1180px, so switch to the
+   burger menu there (each page's own styles already do this at 768px). */
+@media(max-width:1180px){
+  .nav-toggle{display:flex;order:3}
+  .nav-cta{display:none}
+  .nav-phone{order:2}
+  .nav-phone-num{display:none}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--paper,#f5f2ec);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
+  nav.open .nav-links{max-height:82vh;overflow-y:auto;border-bottom:1px solid var(--line,rgba(33,28,24,0.14));box-shadow:0 14px 26px rgba(33,28,24,0.12)}
+  .nav-links li a{padding:0.95rem 1.5rem;font-size:14px;border-top:1px solid var(--line,rgba(33,28,24,0.14))}
+  .nav-links li.has-sub{flex-wrap:wrap;align-items:stretch}
+  .nav-links li.has-sub>a{flex:1;padding-right:1.5rem}
+  .sub-toggle{padding:0 1.5rem;border-top:1px solid var(--line,rgba(33,28,24,0.14))}
+  .sub-toggle svg{width:13px;height:9px}
+  .sub-menu{position:static;width:100%;min-width:0;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-radius:0;padding:0;background:var(--paper-2,#efe9dd);display:none;transition:none}
+  .has-sub.open>.sub-menu{display:block}
+  .nav-links .sub-menu li a{padding:0.85rem 1.5rem 0.85rem 2.6rem;font-size:13px}
+}

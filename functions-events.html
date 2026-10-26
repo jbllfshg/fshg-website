@@ -295,7 +295,35 @@ section[id]{scroll-margin-top:88px}
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+
+/* ---------- EVENT TYPES (hub tiles) ---------- */
+#event-types{background:var(--paper-2);border-bottom:1px solid var(--line);scroll-margin-top:74px}
+.et-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.et-card{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
+.et-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,24,0.12)}
+.et-photo{aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+.et-photo img{width:100%;height:100%;object-fit:cover}
+.et-body{padding:1.4rem 1.5rem 1.5rem;border-top:3px solid var(--claret);display:flex;flex-direction:column;flex:1}
+.et-body h3{font-family:var(--display);font-size:1.35rem;font-weight:800;letter-spacing:-0.015em;line-height:1.1;margin-bottom:0.45rem}
+.et-body p{font-size:0.9rem;color:var(--muted);line-height:1.6;flex:1}
+.et-from{font-size:0.74rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--claret);margin-top:0.9rem}
+.et-go{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-top:0.4rem}
+@media(max-width:880px){.et-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.et-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.et-card:hover{transform:none}}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js"></script>
+<script>
+// Menu sections moved to their own pages: send old links (ads, bookmarks) there.
+(function(){
+  var map = {packages:'/functions/special-occasions/#packages', buffets:'/functions/special-occasions/#buffets', grazing:'/functions/special-occasions/#grazing',
+    banquets:'/functions/special-occasions/#banquets', 'set-menus':'/functions/special-occasions/#set-menus', platters:'/functions/special-occasions/#platters',
+    kids:'/functions/special-occasions/#kids', remembrance:'/remembrance/', weddings:'/functions/weddings/'};
+  var to = map[location.hash.slice(1)];
+  if (to) location.replace(to);
+})();
+</script>
 </head>
 <body>
 
@@ -309,7 +337,18 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <li><a href="index.html">Home</a></li>
     <li><a href="the-fairway.html">The Fairway</a></li>
     <li><a href="the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
-    <li><a href="functions-events.html" class="active">Functions &amp; Events</a></li>
+    <li class="has-sub">
+    <a href="/functions-events.html" class="active">Functions &amp; Events</a>
+    <button type="button" class="sub-toggle" aria-label="Show event types" aria-expanded="false"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <ul class="sub-menu">
+      <li><a href="/functions/special-occasions/">Special Occasions</a></li>
+      <li><a href="/functions/weddings/">Weddings</a></li>
+      <li><a href="/remembrance/">Remembrance</a></li>
+      <li><a href="/functions/graduations-formals/">Graduations &amp; Formals</a></li>
+      <li><a href="/functions/corporate/">Corporate Events</a></li>
+      <li data-xmas><a href="/christmas/">Christmas Parties</a></li>
+    </ul>
+  </li>
     <li><a href="catering.html">Catering</a></li>
     <li><a href="contact.html">Contact us</a></li>
   </ul>
@@ -317,12 +356,11 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   <a href="contact.html" class="nav-cta">Make an enquiry</a>
 </nav>
 
-<!-- Christmas functions banner: hides itself automatically after Sun 20 Dec 2026 (Sydney time) -->
-<a href="/christmas/" id="xmas-banner" style="display:flex;align-items:center;justify-content:center;gap:0.9rem;flex-wrap:wrap;text-align:center;background:#1f3a2b;color:#f5f2ec;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.95rem;line-height:1.4;border-bottom:2px solid #b8945a;transition:background 0.2s" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">
+<!-- Christmas functions banner: shows 1 Oct to 21 Dec each year (data-xmas, see /assets/site.js) -->
+<a href="/christmas/" id="xmas-banner" data-xmas style="display:flex;align-items:center;justify-content:center;gap:0.9rem;flex-wrap:wrap;text-align:center;background:#1f3a2b;color:#f5f2ec;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.95rem;line-height:1.4;border-bottom:2px solid #b8945a;transition:background 0.2s" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">
   <span>🎄 <strong>Book your Christmas function or event now!</strong> — festive menus at The Fairway &amp; The Jack &amp; Cleaver, from $48pp</span>
   <span style="font-weight:700;letter-spacing:0.04em;text-transform:uppercase;font-size:0.78rem;color:#d9bd8c;border-bottom:2px solid #b8945a">See the Christmas menu →</span>
 </a>
-<script>(function(){var b=document.getElementById('xmas-banner');if(b&&Date.now()>=Date.UTC(2026,11,20,13,0,0))b.remove();})();</script>
 
 <!-- HERO -->
 <header id="hero">
@@ -332,15 +370,51 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <span class="hero-tag">Functions &amp; Events</span>
     <h1 class="hero-title">Events worth <em>celebrating</em></h1>
     <p class="hero-sub">From intimate gatherings to 320 guests.</p>
-    <p class="hero-desc">Birthdays, engagements, corporate lunches, christenings, wakes and weddings — our team has over 10 years of experience bringing people together. Choose a package, pick your venue, and we'll handle the rest.</p>
+    <p class="hero-desc">Birthdays, engagements, corporate lunches, christenings, wakes and weddings — our team has over 10 years of experience bringing people together. Choose your occasion below, pick your venue, and we'll handle the rest.</p>
     <div class="hero-actions">
-      <a href="#packages" class="btn btn-primary">View packages</a>
+      <a href="#event-types" class="btn btn-primary">Choose your event</a>
       <a href="#enquire" class="btn btn-outline">Make an enquiry</a>
-      <a href="/christmas/#xmas-packages" id="xmas-functions-btn" class="btn" style="background:#1f3a2b;color:#f5f2ec;border-color:#b8945a" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">🎄 Christmas packages</a>
-      <script>(function(){var b=document.getElementById('xmas-functions-btn');if(b&&Date.now()>=Date.UTC(2026,11,20,13,0,0))b.remove();})();</script>
+      <a href="/christmas/#xmas-packages" id="xmas-functions-btn" data-xmas class="btn" style="background:#1f3a2b;color:#f5f2ec;border-color:#b8945a" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">🎄 Christmas packages</a>
     </div>
   </div>
 </header>
+
+<!-- EVENT TYPES -->
+<section id="event-types">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Choose your occasion</p>
+      <h2 class="sec-title">What are you celebrating?</h2>
+      <p class="sec-sub">Each occasion has its own page with packages, menus and an enquiry form.</p>
+    </div>
+    <div class="et-grid">
+      <a class="et-card" href="/functions/special-occasions/">
+        <div class="et-photo"><img src="images/catering/feature/catering-02.jpg" alt="A grazing table of cheeses, cured meats, fruit and dips" loading="lazy"></div>
+        <div class="et-body"><h3>Special Occasions</h3><p>Birthdays, engagements, christenings and milestones. Buffets, grazing, canapés, banquets and set menus.</p><span class="et-from">From $46pp</span><span class="et-go">Explore →</span></div>
+      </a>
+      <a class="et-card" href="/functions/weddings/">
+        <div class="et-photo"><img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy"></div>
+        <div class="et-body"><h3>Weddings</h3><p>Receptions at both venues, and ceremonies on the golf course at The Fairway. No wedding tax.</p><span class="et-from">Ceremonies from $2,000</span><span class="et-go">Explore →</span></div>
+      </a>
+      <a class="et-card" href="/remembrance/">
+        <div class="et-photo"><img src="images/remembrance/function-room.jpg" alt="A function room set with round tables, white linen and glassware" loading="lazy"></div>
+        <div class="et-body"><h3>Remembrance</h3><p>Wakes, memorials and celebrations of life, handled with care so you don't have to think about the details.</p><span class="et-from">From $33pp</span><span class="et-go">Explore →</span></div>
+      </a>
+      <a class="et-card" href="/functions/graduations-formals/">
+        <div class="et-photo"><img src="images/catering/feature/catering-04.jpg" alt="Waiters serving trays of canapés on the greens" loading="lazy"></div>
+        <div class="et-body"><h3>Graduations &amp; Formals</h3><p>Graduation dinners, school formals and after-parties, with room for up to 320 guests.</p><span class="et-from">New menu coming soon</span><span class="et-go">Explore →</span></div>
+      </a>
+      <a class="et-card" href="/functions/corporate/">
+        <div class="et-photo"><img src="images/catering/feature/catering-06.jpg" alt="A buffet line of hot dishes and salads at an event" loading="lazy"></div>
+        <div class="et-body"><h3>Corporate Events</h3><p>Meetings, workshops, team lunches and end-of-week celebrations.</p><span class="et-from">From $39pp</span><span class="et-go">Explore →</span></div>
+      </a>
+      <a class="et-card" href="/christmas/" data-xmas>
+        <div class="et-photo"><img src="images/christmas/grazing-board.jpg" alt="A festive Christmas grazing spread" loading="lazy"></div>
+        <div class="et-body"><h3>Christmas Parties</h3><p>Work Christmas parties and festive get-togethers, with roasts, seafood and all the trimmings.</p><span class="et-from">From $48pp</span><span class="et-go">Explore →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- INTRO -->
 <section id="intro">
@@ -348,7 +422,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <div class="intro-copy">
       <h2>Two venues, every occasion catered for</h2>
       <p>Whether you're planning an intimate gathering or a celebration for three hundred, our function packages are designed to suit whatever the occasion — from relaxed grazing tables and canapés, to generous buffets, shared banquets, or a plated set menu.</p>
-      <p>Every package below is available at <strong>both</strong> of our venues, so you can choose the package that suits your event best.</p>
+      <p>Our packages are available at <strong>both</strong> of our venues, so you can choose the setting that suits your event best.</p>
       <div class="venue-list">
         <div class="venue-row"><span class="dot"></span><span><strong>The Fairway</strong> — Penrith Golf Club, with unobstructed 180° views of the greens. Main Terrace and Small Terrace available.</span></div>
         <div class="venue-row"><span class="dot"></span><span><strong>The Jack &amp; Cleaver</strong> — Pennant Hills Bowling Club, a warm and versatile space overlooking the green. Yarrara Function Room and Mezzanine available.</span></div>
@@ -407,459 +481,6 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <figure><img src="images/catering/thumb/catering-04.jpg" alt="Waiter serving canapés on the greens" loading="lazy"></figure>
     <figure><img src="images/catering/thumb/catering-12.jpg" alt="Event grazing spread with florals" loading="lazy"></figure>
     <figure><img src="images/catering/thumb/catering-07.jpg" alt="Dessert table with strawberries and slices" loading="lazy"></figure>
-  </div>
-  <nav class="jump-bar" aria-label="Jump to a menu section">
-    <a href="#buffets">Buffets</a>
-    <a href="#grazing">Grazing &amp; Canapés</a>
-    <a href="#banquets">Banquets</a>
-    <a href="#set-menus">Set Menus</a>
-    <a href="#platters">Signature Platters</a>
-    <a href="#kids">Kids</a>
-    <a href="#remembrance">Remembrance</a>
-    <a href="#weddings">Weddings</a>
-    <a href="#beverages">Drinks</a>
-  </nav>
-</section>
-
-<!-- PACKAGES -->
-<section id="packages">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The packages</p>
-      <h2 class="sec-title">Celebration packages</h2>
-      <p class="sec-sub">Choose the style that suits your event. All prices are per person and minimum guest numbers, and minimum spends apply. Bookings on a public holiday incur a 15% surcharge on all packages.</p>
-    </div>
-
-    <h3 class="pkg-group-title" id="buffets">Buffets</h3>
-    <div class="pkg-stack">
-
-      <!-- PIZZA & PASTA -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Signature Pizza &amp; Pasta</div><div class="pkg-meta">Minimum 35 guests · served as an elegant buffet</div></div>
-          <div class="pkg-price"><div class="pp">$46<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">Pasta <span>· choose 3</span></p><p class="choice-items">
-            <span class="it">Penne Boscaiola</span>
-            <span class="it">Classic Bolognese</span>
-            <span class="it">Chicken &amp; mushroom linguine</span>
-            <span class="it">Lamb ragu linguine</span>
-            <span class="it">Preserved lemon &amp; zucchini</span>
-            <span class="it">Chicken pesto</span>
-            <span class="it">Seafood puttanesca <span class="sub">(add $2pp)</span></span>
-          </p></div>
-          <div><p class="choice-label">Pizza <span>· choose 3</span></p><p class="choice-items">
-            <span class="it">Margherita</span>
-            <span class="it">Pepperoni</span>
-            <span class="it">Meat Lovers</span>
-            <span class="it">Chicken &amp; avo</span>
-            <span class="it">Classic vegetarian</span>
-            <span class="it">Supreme</span>
-            <span class="it">Garlic prawn <span class="sub">(add $2pp)</span></span>
-          </p></div>
-          <div><p class="choice-label">Salads <span>· choose 2</span></p><p class="choice-items">
-            <span class="it">Classic Caesar</span>
-            <span class="it">Greek</span>
-            <span class="it">Sweet potato &amp; pinenut</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Starts with house garlic &amp; herb bread. Includes linen for the buffet table, cutlery &amp; crockery.</p>
-      </div>
-
-      <!-- ROAST BUFFET -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Roast Buffet</div><div class="pkg-meta">Minimum 35 guests · served as an elegant buffet</div></div>
-          <div class="pkg-price"><div class="pp-tier"><span class="lbl">2 mains, 2 sides, 2 desserts</span><span class="amt">$46<small>pp</small></span></div><div class="pp-tier"><span class="lbl">3 mains, 3 sides, 2 desserts</span><span class="amt">$54<small>pp</small></span></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">Mains</p><p class="choice-items">
-            <span class="it">Roast pork, crackling, smoked applesauce</span>
-            <span class="it">Tender roast beef, roasted onions, red wine jus</span>
-            <span class="it">Roast chicken, rosemary, lemon, garlic</span>
-            <span class="it">Baked barramundi, creamy lemon butter</span>
-          </p></div>
-          <div><p class="choice-label">Sides</p><p class="choice-items">
-            <span class="it">Triple cooked crispy roast potatoes</span>
-            <span class="it">Skin-on pumpkin, caramelised onions</span>
-            <span class="it">Steamed seasonal vegetables, herbed butter</span>
-            <span class="it">Baked cauliflower, cheese béchamel</span>
-            <span class="it">Green peas, butter, gravy</span>
-            <span class="it">Caesar salad · Seasonal garden salad</span>
-          </p></div>
-          <div><p class="choice-label">Desserts</p><p class="choice-items">
-            <span class="it">Chef's selection of mini cakes</span>
-            <span class="it">Mini sticky date pudding, butterscotch</span>
-            <span class="it">Seasonal fruit</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Includes bread rolls &amp; butter, a complimentary tea &amp; coffee station, linen for the buffet table, cutlery &amp; crockery.</p>
-      </div>
-
-      <!-- PREMIUM BBQ BUFFET -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Premium BBQ Buffet</div><div class="pkg-meta">Minimum 40 guests · perfect after a day on the greens or for a Sunday lunch</div></div>
-          <div class="pkg-price"><div class="pp">$55<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-2">
-          <div><p class="choice-label">Off the grill</p><p class="choice-items">
-            <span class="it">Rump steaks, chimichurri, butter</span>
-            <span class="it">Roast chicken pieces, rosemary, lemon, garlic, roasted onions</span>
-            <span class="it">Pork sausages, gravy</span>
-          </p></div>
-          <div><p class="choice-label">Sides &amp; salads</p><p class="choice-items">
-            <span class="it">Herbed roasted potatoes</span>
-            <span class="it">Green peas, butter</span>
-            <span class="it">Caesar salad</span>
-            <span class="it">Moroccan style cous cous</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Includes bread rolls &amp; butter, linen for the buffet table, cutlery &amp; crockery.</p>
-      </div>
-
-      <!-- SIGNATURE BUFFET -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Signature Buffet</div><div class="pkg-meta">Minimum 40 guests · served as an elegant buffet</div></div>
-          <div class="pkg-price"><div class="pp-tier"><span class="lbl">3 mains, 3 sides, 2 salads</span><span class="amt">$59<small>pp</small></span></div><div class="pp-tier"><span class="lbl">4 mains, 3 sides, 3 salads</span><span class="amt">$67<small>pp</small></span></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">Mains</p><p class="choice-items">
-            <span class="it">Seafood paella</span>
-            <span class="it">Baked salmon, creamy dill sauce</span>
-            <span class="it">Yellow Thai barramundi curry</span>
-            <span class="it">Chicken Inasal (Filo BBQ style)</span>
-            <span class="it">Fried chicken, gochujang</span>
-            <span class="it">Mediterranean chicken pieces</span>
-            <span class="it">Herbed chicken, chimichurri</span>
-            <span class="it">Butter chicken curry</span>
-            <span class="it">Crispy pork kare-kare (Filo peanut style)</span>
-            <span class="it">Glazed honey pork loin</span>
-            <span class="it">Sticky pork belly, house BBQ glaze</span>
-            <span class="it">Beef carvery roast, herbed gravy</span>
-            <span class="it">Asian style beef ribs</span>
-            <span class="it">Braised ossobuco, rich tomato gravy</span>
-            <span class="it">BBQ beef brisket, sweet &amp; tangy</span>
-            <span class="it">Preserved lemon &amp; garlic pasta</span>
-            <span class="it">Vegetarian Thai green curry</span>
-            <span class="it">Roasted pumpkin satay</span>
-          </p></div>
-          <div><p class="choice-label">Sides</p><p class="choice-items">
-            <span class="it">Creamy garlic potato</span>
-            <span class="it">Garlic mashed potato</span>
-            <span class="it">Rice pilaf</span>
-            <span class="it">Grilled asparagus</span>
-            <span class="it">Honey glazed carrots</span>
-            <span class="it">Green beans almondine</span>
-            <span class="it">Mac &amp; cheese</span>
-            <span class="it">Seasonal veggies</span>
-            <span class="it">Tomato carpaccio</span>
-          </p></div>
-          <div><p class="choice-label">Salads</p><p class="choice-items">
-            <span class="it">Waldorf</span>
-            <span class="it">Caesar</span>
-            <span class="it">Greek</span>
-            <span class="it">Creamy coleslaw</span>
-            <span class="it">Asian crunch</span>
-            <span class="it">Italian pasta</span>
-            <span class="it">Spring berry</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Includes bread rolls &amp; butter, a complimentary tea &amp; coffee station, chef's selection of mini cakes, linen for the buffet table, cutlery &amp; crockery.</p>
-      </div>
-
-    </div>
-
-    <h3 class="pkg-group-title" id="grazing">Grazing &amp; Canapés</h3>
-    <div class="pkg-stack">
-
-      <!-- PLATINUM GRAZING -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Platinum Grazing</div><div class="pkg-meta">Minimum 30 guests · designed for relaxed, social grazing — ideal for cocktail parties</div></div>
-          <div class="pkg-price"><div class="pp">$85<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-2">
-          <div><p class="choice-label">Included</p><p class="choice-items">
-            <span class="it">Artisanal cheese selection — local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini</span>
-            <span class="it">Charcuterie selection — cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives &amp; sourdough</span>
-          </p></div>
-          <div><p class="choice-label">&nbsp;</p><p class="choice-items">
-            <span class="it">Chef's selection of savoury pastries</span>
-            <span class="it">Chef's selection of beef, chicken &amp; pork sliders</span>
-          </p>
-          <p class="addon-note">Add chef's selection of pizzas for $9pp</p></div>
-        </div>
-      </div>
-
-      <!-- SIGNATURE CANAPÉS -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Signature Canapés</div><div class="pkg-meta">Minimum 60 guests · choose 3 from each selection (9 total)</div></div>
-          <div class="pkg-price"><div class="pp">$67<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">Cold</p><p class="choice-items">
-            <span class="it">Mini bruschetta, tomatoes &amp; balsamic <span class="diet">v</span></span>
-            <span class="it">Mini rare beef baguette, whipped horseradish</span>
-            <span class="it">Potato blini, smoked salmon &amp; caper tartare</span>
-            <span class="it">Sweet corn fritter, avocado &amp; tomato salsa <span class="diet">gf</span></span>
-            <span class="it">Caramelised onion &amp; feta tartlet <span class="diet">v</span></span>
-            <span class="it">Cranberry, brie &amp; prosciutto crostini</span>
-            <span class="it">Sweet potato &amp; spicy avocado bites <span class="diet">v</span></span>
-          </p></div>
-          <div><p class="choice-label">Hot</p><p class="choice-items">
-            <span class="it">Salt &amp; pepper squid <span class="diet">gf</span></span>
-            <span class="it">Malay satay chicken &amp; sesame skewers</span>
-            <span class="it">Mini vegetarian spring rolls, sweet chilli &amp; soy <span class="diet">v</span></span>
-            <span class="it">Thai style fish cakes</span>
-            <span class="it">Honey soy beef skewers <span class="diet">gf</span></span>
-            <span class="it">Truffle porcini mushroom arancini <span class="diet">v</span></span>
-            <span class="it">Spinach &amp; ricotta savoury rolls <span class="diet">v</span></span>
-          </p></div>
-          <div><p class="choice-label">Fork</p><p class="choice-items">
-            <span class="it">Beer battered fish &amp; chips, house tartare</span>
-            <span class="it">Chicken &amp; prawn pad Thai, peanuts &amp; sprouts</span>
-            <span class="it">Creamy butter chicken, steamed jasmine rice</span>
-            <span class="it">Crispy chicken Caesar salad, parmesan</span>
-            <span class="it">Penne Boscaiola, crispy bacon</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Includes two waiters for two hours of food service.</p>
-      </div>
-
-    </div>
-
-    <h3 class="pkg-group-title" id="banquets">Banquets</h3>
-    <div class="pkg-stack">
-
-      <!-- ART OF ASIA -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Art of Asia Banquet</div><div class="pkg-meta">Minimum 40 guests · a journey through South East Asia, served to the table to share</div></div>
-          <div class="pkg-price"><div class="pp">$81<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">To Start <span>· pick 3</span></p><p class="choice-items">
-            <span class="it">Salmon sashimi</span>
-            <span class="it">Szechuan calamari</span>
-            <span class="it">Prawn, betel leaf</span>
-            <span class="it">Thai style beef salad</span>
-            <span class="it">Vegetable lumpia</span>
-            <span class="it">Sticky pork belly bites</span>
-          </p></div>
-          <div><p class="choice-label">Mains <span>· pick 3</span></p><p class="choice-items">
-            <span class="it">Slow cooked short ribs</span>
-            <span class="it">Cauliflower, coconut curry</span>
-            <span class="it">Roasted chicken, Isaan sauce</span>
-            <span class="it">Pork belly, peanut sauce</span>
-            <span class="it">Grilled salmon, red curry</span>
-            <span class="it">Prawn, coconut curry</span>
-            <span class="it">Pumpkin, satay</span>
-          </p></div>
-          <div><p class="choice-label">Curry <span>· pick 1</span></p><p class="choice-items">
-            <span class="it">Butter chicken</span>
-            <span class="it">Chicken penang</span>
-            <span class="it">Beef rendang</span>
-            <span class="it">Chicken green Thai curry</span>
-            <span class="it">Vegetable yellow curry</span>
-            <span class="it">Beef massaman</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Served with steamed jasmine rice. Add dessert for $12pp (pick two): mango sticky rice, panna cotta, or pandan coconut sago. Includes table linen.</p>
-      </div>
-
-      <!-- MIDDLE EAST -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">The Middle East Banquet</div><div class="pkg-meta">Minimum 40 guests · a Lebanese journey, served to the table to share</div></div>
-          <div class="pkg-price"><div class="pp">$89<small>pp</small></div></div>
-        </div>
-        <div class="pkg-body cols-2">
-          <div><p class="choice-label">Mezze <span>· all included</span></p><p class="choice-items">
-            <span class="it">Kingfish tartare, pomegranate, fried bread</span>
-            <span class="it">Hummus Beiruti, wagyu beef</span>
-            <span class="it">Salmon nayee, fresh mint, olive oil</span>
-            <span class="it">Haloumi cigars, kataifi, honey, za'atar</span>
-            <span class="it">Kebbe balls, lamb mince, pine nuts</span>
-            <span class="it">Prawns, coriander, garlic, chilli, lemon</span>
-            <span class="it">Eggplant fatteh · Babaganoush</span>
-            <span class="it">Batata harra · Tabouli · Fattoush</span>
-            <span class="it">Fresh Lebanese bread, pickles &amp; olives</span>
-          </p></div>
-          <div><p class="choice-label">Mains <span>· pick 3</span></p><p class="choice-items">
-            <span class="it">Mixed charcoal grill — lamb skewers, shish tawook, kafta</span>
-            <span class="it">Slow roasted lamb shoulder, Lebanese rice, nuts</span>
-            <span class="it">Barramundi harra, coriander, chilli, garlic, lemon</span>
-            <span class="it">Chicken tawook, garlic toum</span>
-            <span class="it">Kafta meshwi, parsley, onion, spices</span>
-            <span class="it">Lamb cutlets, pomegranate glaze</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Add dessert for $12pp (pick two): ashta cheesecake, baklava, kanafeh, mouhalabieh, ashta ice cream, or katayef. Includes table linen.</p>
-      </div>
-
-    </div>
-
-    <h3 class="pkg-group-title" id="set-menus">Set Menus</h3>
-    <div class="pkg-stack">
-
-      <!-- SET MENU -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Plated Set Menu</div><div class="pkg-meta">Minimum 40 guests · Two options per course chosen by you, served alternately to the table</div></div>
-          <div class="pkg-price"><div class="pp-tier"><span class="lbl">entrée &amp; main</span><span class="amt">$79<small>pp</small></span></div><div class="pp-tier"><span class="lbl">entrée, main &amp; dessert</span><span class="amt">$89<small>pp</small></span></div></div>
-        </div>
-        <div class="pkg-body cols-3">
-          <div><p class="choice-label">Entrées</p><p class="choice-items">
-            <span class="it">Cauliflower curry, sweet coconut Thai</span>
-            <span class="it">Basil pistachio tortellini, parmesan</span>
-            <span class="it">Prawn red curry skewers (2pc)</span>
-            <span class="it">Heirloom tomato carpaccio, labneh</span>
-            <span class="it">Chicken karaage, teriyaki, kewpie</span>
-            <span class="it">Caprese sourdough, pesto, balsamic</span>
-          </p></div>
-          <div><p class="choice-label">Mains</p><p class="choice-items">
-            <span class="it">Slow cooked lamb shoulder (200g), creamy mash</span>
-            <span class="it">New York sirloin (250g), chimichurri, miso butter</span>
-            <span class="it">Soy roasted chicken Maryland, buttered rice</span>
-            <span class="it">Oven baked Atlantic salmon, crunchy salad</span>
-            <span class="it">Crispy pork belly, pineapple sauce</span>
-            <span class="it">Roast pumpkin, satay, peanuts, Thai basil</span>
-          </p></div>
-          <div><p class="choice-label">Desserts</p><p class="choice-items">
-            <span class="it">Classic affogato, amaretto</span>
-            <span class="it">Chocolate mousse</span>
-            <span class="it">Warm sticky date pudding</span>
-            <span class="it">Pandan panna cotta</span>
-            <span class="it">Assorted cakes</span>
-            <span class="it">Lemon meringue</span>
-          </p></div>
-        </div>
-        <p class="pkg-incl">Includes bread &amp; butter, table linen, and a complimentary tea &amp; coffee station.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SIGNATURE PLATTERS -->
-<section id="platters">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Add to any event</p>
-      <h2 class="sec-title">Signature Platters</h2>
-      <p class="sec-sub">Each platter is designed to feed 10–12 guests. Add them to your event package to round out the spread, or order them on their own for pick-up — including for home. Please note that minimum spends apply.</p>
-    </div>
-    <div class="platter-grid">
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Cheese</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Charcuterie</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Sliders (15pc)</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Arancini</span><span class="platter-dots"></span><span class="platter-price">$120</span></div><p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Crispy Fish</span><span class="platter-dots"></span><span class="platter-price">$155</span></div><p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">S&amp;R Savoury Rolls</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Classic Aussie</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Schnitzel (30pc)</span><span class="platter-dots"></span><span class="platter-price">$255</span></div><p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Wedges</span><span class="platter-dots"></span><span class="platter-price">$110</span></div><p class="platter-desc">Potato wedges with sour cream &amp; sweet chilli sauce.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Seasonal Fruit</span><span class="platter-dots"></span><span class="platter-price">$220</span></div><p class="platter-desc">Chef's selection of seasonal fruit.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Baked Goods</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p></div>
-    </div>
-    <p class="fineprint">Please note: Signature Platters can only be purchased as additions to other packages, unless they are ordered for pick-up only.</p>
-  </div>
-</section>
-
-<!-- FOR THE LITTLE ONES -->
-<section id="kids">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">For the little legends</p>
-      <h2 class="sec-title">For the Little Ones</h2>
-      <p class="sec-sub">For guests aged 12 &amp; under. Enjoy on its own or pair it with any other package. Each platter feeds 10–15 children.</p>
-    </div>
-    <div class="mini-grid">
-      <div class="mini-item"><div class="mi-name">Nuggets &amp; Chips Platter</div><div class="mi-price">$125</div></div>
-      <div class="mini-item"><div class="mi-name">Fish &amp; Chips Platter</div><div class="mi-price">$125</div></div>
-      <div class="mini-item"><div class="mi-name">Fairy Bread Platter</div><div class="mi-price">$80</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- REMEMBRANCE -->
-<section id="remembrance">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">With care</p>
-      <h2 class="sec-title">Remembrance Packages</h2>
-    </div>
-    <p class="remem-intro">Losing a loved one is hard, and we know the last thing you want to be doing is planning how to say goodbye. With over 10 years of experience, we're here to take care of your loved one's memorial, so you don't have to.</p>
-    <div class="remem-cards">
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Gold Package</div><div class="pkg-meta">Minimum 30 guests · Choose 6 options from the menu below</div></div>
-          <div class="pkg-price"><div class="pp">$33<small>pp</small></div></div>
-        </div>
-        <p class="pkg-incl">Includes 3 hour space hire and linen for the food table.</p>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div><div class="pkg-name">Platinum Package</div><div class="pkg-meta">Minimum 30 guests · Choose 8 options from the menu below</div></div>
-          <div class="pkg-price"><div class="pp">$38<small>pp</small></div></div>
-        </div>
-        <p class="pkg-incl">Includes 3 hour space hire, linen for the food table, and a complimentary tea &amp; coffee station.</p>
-      </div>
-    </div>
-    <div class="remem-menu">
-      <p class="choice-label">The menu</p>
-      <div class="remem-list">
-        <span class="it">Mini gourmet beef pies</span>
-        <span class="it">Malay style satay chicken skewers</span>
-        <span class="it">Beer battered fish, house tartare</span>
-        <span class="it">Truffled porcini mushroom arancini <span class="diet">v</span></span>
-        <span class="it">Mini Thai style spring rolls</span>
-        <span class="it">Assorted selection of pizzas</span>
-        <span class="it">Ricotta cheese pastizzi <span class="diet">v</span></span>
-        <span class="it">Savoury spinach &amp; ricotta rolls <span class="diet">v</span></span>
-        <span class="it">Chef's selection of mini sandwiches <span class="sub">(+$4.50pp)</span></span>
-        <span class="it">Mini sweet danish selection</span>
-        <span class="it">Mini cakes selection</span>
-      </div>
-    </div>
-    <p style="margin-top:1.75rem"><a href="/remembrance/" class="btn btn-primary">View remembrance packages &amp; enquire</a></p>
-  </div>
-</section>
-
-<!-- WEDDING CEREMONIES -->
-<section id="weddings">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Say &ldquo;I do&rdquo;</p>
-      <h2 class="sec-title">Wedding Ceremonies on the Golf Course</h2>
-    </div>
-    <p class="remem-intro">Exchange your vows outdoors on the greens at The Fairway, Penrith Golf Club, then move straight inside for your reception. Pair your ceremony with any of our function packages, with no wedding tax.</p>
-    <div class="wed-photos">
-      <figure><img src="images/weddings/ceremony-arbour.jpg" alt="Wedding ceremony set up on the golf course with white chairs and a floral arbour" loading="lazy"></figure>
-      <figure><img src="images/weddings/couple-fairway.jpg" alt="Bride and groom running hand in hand across the fairway" loading="lazy"></figure>
-    </div>
-    <div class="pkg-card wed-card">
-      <div class="pkg-head">
-        <div><span class="vs-tag tag-fairway">Penrith Golf Club</span><div class="pkg-name">Golf Course Ceremony</div><div class="pkg-meta">The Fairway · 90 minute ceremony on the course</div></div>
-        <div class="pkg-price"><div class="pp-alt">From</div><div class="pp">$2,000</div></div>
-      </div>
-      <div class="pkg-incl">
-        <p class="choice-label">Includes</p>
-        <div class="remem-list">
-          <span class="it">90 minutes on the golf course</span>
-          <span class="it">Ceremony chairs</span>
-          <span class="it">Aisle carpet</span>
-          <span class="it">Arbour, dressed with linen</span>
-          <span class="it">Witness table</span>
-          <span class="it">Complimentary toasting champagne</span>
-        </div>
-        <p style="margin-top:1rem"><a href="contact.html#functions-enquiry">Enquire about your wedding</a></p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -960,7 +581,7 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <p class="footer-col-title">Our services</p>
         <ul class="footer-links">
           <li><a href="catering.html">Event Catering</a></li>
-          <li><a href="index.html#events">Functions &amp; Events</a></li>
+          <li><a href="functions-events.html">Functions &amp; Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>

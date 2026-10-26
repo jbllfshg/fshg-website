@@ -367,6 +367,26 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   .menu-col+.menu-col{border-left:none;padding-left:0;margin-top:1rem}
 }
 @media(prefers-reduced-motion:reduce){.snow{display:none}}
+
+/* ---------- DRINKS & ADD-ONS ---------- */
+#beverages{background:var(--paper)}
+#additions{background:var(--paper-2);border-top:1px solid var(--line)}
+.info-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.info-block-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem}
+.info-block-card h3{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem}
+.add-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--line)}
+.add-row:last-child{border-bottom:none}
+.add-name{font-size:0.92rem;font-weight:700;color:var(--ink)}
+.add-name .add-sub{display:block;font-size:0.8rem;font-weight:400;color:var(--muted);margin-top:2px}
+.add-price{font-family:var(--display);font-size:1rem;font-weight:800;color:var(--claret);white-space:nowrap;text-align:right}
+.bev-pkg{margin-bottom:1.5rem}
+.bev-name{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
+.bev-name .bn{font-family:var(--display);font-size:1.1rem;font-weight:800;letter-spacing:-0.01em;color:var(--ink)}
+.bev-name .bp{font-family:var(--display);font-size:1.5rem;font-weight:900;letter-spacing:-0.02em;color:var(--claret)}
+.bev-list{font-size:0.86rem;color:var(--muted);line-height:1.7}
+
+@media(max-width:880px){.info-2col{grid-template-columns:1fr}}
+@media(max-width:768px){.info-block-card{padding:1.5rem}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js"></script>
@@ -559,6 +579,66 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
           <p>A warm, versatile space overlooking the green. The Yarrara Function Room and Mezzanine work for everything from team lunches to big family Christmases.</p>
           <a href="#enquire" class="btn-cta" data-venue="The Jack &amp; Cleaver (Pennant Hills)">Book at The Jack &amp; Cleaver</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEVERAGES -->
+<section id="beverages">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Drinks</p>
+      <h2 class="sec-title">Beverage Packages</h2>
+      <p class="sec-sub">Choose a package, or keep it flexible with a cash bar or bar tab.</p>
+    </div>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Gold Beverage Package</span><span class="bp">$60pp</span></div>
+          <p class="bev-list">4 house tap beers · 1 house white · 1 house red · 1 packaged beer (Corona, Peroni etc) + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Premium Beverage Package</span><span class="bp">$75pp</span></div>
+          <p class="bev-list">3 house tap beers + 1 premium tap/draught RTD · 2 premium whites &amp; 2 premium reds (Moore's Creek / Oyster Bay) · sparkling (Prosecco or Brut) · packaged beer + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+      </div>
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Cash Bar</span></div>
+          <p class="bev-list">Guests pay for their own beverages upon ordering.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Bar Tab</span></div>
+          <p class="bev-list">Set a monetary limit and let us know which beverages to include. We'll notify you once the limit has been reached, and you decide whether to extend it or switch to a cash bar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT ADDITIONS -->
+<section id="additions">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finishing touches</p>
+      <h2 class="sec-title">Event Additions</h2>
+    </div>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <h3>Add-ons</h3>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · up to 50pax</span></span><span class="add-price">$85</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 51–99pax</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 100pax or more</span></span><span class="add-price">$185</span></div>
+        <div class="add-row"><span class="add-name">Tea &amp; Coffee Station<span class="add-sub">Black &amp; herbal teas, instant coffee, sweeteners</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Cakeage<span class="add-sub">Bring your own cake or desserts; crockery supplied</span></span><span class="add-price">$3pp</span></div>
+      </div>
+      <div class="info-block-card">
+        <h3>Staffing &amp; hire</h3>
+        <div class="add-row"><span class="add-name">Waiter / Additional Staff<span class="add-sub">Per hour, per staff member</span></span><span class="add-price">$65/hr</span></div>
+        <div class="add-row"><span class="add-name">Security<span class="add-sub">Minimum 5 hours</span></span><span class="add-price">$75/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Space Hire<span class="add-sub">Standard hire is 4 hours</span></span><span class="add-price">$220/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Services<span class="add-sub">DJ · kids play / soft play · cakes · balloons &amp; decorations</span></span><span class="add-price">On request</span></div>
       </div>
     </div>
   </div>

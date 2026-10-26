@@ -357,6 +357,17 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 .season-band .btn:hover{background:#b8945a;color:var(--paper)}
 @media(max-width:880px){.mini-pkgs,.corp-grid{grid-template-columns:1fr}}
 @media(max-width:768px){#enquire.form-sec{padding:3.8rem 0}.form-card{padding:1.5rem}.form-grid{grid-template-columns:1fr}.soon-card{padding:1.5rem}}
+
+/* Hero with photo (event pages) */
+#hero.has-photo .hero-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:3.5rem;align-items:center}
+.hero-photo{position:relative;margin:0 14px 14px 0}
+.hero-photo::after{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:2px solid var(--claret);border-radius:2px;z-index:0}
+.hero-photo img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.hero-photo.wide img{aspect-ratio:5/4}
+.photo-strip{padding:0 2rem 3rem;background:inherit}
+.photo-strip .gallery-strip{margin-top:0}
+@media(max-width:900px){#hero.has-photo .hero-inner{grid-template-columns:1fr;gap:2.25rem}.hero-photo img,.hero-photo.wide img{aspect-ratio:16/10}}
+@media(max-width:768px){.photo-strip{padding:0 1.25rem 2.5rem}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js"></script>
@@ -399,8 +410,9 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </a>
 
 <!-- HERO -->
-<header id="hero">
+<header id="hero" class="has-photo">
   <div class="hero-inner">
+   <div class="hero-text">
     <p class="crumbs"><a href="/functions-events.html">Functions &amp; Events</a> &nbsp;/&nbsp; Graduations &amp; Formals</p>
     <span class="hero-tag">Graduations &amp; Formals</span>
     <h1 class="hero-title">Celebrate the <em>big finish</em></h1>
@@ -410,6 +422,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <a href="#enquire" class="btn btn-primary">Make an enquiry</a>
       <a href="#spaces" class="btn btn-outline">Our spaces</a>
     </div>
+    </div>
+   <figure class="hero-photo "><img src="/images/functions/table-window.jpg" alt="A table set with candles and flowers in a sunlit function room"></figure>
   </div>
 </header>
 
@@ -425,6 +439,16 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <p>We're putting the finishing touches on our graduation and formal packages. In the meantime, tell us about your event and we'll send you options, or browse our <a href="/functions/special-occasions/" style="color:var(--claret);font-weight:700">function packages</a>.</p>
       <a href="#enquire" class="btn btn-primary">Make an enquiry</a>
     </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photo-strip" style="padding-top:3rem">
+  <div class="gallery-strip">
+    <figure><img src="/images/functions/table-sunlit-overhead.jpg" alt="A sunlit table set with candles and flowers" loading="lazy"></figure>
+    <figure><img src="/images/catering/feature/catering-04.jpg" alt="Waiters serving trays of canapés on the greens" loading="lazy"></figure>
+    <figure><img src="/images/functions/room-tables.jpg" alt="Round tables dressed in white linen with blue napkins and gold chargers" loading="lazy"></figure>
+    <figure><img src="/images/functions/table-window-sun.jpg" alt="A table set beside tall windows overlooking the trees" loading="lazy"></figure>
   </div>
 </section>
 

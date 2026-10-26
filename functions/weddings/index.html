@@ -357,6 +357,17 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 .season-band .btn:hover{background:#b8945a;color:var(--paper)}
 @media(max-width:880px){.mini-pkgs,.corp-grid{grid-template-columns:1fr}}
 @media(max-width:768px){#enquire.form-sec{padding:3.8rem 0}.form-card{padding:1.5rem}.form-grid{grid-template-columns:1fr}.soon-card{padding:1.5rem}}
+
+/* Hero with photo (event pages) */
+#hero.has-photo .hero-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:3.5rem;align-items:center}
+.hero-photo{position:relative;margin:0 14px 14px 0}
+.hero-photo::after{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:2px solid var(--claret);border-radius:2px;z-index:0}
+.hero-photo img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.hero-photo.wide img{aspect-ratio:5/4}
+.photo-strip{padding:0 2rem 3rem;background:inherit}
+.photo-strip .gallery-strip{margin-top:0}
+@media(max-width:900px){#hero.has-photo .hero-inner{grid-template-columns:1fr;gap:2.25rem}.hero-photo img,.hero-photo.wide img{aspect-ratio:16/10}}
+@media(max-width:768px){.photo-strip{padding:0 1.25rem 2.5rem}}
 </style>
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js"></script>
@@ -399,8 +410,9 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 </a>
 
 <!-- HERO -->
-<header id="hero">
+<header id="hero" class="has-photo">
   <div class="hero-inner">
+   <div class="hero-text">
     <p class="crumbs"><a href="/functions-events.html">Functions &amp; Events</a> &nbsp;/&nbsp; Weddings</p>
     <span class="hero-tag">Weddings</span>
     <h1 class="hero-title">Your day, <em>your way</em></h1>
@@ -411,6 +423,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <a href="#reception" class="btn btn-outline">Reception packages</a>
       <a href="#enquire" class="btn btn-outline">Make an enquiry</a>
     </div>
+    </div>
+   <figure class="hero-photo wide"><img src="/images/functions/table-window-sun.jpg" alt="A reception table set with candles and flowers beside tall windows overlooking the trees"></figure>
   </div>
 </header>
 
@@ -466,6 +480,16 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <a class="mini-pkg" href="/functions/special-occasions/#banquets"><p class="mp-name">The Middle East Banquet</p><p class="mp-meta">Shared banquet · min. 40 guests</p><p class="mp-price">$89<small>pp</small></p><span class="mp-link">See the full menu →</span></a>
       <a class="mini-pkg" href="/functions/special-occasions/#set-menus"><p class="mp-name">Plated Set Menu</p><p class="mp-meta">Set menu · min. 40 guests</p><p class="mp-price">From $79<small>pp</small></p><span class="mp-link">See the full menu →</span></a>
     </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photo-strip" style="padding-top:3rem">
+  <div class="gallery-strip">
+    <figure><img src="/images/functions/table-overhead.jpg" alt="A round table from above, set for ten with a floral centrepiece" loading="lazy"></figure>
+    <figure><img src="/images/functions/room-window-chair.jpg" alt="A dressed table and chair beside the windows on a sunny afternoon" loading="lazy"></figure>
+    <figure><img src="/images/functions/table-setting.jpg" alt="A place setting with a blue napkin, gold butterfly ring and menu card" loading="lazy"></figure>
+    <figure><img src="/images/functions/room-tables.jpg" alt="Round tables dressed in white linen with blue napkins and gold chargers" loading="lazy"></figure>
   </div>
 </section>
 

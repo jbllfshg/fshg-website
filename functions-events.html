@@ -295,6 +295,21 @@ section[id]{scroll-margin-top:88px}
 
 /* Cohesive photo treatment — consistent warm editorial grade site-wide. */
 img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+
+/* Hero photo: the blue and white room behind the headline */
+#hero{position:relative;overflow:hidden;background:var(--ink) url('/images/functions/room-tables.jpg') center 45%/cover no-repeat;border-bottom:0;padding-top:6rem;padding-bottom:5.5rem}
+#hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,28,24,0.9) 0%,rgba(33,28,24,0.7) 50%,rgba(33,28,24,0.25) 100%)}
+#hero .hero-inner{position:relative;z-index:1}
+#hero .hero-tag{color:var(--orange)}
+#hero .hero-tag::before{background:var(--orange)}
+#hero .hero-title{color:var(--paper)}
+#hero .hero-title em{color:var(--orange)}
+#hero .hero-sub{color:var(--paper)}
+#hero .hero-desc{color:var(--paper-dim)}
+#hero .btn-primary{background:var(--claret)}
+#hero .btn-outline{color:var(--paper);border-color:rgba(245,242,236,0.5)}
+#hero .btn-outline:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+@media(max-width:768px){#hero{padding-top:4rem;padding-bottom:4rem}#hero::before{background:rgba(33,28,24,0.78)}}
 </style>
 </head>
 <body>

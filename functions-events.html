@@ -146,9 +146,6 @@ section{padding:5.5rem 0}
 .pkg-group-title{font-family:var(--display);font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:800;letter-spacing:-0.025em;line-height:1;color:var(--ink);margin-top:3.5rem;padding-bottom:0.55rem;border-bottom:3px solid var(--claret);display:inline-block;scroll-margin-top:88px}
 .pkg-group-title:first-of-type{margin-top:0}
 section[id]{scroll-margin-top:88px}
-.jump-bar{position:static;height:auto;z-index:auto;background:none;border:none;padding:0;backdrop-filter:none;display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;max-width:1116px;margin:2rem auto 0}
-.jump-bar a{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:var(--card);border:1px solid var(--line-strong);border-radius:2px;padding:10px 18px;text-decoration:none;transition:all 0.18s}
-.jump-bar a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pkg-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem;transition:transform 0.2s,box-shadow 0.2s}
 .pkg-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,28,24,0.10)}
 .pkg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
@@ -310,6 +307,24 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 #hero .btn-outline{color:var(--paper);border-color:rgba(245,242,236,0.5)}
 #hero .btn-outline:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 @media(max-width:768px){#hero{padding-top:4rem;padding-bottom:4rem}#hero::before{background:rgba(33,28,24,0.78)}}
+/* Package groups: full-width coloured bands and a sticky jump bar */
+.jump-bar{position:sticky;top:74px;z-index:90;background:rgba(245,242,236,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.jump-inner{max-width:1180px;margin:0 auto;padding:0.7rem 2rem;display:flex;gap:0.5rem;overflow-x:auto;scrollbar-width:none}
+.jump-inner::-webkit-scrollbar{display:none}
+.jump-bar a{flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:var(--card);border:1px solid var(--line-strong);border-radius:2px;padding:9px 14px;text-decoration:none;transition:all 0.18s}
+.jump-bar a:hover,.jump-bar a.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-area section[id],.pkg-band{scroll-margin-top:136px}
+.pkg-band{margin:4rem calc(50% - 50vw) 0;color:#f5f2ec}
+.pkg-band-in{max-width:1180px;margin:0 auto;padding:2.6rem 2rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem}
+.band-num{font-family:var(--display);font-size:13px;font-weight:800;letter-spacing:0.14em;opacity:0.7;margin-bottom:0.4rem}
+.band-title{font-family:var(--display);font-size:clamp(2rem,4.4vw,3.2rem);font-weight:900;letter-spacing:-0.03em;line-height:1}
+.band-sub{margin-top:0.6rem;font-size:1.05rem;opacity:0.88}
+.band-from{font-family:var(--display);font-size:1.15rem;font-weight:800;white-space:nowrap;border:1px solid rgba(245,242,236,0.5);padding:0.55rem 1rem;border-radius:2px}
+.band-claret{background:var(--claret)}
+.band-orange{background:#b25a20}
+.band-green{background:#1f3a2b}
+.band-ink{background:var(--ink)}
+@media(max-width:768px){.jump-inner{padding:0.6rem 1.25rem}.pkg-band{margin-top:3rem}.pkg-band-in{padding:2rem 1.25rem;flex-direction:column;align-items:flex-start;gap:1rem}}
 </style>
 </head>
 <body>
@@ -429,18 +444,23 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
     <figure><img src="images/functions/table-window.jpg" alt="A blue and white table with candles and flowers in a sunlit function room" loading="lazy"></figure>
     <figure><img src="images/functions/room-balloons.jpg" alt="Blue and gold balloons and a blue and white flower wall at a function" loading="lazy"></figure>
   </div>
-  <nav class="jump-bar" aria-label="Jump to a menu section">
+</section>
+
+<!-- MENU AREA: sticky jump bar stays on screen from the packages down to the event additions -->
+<div class="menu-area">
+<div class="jump-bar" role="navigation" aria-label="Jump to a menu section">
+  <div class="jump-inner">
     <a href="#buffets">Buffets</a>
     <a href="#grazing">Grazing &amp; Canapés</a>
     <a href="#banquets">Banquets</a>
     <a href="#set-menus">Set Menus</a>
+    <a href="#remembrance">Remembrance</a>
     <a href="#platters">Signature Platters</a>
     <a href="#kids">Kids</a>
-    <a href="#remembrance">Remembrance</a>
     <a href="#weddings">Weddings</a>
     <a href="#beverages">Drinks</a>
-  </nav>
-</section>
+  </div>
+</div>
 
 <!-- PACKAGES -->
 <section id="packages">
@@ -451,7 +471,12 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
       <p class="sec-sub">Choose the style that suits your event. All prices are per person and minimum guest numbers, and minimum spends apply. Bookings on a public holiday incur a 15% surcharge on all packages.</p>
     </div>
 
-    <h3 class="pkg-group-title" id="buffets">Buffets</h3>
+    <div class="pkg-band band-claret" id="buffets">
+      <div class="pkg-band-in">
+        <div><p class="band-num">01</p><h3 class="band-title">Buffets</h3><p class="band-sub">Help-yourself spreads, from pizza and pasta to roasts and the BBQ.</p></div>
+        <p class="band-from">From $46pp</p>
+      </div>
+    </div>
     <div class="pkg-stack">
 
       <!-- PIZZA & PASTA -->
@@ -593,7 +618,12 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 
     </div>
 
-    <h3 class="pkg-group-title" id="grazing">Grazing &amp; Canapés</h3>
+    <div class="pkg-band band-orange" id="grazing">
+      <div class="pkg-band-in">
+        <div><p class="band-num">02</p><h3 class="band-title">Grazing &amp; Canapés</h3><p class="band-sub">Relaxed, social food for cocktail-style parties.</p></div>
+        <p class="band-from">From $67pp</p>
+      </div>
+    </div>
     <div class="pkg-stack">
 
       <!-- PLATINUM GRAZING -->
@@ -653,7 +683,12 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 
     </div>
 
-    <h3 class="pkg-group-title" id="banquets">Banquets</h3>
+    <div class="pkg-band band-green" id="banquets">
+      <div class="pkg-band-in">
+        <div><p class="band-num">03</p><h3 class="band-title">Banquets</h3><p class="band-sub">Shared dishes served to the table.</p></div>
+        <p class="band-from">From $81pp</p>
+      </div>
+    </div>
     <div class="pkg-stack">
 
       <!-- ART OF ASIA -->
@@ -724,7 +759,12 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
 
     </div>
 
-    <h3 class="pkg-group-title" id="set-menus">Set Menus</h3>
+    <div class="pkg-band band-ink" id="set-menus">
+      <div class="pkg-band-in">
+        <div><p class="band-num">04</p><h3 class="band-title">Set Menus</h3><p class="band-sub">Plated courses served to your guests.</p></div>
+        <p class="band-from">From $79pp</p>
+      </div>
+    </div>
     <div class="pkg-stack">
 
       <!-- SET MENU -->
@@ -762,47 +802,6 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <p class="pkg-incl">Includes bread &amp; butter, table linen, and a complimentary tea &amp; coffee station.</p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- SIGNATURE PLATTERS -->
-<section id="platters">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Add to any event</p>
-      <h2 class="sec-title">Signature Platters</h2>
-      <p class="sec-sub">Each platter is designed to feed 10–12 guests. Add them to your event package to round out the spread, or order them on their own for pick-up — including for home. Please note that minimum spends apply.</p>
-    </div>
-    <div class="platter-grid">
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Cheese</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Charcuterie</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Sliders (15pc)</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Arancini</span><span class="platter-dots"></span><span class="platter-price">$120</span></div><p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Crispy Fish</span><span class="platter-dots"></span><span class="platter-price">$155</span></div><p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">S&amp;R Savoury Rolls</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Classic Aussie</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Schnitzel (30pc)</span><span class="platter-dots"></span><span class="platter-price">$255</span></div><p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Wedges</span><span class="platter-dots"></span><span class="platter-price">$110</span></div><p class="platter-desc">Potato wedges with sour cream &amp; sweet chilli sauce.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Seasonal Fruit</span><span class="platter-dots"></span><span class="platter-price">$220</span></div><p class="platter-desc">Chef's selection of seasonal fruit.</p></div>
-      <div class="platter-item"><div class="platter-head"><span class="platter-name">Baked Goods</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p></div>
-    </div>
-    <p class="fineprint">Please note: Signature Platters can only be purchased as additions to other packages, unless they are ordered for pick-up only.</p>
-  </div>
-</section>
-
-<!-- FOR THE LITTLE ONES -->
-<section id="kids">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">For the little legends</p>
-      <h2 class="sec-title">For the Little Ones</h2>
-      <p class="sec-sub">For guests aged 12 &amp; under. Enjoy on its own or pair it with any other package. Each platter feeds 10–15 children.</p>
-    </div>
-    <div class="mini-grid">
-      <div class="mini-item"><div class="mi-name">Nuggets &amp; Chips Platter</div><div class="mi-price">$125</div></div>
-      <div class="mini-item"><div class="mi-name">Fish &amp; Chips Platter</div><div class="mi-price">$125</div></div>
-      <div class="mini-item"><div class="mi-name">Fairy Bread Platter</div><div class="mi-price">$80</div></div>
     </div>
   </div>
 </section>
@@ -846,6 +845,47 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
         <span class="it">Mini sweet danish selection</span>
         <span class="it">Mini cakes selection</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE PLATTERS -->
+<section id="platters">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Add to any event</p>
+      <h2 class="sec-title">Signature Platters</h2>
+      <p class="sec-sub">Each platter is designed to feed 10–12 guests. Add them to your event package to round out the spread, or order them on their own for pick-up — including for home. Please note that minimum spends apply.</p>
+    </div>
+    <div class="platter-grid">
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Cheese</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Local &amp; imported cheeses, dried fruits, nuts, crackers, lavosh &amp; grissini.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Artisanal Charcuterie</span><span class="platter-dots"></span><span class="platter-price">$230</span></div><p class="platter-desc">Cured salami, prosciutto, ham, provolone, marinated peppers, feta, olives, grissini &amp; sourdough.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Sliders (15pc)</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">American style cheeseburger, crispy pork belly, or buffalo fried chicken.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Arancini</span><span class="platter-dots"></span><span class="platter-price">$120</span></div><p class="platter-desc">Mushroom &amp; porcini truffle arancini, served with garlic aioli.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Crispy Fish</span><span class="platter-dots"></span><span class="platter-price">$155</span></div><p class="platter-desc">Beer battered mini fried fish, lemon wedges &amp; tartare sauce.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">S&amp;R Savoury Rolls</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">Spinach &amp; ricotta savoury rolls, baked crispy, with dipping sauces.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Classic Aussie</span><span class="platter-dots"></span><span class="platter-price">$135</span></div><p class="platter-desc">Mini beef pies &amp; mini sausage rolls, with dipping sauces.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Schnitzel (30pc)</span><span class="platter-dots"></span><span class="platter-price">$255</span></div><p class="platter-desc">Classic chicken schnitzel, breaded &amp; fried to perfection, with gravy.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Wedges</span><span class="platter-dots"></span><span class="platter-price">$110</span></div><p class="platter-desc">Potato wedges with sour cream &amp; sweet chilli sauce.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Seasonal Fruit</span><span class="platter-dots"></span><span class="platter-price">$220</span></div><p class="platter-desc">Chef's selection of seasonal fruit.</p></div>
+      <div class="platter-item"><div class="platter-head"><span class="platter-name">Baked Goods</span><span class="platter-dots"></span><span class="platter-price">$125</span></div><p class="platter-desc">A mix of freshly baked muffins &amp; warm danishes.</p></div>
+    </div>
+    <p class="fineprint">Please note: Signature Platters can only be purchased as additions to other packages, unless they are ordered for pick-up only.</p>
+  </div>
+</section>
+
+<!-- FOR THE LITTLE ONES -->
+<section id="kids">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">For the little legends</p>
+      <h2 class="sec-title">For the Little Ones</h2>
+      <p class="sec-sub">For guests aged 12 &amp; under. Enjoy on its own or pair it with any other package. Each platter feeds 10–15 children.</p>
+    </div>
+    <div class="mini-grid">
+      <div class="mini-item"><div class="mi-name">Nuggets &amp; Chips Platter</div><div class="mi-price">$125</div></div>
+      <div class="mini-item"><div class="mi-name">Fish &amp; Chips Platter</div><div class="mi-price">$125</div></div>
+      <div class="mini-item"><div class="mi-name">Fairy Bread Platter</div><div class="mi-price">$80</div></div>
     </div>
   </div>
 </section>
@@ -943,6 +983,8 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   </div>
 </section>
 
+</div><!-- /menu-area -->
+
 <!-- ENQUIRE -->
 <section id="enquire">
   <div class="enquire-inner">
@@ -1000,5 +1042,14 @@ img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
   </div>
 </footer>
 
+<script>
+// Jump bar: highlight the menu group currently on screen
+(function(){var links=[].slice.call(document.querySelectorAll('.jump-bar a')),cur=null;
+var targets=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function update(){var on=-1;targets.forEach(function(t,i){if(t&&t.getBoundingClientRect().top<=160)on=i});
+if(on===cur)return;cur=on;links.forEach(function(a,i){a.classList.toggle('active',i===on)});
+var a=links[on];if(a){var bar=a.parentNode;bar.scrollLeft=a.offsetLeft-bar.clientWidth/2+a.clientWidth/2}}
+window.addEventListener('scroll',update,{passive:true});update()})();
+</script>
 </body>
 </html>

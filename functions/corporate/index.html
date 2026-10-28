@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js): Google Ads account AW-18516230020 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18516230020"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18516230020');
+</script>
+<script>
+  // Google Ads "Website phone tap (Fairway)" conversion: taps on either Fairway number
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!a) return;
+    var num = a.getAttribute('href').replace(/[^0-9]/g, '');
+    if (num === '0247023642' || num === '0247361633') {
+      gtag('event', 'conversion', { send_to: 'AW-18516230020/hsCBCLPk0qEdEIT_nP1E', value: 1.0, currency: 'AUD' });
+    }
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Events &amp; Work Functions | Four Sausages</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Four Sausages Hospitality Group">
+<link rel="canonical" href="https://fshg.com.au/functions/corporate/">
+<meta name="theme-color" content="#8a2b2e">
+<meta name="description" content="Corporate events, meetings and team lunches at The Fairway (Penrith) and The Jack &amp; Cleaver (Pennant Hills). Packages from $39 a head.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Four Sausages — "Bold Editorial" design system
+   Palette: warm paper, near-black ink, claret primary, burnt-orange secondary
+   Type: Archivo (heavy display) + Figtree (body)
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#f5f2ec;--paper-2:#efe9dd;--card:#fbfaf6;
+  --ink:#211c18;--muted:#7c7267;
+  --line:rgba(33,28,24,0.14);--line-strong:rgba(33,28,24,0.24);
+  --claret:#8a2b2e;--claret-dk:#6f2124;--orange:#c96a2b;
+  --paper-dim:rgba(245,242,236,0.72);--paper-faint:rgba(245,242,236,0.46);
+  --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-block;text-decoration:none;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:13px 26px;border-radius:2px;transition:all 0.18s;cursor:pointer;border:1px solid transparent;text-align:center}
+.btn-primary{background:var(--claret);color:var(--paper)}
+.btn-primary:hover{background:var(--claret-dk)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn-outline:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn-light{background:var(--paper);color:var(--ink)}
+.btn-light:hover{background:var(--orange);color:var(--paper)}
+.btn-ghost-light{background:transparent;color:var(--paper);border-color:rgba(245,242,236,0.4)}
+.btn-ghost-light:hover{border-color:var(--paper);background:rgba(245,242,236,0.08)}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:74px;gap:1.25rem}
+.nav-group{display:flex;flex-direction:column;flex-shrink:0;text-decoration:none}
+.nav-group-name{font-family:var(--display);font-size:21px;font-weight:900;color:var(--ink);letter-spacing:-0.01em;line-height:1;text-transform:uppercase}
+.nav-group-sub{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--claret);margin-top:3px}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;flex:1;justify-content:center}
+.nav-links li a{text-decoration:none;color:var(--ink);font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.18s;padding:0.5rem 0.9rem;display:block;white-space:nowrap}
+.nav-links li a:hover,.nav-links li a.active{color:var(--claret)}
+.nav-toggle{display:none;flex-shrink:0;background:none;border:none;cursor:pointer;color:var(--ink);width:42px;height:42px;align-items:center;justify-content:center;border-radius:4px;transition:background 0.2s}
+.nav-toggle:hover{background:var(--line)}
+.nav-toggle svg{width:26px;height:26px;display:block}
+.nav-cta{flex-shrink:0;background:var(--claret);color:var(--paper);border:none;border-radius:2px;padding:11px 22px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.07em;text-transform:uppercase;font-family:var(--body);transition:background 0.18s;white-space:nowrap;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--claret-dk)}
+.nav-phone{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;transition:color 0.2s}
+.nav-phone:hover{color:var(--claret)}
+.nav-phone svg{width:15px;height:15px;flex-shrink:0}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:5.5rem 0}
+.sec-head{max-width:650px;margin-bottom:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.9rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-title{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:0.85rem;text-wrap:balance}
+.sec-sub{color:var(--muted);font-size:1rem;line-height:1.7}
+
+/* ---------- HERO ---------- */
+#hero{background:var(--paper);padding:4.5rem 2rem 4rem;border-bottom:1px solid var(--line)}
+.hero-accent,.hero-accent2{display:none}
+.hero-inner{max-width:1116px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--claret);margin-bottom:1.5rem}
+.hero-tag::before{content:"";width:30px;height:2px;background:var(--claret)}
+.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(2.9rem,6.4vw,5.3rem);line-height:0.94;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance;max-width:14ch;margin-bottom:1.3rem}
+.hero-title em{font-style:normal;color:var(--claret)}
+.hero-sub{font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,2.5vw,1.6rem);letter-spacing:-0.015em;color:var(--ink);margin-bottom:1.1rem}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:58ch;line-height:1.7;margin-bottom:2.1rem}
+.hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+
+/* ---------- INTRO ---------- */
+#intro{background:var(--paper)}
+.intro-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:center}
+.intro-copy h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1.25rem;text-wrap:balance}
+.intro-copy p{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:1rem}
+.intro-copy p strong{color:var(--ink);font-weight:700}
+.venue-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.8rem}
+.venue-row{display:flex;gap:0.9rem;align-items:flex-start;font-size:0.92rem;color:var(--muted);line-height:1.7}
+.venue-row .dot{width:8px;height:8px;background:var(--claret);margin-top:7px;flex-shrink:0}
+.venue-row strong{color:var(--ink);font-weight:700}
+.capacity-card{border-radius:3px;overflow:hidden;background:var(--ink);color:var(--paper);border-top:4px solid var(--claret);padding:2.25rem 2rem;display:flex;flex-direction:column;gap:1.5rem}
+.cap-stat .cap-num{font-family:var(--display);font-size:3.4rem;font-weight:900;letter-spacing:-0.03em;color:var(--orange);line-height:1}
+.cap-stat .cap-label{font-size:0.85rem;color:var(--paper-dim);letter-spacing:0.02em;margin-top:0.35rem}
+.cap-note{font-size:0.8rem;color:var(--paper-faint);line-height:1.6;border-top:1px solid rgba(245,242,236,0.15);padding-top:1.25rem}
+
+/* ---------- SPACES & CAPACITIES ---------- */
+#spaces{background:linear-gradient(rgba(245,242,236,0.9),rgba(245,242,236,0.94)),url('/images/home/texture-paper.webp');background-size:cover;background-position:left center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.spaces-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.venue-spaces{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem}
+.vs-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--claret);border:1px solid var(--line-strong);padding:4px 11px;border-radius:2px;margin-bottom:1rem}
+.vs-name{font-family:var(--display);font-weight:800;font-size:1.75rem;letter-spacing:-0.02em;color:var(--ink);line-height:1;margin-bottom:1.25rem}
+.space-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.space-row:last-child{border-bottom:none;padding-bottom:0}
+.space-name{font-size:1rem;font-weight:700;color:var(--ink)}
+.space-caps{display:flex;gap:0.5rem;flex-wrap:wrap}
+.cap-pill{display:inline-block;font-size:0.78rem;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:2px;padding:4px 12px;font-variant-numeric:tabular-nums}
+
+/* ---------- GALLERY STRIP ---------- */
+#gallery{background:var(--paper);border-bottom:1px solid var(--line);padding:3rem 2rem}
+.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;max-width:1116px;margin:0 auto}
+.gallery-strip figure{margin:0;border-radius:2px;overflow:hidden;aspect-ratio:4/3;background:var(--paper-2)}
+.gallery-strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.gallery-strip figure:hover img{transform:scale(1.05)}
+
+/* ---------- PACKAGES ---------- */
+#packages{background:var(--paper)}
+.pkg-stack{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem;margin-bottom:1rem}
+.pkg-group-title{font-family:var(--display);font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:800;letter-spacing:-0.025em;line-height:1;color:var(--ink);margin-top:3.5rem;padding-bottom:0.55rem;border-bottom:3px solid var(--claret);display:inline-block;scroll-margin-top:88px}
+.pkg-group-title:first-of-type{margin-top:0}
+section[id]{scroll-margin-top:88px}
+.jump-bar{position:static;height:auto;z-index:auto;background:none;border:none;padding:0;backdrop-filter:none;display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;max-width:1116px;margin:2rem auto 0}
+.jump-bar a{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:var(--card);border:1px solid var(--line-strong);border-radius:2px;padding:10px 18px;text-decoration:none;transition:all 0.18s}
+.jump-bar a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pkg-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem;transition:transform 0.2s,box-shadow 0.2s}
+.pkg-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,28,24,0.10)}
+.pkg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.pkg-name{font-family:var(--display);font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;color:var(--ink);line-height:1.05}
+.pkg-meta{font-size:0.82rem;color:var(--muted);margin-top:0.45rem;line-height:1.5}
+.pkg-price{flex-shrink:0;text-align:right}
+.pkg-price .pp{font-family:var(--display);font-size:2.2rem;font-weight:900;letter-spacing:-0.03em;color:var(--claret);line-height:1}
+.pkg-price .pp small{font-size:0.85rem;font-weight:700;letter-spacing:0}
+.pkg-price .pp-alt{font-size:0.78rem;color:var(--muted);margin-top:0.25rem;line-height:1.4}
+.pkg-price .pp-tier{display:flex;align-items:baseline;justify-content:flex-end;gap:0.6rem;white-space:nowrap;line-height:1.35}
+.pkg-price .pp-tier+.pp-tier{margin-top:0.3rem}
+.pkg-price .pp-tier .lbl{font-size:0.74rem;color:var(--muted)}
+.pkg-price .pp-tier .amt{font-family:var(--display);font-size:1.7rem;font-weight:900;letter-spacing:-0.025em;color:var(--claret)}
+.pkg-price .pp-tier .amt small{font-size:0.75rem;font-weight:700;letter-spacing:0}
+.pkg-incl{font-size:0.85rem;color:var(--ink);line-height:1.65;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.pkg-body{margin-top:1.4rem;display:grid;gap:1.6rem}
+.pkg-body.cols-2{grid-template-columns:1fr 1fr}
+.pkg-body.cols-3{grid-template-columns:repeat(3,1fr)}
+.choice-label{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:0.65rem}
+.choice-label span{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+.choice-items{font-size:0.88rem;color:var(--ink);line-height:1.7}
+.choice-items .it{display:block;margin-bottom:0.2rem}
+.choice-items .sub{color:var(--muted);font-size:0.92em}
+.diet{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--claret);background:var(--paper-2);border:1px solid var(--line);border-radius:2px;padding:1px 5px;margin-left:3px;vertical-align:middle}
+.addon-note{font-size:0.82rem;color:var(--muted);margin-top:0.5rem}
+
+/* ---------- PLATTERS (dark band) ---------- */
+#platters{background:linear-gradient(rgba(33,28,24,0.86),rgba(33,28,24,0.92)),url('/images/home/texture-timber.webp');background-size:cover;background-position:center;color:var(--paper)}
+#platters .sec-title{color:var(--paper)}
+#platters .sec-sub{color:var(--paper-dim)}
+.platter-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 3rem}
+.platter-item{padding:0.95rem 0;border-bottom:1px solid rgba(245,242,236,0.15)}
+.platter-head{display:flex;align-items:baseline;gap:0.6rem}
+.platter-name{font-family:var(--display);font-size:1.05rem;font-weight:700;letter-spacing:-0.01em;color:var(--paper)}
+.platter-dots{flex:1;border-bottom:1px dotted rgba(245,242,236,0.3);transform:translateY(-3px);min-width:12px}
+.platter-price{font-family:var(--display);font-size:1.1rem;font-weight:800;color:var(--orange);white-space:nowrap}
+.platter-desc{font-size:0.83rem;color:var(--paper-dim);line-height:1.55;margin-top:4px}
+#platters .fineprint{color:var(--paper-dim)}
+
+/* ---------- KIDS / mini items ---------- */
+#kids{background:var(--paper)}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.mini-item{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:1.4rem 1.25rem;text-align:center}
+.mini-item .mi-name{font-size:0.95rem;font-weight:700;color:var(--ink)}
+.mini-item .mi-price{font-family:var(--display);font-size:1.7rem;font-weight:900;letter-spacing:-0.02em;color:var(--claret);margin-top:0.4rem}
+
+/* ---------- REMEMBRANCE ---------- */
+#remembrance{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#remembrance .sec-head{margin-bottom:1.25rem}
+.remem-intro{max-width:680px;font-size:1rem;color:var(--muted);line-height:1.75}
+.remem-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.remem-menu{margin-top:2rem;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem}
+.remem-menu .choice-label{margin-bottom:1.25rem}
+.remem-list{columns:2;column-gap:3rem;font-size:0.9rem;color:var(--ink);line-height:1.9}
+.remem-list .it{display:block;break-inside:avoid;margin-bottom:0.15rem}
+.remem-list .sub{color:var(--muted)}
+.wed-photos{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:2.5rem}
+.wed-photos figure{margin:0;border-radius:3px;overflow:hidden;aspect-ratio:3/2;background:var(--paper-2)}
+.wed-photos img{width:100%;height:100%;object-fit:cover;display:block}
+.wed-card{margin-top:1.5rem}
+
+/* ---------- TWO-COLUMN INFO BLOCKS (beverages / additions) ---------- */
+#beverages{background:var(--paper)}
+#additions{background:var(--paper-2);border-top:1px solid var(--line)}
+.info-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.info-block-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:2rem 2.25rem}
+.info-block-card h3{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem}
+.add-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--line)}
+.add-row:last-child{border-bottom:none}
+.add-name{font-size:0.92rem;font-weight:700;color:var(--ink)}
+.add-name .add-sub{display:block;font-size:0.8rem;font-weight:400;color:var(--muted);margin-top:2px}
+.add-price{font-family:var(--display);font-size:1rem;font-weight:800;color:var(--claret);white-space:nowrap;text-align:right}
+.bev-pkg{margin-bottom:1.5rem}
+.bev-name{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
+.bev-name .bn{font-family:var(--display);font-size:1.1rem;font-weight:800;letter-spacing:-0.01em;color:var(--ink)}
+.bev-name .bp{font-family:var(--display);font-size:1.5rem;font-weight:900;letter-spacing:-0.02em;color:var(--claret)}
+.bev-list{font-size:0.86rem;color:var(--muted);line-height:1.7}
+
+/* ---------- ENQUIRE ---------- */
+#enquire{background:var(--paper);padding:5.5rem 2rem;border-top:1px solid var(--line)}
+.enquire-inner{max-width:820px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--claret);border-radius:3px;padding:3.5rem 2.5rem}
+.enquire-inner h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:1rem;text-wrap:balance}
+.enquire-inner p{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem}
+.enquire-contact{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.enquire-contact a{color:var(--ink);text-decoration:none;font-size:1.05rem;font-weight:600;border-bottom:2px solid var(--line-strong);transition:border-color 0.2s,color 0.2s}
+.enquire-contact a:hover{border-color:var(--orange);color:var(--claret)}
+.fineprint{max-width:900px;margin:2.5rem auto 0;font-size:0.76rem;color:var(--muted);line-height:1.7;text-align:center}
+.enquire-inner .fineprint{margin-bottom:0}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:var(--ink);color:var(--paper-dim);font-size:14px}
+.footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:2.5rem;padding:4rem 0 3rem}
+.footer-brand-name{font-family:var(--display);font-size:1.4rem;font-weight:900;color:var(--paper);letter-spacing:-0.01em;text-transform:uppercase;line-height:1}
+.footer-brand-sub{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin:0.4rem 0 1.25rem}
+.footer-brand-desc{font-size:0.85rem;color:var(--paper-faint);line-height:1.8;max-width:280px}
+.footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--paper-dim);text-decoration:none;font-size:0.875rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-contact-item{font-size:0.875rem;color:var(--paper-dim);line-height:1.7;margin-bottom:0.6rem}
+.footer-contact-item a{color:var(--paper-dim);text-decoration:none;transition:color 0.2s}
+.footer-contact-item a:hover{color:var(--orange)}
+.footer-contact-item strong{color:var(--paper);font-weight:700}
+.footer-rule{border:none;border-top:1px solid rgba(245,242,236,0.1);margin:0}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap;gap:0.5rem}
+.footer-legal{font-size:11px;color:var(--paper-faint)}
+.footer-abn{font-size:11px;color:rgba(245,242,236,0.32)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(max-width:880px){
+  .intro-grid,.spaces-grid{grid-template-columns:1fr}
+  .pkg-body.cols-2,.pkg-body.cols-3,.platter-grid,.remem-cards,.info-2col,.remem-list,.wed-photos{grid-template-columns:1fr;columns:1}
+  .gallery-strip{grid-template-columns:repeat(2,1fr)}
+  .mini-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .footer-main{grid-template-columns:1fr}
+  .nav-toggle{display:flex}
+  .nav-cta{display:none}
+  .nav-phone{order:2}
+  .nav-toggle{order:3}
+  .nav-phone-num{display:none}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height 0.32s ease;z-index:99}
+  nav.open .nav-links{max-height:82vh;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(33,28,24,0.12)}
+  .nav-links li a{padding:0.95rem 1.5rem;font-size:14px;border-top:1px solid var(--line)}
+  nav{padding:0 1.25rem}
+  .wrap{padding:0 1.25rem}
+  section{padding:3.8rem 0}
+  #hero{padding:3rem 1.25rem}
+  #gallery{padding:2rem 1.25rem}
+  #enquire{padding:3.8rem 1.25rem}
+  .enquire-inner{padding:2.5rem 1.5rem}
+  .pkg-card,.info-block-card,.remem-menu,.venue-spaces{padding:1.5rem}
+  .pkg-price,.pkg-price .pp-tier{text-align:left;justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .gallery-strip img,.gallery-strip figure:hover img{transition:none;transform:none}
+  .pkg-card:hover{transform:none}
+}
+
+/* Cohesive photo treatment — consistent warm editorial grade site-wide. */
+img,.hero-img{filter:saturate(1.08) contrast(1.05) brightness(1.01) sepia(0.06)}
+/* ---------- ENQUIRE FORM (solid card — no texture behind fields) ---------- */
+#enquire.form-sec{background:var(--paper-2);border-bottom:1px solid var(--line);scroll-margin-top:80px}
+#enquire.form-sec .wrap{max-width:904px}
+.form-card{max-width:840px;margin:2.25rem auto 0;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--claret);border-radius:3px;padding:2.25rem;box-shadow:0 18px 40px rgba(33,28,24,0.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.ff{display:flex;flex-direction:column;gap:6px}
+.ff.full{grid-column:1/-1}
+.ff label{font-size:11px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em}
+.ff input,.ff select,.ff textarea{border:1px solid var(--line-strong);border-radius:2px;padding:12px 13px;font-family:var(--body);font-size:16px;background:#fff;color:var(--ink);outline:none;transition:border-color 0.18s,box-shadow 0.18s;width:100%}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--claret);box-shadow:0 0 0 3px rgba(138,43,46,0.14)}
+.ff textarea{resize:vertical;min-height:92px}
+.ff select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23211c18' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:32px}
+.btn-submit{display:flex;width:100%;margin-top:1.4rem;padding:16px}
+.form-fine{font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.85rem;line-height:1.5}
+.form-msg{padding:1.25rem 1.4rem;border-radius:2px;font-size:0.95rem;line-height:1.6}
+.form-msg.ok{background:var(--paper-2);border:1px solid var(--line-strong);border-left:4px solid var(--claret);color:var(--ink)}
+.form-msg.ok a{color:var(--claret);font-weight:700}
+.form-msg.err{background:rgba(138,43,46,0.07);border:1px solid var(--claret);color:var(--claret-dk)}
+.form-msg.err a{color:var(--claret-dk);font-weight:700}
+.hp{position:absolute;left:-9999px}
+
+
+/* ---------- EVENT PAGES (shared by the Functions & Events sub-pages) ---------- */
+#enquire.form-sec{padding:5.5rem 0;border-top:1px solid var(--line)}
+#enquire.form-sec .sec-sub a{color:var(--claret);font-weight:600}
+.btn-submit{display:flex;align-items:center;justify-content:center;width:100%;margin-top:1.4rem;padding:16px;background:var(--claret);color:var(--paper);border:0;border-radius:2px;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer}
+.btn-submit:hover{background:var(--claret-dk)}
+.crumbs{font-size:12px;color:var(--muted);margin-bottom:1.1rem}
+.crumbs a{color:var(--muted);text-underline-offset:3px}
+.extras-band{background:var(--paper-2);border-top:1px solid var(--line)}
+.extras-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.extras-band h2{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-0.02em;line-height:1.1}
+.extras-band p{color:var(--muted);font-size:0.95rem;line-height:1.6;margin-top:0.35rem;max-width:60ch}
+.mini-pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.mini-pkg{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--claret);border-radius:3px;padding:1.4rem 1.4rem 1.3rem;transition:transform 0.2s,box-shadow 0.2s}
+.mini-pkg:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,28,24,0.10)}
+.mini-pkg .mp-name{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-0.015em;line-height:1.15}
+.mini-pkg .mp-meta{font-size:0.8rem;color:var(--muted);margin-top:0.35rem;line-height:1.5}
+.mini-pkg .mp-price{font-family:var(--display);font-weight:900;font-size:1.5rem;color:var(--claret);margin-top:0.7rem;letter-spacing:-0.02em}
+.mini-pkg .mp-price small{font-size:0.75rem;font-weight:700;letter-spacing:0;color:var(--muted)}
+.mini-pkg .mp-link{display:inline-block;margin-top:0.6rem;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--claret)}
+.pkg-list{list-style:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:0.45rem}
+.pkg-list li{font-size:0.92rem;color:var(--ink);line-height:1.5;padding-left:1.1rem;position:relative}
+.pkg-list li::before{content:"";position:absolute;left:0;top:0.55em;width:6px;height:6px;background:var(--claret)}
+.pkg-list li small{color:var(--muted);font-size:0.88em}
+.corp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
+.corp-grid .pkg-card{display:flex;flex-direction:column}
+.corp-grid .pkg-card .pkg-list{flex:1}
+.corp-grid .btn{margin-top:1.4rem;align-self:flex-start}
+.kicker{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-top:0.5rem}
+.soon-card{background:var(--card);border:1px dashed var(--line-strong);border-radius:3px;padding:2.25rem;max-width:760px}
+.soon-card h3{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:0.6rem}
+.soon-card p{color:var(--muted);line-height:1.7}
+.soon-card .btn{margin-top:1.25rem}
+.season-band{background:#1f3a2b;color:var(--paper);border-top:2px solid #b8945a}
+.season-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.season-band h2{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-0.02em}
+.season-band p{color:var(--paper-dim);margin-top:0.35rem}
+.season-band .btn{background:var(--paper);color:var(--ink)}
+.season-band .btn:hover{background:#b8945a;color:var(--paper)}
+@media(max-width:880px){.mini-pkgs,.corp-grid{grid-template-columns:1fr}}
+@media(max-width:768px){#enquire.form-sec{padding:3.8rem 0}.form-card{padding:1.5rem}.form-grid{grid-template-columns:1fr}.soon-card{padding:1.5rem}}
+
+/* Hero with photo (event pages) */
+#hero.has-photo .hero-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:3.5rem;align-items:center}
+.hero-photo{position:relative;margin:0 14px 14px 0}
+.hero-photo::after{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:2px solid var(--claret);border-radius:2px;z-index:0}
+.hero-photo img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.hero-photo.wide img{aspect-ratio:5/4}
+.photo-strip{padding:0 2rem 3rem;background:inherit}
+.photo-strip .gallery-strip{margin-top:0}
+@media(max-width:900px){#hero.has-photo .hero-inner{grid-template-columns:1fr;gap:2.25rem}.hero-photo img,.hero-photo.wide img{aspect-ratio:16/10}}
+@media(max-width:768px){.photo-strip{padding:0 1.25rem 2.5rem}}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-group">
+    <span class="nav-group-name">Four Sausages</span>
+    <span class="nav-group-sub">Hospitality Group</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/the-fairway.html">The Fairway</a></li>
+    <li><a href="/the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+    <li class="has-sub">
+    <a href="/functions-events.html" class="active">Functions &amp; Events</a>
+    <button type="button" class="sub-toggle" aria-label="Show event types" aria-expanded="false"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <ul class="sub-menu">
+      <li><a href="/functions/special-occasions/">Special Occasions</a></li>
+      <li><a href="/functions/weddings/">Weddings</a></li>
+      <li><a href="/remembrance/">Remembrance</a></li>
+      <li><a href="/functions/graduations-formals/">Graduations &amp; Formals</a></li>
+      <li><a href="/functions/corporate/" class="active">Corporate Events</a></li>
+      <li data-xmas><a href="/christmas/">Christmas Parties</a></li>
+    </ul>
+  </li>
+    <li><a href="/catering.html">Catering</a></li>
+    <li><a href="/contact.html">Contact us</a></li>
+  </ul>
+  <a href="tel:0247023642" class="nav-phone" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-num">(02) 4702 3642</span></a>
+  <a href="#enquire" class="nav-cta">Make an enquiry</a>
+</nav>
+
+<!-- Christmas functions banner: shows 1 Oct to 21 Dec each year (data-xmas, see /assets/site.js) -->
+<a href="/christmas/" id="xmas-banner" data-xmas style="display:flex;align-items:center;justify-content:center;gap:0.9rem;flex-wrap:wrap;text-align:center;background:#1f3a2b;color:#f5f2ec;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.95rem;line-height:1.4;border-bottom:2px solid #b8945a;transition:background 0.2s" onmouseover="this.style.background='#162b20'" onmouseout="this.style.background='#1f3a2b'">
+  <span>🎄 <strong>Book your Christmas function or event now!</strong> — festive menus at The Fairway &amp; The Jack &amp; Cleaver, from $48pp</span>
+  <span style="font-weight:700;letter-spacing:0.04em;text-transform:uppercase;font-size:0.78rem;color:#d9bd8c;border-bottom:2px solid #b8945a">See the Christmas menu →</span>
+</a>
+
+<!-- HERO -->
+<header id="hero" class="has-photo">
+  <div class="hero-inner">
+   <div class="hero-text">
+    <p class="crumbs"><a href="/functions-events.html">Functions &amp; Events</a> &nbsp;/&nbsp; Corporate Events</p>
+    <span class="hero-tag">Corporate Events</span>
+    <h1 class="hero-title">Work functions, <em>sorted</em></h1>
+    <p class="hero-sub">Meetings, workshops, team lunches and end-of-week celebrations.</p>
+    <p class="hero-desc">Bring the team to The Fairway or The Jack &amp; Cleaver. We set the room, look after the food and keep things running, so you can focus on the day.</p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn btn-primary">View packages</a>
+      <a href="#enquire" class="btn btn-outline">Make an enquiry</a>
+    </div>
+    </div>
+   <figure class="hero-photo wide"><img src="/images/functions/room-window-chair.jpg" alt="A dressed table and chair beside the windows on a sunny afternoon"></figure>
+  </div>
+</header>
+
+<!-- CORPORATE PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The packages</p>
+      <h2 class="sec-title">Corporate packages</h2>
+      <p class="sec-sub">Three simple packages for meetings, workshops, team lunches and celebrations, priced per head. Available at both venues.</p>
+    </div>
+    <div class="corp-grid">
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Morning Spread</div><p class="kicker">Effortless morning tea</p></div>
+          <div class="pkg-price"><div class="pp">$39<small>pp</small></div></div>
+        </div>
+        <p class="pkg-meta">An easy morning tea to start the day right.</p>
+        <ul class="pkg-list">
+          <li>Baked Goods Platter <small>— warm muffins &amp; danishes</small></li>
+          <li>Seasonal Fresh Fruit Platter</li>
+          <li>Savoury Pastry Platter <small>— pastizzi &amp; spinach &amp; ricotta rolls</small></li>
+        </ul>
+        <a href="#enquire" class="btn btn-primary" data-package="Morning Spread ($39pp)">Enquire about this package</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Working Lunch</div><p class="kicker">Lunch that earns its keep</p></div>
+          <div class="pkg-price"><div class="pp">$45<small>pp</small></div></div>
+        </div>
+        <p class="pkg-meta">A proper feed to carry a midday meeting.</p>
+        <ul class="pkg-list">
+          <li>Classic Aussie Platter <small>— mini beef pies &amp; sausage rolls</small></li>
+          <li>Chef's Sandwich Platter <small>— mixed gourmet selection</small></li>
+          <li>Truffle &amp; Porcini Arancini <small>— with garlic aioli</small></li>
+          <li>Seasonal Fresh Fruit Platter</li>
+        </ul>
+        <a href="#enquire" class="btn btn-primary" data-package="Working Lunch ($45pp)">Enquire about this package</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div><div class="pkg-name">Friday's Table</div><p class="kicker">The best part of the week</p></div>
+          <div class="pkg-price"><div class="pp">$51<small>pp</small></div></div>
+        </div>
+        <p class="pkg-meta">A shareable spread to round off the week.</p>
+        <ul class="pkg-list">
+          <li>Gourmet Slider Platter <small>— cheeseburger &amp; crispy pork belly</small></li>
+          <li>Pizza Tray <small>— chef's selection</small></li>
+          <li>Crispy Fish Platter <small>— lemon &amp; house tartare</small></li>
+          <li>Potato Wedges <small>— sour cream &amp; sweet chilli</small></li>
+          <li>Seasonal Fresh Fruit Platter</li>
+        </ul>
+        <a href="#enquire" class="btn btn-primary" data-package="Friday's Table ($51pp)">Enquire about this package</a>
+      </div>
+    </div>
+    <p class="fineprint" style="text-align:left;margin-left:0">Need something bigger? Any of our <a href="/functions/special-occasions/" style="color:var(--claret);font-weight:700">function packages</a> can be booked for a corporate event too.</p>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photo-strip" style="padding-top:3rem">
+  <div class="gallery-strip">
+    <figure><img src="/images/catering/feature/catering-06.jpg" alt="A buffet line of hot dishes and salads at an event" loading="lazy"></figure>
+    <figure><img src="/images/catering/feature/catering-02.jpg" alt="A grazing table of cheeses, cured meats, fruit and dips" loading="lazy"></figure>
+    <figure><img src="/images/catering/feature/catering-05.jpg" alt="Trays of canapés ready to serve" loading="lazy"></figure>
+    <figure><img src="/images/catering/feature/catering-07.jpg" alt="Dessert table with brownies and strawberries" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- CHRISTMAS (shows 1 Oct to 21 Dec) -->
+<section class="season-band" data-xmas>
+  <div class="wrap">
+    <div>
+      <h2>🎄 Planning the work Christmas party?</h2>
+      <p>Festive roasts, seafood and all the trimmings, from $48pp at both venues.</p>
+    </div>
+    <a href="/christmas/" class="btn">See Christmas packages</a>
+  </div>
+</section>
+
+<!-- SPACES & CAPACITIES -->
+<section id="spaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The venues</p>
+      <h2 class="sec-title">Spaces &amp; capacities</h2>
+      <p class="sec-sub">Two venues and four versatile spaces — choose the setting that suits your guest count and the style of your event.</p>
+    </div>
+    <div class="spaces-grid">
+      <div class="venue-spaces">
+        <span class="vs-tag tag-fairway">Penrith Golf Club</span>
+        <h3 class="vs-name">The Fairway</h3>
+        <div class="space-row">
+          <span class="space-name">Main Terrace</span>
+          <span class="space-caps"><span class="cap-pill">160 seated</span><span class="cap-pill">180 cocktail</span></span>
+        </div>
+        <div class="space-row">
+          <span class="space-name">Small Terrace</span>
+          <span class="space-caps"><span class="cap-pill">Up to 35 seated</span></span>
+        </div>
+      </div>
+      <div class="venue-spaces">
+        <span class="vs-tag tag-jack">Pennant Hills Bowling Club</span>
+        <h3 class="vs-name">The Jack &amp; Cleaver</h3>
+        <div class="space-row">
+          <span class="space-name">Yarrara Room</span>
+          <span class="space-caps"><span class="cap-pill">250 seated</span><span class="cap-pill">320 cocktail</span></span>
+        </div>
+        <div class="space-row">
+          <span class="space-name">Mezzanine</span>
+          <span class="space-caps"><span class="cap-pill">60 seated</span><span class="cap-pill">75 cocktail</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEVERAGES -->
+<section id="beverages">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Drinks</p>
+      <h2 class="sec-title">Beverage Packages</h2>
+      <p class="sec-sub">Choose a package, or keep it flexible with a cash bar or bar tab.</p>
+    </div>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Gold Beverage Package</span><span class="bp">$60pp</span></div>
+          <p class="bev-list">4 house tap beers · 1 house white · 1 house red · 1 packaged beer (Corona, Peroni etc) + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Premium Beverage Package</span><span class="bp">$75pp</span></div>
+          <p class="bev-list">3 house tap beers + 1 premium tap/draught RTD · 2 premium whites &amp; 2 premium reds (Moore's Creek / Oyster Bay) · sparkling (Prosecco or Brut) · packaged beer + Heineken 0.0 · non-alcoholic white &amp; red · unlimited post-mix soft drink.</p>
+        </div>
+      </div>
+      <div class="info-block-card">
+        <div class="bev-pkg">
+          <div class="bev-name"><span class="bn">Cash Bar</span></div>
+          <p class="bev-list">Guests pay for their own beverages upon ordering.</p>
+        </div>
+        <div class="bev-pkg" style="margin-bottom:0">
+          <div class="bev-name"><span class="bn">Bar Tab</span></div>
+          <p class="bev-list">Set a monetary limit and let us know which beverages to include. We'll notify you once the limit has been reached, and you decide whether to extend it or switch to a cash bar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT ADDITIONS -->
+<section id="additions">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finishing touches</p>
+      <h2 class="sec-title">Event Additions</h2>
+    </div>
+    <div class="info-2col">
+      <div class="info-block-card">
+        <h3>Add-ons</h3>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · up to 50pax</span></span><span class="add-price">$85</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 51–99pax</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Table Linen<span class="add-sub">White or black · 100pax or more</span></span><span class="add-price">$185</span></div>
+        <div class="add-row"><span class="add-name">Tea &amp; Coffee Station<span class="add-sub">Black &amp; herbal teas, instant coffee, sweeteners</span></span><span class="add-price">$135</span></div>
+        <div class="add-row"><span class="add-name">Cakeage<span class="add-sub">Bring your own cake or desserts; crockery supplied</span></span><span class="add-price">$3pp</span></div>
+      </div>
+      <div class="info-block-card">
+        <h3>Staffing &amp; hire</h3>
+        <div class="add-row"><span class="add-name">Waiter / Additional Staff<span class="add-sub">Per hour, per staff member</span></span><span class="add-price">$65/hr</span></div>
+        <div class="add-row"><span class="add-name">Security<span class="add-sub">Minimum 5 hours</span></span><span class="add-price">$75/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Space Hire<span class="add-sub">Standard hire is 4 hours</span></span><span class="add-price">$220/hr</span></div>
+        <div class="add-row"><span class="add-name">Additional Services<span class="add-sub">DJ · kids play / soft play · cakes · balloons &amp; decorations</span></span><span class="add-price">On request</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section id="enquire" class="form-sec">
+  <div class="wrap">
+    <p class="eyebrow">Let's plan it</p>
+    <h2 class="sec-title">Make a corporate enquiry</h2>
+    <p class="sec-sub">Tell us about your event and our functions team will be in touch. Prefer to talk? Call <a href="tel:0247023642">(02) 4702 3642</a>.</p>
+    <form name="functions-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-card js-enquiry" action="/functions/thank-you" data-label="Corporate event" data-page="corporate">
+      <input type="hidden" name="form-name" value="functions-enquiry">
+      <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+      <div class="form-body">
+        <div class="form-grid">
+          <div class="ff"><label for="f-name">Name</label><input id="f-name" type="text" name="name" autocomplete="name" required></div>
+          <div class="ff"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" required></div>
+          <div class="ff full"><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" required></div>
+          <div class="ff"><label for="f-venue">Venue</label>
+            <select id="f-venue" name="venue" required>
+              <option value="" disabled selected>Choose…</option>
+              <option value="The Fairway (Penrith)">The Fairway (Penrith)</option>
+              <option value="The Jack &amp; Cleaver (Pennant Hills)">The Jack &amp; Cleaver (Pennant Hills)</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="ff"><label for="f-type">Event type</label>
+            <select id="f-type" name="event_type" required>
+              <option value="" disabled selected>Choose…</option>
+              <option>Meeting or workshop</option>
+              <option>Team lunch</option>
+              <option>Conference or training day</option>
+              <option>End-of-year or team celebration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="ff"><label for="f-package">Package</label>
+            <select id="f-package" data-field="package">
+              <option value="" selected>Not sure yet</option>
+              <option>Morning Spread ($39pp)</option>
+              <option>Working Lunch ($45pp)</option>
+              <option>Friday's Table ($51pp)</option>
+            </select>
+          </div>
+          <div class="ff"><label for="f-guests">Approx. guests</label><input id="f-guests" type="number" name="guests" min="1" inputmode="numeric" placeholder="e.g. 60"></div>
+          <div class="ff full"><label for="f-date">Preferred date</label><input id="f-date" type="date" name="preferred_date"></div>
+          <div class="ff full"><label for="f-msg">Message <span style="text-transform:none;font-weight:400">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Start and finish times, AV needs, any dietary requirements?"></textarea></div>
+        </div>
+        <button type="submit" class="btn-submit">Send my enquiry</button>
+        <p class="form-fine">We'll reply personally, with no obligation. Your details are only used to help plan your event.</p>
+      </div>
+      <div class="form-msg" role="status" hidden></div>
+    </form>
+    <p class="fineprint">Packages outline minimum guest numbers, and a minimum spend also applies. Bookings on a public holiday incur a 15% surcharge on all packages. We take the utmost care with dietary requirements, but cannot guarantee there will be no cross-contamination where allergens are concerned. Packages and pricing are subject to change.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-main">
+      <!-- Brand -->
+      <div>
+        <p class="footer-brand-name">Four Sausages</p>
+        <p class="footer-brand-sub">Hospitality Group</p>
+        <p class="footer-brand-desc">Two distinctive venues, private event packages, and off-site catering — serving Western Sydney and the Hills District with over 10 years of hospitality experience.</p>
+      </div>
+      <!-- Our venues -->
+      <div>
+        <p class="footer-col-title">Our venues</p>
+        <ul class="footer-links">
+          <li><a href="/the-fairway.html">The Fairway</a></li>
+          <li><a href="/the-jack-and-cleaver.html">The Jack &amp; Cleaver</a></li>
+        </ul>
+      </div>
+      <!-- Our services -->
+      <div>
+        <p class="footer-col-title">Our services</p>
+        <ul class="footer-links">
+          <li><a href="/catering.html">Event Catering</a></li>
+          <li><a href="/index.html#events">Functions &amp; Events</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <p class="footer-contact-item"><strong>The Fairway</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:reservations@thefairwaypenrith.com.au">reservations@thefairwaypenrith.com.au</a></p>
+        <p class="footer-contact-item"><strong>The Jack &amp; Cleaver</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:reservations@thejackandcleaver.com.au">reservations@thejackandcleaver.com.au</a></p>
+        <p class="footer-contact-item"><strong>Functions &amp; Catering</strong><br><a href="tel:0247023642">(02) 4702 3642</a><br><a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a></p>
+      </div>
+    </div>
+    <hr class="footer-rule">
+    <div class="footer-bottom">
+      <span class="footer-legal">© 2026 LL Club Catering Services Pty Ltd &nbsp;·&nbsp; Trading as Four Sausages Hospitality Group, The Fairway Penrith, The Jack &amp; Cleaver &amp; Four Sausages Catering</span>
+      <span class="footer-abn">R/O 1939 The Northern Road, Glenmore Park NSW 2745</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+(function(){
+  // Package and venue buttons prefill the form as they scroll to it
+  function prefill(sel, v){
+    var el = document.querySelector(sel);
+    if(el && v) el.value = v;
+  }
+  document.querySelectorAll('[data-package]').forEach(function(a){
+    a.addEventListener('click', function(){ prefill('#f-package', a.getAttribute('data-package')); });
+  });
+  document.querySelectorAll('[data-venue]').forEach(function(a){
+    a.addEventListener('click', function(){ prefill('#f-venue', a.getAttribute('data-venue')); });
+  });
+
+  document.querySelectorAll('form.js-enquiry').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      var body = form.querySelector('.form-body');
+      var msg = form.querySelector('.form-msg');
+      var venue = (form.querySelector('[name="venue"]') || {}).value || '';
+      var eventType = (form.querySelector('[name="event_type"]') || {}).value || '';
+      var pkgEl = form.querySelector('[data-field="package"]');
+      var data = new URLSearchParams(new FormData(form));
+      // Send the page (and package choice) inside the existing message field,
+      // so the shared functions-enquiry form needs no new fields.
+      var tag = '[' + form.getAttribute('data-label') + (pkgEl ? ' · Package: ' + (pkgEl.value || 'Not sure yet') : '') + ']';
+      data.set('message', tag + (data.get('message') ? '\n' + data.get('message') : ''));
+      fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: data.toString() })
+        .then(function(){
+          window.dataLayer.push({ event:'enquiry_submit', venue: venue, event_type: eventType, page: form.getAttribute('data-page') });
+          // Google Ads "Submit lead form" conversion
+          if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-18516230020/vpvNCL-4u54dEIT_nP1E', value: 1.0, currency: 'AUD' });
+          if(body) body.style.display = 'none';
+          if(msg){
+            msg.hidden = false;
+            msg.className = 'form-msg ok';
+            msg.innerHTML = '<strong>Thank you, your enquiry is in.</strong><br>Our functions team will be in touch very soon. For anything urgent, call <a href="tel:0247023642">(02) 4702 3642</a>.';
+            msg.scrollIntoView({ behavior:'smooth', block:'center' });
+          }
+        })
+        .catch(function(){
+          if(msg){
+            msg.hidden = false;
+            msg.className = 'form-msg err';
+            msg.innerHTML = 'Something went wrong sending your enquiry. Please call (02) 4702 3642 or email <a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a> and we\'ll sort it out.';
+          }
+        });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js): Google Ads account AW-18516230020 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18516230020"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18516230020');
+</script>
+<script>
+  // Google Ads "Website phone tap (Fairway)" conversion: taps on either Fairway number
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!a) return;
+    var num = a.getAttribute('href').replace(/[^0-9]/g, '');
+    if (num === '0247023642' || num === '0247361633') {
+      gtag('event', 'conversion', { send_to: 'AW-18516230020/hsCBCLPk0qEdEIT_nP1E', value: 1.0, currency: 'AUD' });
+    }
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Functions, Events &amp; Catering | Four Sausages Hospitality Group</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Four Sausages Hospitality Group">
+<meta name="theme-color" content="#8a2b2e">
+<meta name="description" content="Functions, events and catering from Four Sausages Hospitality Group at The Fairway (Penrith) and The Jack &amp; Cleaver (Pennant Hills).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* QR landing page for the FSHG business cards: pick functions or catering. */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#f5f2ec;--ink:#211c18;--muted:#7c7267;
+  --claret:#8a2b2e;--claret-dk:#6f2124;--peach:#f3c9a6;
+  --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 1.25rem}
+.top{padding:1.6rem 0 0}
+.brand{display:inline-block;text-decoration:none}
+.brand-name{font-family:var(--display);font-weight:900;font-size:1.35rem;text-transform:uppercase;letter-spacing:-0.01em;line-height:.95}
+.brand-sub{font-weight:700;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--claret);margin-top:.3rem}
+main{flex:1;padding:2.4rem 0 3rem}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(2rem,7vw,3.2rem);line-height:.95;text-transform:uppercase;letter-spacing:-0.02em}
+h1 em{font-style:normal;color:var(--claret)}
+.lede{font-size:1.05rem;color:var(--muted);margin-top:.8rem;max-width:34rem}
+.choices{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.8rem}
+@media (min-width:700px){.choices{grid-template-columns:1fr 1fr;gap:1.4rem}}
+.choice{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:220px;border-radius:4px;overflow:hidden;text-decoration:none;color:var(--paper);background:var(--claret) center/cover no-repeat;isolation:isolate;transition:transform .18s}
+@media (min-width:700px){.choice{min-height:320px}}
+.choice:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,28,24,.15) 0%,rgba(33,28,24,.55) 40%,rgba(33,28,24,.88));z-index:-1}
+.choice:hover{transform:translateY(-3px)}
+.choice:focus-visible{outline:3px solid var(--claret);outline-offset:3px}
+.choice-body{padding:1.3rem 1.3rem 1.2rem}
+.choice-kick{font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--peach)}
+.choice-title{font-family:var(--display);font-weight:900;font-size:1.75rem;text-transform:uppercase;line-height:1;margin-top:.35rem}
+.choice-desc{font-size:.95rem;opacity:.9;margin-top:.45rem;line-height:1.4}
+.choice-go{display:inline-block;margin-top:.9rem;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:.7rem 1.1rem;border-radius:2px}
+.fn{background-image:url(/images/home/path-function.jpg)}
+.ct{background-image:url(/images/home/we-come-to-you.jpg)}
+.contact{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.98rem}
+.contact a{font-weight:600;text-decoration:none;border-bottom:1px solid rgba(138,43,46,.35)}
+.contact a:hover{color:var(--claret)}
+footer{background:var(--claret);color:var(--paper);padding:1rem 0;font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;justify-content:space-between}
+footer a{text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="Four Sausages Hospitality Group home">
+    <div class="brand-name">Four Sausages</div>
+    <div class="brand-sub">Hospitality Group</div>
+  </a>
+</div></div>
+
+<main><div class="wrap">
+  <h1>Functions, events &amp; <em>catering</em></h1>
+  <p class="lede">Thanks for scanning. What are you planning?</p>
+
+  <div class="choices">
+    <a class="choice fn" href="/functions-events">
+      <div class="choice-body">
+        <div class="choice-kick">At our venues</div>
+        <div class="choice-title">Functions &amp; events</div>
+        <p class="choice-desc">Birthdays, weddings, Christmas parties and more at The Fairway or The Jack &amp; Cleaver.</p>
+        <span class="choice-go">See function packages</span>
+      </div>
+    </a>
+    <a class="choice ct" href="/catering">
+      <div class="choice-body">
+        <div class="choice-kick">We come to you</div>
+        <div class="choice-title">Catering</div>
+        <p class="choice-desc">Packages and platters delivered to your office or home, ready to serve.</p>
+        <span class="choice-go">See catering menu</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="contact">
+    <a href="tel:0247023642">(02) 4702 3642</a>
+    <a href="mailto:functions@fshg.com.au">functions@fshg.com.au</a>
+    <a href="mailto:catering@fshg.com.au">catering@fshg.com.au</a>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  <span>Four Sausages Hospitality Group</span>
+  <span><a href="/the-fairway">The Fairway</a> Penrith · <a href="/the-jack-and-cleaver">The Jack &amp; Cleaver</a> Pennant Hills</span>
+</div></footer>
+</body>
+</html>

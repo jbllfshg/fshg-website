@@ -88,3 +88,10 @@
   to = "/404.html"
   status = 404
   force = true
+
+# Keep the staff handbook out of search results (it is password protected,
+# but this tells Google not to list the URL either).
+[[headers]]
+  for = "/staff-handbook*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
